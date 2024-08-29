@@ -31,3 +31,55 @@ Dabory Composable (DC) is a powerful and modular development framework created t
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/dabory-composable-frontend.git
+
+## Navigate to the project directory:
+```bash
+cd dabory-composable-frontend
+
+
+
+Install dependencies:
+bash
+코드 복사
+composer install
+npm install
+npm run dev
+Set up environment variables:
+Copy the .env.example file to .env:
+
+bash
+코드 복사
+cp .env.example .env
+Update the .env file with your environment-specific settings (database, app URL, etc.).
+
+Generate the application key:
+bash
+코드 복사
+php artisan key:generate
+Run the migrations:
+bash
+코드 복사
+php artisan migrate
+Serve the application:
+bash
+코드 복사
+php artisan serve
+Directory Structure
+/resources/views: Contains the Blade templates for the frontend.
+/public/css: Custom stylesheets.
+/public/js: Custom JavaScript files.
+/routes/web.php: Defines the routes for the frontend pages.
+/app/Http/Controllers: Contains the controllers that handle frontend logic.
+Contribution Guidelines
+We welcome contributions from the community! If you would like to contribute to the development of Dabory Composable, please follow these steps:
+
+Fork the repository.
+Create a new branch for your feature or bugfix.
+Commit your changes with clear commit messages.
+Push your changes to your fork.
+Submit a pull request with a detailed description of your changes.
+License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+Contact
+If you have any questions or need further assistance, feel free to reach out through the GitHub Issues page or contact us directly at support@dabory.com.
