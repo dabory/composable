@@ -36,50 +36,70 @@ Dabory Composable (DC) is a powerful and modular development framework created t
 ```bash
 cd dabory-composable-frontend
 
+# Dabory Composable Setup Guide
 
+## Installation
 
-Install dependencies:
-bash
-코드 복사
-composer install
-npm install
-npm run dev
-Set up environment variables:
-Copy the .env.example file to .env:
+To get started with the project, follow these steps:
 
-bash
-코드 복사
-cp .env.example .env
-Update the .env file with your environment-specific settings (database, app URL, etc.).
+1. **Install dependencies:**
 
-Generate the application key:
-bash
-코드 복사
-php artisan key:generate
-Run the migrations:
-bash
-코드 복사
-php artisan migrate
-Serve the application:
-bash
-코드 복사
-php artisan serve
-Directory Structure
-/resources/views: Contains the Blade templates for the frontend.
-/public/css: Custom stylesheets.
-/public/js: Custom JavaScript files.
-/routes/web.php: Defines the routes for the frontend pages.
-/app/Http/Controllers: Contains the controllers that handle frontend logic.
-Contribution Guidelines
+    ```bash
+    composer install
+    npm install
+    npm run dev
+    ```
+
+2. **Set up environment variables:**
+
+    Copy the `.env.example` file to `.env`:
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    Update the `.env` file with your environment-specific settings (database, app URL, etc.).
+
+3. **Generate the application key:**
+
+    ```bash
+    php artisan key:generate
+    ```
+
+4. **Run the migrations:**
+
+    ```bash
+    php artisan migrate
+    ```
+
+5. **Serve the application:**
+
+    ```bash
+    php artisan serve
+    ```
+
+## Directory Structure
+
+- `/resources/views`: Contains the Blade templates for the frontend.
+- `/public/css`: Custom stylesheets.
+- `/public/js`: Custom JavaScript files.
+- `/routes/web.php`: Defines the routes for the frontend pages.
+- `/app/Http/Controllers`: Contains the controllers that handle frontend logic.
+
+## Contribution Guidelines
+
 We welcome contributions from the community! If you would like to contribute to the development of Dabory Composable, please follow these steps:
 
-Fork the repository.
-Create a new branch for your feature or bugfix.
-Commit your changes with clear commit messages.
-Push your changes to your fork.
-Submit a pull request with a detailed description of your changes.
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes with clear commit messages.
+4. Push your changes to your fork.
+5. Submit a pull request with a detailed description of your changes.
 
-Contact
-If you have any questions or need further assistance, feel free to reach out through the GitHub Issues page or contact us directly at support@dabory.com.
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+If you have any questions or need further assistance, feel free to reach out through the [GitHub Issues](https://github.com/your-repo/issues) page or contact us directly at [support@dabory.com](mailto:support@dabory.com).
