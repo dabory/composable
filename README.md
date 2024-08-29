@@ -134,4 +134,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-If you have any questions or need further assistance, feel free to reach out through the [GitHub Issues](https://github.com/your-repo/issues) page or contact us directly at [support@dabory.com](mailto:support@dabory.com).
+If you have any questions or need further assistance, feel free to reach out through the [GitHub Issues](https://github.com/your-repo/issues) page or contact us directly at [composable@dabory.com](mailto:support@dabory.com).
