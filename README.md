@@ -26,16 +26,6 @@ Dabory Composable (DC) is a powerful and modular development framework created t
 - **PHP Version**: 7.3 - 8.0
 - **Composer**: Make sure Composer is installed on your system.
 
-### Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/dabory-composable-frontend.git
-
-## Navigate to the project directory:
-```bash
-cd dabory-composable-frontend
-
 # Dabory Composable Setup Guide
 
 ## Installation
