@@ -1,4 +1,4 @@
-# Dabory Composable (DC) Frontend
+# HomePage (CMS), e-Commerce, ERP, CRM, and WebPOS Packages
 
 Welcome to the official GitHub repository for the **Dabory Composable (DC) Frontend**, specifically designed for **Laravel Version 7** and compatible with **PHP 7.3 to 8.0**. This repository provides the frontend codebase for DC, a comprehensive and flexible development framework that seamlessly integrates essential business functionalities such as CMS, e-commerce, CRM, ERP, and more.
 
