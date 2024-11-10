@@ -84,6 +84,12 @@ AI 혁명의 시대가 도래하면서 소프트웨어 개발 방식이나 구�
 
 ## Installation
 
+!!Important : This github code CANNOT run properly without installing from one of theme git repository. 
+It is sample code for PHP and Node.js developers to review, Not for complete running only by this code.
+
+Since Structure of Dabory Composable run by core and theme, Parent(Core)-Child(Theme) git repository, 
+You need to visit https://composable.dabory.com/ to install appropriate Theme over your CORE git code.
+
 To get started with the project, follow these steps:
 
 1. **Install dependencies:**
