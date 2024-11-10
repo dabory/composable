@@ -1,0 +1,41 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "상품 리스트",
+        "PageApi": "list-type1-page",
+        "ActApi": "item-act"
+    },
+
+    "HeadSelectOptions": [
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "서브 위젯 추가",
+            "Component": "popup-json.form-b.layer-form",
+            "Parameter": "/popup/popup-json/form-b/layer",
+            "ThemeDir": ""
+        }
+    ],
+
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "No": "3"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center"
+        }
+    ]
+}

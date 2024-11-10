@@ -1,0 +1,118 @@
+{
+    "General": {
+        "PickApi": "media-pick",
+        "ActApi": "media-bact"
+    },
+
+    "QueryVars": {
+        "QueryName": "common/media"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "save-and-paste",
+            "Caption": "미디어 업로드 후 붙여넣기",
+            "Parameter": ""
+        },
+        {
+            "Value": "save",
+            "Caption": "미디어 업로드만",
+            "Parameter": ""
+        }
+    ],
+
+    "MediaClassOptions": [
+        {
+            "Value": "image",
+            "Caption": "이미지"
+        },
+        {
+            "Value": "audio",
+            "Caption": "오디오"
+        },
+        {
+            "Value": "movie",
+            "Caption": "동영상"
+        },
+        {
+            "Value": "document",
+            "Caption": "문서"
+        },
+        {
+            "Value": "zip",
+            "Caption": "압축화일"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "",
+            "AutoSlipNo": "미디어 번호(자동채번)*",
+            "FileSelect": "화일선택*",
+            "MediaClass": "미디어 분류",
+            "MediaName": "미디어명",
+            "MediaBrand": "미디어 브랜드",
+            "FileUrl": "화일주소",
+            "MediaCaption": "미디어 제목",
+            "FileSize": "화일크기(KB)",
+            "UserName": "작성자",
+            "BranchName": "작성지사",
+            "IsLinked": "첨부",
+            "LinkLocation": "첨부대상",
+            "IsClosed": "사용종료",
+            "EditImage": "이미지편집"
+        },
+        {
+            "SaveButton": "left",
+            "AutoSlipNo": "left",
+            "FileSelect": "left",
+            "MediaClass": "left",
+            "MediaName": "left",
+            "MediaBrand": "left",
+            "FileUrl": "left",
+            "MediaCaption": "left",
+            "FileSize": "left",
+            "UserName": "left",
+            "BranchName": "left",
+            "IsLinked": "left",
+            "LinkLocation": "left",
+            "IsClosed": "left",
+            "EditImage": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AutoSlipNo": "20",
+            "FileSelect": "20",
+            "MediaClass": "20",
+            "MediaName": "50",
+            "MediaBrand": "50",
+            "FileUrl": "500",
+            "MediaCaption": "50",
+            "FileSize": "20",
+            "UserName": "20",
+            "BranchName": "20",
+            "IsLinked": "0",
+            "LinkLocation": "20",
+            "IsClosed": "0",
+            "EditImage": "20"
+        },
+        {
+            "SaveButton": "",
+            "AutoSlipNo": "required",
+            "FileSelect": "required",
+            "MediaClass": "",
+            "MediaName": "",
+            "MediaBrand": "",
+            "FileUrl": "",
+            "MediaCaption": "",
+            "FileSize": "",
+            "UserName": "",
+            "BranchName": "",
+            "IsLinked": "",
+            "LinkLocation": "",
+            "IsClosed": "",
+            "EditImage": ""
+        }
+    ]
+}

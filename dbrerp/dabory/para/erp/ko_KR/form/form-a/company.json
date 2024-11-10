@@ -1,0 +1,140 @@
+{
+    "General": {
+        "Title": "업체 입력",
+        "PickApi": "company-pick",
+        "ActApi": "company-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "복사"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "CompanyNo": "업체 등록번호*(판매회원코드)",
+            "TaxNo": "사업자 등록번호",
+            "CompanyName": "업체명*",
+            "CompanyClass": "거래분류(개인/매출/매입)*",
+            "CgroupId": "업체구분*",
+            "MainContact": "담당자명",
+            "MobileNo": "담당자전화",
+            "Email": "이메일",
+            "CardChar4": "카드4자리",
+            "TelNo": "전화번호",
+            "FaxNo": "팩스번호",
+            "FullName": "상호",
+            "President": "대표자",
+            "ZipCode": "우편번호",
+            "Addr1": "주소",
+            "Addr2": "주소상세",
+            "BizType": "업태",
+            "DealItem": "종목",
+            "Sort": "구분",
+            "Remarks": "메모",
+            "IsDealEnd": "거래종료",
+            "SellerId": "판매회원"
+        },
+        {
+            "SaveButton": "",
+            "CompanyNo": "left",
+            "TaxNo": "left",
+            "CompanyName": "left",
+            "CompanyClass": "left",
+            "CgroupId": "left",
+            "MainContact": "left",
+            "MobileNo": "left",
+            "Email": "left",
+            "CardChar4": "left",
+            "TelNo": "left",
+            "FaxNo": "left",
+            "FullName": "left",
+            "President": "left",
+            "ZipCode": "left",
+            "Addr1": "left",
+            "Addr2": "left",
+            "BizType": "left",
+            "DealItem": "left",
+            "Sort": "left",
+            "Remarks": "left",
+            "IsDealEnd": "left",
+            "SellerId": "left"
+        },
+        {
+            "SaveButton": "0",
+            "CompanyNo": "20",
+            "TaxNo": "20",
+            "CompanyName": "64",
+            "CompanyClass": "2",
+            "CgroupId": "0",
+            "MainContact": "36",
+            "MobileNo": "21",
+            "Email": "64",
+            "CardChar4": "4",
+            "TelNo": "21",
+            "FaxNo": "21",
+            "FullName": "96",
+            "President": "96",
+            "ZipCode": "0",
+            "Addr1": "49",
+            "Addr2": "49",
+            "BizType": "128",
+            "DealItem": "128",
+            "Sort": "2",
+            "Remarks": "1000",
+            "IsDealEnd": "0",
+            "SellerId": "0"
+        },
+        {
+            "SaveButton": "",
+            "CompanyNo": "required",
+            "TaxNo": "",
+            "CompanyName": "required",
+            "CompanyClass": "required",
+            "CgroupId": "required",
+            "MainContact": "",
+            "MobileNo": "",
+            "Email": "",
+            "CardChar4": "",
+            "TelNo": "",
+            "FaxNo": "",
+            "FullName": "",
+            "President": "",
+            "ZipCode": "",
+            "Addr1": "",
+            "Addr2": "",
+            "BizType": "",
+            "DealItem": "",
+            "Sort": "",
+            "Remarks": "",
+            "IsDealEnd": "",
+            "SellerId": "disabled"
+        }
+    ],
+    "CompanyClassOptions": [
+        {
+            "Value": "AA",
+            "Caption": "개인고객"
+        },
+        {
+            "Value": "AB",
+            "Caption": "기업고객"
+        },
+        {
+            "Value": "BB",
+            "Caption": "상품매입업체"
+        }
+    ]
+}

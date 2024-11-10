@@ -1,0 +1,157 @@
+{
+    "General": {
+        "Title": "SSO App 조회",
+        "PageApi": "slip-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "pro:sso/sso_app"
+    },
+
+    "//SlipSearchFields": "쿼리를 공통하기 위한 테이블 필드변수들",
+    "SlipSearchFields": {
+        "SlipDateField": "sso_app_date",
+        "SlipNoField": "sso_app_no"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "DateRange": "",
+            "DateNavi": "일자방향(오늘)",
+            "Date": "날짜",
+            "QuerySpeed": "표시속도",
+            "SlipNo": "앱 번호",
+            "CompanyName": "앱 종류",
+            "ItemCode": "앱 ID",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "QuerySpeedOptions": [
+        {
+            "Value": "normal",
+            "Caption": "일반"
+        },
+        {
+            "Value": "quick",
+            "Caption": "빠르게"
+        },
+        {
+            "Value": "detailed",
+            "Caption": "상세하게"
+        }
+    ],
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "sso_app_no desc",
+            "Caption": "앱 번호 역순"
+        },
+        {
+            "Value": "sso_app_no asc",
+            "Caption": "앱 번호 정렬"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "SlipNo": "앱 번호",
+            "DealCode": "앱 종류",
+            "Company": "앱 명",
+            "SetGroup": "앱 ID",
+            "Item": "앱 일자",
+            "Amt": "사용않음",
+            "Status": "사용않음",
+            "Ref": "사용않음"
+        },
+        {
+            "No": "6",
+            "SlipNo": "10",
+            "DealCode": "8",
+            "Company": "16",
+            "SetGroup": "10",
+            "Item": "10",
+            "Amt": "10",
+            "Status": "10",
+            "Ref": "10"
+        },
+        {
+            "No": "center",
+            "SlipNo": "center",
+            "DealCode": "center",
+            "Company": "left",
+            "SetGroup": "left",
+            "Item": "left",
+            "Amt": "left",
+            "Status": "left",
+            "Ref": "center"
+        }
+    ]
+}

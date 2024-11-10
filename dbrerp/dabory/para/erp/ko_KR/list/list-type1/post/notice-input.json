@@ -1,0 +1,220 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "공지 관리",
+        "PageApi": "list-type1-page",
+        "ActApi": "post-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "post/standard-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "",
+        "SimpleFilter": "mx.post_type_id=1"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "공지 등록"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "공지 일괄 삭제"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "날짜",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "팝업 선택(라디오 버튼)",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mm.email",
+            "Caption": "이메일"
+        },
+        {
+            "Value": "mx.pc1",
+            "Caption": "지갑주소"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.status='0'",
+            "Caption": "status('post-notice','0')"
+        },
+        {
+            "Value": "mx.status='1'",
+            "Caption": "status('post-notice','1')"
+        },
+        {
+            "Value": "mx.status='2'",
+            "Caption": "status('post-notice','2')"
+        }
+    ],
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "공지 관리",
+            "Component": "form-post.standard",
+            "Parameter": "/form/form-post/post/notice"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "문의일자 역순"
+        },
+        {
+            "Value": "mx.created_on asc",
+            "Caption": "문의일자 순서"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst": true,
+        "IsExcelColumn": true,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines": 15,
+        "HeadHeight": "140",
+        "BodyHeight": "570"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "제목",
+            "C2": "생성일",
+            "C3": "공식일자",
+            "C4": "내용",
+            "C5": "슬러그",
+            "C6": "상태"
+        },
+        {
+            "$Radio": "2",
+            "$Check": "2",
+            "No": "7",
+            "C1": "15",
+            "C2": "8",
+            "C3": "8",
+            "C4": "15",
+            "C5": "9",
+            "C6": "8"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "unixtime",
+            "C3": "left",
+            "C4": "left",
+            "C5": "left",
+            "C6": "status('post-notice')"
+        }
+    ]
+}

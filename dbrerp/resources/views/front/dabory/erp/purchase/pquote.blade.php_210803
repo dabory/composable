@@ -1,0 +1,1160 @@
+@extends('layouts.master')
+@section('title', $formB['General']['Title'])
+@section('content')
+<div class="content purchase">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="mb-1 pt-2 text-right">
+                <button type="button" hidden
+                    class="btn btn-success btn-open-modal item-modal-btn"
+                    data-target="item"
+                    data-clicked="get_item_id"
+                    data-variable="itemModal">
+                </button>
+                <button type="button" hidden
+                    class="btn btn-success btn-open-modal bodycopy-modal-btn"
+                    data-target="bodycopy"
+                    data-clicked="checked_data"
+                    data-variable="pquoteBodyCopy">
+                </button>
+
+                <button type="button"
+                    class="btn btn-success btn-open-modal"
+                    data-target="slip"
+                    data-clicked="update_data"
+                    data-variable="pquoteModal">
+                    <i class="icon-folder-open"></i>
+                </button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-primary pquote-act" data-value="save" {{ $formB['FormVars']['Hidden']['SaveButton'] }}>
+                        {{ $formB['FormVars']['Title']['SaveButton'] }}
+                    </button>
+                    @include('front.dabory.erp.partial.select-btn-options', [
+                        'selectBtns' => $formB['HeadSelectOptions'],
+                        'eventClassName' => 'pquote-act',
+                    ])
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="frm">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card card card-primary mb-3 mb-md-0 border-light" style="height: 260px">
+                                    <div class="card-header p-0 mb-2">
+                                        {{-- <p class="card-title p-1 ml-2">주요 정보</p> --}}
+                                    </div>
+                                    <div class="card-body">
+                                        <input type="hidden" id="Id" name="Id" value="0">
+                                        <div class="d-flex flex-column mb-2">
+                                            <label class="m-0 overflow-hidden text-nowrap">{{ $formB['FormVars']['Title']['AutoSlipNo'] }}</label>
+                                            <div class="col-12 d-flex p-0">
+                                                <button id="auto-slip-no-btn" class="btn-dark border-white rounded overflow-hidden col-3 text-center text-white text-nowrap radius-r0"
+                                                    onclick="get_last_slip_no(this)">
+                                                    <span class="icon-cogs"></span>
+                                                </button>
+                                                <input type="text" id="auto-slip-no-txt" class="rounded w-100 radius-l0" autocomplete="off" required disabled>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column mb-2">
+                                            <label class="m-0">{{ $formB['FormVars']['Title']['Date'] }}</label>
+                                            <input class="rounded w-100" type="date" value="" id="pquote-date" required>
+                                        </div>
+                                        <div class="d-flex flex-column mb-2">
+                                            <label class="m-0 ">{{ $formB['FormVars']['Title']['Supplier'] }}</label>
+                                            <div class="d-flex">
+                                                <input type="text" id="supplier-txt" data-id="0" class="rounded w-100 radius-r0" autocomplete="off" required disabled>
+                                                <button type="button"
+                                                    class="btn-success rounded btn-open-modal border-0 radius-l0 col-3"
+                                                    data-target="company"
+                                                    data-clicked="get_supplier_id"
+                                                    data-variable="companyModal">
+                                                    <i class="icon-folder-open"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card card card-info mb-3 mb-md-0 border-light" style="height: 260px">
+                                    <div class="card-header p-0 mb-2">
+                                        {{-- <p class="card-title p-1 ml-2">거래구분 / 세율</p> --}}
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column mb-2">
+                                            <label class="m-0 ">{{ $formB['FormVars']['Title']['DealType'] }}</label>
+                                            <select class="rounded w-100" id="deal-type-select" required>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex flex-column mb-2">
+                                            <label class="m-0">{{ $formB['FormVars']['Title']['VatType'] }}</label>
+                                            <select class="rounded w-100" id="vat-type-select" onchange="set_vat_type_rate(this)" required>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex flex-column mb-2">
+                                            <label class="m-0">{{ $formB['FormVars']['Title']['VatTypeRate'] }}</label>
+                                            <input type="text" id="vat-type-rate-text" class="rounded w-100" autocomplete="off" value="" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card card card-success mb-3 mb-md-0 border-light" style="height: 260px">
+                                    <div class="card-header p-0 mb-2">
+                                        {{-- <p class="card-title p-1 ml-2">거래 조건</p> --}}
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column mb-2">
+                                            <label class="m-0">{{ $formB['FormVars']['Title']['Delivery'] }}</label>
+                                            <select class="rounded w-100" id="delivery-select"></select>
+                                        </div>
+                                        <div class="d-flex flex-column mb-2">
+                                            <label class="m-0">{{ $formB['FormVars']['Title']['PayTerms'] }}</label>
+                                            <select class="rounded w-100" id="payTerms-select"></select>
+                                        </div>
+                                        <div class="d-flex flex-column mb-2">
+                                            <label class="m-0">{{ $formB['FormVars']['Title']['Column1'] }}</label>
+                                            <select class="rounded w-100" id="column1-select"></select>
+                                        </div>
+                                        <div class="d-flex flex-column mb-2">
+                                            <label class="m-0">{{ $formB['FormVars']['Title']['Column2'] }}</label>
+                                            <select class="rounded w-100" id="column2-select"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card card card-danger mb-0 border-light" style="height: 260px">
+                                    <div class="card-header p-0 mb-2">
+                                        {{-- <p class="card-title p-1 ml-2">기타</p> --}}
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column mb-2">
+                                            <label class="m-0">{{ $formB['FormVars']['Title']['Remarks'] }}</label>
+                                            <textarea style="height: 88px" class="rounded w-100" id="remarks-txt-area"></textarea>
+                                        </div>
+                                        <div class="d-flex flex-column mb-2">
+                                            <label class="m-0">{{ $formB['FormVars']['Title']['Status'] }}</label>
+                                            <select class="rounded w-100" data-closed="0" id="status-select" onchange="set_is_closed_val(this)">
+                                                <option value=""></option>
+                                                <option value="{{ $formB['StatusOptions'][0]['Value'] }}">{{ $formB['StatusOptions'][0]['Caption'] }}</option>
+                                                <option value="{{ $formB['StatusOptions'][1]['Value'] }}">{{ $formB['StatusOptions'][1]['Caption'] }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+                <div class="card-body p-0 mt-2 mx-2">
+                    <div id="p-quote-eBody">
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-light mr-1" onclick="seq_no_up_down(this, 'down')"
+                                data-clicked=""><i class="fas fa-arrow-down fa-sm"></i>
+                            </button>
+                            <button class="btn btn-light mr-1" onclick="seq_no_up_down(this, 'up')"
+                                data-clicked=""><i class="fas fa-arrow-up fa-sm"></i>
+                            </button>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-primary pquote-bd-act" data-value="add">
+                                        {{ $formB['FormVars']['Title']['AddNewBdButton'] }}
+                                </button>
+                                @include('front.dabory.erp.partial.select-btn-options', [
+                                    'selectBtns' => $formB['BodySelectOptions'],
+                                    'eventClassName' => 'pquote-bd-act'
+                                ])
+                            </div>
+                        </div>
+                        <div class="table-responsive mt-2" style="height:480px;">
+                            <table class="table-row">
+                                <thead id="pquote-table-head">
+                                    <th class="p-0" style="width: 3px;" id="bd-cursor-state-th" hidden></th>
+                                    <th class="p-0" style="width: 3px;" id="bd-cud-check-th" hidden>
+                                        <input type="checkbox" id="pquote-checkbox-all" tabindex="-1" onclick="checkbox_all_checked(this, 'bd-cud-check')">
+                                        <label class="m-0" for="pquote-checkbox-all"></label>
+                                    </th>
+                                    @foreach ($formB['ListVars']['Title'] as $key => $title)
+                                        <th class="text-center" {{ $formB['ListVars']['Hidden'][$key] }}
+                                            tabindex="0" rowspan="1" colspan="1"
+                                            style="width:{{ $formB['ListVars']['Size'][$key] }}px">
+                                            {{ $title }}
+                                        </th>
+                                    @endforeach
+                                </thead>
+                                <tbody id="pquote-table-body">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="pquote-table-footer" class="justify-content-center col-12 d-flex flex-column flex-md-row align-items-start align-items-stretch align-items-md-center mb-2 p-2 border mt-2 rounded">
+                            @foreach ($formB['FooterVars']['Title'] as $key => $title)
+                                <div class="d-flex align-items-stretch align-items-md-center flex-column flex-md-row mb-2 mb-md-0 px-2 px-md-1">
+                                    <label class="text-md-center w-100 overflow-hidden text-nowrap m-0" {{ $formB['FooterVars']['Hidden'][$key] }}
+                                        rowspan="1" colspan="1">
+                                        {{ $title }}
+                                    </label>
+                                    <input type="text" class="w-100 rounded" id="{{ $key }}" disabled>
+                                </div>
+                            @endforeach
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('modal')
+    @include('front.outline.static.slip', ['moealSetFile' => $pquoteModal])
+    @include('front.outline.static.company', ['moealSetFile' => $companyModal])
+    @include('front.outline.static.item', ['moealSetFile' => $itemModal])
+    @include('front.outline.static.copy-to-another', ['moealSetFile' => $pquoteCopyToAnother])
+    @include('front.outline.static.body-copy', ['moealSetFile' => $pquoteBodyCopy])
+@endsection
+
+@section('js')
+
+<script src="/js/modals-controller/b-type/slip.js?{{date('YmdHis')}}"></script>
+<script src="/js/modals-controller/b-type/pquote-body-copy.js?{{date('YmdHis')}}"></script>
+<script src="/js/modals-controller/a-type/company.js?{{date('YmdHis')}}"></script>
+<script src="/js/modals-controller/a-type/item.js?{{date('YmdHis')}}"></script>
+    <script>
+        window.onload = function () {
+            $('#pquote-date').val(date_to_sting(new Date()))
+            create_deal_type_select_box_options()
+            create_vat_type_select_box_options()
+            create_etc_select_box_options()
+
+            $('.pquote-act').on('click', function () {
+                // console.log($(this).data('value'))
+                switch( $(this).data('value') ) {
+                    case 'save': btn_act_save(); break;
+                    case 'new': btn_act_new(); break;
+                    case 'copy-to-another': btn_act_copy_to_another(); break;
+                    case 'delete': btn_act_del(); break;
+                    case 'save-and-new': btn_act_save_and_new(); break;
+                }
+            });
+
+            $('.pquote-bd-act').on('click', function () {
+                switch( $(this).data('value') ) {
+                    case 'add': btn_bd_act_add(); break;
+                    case 'body-copy': btn_bd_act_body_copy(); break;
+                    case 'multi-delete': btn_bd_act_multi_delete(); break;
+                    case 'multi-update': break;
+                }
+            });
+        }
+
+        async function seq_no_up_down($this, move) {
+            if (parseInt($(`#frm`).find(`input[name="Id"]`).val()) == 0) {
+                alert( @json(_e('Can NOT move UP or DOWN in the status')) , 'error');
+                return;
+            }
+            $($this).prop('disabled', true);
+            let tr = $(`input[name='bd-cursor-state']:checked`).closest('tr')
+            index = $(tr).prevAll().length
+            bd = bd_page[index]
+
+            await get_api_data('seq-no-up-down', {
+                BdTableName: 'pquote_bd',
+                HdIdName: 'pquote_id',
+                HdId: parseInt(bd.PquoteId),
+                CurrId: parseInt(bd.Id),
+                Move: move,
+            })
+
+            let response = await get_api_data('pquote-form-book', {
+                SlipNo: $('#auto-slip-no-txt').val(),
+                BookVars: [{ Query: '' }, { Asc: 'SeqNo' }]
+            })
+
+            bd_page = isEmpty(response.data.BdPage) ? [] : response.data.BdPage
+
+            create_bd_page();
+
+            if (bd_page.length > 0) {
+                let unique = bd_page[bd_page.length - 1].SeqNo * bd_page[bd_page.length - 1].Id + rand(1, 999);
+                bd_page[bd_page.length - 1].cursorId = unique
+            }
+
+            let up_or_down_val = (move == 'up' ? -1 : 1);
+            let after_index = index + up_or_down_val;
+            if (after_index > -1 && after_index < bd_page.length) {
+                $(`#pquote-table-body tr:eq(${after_index})`).children(`td:eq(0)`).find('input').prop('checked', true);
+                $(`#pquote-table-body tr:eq(${after_index})`).children(`td:eq(0)`).find('input').trigger('click');
+            } else {
+                $(`#pquote-table-body tr:eq(${index})`).children(`td:eq(0)`).find('input').prop('checked', true);
+                $(`#pquote-table-body tr:eq(${index})`).children(`td:eq(0)`).find('input').trigger('click');
+            }
+
+            $($this).prop('disabled', false);
+        }
+
+        function last_item_added_check() {
+            let tr = $('#pquote-table-body tr:last');
+            let index = $('#pquote-table-body tr').length;
+
+            if (index > 0 && bd_page[index - 1].Id == 0) {
+                $(tr).children(`td:eq(0)`).find('input').prop('checked', true);
+                $(tr).children(`td:eq(0)`).find('input').trigger('click');
+                $(tr).children(`td:eq(2)`).find('input').focus();
+                alert( @json(_e('Finish editting in the last item line')) , 'error');
+                return true;
+            }
+            return false;
+        }
+
+        // start body act btn
+        function btn_bd_act_add() {
+            if (parseInt($(`#frm`).find(`input[name="Id"]`).val()) == 0) {
+                alert( @json(_e('Action failed')) , 'error');
+                return;
+            }
+            cursor_th_and_cud_th_show();
+            if (! last_item_added_check()) {
+                add_tr();
+            }
+        }
+
+        function btn_bd_act_multi_delete() {
+            let data = [];
+            let delete_ids = [];
+
+            $(`input[name='bd-cud-check']`).each(function(index){
+                if ($(this).is(':checked')) {
+                    data.push({ Id: parseInt(`-${bd_page[index].Id}`) });
+                    delete_ids.push(bd_page[index].Id)
+                }
+            })
+
+            if (data.length == 0) {
+                alert( @json(_e('Click the checkbox(es) of line for action')) , 'error');
+                return;
+            }
+
+            confirm_message_shw_and_delete(function() {
+                call_bd_act_api(data, function (page) {
+                    // 기존배열에서 삭제 할 ID로 필터함.
+                    bd_page = bd_page.filter(function (page) {
+                        return !delete_ids.includes(page.Id)
+                    })
+                    create_bd_page();
+                    alert( @json(_e('Action completed')), 'success');
+                });
+            })
+        }
+
+
+        function btn_bd_act_body_copy() {
+            if (parseInt($(`#frm`).find(`input[name="Id"]`).val()) == 0) {
+                alert( @json(_e('Can NOT copy in the status')) , 'error');
+                return;
+            }
+            $('.bodycopy-modal-btn').trigger('click');
+        }
+        // end body act btn
+
+        // start head act btn
+        function btn_act_copy_to_another() {
+            $('#modal-copy-to-anther').find('.source-slip-no-txt').val($('#auto-slip-no-txt').val());
+            $('#modal-copy-to-anther').modal('show');
+        }
+
+        function btn_act_del() {
+            if (befo_del_copy_id() || $(`#frm`).find(`input[name="Id"]`).val() == 0) {
+                alert( @json(_e('Can NOT delete in the status')) , 'error');
+                return;
+            }
+
+            confirm_message_shw_and_delete(function() {
+                const id = $(`#frm`).find(`input[name="Id"]`).val();
+                $(`#frm`).find(`input[name="Id"]`).val( `-${id}` );
+                // console.log($(`#frm`).find(`input[name="Id"]`).val())
+                call_act_api(get_parameter());
+                btn_act_new();
+            })
+        }
+
+        function btn_act_save_and_new() {
+            if (dom_required_check('#frm input') || dom_required_check('#frm select')) {
+                alert( @json(_e('(*)Required item(s) omitted')), 'warning' );
+                return;
+            }
+            call_act_api(get_parameter(), function() {
+                if (isEmpty(bd_page)) {
+                    btn_act_new();
+                    return;
+                }
+                let data = bd_update_due_to_vat_rate_change();
+                call_bd_act_api(data, function() {
+                    btn_act_new();
+                })
+            });
+        }
+
+        function btn_act_save() {
+            if (dom_required_check('#frm input') || dom_required_check('#frm select')) {
+                alert( @json(_e('(*)Required item(s) omitted')), 'warning' );
+                return;
+            }
+            call_act_api(get_parameter(), function() {
+                if (isEmpty(bd_page)) return;
+                let data = bd_update_due_to_vat_rate_change();
+                call_bd_act_api(data, function() {
+                    create_bd_page();
+                })
+            });
+        }
+        // end head act btn
+
+        function bd_update_due_to_vat_rate_change() {
+            let data = [];
+            CurrentVateRate = parseFloat($('#vat-type-select').find('option:selected').data('vatrate'));
+            bd_page.forEach(bd => {
+                let supply_amt, vat_amt, sum_amt;
+                [supply_amt, vat_amt, sum_amt] = amt_calc({ pquote_prc: parseFloat(bd.PquotePrc), pquote_qty: parseFloat(bd.PquoteQty) },
+                    CurrentVateRate);
+                bd.PquoteSupply = supply_amt;
+                bd.PquoteVat = vat_amt;
+                bd.PquoteSum = sum_amt;
+
+                data.push({
+                    Id: parseInt(bd.Id),
+                    PquoteSupply: String(bd.PquoteSupply),
+                    PquoteVat: String(bd.PquoteVat),
+                    PquoteSum: String(bd.PquoteSum),
+                    Ip: user['Ip']
+                })
+            });
+            return data;
+        }
+
+        function get_parameter() {
+            let id = parseInt($(`#frm`).find(`input[name="Id"]`).val());
+            let parameter = {
+                Id: id,
+                CreatedOn: get_now_time_stamp(),
+                UpdatedOn: get_now_time_stamp(),
+                CreatedAt: new Date(),
+                UpdatedAt: new Date(),
+                PquoteNo: $('#auto-slip-no-txt').val(),
+                PquoteDate: moment(new Date($('#pquote-date').val())).format('YYYYMMDD'),
+                DealTypeId: parseInt($('#deal-type-select').val()),
+                UserId: user['UserId'],
+                SgroupId: user['SgroupId'],
+                BranchId: user['BranchId'],
+                SupplierId: parseInt($('#supplier-txt').data('id')),
+                VatRateId: parseInt($('#vat-type-select').val()),
+                CompanyContact: $('#supplier-txt').data('contact'),
+                PayTerms: $('#payTerms-select').val(),
+                PayPeriod: '',
+                Destination: '',
+                Delivery: $('#delivery-select').val(),
+                Status: $('#status-select').val(),
+                IsClosed: String($('#status-select').data('closed')),
+                Column1: $('#column1-select').val(),
+                Column2: $('#column2-select').val(),
+                Remarks: $('#remarks-txt-area').val(),
+                Ip: user['Ip']
+            }
+            if (id < 0) {
+                parameter = { Id: parseInt($(`#frm`).find(`input[name="Id"]`).val()) }
+            } else if (id > 0) {
+                delete parameter.CreatedOn;
+                delete parameter.CreatedAt;
+            }
+
+            return parameter;
+        }
+
+        function call_act_api(data, callback) {
+            $.when(get_api_data(formB.General.ActApi, {
+                Page: [
+                    data
+                ]
+            })).done(function(response) {
+                let d = response.data
+                if (d.Page) {
+                    set_as_response_id(d.Page[0].Id)
+                    callback();
+                    alert( @json(_e('Action completed')), 'success' );
+                } else {
+                    alert( @json(_e('API request failed. Please Check')), 'error' );
+                }
+            });
+        }
+
+        function cursor_th_and_cud_th_show() {
+            $('#bd-cursor-state-th').attr('hidden', false)
+            $('#bd-cud-check-th').attr('hidden', false)
+        }
+
+        function cursor_th_and_cud_th_hidden() {
+            $('#bd-cursor-state-th').attr('hidden', true)
+            $('#bd-cud-check-th').attr('hidden', true)
+        }
+
+        function btn_act_new() {
+            bd_page = [];
+            // 체크박스, 라디오버튼 th hidden true 해준다.
+            cursor_th_and_cud_th_hidden()
+            $(`#frm`).find(`input[name="Id"]`).val(0)
+
+            $('#auto-slip-no-txt').val('')
+            set_slip_no_btn_abled()
+            $('#pquote-date').val(date_to_sting(new Date()))
+            $('#supplier-txt').val('')
+            $('#supplier-txt').data('id', 0)
+            $('#supplier-txt').data('contact', '')
+
+            select_box_first_selected('#deal-type-select')
+            select_box_first_selected('#vat-type-select')
+            $('#vat-type-select').trigger('change');
+
+            select_box_first_selected('#delivery-select')
+            select_box_first_selected('#payTerms-select')
+            select_box_first_selected('#column1-select')
+            select_box_first_selected('#column2-select')
+
+            $('#remarks-txt-area').val('')
+            select_box_first_selected('#status-select')
+            $('#status-select').data('closed', 0)
+
+            // table body 초기화
+            $('#pquote-table-body').html('');
+
+            // footer 합계 초기화
+            $('#QtyTotal').val('');
+            $('#SupplyTotal').val('');
+            $('#VatTotal').val('');
+            $('#SumTotal').val('');
+        }
+
+        async function call_last_slip_no_api() {
+            let response = await get_api_data('last-slip-no-get', {
+                HdTableName: 'pquote',
+                YYMMDD: moment(new Date()).format('YYMMDD'),
+            })
+
+            return response;
+        }
+
+        async function get_last_slip_no($this) {
+            set_slip_no_btn_disabled()
+            let response = await call_last_slip_no_api();
+            $('#auto-slip-no-txt').val(moment(new Date()).format('YYMMDD') + '-' + response.data.LastSlipNo)
+        }
+
+        function set_is_closed_val($this) {
+            switch ($($this).val()) {
+                case '확정':
+                    $($this).data('closed', "1");
+                    break;
+                default:
+                    $($this).data('closed', "0");
+                    break;
+            }
+        }
+
+        function amt_calc(bd, vat_rate) {
+            supply_amt = bd.pquote_qty * bd.pquote_prc;
+            vat_amt = (bd.pquote_qty * bd.pquote_prc) * vat_rate;
+            sum_amt = supply_amt + vat_amt;
+
+            return [supply_amt, vat_amt, sum_amt]
+        }
+
+        function set_vat_type_rate($this) {
+            vate_rate = $($this).find('option:selected').data('vatrate');
+            $('#vat-type-rate-text').val(vate_rate + '%')
+            if (isEmpty(bd_page)) return;
+
+            // create_bd_page();
+        }
+
+        async function get_select_box_options_data(url, query) {
+            let response = await get_api_data(url, {
+                PageVars: {
+                    Query: query,
+                    Asc: "sort_no",
+                }
+            })
+
+            return response.data.Page;
+        }
+
+        async function create_deal_type_select_box_options() {
+            let page = await get_select_box_options_data('deal-type-page', 'deal_category="purch"')
+            let html =  page.reduce(function (accumulator, item) {
+                return accumulator + `<option value="${item.Id}">${item.DealName}</option>`;
+            }, '');
+            $('#deal-type-select').html(html);
+        }
+
+        async function create_vat_type_select_box_options() {
+            let page = await get_select_box_options_data('vat-rate-page', '')
+            let html =  page.reduce(function (accumulator, item) {
+                return accumulator + `<option value="${item.Id}" data-vatrate="${item.VatRate}">${item.VatName}</option>`;
+            }, '');
+            $('#vat-type-select').html(html);
+            $('#vat-type-select').trigger('change');
+        }
+
+        async function create_etc_select_box_options() {
+            let delivery = create_options(await get_select_box_options_data('etc-page', 'select_name="납품기한"'))
+            let payTerms = create_options(await get_select_box_options_data('etc-page', 'select_name="지불조건"'))
+            let column1 = create_options(await get_select_box_options_data('etc-page', 'select_name="공란1"'))
+            let column2 = create_options(await get_select_box_options_data('etc-page', 'select_name="공란2"'))
+
+            $('#delivery-select').html(delivery);
+            $('#payTerms-select').html(payTerms);
+            $('#column1-select').html(column1);
+            $('#column2-select').html(column2);
+        }
+
+        function table_td_focus($this) {
+            var txt = $($this).children('input').val();
+            // 포커스 = 전체 txt 전체선택
+
+            // 현재 수정 중 td 라디오 버튼으로 표시
+            current_radio = $($this).closest('tr').children('td:eq(0)').find('input');
+            $(current_radio).prop('checked', true)
+            bd_cursor_click(current_radio);
+            // console.log('tr text: '+ txt);
+        }
+
+        function able_or_disable_txt_box(dom_val, type = 1) {
+            switch (type) {
+                case 1:
+                    $(dom_val).removeClass('border-0 bg-white')
+                    $(dom_val).prop('disabled', false)
+                    break;
+                case 2:
+                    $(dom_val).addClass('border-0 bg-white')
+                    $(dom_val).prop('disabled', true)
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function bd_cursor_click($this) {
+            let tr = $($this).closest('tr');
+            able_or_disable_txt_box($(tr).children('td:eq(2)').find('input'));
+            able_or_disable_txt_box($(tr).children('td:eq(6)').find('input'));
+            able_or_disable_txt_box($(tr).children('td:eq(7)').find('input'));
+            able_or_disable_txt_box($(tr).children('td:eq(8)').find('input'));
+            able_or_disable_txt_box($(tr).children('td:eq(9)').find('input'));
+            able_or_disable_txt_box($(tr).children('td:eq(10)').find('input'));
+
+            $(`input[name='bd-cursor-state']`).each(function(){
+                if (! $(this).is(':checked')) {
+                    let tr = $(this).closest('tr');
+                    able_or_disable_txt_box($(tr).children('td:eq(2)').find('input'), 2);
+                    able_or_disable_txt_box($(tr).children('td:eq(6)').find('input'), 2);
+                    able_or_disable_txt_box($(tr).children('td:eq(7)').find('input'), 2);
+                    able_or_disable_txt_box($(tr).children('td:eq(8)').find('input'), 2);
+                    able_or_disable_txt_box($(tr).children('td:eq(9)').find('input'), 2);
+                    able_or_disable_txt_box($(tr).children('td:eq(10)').find('input'), 2);
+                }
+            })
+        }
+
+        function amt_total_calc() {
+            let qty_total = 0, supply_total = 0, vat_amt_vat_total = 0, sum_total = 0;
+
+            bd_page.forEach(bd => {
+                qty_total += parseFloat(bd.PquoteQty);
+                supply_total += parseFloat(bd.PquoteSupply);
+                vat_amt_vat_total += parseFloat(bd.PquoteVat);
+                sum_total += parseFloat(bd.PquoteSum);
+            })
+
+            $('#QtyTotal').val(qty_total);
+            $('#SupplyTotal').val(supply_total);
+            $('#VatTotal').val(vat_amt_vat_total);
+            $('#SumTotal').val(sum_total);
+        }
+
+        function discount_rate_calc(cost, purchase) {
+            result = ((cost - purchase) / cost * 100).toFixed(4);
+            if (result >= 100 || result <= 0) {
+                result = 99.9999
+            }
+
+            return result;
+        }
+
+        async function get_last_seq_no(id) {
+            let response = await get_api_data('last-seq-no-get', {
+                BdTableName: 'pquote_bd',
+                HdIdName: 'pquote_id',
+                HdId: id
+            })
+            return response.data.LastSeqNo;
+        }
+
+        function get_bd_parameter(bd) {
+            let discount_rate = discount_rate_calc(parseInt(minusComma(bd.SalesPrc)) * parseInt(minusComma(bd.PquoteQty)), parseInt(bd.PquoteSum));
+
+            let parameter = {
+                Id: parseInt(bd.Id),
+                CreatedOn: get_now_time_stamp(),
+                UpdatedOn: get_now_time_stamp(),
+                CreatedAt: new Date(),
+                UpdatedAt: new Date(),
+                PquoteId: parseInt(bd.PquoteId),
+                SeqNo: bd.SeqNo,
+                CrtUserId: user['UserId'],
+                UpdUserId: user['UserId'],
+                ItemId: parseInt(bd.ItemId),
+                PquoteQty: String(bd.PquoteQty),
+                PquotePrc: String(bd.PquotePrc),
+                PquoteSupply: String(bd.PquoteSupply),
+                PquoteVat: String(bd.PquoteVat),
+                PquoteSum: String(bd.PquoteSum),
+                DiscountRate: String(discount_rate),
+                Ip: user['Ip']
+            }
+
+            if (id < 0) {
+                parameter = { Id: parseInt(bd.Id) }
+            } else if (id > 0) {
+                delete parameter.CreatedOn;
+                delete parameter.CreatedAt;
+                delete parameter.CrtUserId;
+            } else {
+                delete parameter.UpdatedOn;
+                delete parameter.UpdatedAt;
+                delete parameter.UpdUserId;
+            }
+            return parameter;
+        }
+
+        function call_bd_act_api(data, callback) {
+            $.when(get_api_data('pquote-bd-act', {
+                Page: data
+            })).done(function(response) {
+                let d = response.data
+                if (d.Page) {
+                    callback(d.Page);
+                } else {
+                    alert( @json(_e('API request failed. Please Check')), 'error' );
+                }
+            });
+        }
+
+        function amt_calc_txt_is_changed() {
+            // tbody에서 현재tr index 가져옴,
+            let tr = $(`input[name='bd-cursor-state']:checked`).closest('tr')
+            index = $(tr).prevAll().length
+
+            let bd = { pquote_prc: 0, pquote_qty: 0 };
+            let supply_amt, vat_amt, sum_amt;
+
+            bd.pquote_qty = parseFloat($(tr).children('td:eq(6)').find('input').val());
+            bd.pquote_prc = parseFloat($(tr).children('td:eq(7)').find('input').val());
+
+            [supply_amt, vat_amt, sum_amt] = amt_calc(bd, CurrentVateRate);
+
+            $(tr).children('td:eq(8)').find('input').val(supply_amt)
+            $(tr).children('td:eq(9)').find('input').val(vat_amt)
+            $(tr).children('td:eq(10)').find('input').val(sum_amt)
+
+            bd_page[index].PquotePrc = bd.pquote_prc
+            bd_page[index].PquoteQty = bd.pquote_qty
+            bd_page[index].PquoteSupply = supply_amt
+            bd_page[index].PquoteVat = vat_amt
+            bd_page[index].PquoteSum = sum_amt
+        }
+
+        function custom_supply_amt_or_vat_amt() {
+            let tr = $(`input[name='bd-cursor-state']:checked`).closest('tr')
+            index = $(tr).prevAll().length
+
+            let supply_amt = parseFloat($(tr).children('td:eq(8)').find('input').val());
+            let vat_amt = parseFloat($(tr).children('td:eq(9)').find('input').val());
+            let sum_amt = parseFloat(supply_amt) + parseFloat(vat_amt);
+
+            $(tr).children('td:eq(8)').find('input').val(supply_amt)
+            $(tr).children('td:eq(9)').find('input').val(vat_amt)
+            $(tr).children('td:eq(10)').find('input').val(sum_amt)
+
+            bd_page[index].PquoteSupply = supply_amt
+            bd_page[index].PquoteVat = vat_amt
+            bd_page[index].PquoteSum = sum_amt
+        }
+
+        function custom_sum_amt() {
+            let tr = $(`input[name='bd-cursor-state']:checked`).closest('tr')
+            index = $(tr).prevAll().length
+
+            let sum_amt = parseFloat($(tr).children('td:eq(10)').find('input').val());
+            $(tr).children('td:eq(10)').find('input').val(sum_amt)
+            bd_page[index].PquoteSum = sum_amt
+        }
+
+        function create_bd_page() {
+            let html = ``;
+            let qty_total = 0, supply_total = 0, vat_amt_vat_total = 0, sum_total = 0;
+            bd_page.forEach(bd => {
+                qty_total += parseFloat(bd.PquoteQty);
+                supply_total += parseFloat(bd.PquoteSupply);
+                vat_amt_vat_total += parseFloat(bd.PquoteVat);
+                sum_total += parseFloat(bd.PquoteSum);
+
+                // 품목코드, 수량, 단가, 공급가액, 세액, 합계금액
+                html +=
+                `<tr>
+                    <td class="px-1">
+                        <input name="bd-cursor-state" type="radio" value="1" id="bd-cursor-state-${bd.Id}" tabindex="-1"
+                        onclick="bd_cursor_click(this)">
+                        <label class="m-0" for="bd-cursor-state-${bd.Id}"></label>
+                    </td>
+                    <td class="px-1">
+                        <input name="bd-cud-check" type="checkbox" value="1" id="bd-cud-check-${bd.Id}" tabindex="-1">
+                        <label class="m-0" for="bd-cud-check-${bd.Id}"></label>
+                    </td>
+                    <td onfocusin="table_td_focus(this)" onkeydown="enterPressedinCell(event)"
+                        class="text-${formB.ListVars['Align'].ItemCode}" ${formB.ListVars['Hidden'].ItemCode}
+                        style="padding:5px">
+                        <input type="text" class="text-${formB.ListVars['Align'].ItemCode} border-0 bg-white" value="${bd.ItemCode}" disabled
+                        onclick="bd_cursor_click(this)" required>
+                    </td>
+                    <td
+                        class="text-${formB.ListVars['Align'].ItemName}" ${formB.ListVars['Hidden'].ItemName}>${bd.ItemName}
+                    </td>
+                    <td
+                        class="text-${formB.ListVars['Align'].SubName}" ${formB.ListVars['Hidden'].SubName}>${bd.SubName}
+                    </td>
+                    <td
+                        class="text-${formB.ListVars['Align'].CountUnit}" ${formB.ListVars['Hidden'].CountUnit}>${bd.CountUnit}
+                    </td>
+                    <td onfocusin="table_td_focus(this)" onkeydown="handleEnterPressedinTabCell(event)"
+                        class="text-${formB.ListVars['Align'].PquoteQty}" ${formB.ListVars['Hidden'].PquoteQty}
+                        style="padding:5px">
+                        <input type="text" class="text-${formB.ListVars['Align'].PquoteQty} border-0 bg-white" value="${bd.PquoteQty}" disabled
+                        onfocusout="amt_calc_txt_is_changed()"
+                        required>
+                    </td>
+                    <td onfocusin="table_td_focus(this)" onkeydown="handleEnterPressedinTabCell(event)"
+                        class="text-${formB.ListVars['Align'].PquotePrc}" ${formB.ListVars['Hidden'].PquotePrc}
+                        style="padding:5px">
+                        <input type="text" class="text-${formB.ListVars['Align'].PquotePrc} border-0 bg-white" value="${bd.PquotePrc}" disabled
+                        onfocusout="amt_calc_txt_is_changed()"
+                        required>
+                    </td>
+                    <td onfocusin="table_td_focus(this)" onkeydown="handleEnterPressedinTabCell(event)"
+                        class="text-${formB.ListVars['Align'].SupplyAmt}" ${formB.ListVars['Hidden'].SupplyAmt}
+                        style="padding:5px">
+                        <input type="text" class="text-${formB.ListVars['Align'].SupplyAmt} border-0 bg-white" value="${bd.PquoteSupply}" disabled
+                        onfocusout="custom_supply_amt_or_vat_amt()"
+                        required>
+                    </td>
+                    <td onfocusin="table_td_focus(this)" onkeydown="handleEnterPressedinTabCell(event)"
+                        class="text-${formB.ListVars['Align'].VatAmt}" ${formB.ListVars['Hidden'].VatAmt}
+                        style="padding:5px">
+                        <input type="text" class="text-${formB.ListVars['Align'].VatAmt} border-0 bg-white" value="${bd.PquoteVat}"
+                        onfocusout="custom_supply_amt_or_vat_amt()"
+                        required>
+                    </td>
+                    <td onfocusin="table_td_focus(this)"
+                    onkeydown="handleEnterPressedinTabCell(event)" onfocusout="add_td_last_tap_out(this, ${bd.Id})"
+                        class="text-${formB.ListVars['Align'].SumAmt}" ${formB.ListVars['Hidden'].SumAmt}
+                        style="padding:5px">
+                        <input type="text" class="text-${formB.ListVars['Align'].SumAmt} border-0 bg-white" value="${bd.PquoteSum}" disabled
+                        onfocusout="custom_sum_amt()"
+                        required>
+                    </td>
+                    <td
+                        class="text-${formB.ListVars['Align'].SalesPrc}" ${formB.ListVars['Hidden'].SalesPrc}>${bd.SalesPrc}
+                    </td>
+                </tr>`;
+            });
+
+            $('#QtyTotal').val(qty_total);
+            $('#SupplyTotal').val(supply_total);
+            $('#VatTotal').val(vat_amt_vat_total);
+            $('#SumTotal').val(sum_total);
+
+            $('#pquote-table-body').html(html);
+        }
+
+        function set_slip_no_btn_abled() {
+            $('#auto-slip-no-btn').addClass('text-white')
+            $('#auto-slip-no-btn').removeClass('bg-white text-black')
+            $('#auto-slip-no-btn').attr('disabled', false)
+        }
+
+        function set_slip_no_btn_disabled() {
+            $('#auto-slip-no-btn').attr('disabled', true);
+            $('#auto-slip-no-btn').removeClass('text-white')
+            $('#auto-slip-no-btn').addClass('bg-white text-black')
+        }
+
+        async function add_td_last_tap_out($this, id) {
+            let tr = $(`input[name='bd-cursor-state']:checked`).closest('tr')
+            index = $(tr).prevAll().length
+
+            // 필수텍스트가 안비어있으고 fouces out == 다음 tr 추가
+            if (bd_page[index].ItemId != 0 && ! dom_required_check($(tr).find(`input`))) {
+                if ($($this).data('last')) {
+                    let seq_no = await get_last_seq_no(bd_page[index].PquoteId)
+                    bd_page[index].SeqNo = seq_no;
+                }
+
+                call_bd_act_api([ get_bd_parameter(bd_page[index]) ], function (page) {
+                    bd_page[index].Id = page[0].Id;
+                    // 합계 계산
+                    amt_total_calc();
+
+                    if ($($this).data('last')) {
+                        add_tr();
+                        $($this).data('last', false)
+                    }
+                    alert( @json(_e('Action completed')), 'success');
+                });
+            }
+        }
+
+        function set_item_data_to_textbox(item) {
+            let tr = $(`input[name='bd-cursor-state']:checked`).closest('tr')
+            $(tr).children('td:eq(2)').find('input').val(item.ItemCode)
+            $(tr).children('td:eq(3)').text(item.ItemName)
+            $(tr).children('td:eq(4)').text(item.SubName)
+            $(tr).children('td:eq(5)').text(item.CountUnit)
+            $(tr).children('td:eq(7)').find('input').val(item.PurchPrc)
+            $(tr).children('td:eq(11)').text(item.SalesPrc)
+
+            index = $(tr).prevAll().length;
+            bd_page[index].ItemId = item.Id
+            bd_page[index].ItemCode = item.ItemCode
+            bd_page[index].ItemName = item.ItemName
+            bd_page[index].SubName = item.SubName
+            bd_page[index].CountUnit = item.CountUnit
+            bd_page[index].PquotePrc = item.PurchPrc
+            bd_page[index].SalesPrc = item.SalesPrc
+            amt_calc_txt_is_changed();
+
+            return $(tr).children('td:eq(6)').find('input')
+        }
+
+        async function enterPressedinCell(event) {
+            if((event.which && event.which == 13) || event.keyCode && event.keyCode == 13) {
+                document.activeElement.blur();
+
+                let response = await get_api_data('item-igroup-page', {
+                    PageVars: {
+                        Query: `item_code='${$(event.target).val()}'`,
+                        Limit: 1,
+                    }
+                })
+                if (isEmpty(response.data.Page)) {
+                    $('#modal-item').find('.item-code').val($(event.target).val())
+                    $('.item-modal-btn').trigger('click');
+                } else {
+                    let item = response.data.Page[0];
+
+                    let next_input = set_item_data_to_textbox(item);
+                    next_input.focus();
+                }
+            }
+        }
+
+        function handleEnterPressedinTabCell(event){
+            if ((event.which && event.which == 13) || event.keyCode && event.keyCode == 13) {
+                let tr = $(`input[name='bd-cursor-state']:checked`).closest('tr')
+                var index = $(event.target).closest('td').prevAll().length;
+                if (index == 10) {
+                    $(tr).children(`td:eq(${index})`).find('input').blur();
+                }
+                $(tr).children(`td:eq(${index+1})`).find('input').focus();
+            }
+        }
+
+        async function add_tr() {
+            let last_bd_id_inc = 0;
+            if (bd_page.length > 0) {
+                last_bd_id_inc = bd_page[bd_page.length - 1].cursorId + 1
+            }
+
+            let html = `<tr>
+                <td class="px-1">
+                    <input name="bd-cursor-state" type="radio" value="1" id="bd-cursor-state-${last_bd_id_inc}" tabindex="-1"
+                    onclick="bd_cursor_click(this)">
+                    <label class="m-0" for="bd-cursor-state-${last_bd_id_inc}"></label>
+                </td>
+                <td class="px-1">
+                    <input name="bd-cud-check" type="checkbox" value="1" id="bd-cud-check-${last_bd_id_inc}" tabindex="-1">
+                    <label class="m-0" for="bd-cud-check-${last_bd_id_inc}"></label>
+                </td>
+                <td onkeydown="enterPressedinCell(event)"
+                    id="item-code-${last_bd_id_inc}" onfocusin="table_td_focus(this)" ${formB.ListVars['Hidden'].ItemCode}
+                    style="padding:5px">
+                    <input type="text" class="text-${formB.ListVars['Align'].ItemCode}" value=""
+                    onclick="bd_cursor_click(this)" required>
+                </td>
+                <td
+                    class="text-${formB.ListVars['Align'].ItemName}" ${formB.ListVars['Hidden'].ItemName}>
+                </td>
+                <td
+                    class="text-${formB.ListVars['Align'].SubName}" ${formB.ListVars['Hidden'].SubName}>
+                </td>
+                <td
+                    class="text-${formB.ListVars['Align'].CountUnit}" ${formB.ListVars['Hidden'].CountUnit}>
+                </td>
+                <td onkeydown="handleEnterPressedinTabCell(event)"
+                    onfocusin="table_td_focus(this)" ${formB.ListVars['Hidden'].PquotePrc}
+                    style="padding:5px">
+                    <input type="text" class="text-${formB.ListVars['Align'].PquotePrc}" value=""
+                    onfocusout="amt_calc_txt_is_changed()"
+                    required>
+                </td>
+                <td onkeydown="handleEnterPressedinTabCell(event)"
+                    onfocusin="table_td_focus(this)" ${formB.ListVars['Hidden'].PquoteQty}
+                    style="padding:5px">
+                    <input type="text" class="text-${formB.ListVars['Align'].PquoteQty}" value=""
+                    onfocusout="amt_calc_txt_is_changed()"
+                    required>
+                </td>
+                <td onkeydown="handleEnterPressedinTabCell(event)"
+                    onfocusin="table_td_focus(this)" ${formB.ListVars['Hidden'].SupplyAmt}
+                    style="padding:5px">
+                    <input type="text" class="text-${formB.ListVars['Align'].SupplyAmt}" value=""
+                    onfocusout="custom_supply_amt_or_vat_amt()"
+                    required>
+                </td>
+                <td onkeydown="handleEnterPressedinTabCell(event)"
+                    onfocusin="table_td_focus(this)" ${formB.ListVars['Hidden'].VatAmt}
+                    style="padding:5px">
+                    <input type="text" class="text-${formB.ListVars['Align'].VatAmt}" value=""
+                    onfocusout="custom_supply_amt_or_vat_amt()"
+                    required>
+                </td>
+                <td onkeydown="handleEnterPressedinTabCell(event)" data-last=true onfocusout="add_td_last_tap_out(this, ${last_bd_id_inc})"
+                    onfocusin="table_td_focus(this)" ${formB.ListVars['Hidden'].SumAmt}
+                    style="padding:5px">
+                    <input type="text" class="text-${formB.ListVars['Align'].SumAmt}" value=""
+                    onfocusout="custom_sum_amt()"
+                    required>
+                </td>
+                <td
+                    class="text-${formB.ListVars['Align'].SalesPrc}" ${formB.ListVars['Hidden'].SalesPrc}>
+                </td>
+            </tr>`;
+            $('#pquote-table-body').append(html)
+
+            await setTimeout( function() {
+                $(`#item-code-${last_bd_id_inc}`).find('input').focus()
+            }, 100);
+
+            bd_page.push({
+                cursorId: last_bd_id_inc,
+                Id: 0,
+                ItemId: 0,
+                ItemCode: '',
+                ItemName: '',
+                SubName: '',
+                CountUnit: '',
+                SeqNo: 0,
+                PquoteId: parseInt($(`#frm`).find(`input[name="Id"]`).val()),
+                PquotePrc: 0,
+                PquoteQty: 0,
+                PquoteSupply: 0,
+                PquoteVat: 0,
+                PquoteSum: 0,
+                SalesPrc: 0,
+            })
+        }
+
+        async function update_data(slip_no) {
+            let response = await get_api_data('pquote-form-book', {
+                SlipNo: slip_no,
+                BookVars: [{ Query: '' }, { Asc: 'SeqNo' }]
+            })
+            if (hd_page = isEmpty(response.data)) {
+                $('#modal-slip').modal('hide');
+                return;
+            }
+            set_slip_no_btn_disabled()
+
+            hd_page = response.data.HdPage[0]
+            bd_page = isEmpty(response.data.BdPage) ? [] : response.data.BdPage
+
+            $("#Id").val(hd_page.Id)
+            $('#auto-slip-no-txt').val(hd_page.PquoteNo)
+            $('#pquote-date').val(moment(to_date(hd_page.PquoteDate)).format('YYYY-MM-DD'))
+            $('#supplier-txt').val(hd_page.CompanyName)
+            $('#supplier-txt').data('id', hd_page.SupplierId)
+            $('#supplier-txt').data('contact', hd_page.CompanyContact)
+
+            $('#deal-type-select').val(hd_page.DealTypeId)
+            $('#vat-type-select').val(hd_page.VatRateId)
+            $('#vat-type-select').trigger('change')
+            CurrentVateRate = parseFloat($('#vat-type-select').find('option:selected').data('vatrate'));
+
+            $('#delivery-select').val(hd_page.Delivery)
+            $('#payTerms-select').val(hd_page.PayTerms)
+            $('#column1-select').val(hd_page.Column1)
+            $('#column2-select').val(hd_page.Column2)
+
+            $('#remarks-txt-area').val(hd_page.Remarks)
+            $('#status-select').val(hd_page.Status)
+
+            // table body에 데이터 추가
+            create_bd_page();
+
+            // 체크박스, 라디오버튼 th hidden false 해준다.
+            $('#bd-cursor-state-th').attr('hidden', false)
+            $('#bd-cud-check-th').attr('hidden', false)
+
+            if (bd_page.length > 0) {
+                let unique = bd_page[bd_page.length - 1].SeqNo * bd_page[bd_page.length - 1].Id + rand(1, 999);
+                bd_page[bd_page.length - 1].cursorId = unique
+            }
+
+            $('#modal-slip').modal('hide');
+        };
+
+        async function get_supplier_id(supplier_id) {
+            let response = await get_api_data('company-pick', {
+                Page : [
+                    {Id: supplier_id }
+                ]
+            })
+            let company = response.data.Page[0];
+            $('#supplier-txt').data('id', company.Id);
+            $('#supplier-txt').val(company.CompanyName);
+            $('#supplier-txt').data('contact', company.MainContact);
+
+            $('#modal-company').modal('hide');
+        }
+
+        async function get_item_id(item_id) {
+            let response = await get_api_data('item-pick', {
+                Page : [
+                    {Id: item_id }
+                ]
+            })
+            let item = response.data.Page[0];
+            let next_input = set_item_data_to_textbox(item)
+
+            $('#modal-item').modal('hide');
+            next_input.focus();
+        }
+
+        const formB = {!! json_encode($formB) !!};
+        const user = {!! json_encode(session('user')) !!};
+        let pquoteModal = {!! json_encode($pquoteModal) !!};
+        let companyModal = {!! json_encode($companyModal) !!};
+        let itemModal = {!! json_encode($itemModal) !!};
+        let pquoteBodyCopy = {!! json_encode($pquoteBodyCopy) !!};
+        let bd_page = []
+        // 현재 DB의 부가세율
+        let CurrentVateRate = 0;
+    </script>
+@endsection

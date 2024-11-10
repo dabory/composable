@@ -1,0 +1,198 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "회원 App Api 확장",
+        "PageApi": "list-type1-page",
+        "ActApi": "member-app-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "pro/member-app-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "HeadSelectOptions": [
+
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "팝업 선택(라디오 버튼)",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.email",
+            "Caption": "아이디(이메일)"
+        },
+        {
+            "Value": "mx.nick_name",
+            "Caption": "이름"
+        },
+        {
+            "Value": "mx.status",
+            "Caption": "상태",
+            "Reverse": "status_rev('member')"
+        },
+        {
+            "Value": "N_mx.id",
+            "Caption": "mx.id"
+        }
+
+    ],
+
+    "SimpleSelectOptions": [
+
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "회원 확장 입력/수정/삭제",
+            "Component": "popup-form1.form-a.app-api-ext-form",
+            "Parameter": "/popup/popup-form1/form-a/app-api-ext"
+        }
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "등록일자 순서"
+        },
+        {
+            "Value": "mx.created_on asc",
+            "Caption": "등록일자 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsExcelColumn" : false,
+        "IsListFirst" : true,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "80",
+        "BodyHeight": "570"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "아이디(이메일)",
+            "C2": "등급",
+            "C3": "상태",
+            "C4": "모바일번호",
+            "C5": "SsoSubId",
+            "C6": "권한번호/명",
+            "C7": "영업구분",
+            "C8": "지사구분",
+            "C9": "창고구분",
+            "C10": "회계구분",
+            "C11": "종결"
+        },
+        {
+            "$Radio": "2",
+            "$Check": "2",
+            "No": "6",
+            "C1": "20",
+            "C2": "10",
+            "C3": "10",
+            "C4": "10",
+            "C5": "10",
+            "C6": "10",
+            "C7": "10",
+            "C8": "10",
+            "C9": "10",
+            "C10": "10",
+            "C11": "10"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "sort('member')",
+            "C3": "status('member')",
+            "C4": "center",
+            "C5": "center",
+            "C6": "center",
+            "C7": "center",
+            "C8": "center",
+            "C9": "center",
+            "C10": "center",
+            "C11": "check"
+        }
+    ]
+}

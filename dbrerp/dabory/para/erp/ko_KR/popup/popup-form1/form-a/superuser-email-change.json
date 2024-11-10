@@ -1,0 +1,44 @@
+{
+    "General": {
+        "PickApi": "users-pick",
+        "ActApi": "superuser-email-change"
+    },
+
+    "SelectButtonOptions": [
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "Email": "이메일",
+            "NewEmail": "변경될 이메일",
+            "CertPhrase1": "인증번호 메일주소로 요청",
+            "EmailVerifyNumber": "메일 인증번호(변경될 이메일을 찾아서 6자리 인증번호를 입력)",
+            "Password": "현재 비밀번호",
+            "NewPassword": "변경 비밀번호",
+            "NewPasswordConfirmation": "변경 비밀번호 확인",
+            "MobileNo": "현재 관리자 모바일 번호",
+            "CertPhrase2": "인증번호 요청",
+            "MobileVerifyNumber": "현재 모바일폰에서 확인한 인증 번호",
+            "NewMobileNo": "변경 관리자 모바일 번호",
+            "NewMobileVerifyNumber": "변경 관리자 모바일폰에서 확인한 인증번호"
+        },
+        {
+            "SaveButton": "left",
+            "Email": "left",
+            "NewEmail": "left",
+            "CertPhrase1": "left",
+            "EmailVerifyNumber": "left",
+            "Password": "left",
+            "NewPassword": "left",
+            "NewPasswordConfirmation": "left",
+            "MobileNo": "left",
+            "CertPhrase2": "left",
+            "MobileVerifyNumber": "left",
+            "NewMobileNo": "left",
+            "NewMobileVerifyNumber": "left"
+        }
+    ]
+
+}

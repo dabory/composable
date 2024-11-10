@@ -1,0 +1,102 @@
+.dabory-table-option-wrapper {
+    width: 100% !important;
+    padding-top: 0.425rem !important;
+    align-items: center !important;
+    flex-direction: row !important;
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
+.dabory-table-line-select {
+    margin-bottom: 0!important;
+}
+
+.dabory-table-option-wrapper select {
+    height: 28px !important;
+    padding: 0 2px !important;
+    color: #373737 !important;
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+    box-sizing: border-box !important;
+    word-wrap: normal !important;
+    margin: 0 !important;
+    border-radius: 0.25rem !important;
+}
+
+.dabory-type1-box .button, .dabory-type1-box input, .dabory-type1-box optgroup, .dabory-type1-box select, .dabory-type1-box textarea {
+    font-size: 13px !important;
+}
+
+.dabory-table-order-by-div {
+    margin-bottom: 0 !important;
+    align-items: center !important;
+    flex-direction: row !important;
+    display: flex !important;
+    margin-left: 0.3125rem !important;
+}
+
+.dabory-table-order-by-select {
+    width: 100% !important;
+}
+
+.dabory-table-pagination {
+    margin-left: auto !important;
+    margin-bottom: 0 !important;
+    display: flex !important;
+    padding-left: 0 !important;
+    list-style: none !important;
+    border-radius: 0.25rem !important;
+    font-size: 13px !important;
+}
+
+.dabory-table-pagination .page-item:first-child .page-link {
+    border-radius: unset !important;
+    border-top-left-radius: 0.1875rem !important;
+    border-bottom-left-radius: 0.1875rem !important;
+}
+
+.dabory-table-pagination .page-item:last-child .page-link {
+    border-radius: unset !important;
+    border-top-right-radius: 0.1875rem !important;
+    border-bottom-right-radius: 0.1875rem !important;
+}
+
+.dabory-table-pagination .page-item .page-link {
+    position: relative !important;
+    display: block !important;
+    min-width: 2.12507rem !important;
+    padding: 0.3125rem 0.75rem !important;
+    font-size: .8125rem !important;
+    line-height: 1.6924 !important;
+    border: 1px solid #cad1dc !important;
+    margin: 0 !important;
+    margin-left: -1px !important;
+    color: black !important;
+}
+
+.dabory-table-pagination .page-item.disabled .page-link {
+    color: #ccc !important;
+    pointer-events: none !important;
+    cursor: auto !important;
+    background-color: #f0f2f5 !important;
+    border-color: #cad1dc !important;
+}
+
+.dabory-table-pagination .page-item.active .page-link {
+    z-index: 3 !important;
+    color: #fff !important;
+    background-color: #5c6bc0 !important;
+    border-color: #5c6bc0 !important;
+}
+
+.dabory-table-pagination .page-item {
+    margin: 0 !important;
+}
+
+.dabory-table-pagination .page-item .page-link:hover {
+    z-index: 2 !important;
+    color: #333 !important;
+    text-decoration: none !important;
+    background-color: #e1e5eb !important;
+    border-color: #bac4d1 !important;
+}

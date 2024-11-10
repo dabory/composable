@@ -1,0 +1,66 @@
+{
+    "General": {
+        "PickApi": "sort-menu-pick",
+        "ActApi": "sort-menu-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "MenuCode": "메뉴코드*",
+            "SortType": "소트구분",
+            "BgcolorCode": "메뉴배경색상",
+            "DashPageUrl": "대시보드 페이지 URL",
+            "Component": "컴포넌트",
+            "Parameter": "파라메터",
+            "Icon": "지정아이콘",
+            "MgtType": "Mgt Type",
+            "IsEnabled": "사용"
+        },
+        {
+            "SaveButton": "left",
+            "MenuCode": "left",
+            "SortType": "left",
+            "BgcolorCode": "left",
+            "DashPageUrl": "left",
+            "Component": "left",
+            "Parameter": "left",
+            "Icon": "left",
+            "MgtType": "left",
+            "IsEnabled": "left"
+        },
+        {
+            "SaveButton": "0",
+            "MenuCode": "100",
+            "SortType": "100",
+            "BgcolorCode": "100",
+            "DashPageUrl": "100",
+            "Component": "500",
+            "Parameter": "500",
+            "Icon": "100",
+            "MgtType": "100",
+            "IsEnabled": "100"
+        },
+        {
+            "SaveButton": "",
+            "MenuCode": "required",
+            "SortType": "",
+            "BgcolorCode": "",
+            "DashPageUrl": "",
+            "Component": "",
+            "Parameter": "",
+            "Icon": "",
+            "MgtType": "",
+            "IsEnabled": ""
+        }
+    ]
+}

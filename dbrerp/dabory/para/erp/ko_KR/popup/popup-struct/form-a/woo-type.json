@@ -1,0 +1,72 @@
+{
+    "General": {
+        "PickApi": "struct-pick",
+        "ActApi": "struct-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "IsHtmlMatch": "IsHtmlMatch",
+            "HtmlMatchStr": "HtmlMatchStr",
+            "PdpRegEx": "PdpRegEx",
+            "PlpRegEx": "PlpRegEx",
+
+            "ItemName": "ItemName",
+            "Categories": "Categories",
+            "Currency": "Currency",
+            "SalesPrice": "SalesPrice",
+            "Images": "Images",
+            "ShortDesc": "ShortDesc",
+            "TextDesc": "TextDesc",
+            "Tags": "Tags",
+            "Emails": "Emails",
+
+            "Language": "Language",
+            "BrandName": "BrandName",
+            "Manufacturer": "Manufacturer",
+            "Sku": "Sku",
+            "Options": "Options",
+            "UserCredit": "UserCredit",
+            "ModelNo": "ModelNo",
+            "ModelName": "ModelName",
+            "Origin": "Origin",
+            "OriginDesc": "OriginDesc",
+            "MinimumQty": "MinimumQty",
+            "DeliveryPrice": "DeliveryPrice"
+        },
+        {
+            "SaveButton": "center",
+            "IsHtmlMatch": "center",
+            "HtmlMatchStr": "center",
+            "PdpRegEx": "center",
+            "PlpRegEx": "center",
+            "ItemName": "center",
+            "Email": "center",
+            "Tags": "center",
+            "ModelName": "center",
+            "ModelNo": "center",
+            "BrandName": "center",
+            "Sku": "center",
+            "Categories": "center",
+            "Manufacturer": "center",
+            "Origin": "center",
+            "Language": "center",
+            "Currency": "center",
+            "SalesPrice": "center",
+            "DeliveryPrice": "center",
+            "MinimumQty": "center",
+            "UserCredit": "center",
+            "Options": "center",
+            "Images": "center",
+            "ShortDesc": "center",
+            "OriginDesc": "center",
+            "TextDesc": "center"
+        }
+    ]
+}

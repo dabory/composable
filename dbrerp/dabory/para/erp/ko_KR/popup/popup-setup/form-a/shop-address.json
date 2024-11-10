@@ -1,0 +1,26 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "ZipCode": "우편 번호",
+            "Addr1": "주소1",
+            "Addr2": "주소2"
+        },
+        {
+            "SaveButton": "center",
+            "ZipCode": "center",
+            "Addr1": "center",
+            "Addr2": "center"
+        }
+    ]
+}

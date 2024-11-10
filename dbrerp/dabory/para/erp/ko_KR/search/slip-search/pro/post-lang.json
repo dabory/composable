@@ -1,0 +1,124 @@
+{
+    "General": {
+        "Title": "언어별 게시판 조회",
+        "PageApi": "slip-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "pro/post-lang",
+        "FilterName": "",
+        "FilterValue": "",
+        "SimpleFilter": ""
+    },
+
+    "//SlipSearchFields": "쿼리를 공통하기 위한 테이블 필드변수들",
+    "SlipSearchFields": {
+        "SlipDateField": "official_date",
+        "SlipNoField": "post_no"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "QuerySpeed": "표시속도",
+            "SlipNo": "게시번호",
+            "CompanyName": "",
+            "ItemCode": "",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "QuerySpeedOptions": [
+        {
+            "Value": "quick",
+            "Caption": "빠르게"
+        }
+    ],
+
+    "FilterSelectOptions": [
+    ],
+
+    "SimpleSelectOptions": [
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "post_no desc",
+            "Caption": "게시번호 역순"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "SlipNo": "게시번호",
+            "DealCode": "제목",
+            "Company": "게시판종류",
+            "SetGroup": "게시판코드",
+            "Item": "축약내용",
+            "Amt": "작성자",
+            "Status": "상태",
+            "Ref": ""
+        },
+        {
+            "No": "6",
+            "SlipNo": "7",
+            "DealCode": "10",
+            "Company": "7",
+            "SetGroup": "8",
+            "Item": "18",
+            "Amt": "10",
+            "Status": "8",
+            "Ref": "8"
+        },
+        {
+            "No": "center",
+            "SlipNo": "center",
+            "DealCode": "left",
+            "Company": "center",
+            "SetGroup": "center",
+            "Item": "left",
+            "Amt": "center",
+            "Status": "center",
+            "Ref": "left"
+        }
+    ]
+}

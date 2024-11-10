@@ -1,0 +1,25 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "ReservePoint": "최소보유적립금 제한",
+            "MinUsePoint": "최소상품 구매 금액 제한"
+        },
+        {
+            "SaveButton": "center",
+            "ReservePoint": "decimal('sales_amt')",
+            "MinUsePoint": "decimal('sales_amt')"
+        }
+
+    ]
+}

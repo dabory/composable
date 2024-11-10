@@ -1,0 +1,49 @@
+{
+    "General": {
+        "Title": "빠른 품목 추가 미리보기",
+        "PickApi": "",
+        "ActApi": ""
+    },
+
+    "SelectButtonOptions": [
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "SalesQty": "매출 수량",
+            "BarCode": "바코드 입력",
+            "BarCodeButton": "바코드 입력",
+            "DiscountPrc": "할인 금액",
+            "DiscountPrcButton": "할인 추가"
+        },
+        {
+            "SaveButton": "",
+            "SalesQty": "left",
+            "BarCode": "left",
+            "BarCodeButton": "left",
+            "DiscountPrc": "decimal('sales_amt')",
+            "DiscountPrcButton": "left"
+
+        },
+        {
+            "SaveButton": "0",
+            "SalesQty": "20",
+            "BarCode": "1000",
+            "BarCodeButton": "0",
+            "DiscountPrc": "100",
+            "DiscountPrcButton": "0"
+
+        },
+        {
+            "SaveButton": "",
+            "SalesQty": "",
+            "BarCode": "",
+            "BarCodeButton": "",
+            "DiscountPrc": "",
+            "DiscountPrcButton": ""
+
+        }
+    ]
+}

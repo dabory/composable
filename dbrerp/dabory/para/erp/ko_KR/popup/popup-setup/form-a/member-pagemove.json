@@ -1,0 +1,35 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AfterLoginUri": "로그인후 이동 페이지",
+            "AfterLoginApplyPage": "AfterLoginApplyPage",
+            "AfterAddCartUri": "카트추가후 이동 페이지",
+            "AfterCheckoutSuccessUri": "결제성공후 이동 페이지",
+            "AfterCheckoutFailUri": "결제실패후 이동 페이지",
+            "AfterSupplierLoginUri": "공급/입점사 로그인 이동 페이지",
+            "AfterBuySupLoginUri": "소비/공급 동시자 로그인 이동 페이지"
+        },
+        {
+            "SaveButton": "center",
+            "AfterLoginUri": "center",
+            "AfterLoginApplyPage": "center",
+            "AfterAddCartUri": "center",
+            "AfterCheckoutSuccessUri": "center",
+            "AfterCheckoutFailUri": "center",
+            "AfterSupplierLoginUri": "center",
+            "AfterBuySupLoginUri": "center"
+        }
+
+    ]
+}

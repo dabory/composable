@@ -1,0 +1,144 @@
+{
+    "General": {
+        "Title": "미디어 찾기",
+        "PageApi": "media-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "media/image",
+        "FilterName": "",
+        "FilterValue": ""
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "",
+            "Caption": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "선택된 미디어 붙여넣기",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "날짜",
+            "From": "부터",
+            "To": "까지",
+            "SlipNo": "미디어번호",
+            "MediaName": "미디어명",
+            "FileName": "화일명",
+            "LinkLocation": "첨부대상",
+            "UserName": "작성자",
+            "BranchName": "작성지사"
+        },
+        {
+            "SaveButton": "left",
+            "DateRange": "left",
+            "Date": "left",
+            "From": "left",
+            "To": "left",
+            "SlipNo": "center",
+            "MediaName": "left",
+            "FileName": "left",
+            "LinkLocation": "left",
+            "UserName": "left",
+            "BranchName": "left"
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "last-month",
+            "Caption": "전월"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "last-year",
+            "Caption": "전년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default, 필수(Required)",
+    "OrderByOptions": [
+        {
+            "Value": "media_no desc",
+            "Caption": "미디어번호 역순"
+        },
+        {
+            "Value": "media_no asc",
+            "Caption": "미디어번호 정렬순"
+        },
+        {
+            "Value": "media_name asc",
+            "Caption": "미디어명 역순"
+        }
+    ],
+
+    "ThumbContainerVars": {
+        "ListWidth": 150,
+        "ListHeight": 75
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(%), ListVars[2]-align",
+    "// Price": "Prices show with comma and truncate numbers under decimal !!",
+    "ListVars": [
+        {
+            "$Check": "$Check",
+            "No": "번호",
+            "MediaNo": "미디어번호",
+            "ThumbNail": "썸네일",
+            "MediaName": "미디어명",
+            "FileName": "화일명",
+            "UserName": "작성자",
+            "BranchName": "작성지사",
+            "LinkLocation": "첨부대상",
+            "Linked": "첨부"
+        },
+        {
+            "$Check": "3",
+            "No": "4",
+            "MediaNo": "10",
+            "ThumbNail": "20",
+            "MediaName": "10",
+            "FileName": "10",
+            "UserName": "10",
+            "BranchName": "10",
+            "LinkLocation": "10",
+            "Linked": "10"
+        },
+        {
+            "$Check": "center",
+            "No": "center",
+            "MediaNo": "left",
+            "ThumbNail": "$_ThumbNail",
+            "MediaName": "left",
+            "FileName": "$_FileName",
+            "UserName": "left",
+            "BranchName": "left",
+            "LinkLocation": "left",
+            "Linked": "center"
+        }
+    ]
+}

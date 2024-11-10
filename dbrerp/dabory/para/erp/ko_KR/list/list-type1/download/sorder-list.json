@@ -1,0 +1,212 @@
+{
+    "General": {
+        "Title": "사용자메뉴 불러오기",
+        "PageApi": "list-type1-page"
+    },
+    "QueryMapper": {
+        "FirstRange": "SorderNo",
+        "SecondRange": "CompanyName",
+        "ThirdRange": "ItemCode",
+        "FourthRange": "",
+        "FilterOptions": "",
+        "SimpleOptions": ""
+    },
+
+    "QueryVars": {
+        "QueryName": "sales/sorder-list",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "",
+        "SimpleFilter": ""
+    },
+
+    "HeadSelectOptions": [
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "",
+            "To": "",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "다운로드 리스트",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+    ],
+
+    "SimpleSelectOptions": [
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "SelectPopupOptions": [
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsAddTotalLine": false,
+        "IsExcelColumn": true,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "160",
+        "BodyHeight": "570"
+    },
+
+    "OrderByOptions": [
+    ],
+
+    "BalanceOptions": [
+    ],
+
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "No": "번호",
+            "C1": "수주 번호",
+            "C2": "수주 일자",
+            "C3": "고객",
+            "C4": "거래구분",
+            "C5": "품목코드",
+            "C6": "품명",
+            "C7": "서브명",
+            "C8": "수량",
+            "C9": "단가",
+            "C10": "합계금액",
+            "C11": "참고1",
+            "C12": "참고2",
+            "C13": "일자(월)",
+            "C14": "일자(주)",
+            "C15": "품목구분",
+            "C16": "업체구분",
+            "C17": "지불조건",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "6",
+            "C1": "12",
+            "C2": "9",
+            "C3": "15",
+            "C4": "8",
+            "C5": "10",
+            "C6": "15",
+            "C7": "10",
+            "C8": "10",
+            "C9": "10",
+            "C10": "10",
+            "C11": "10",
+            "C12": "10",
+            "C13": "10",
+            "C14": "10",
+            "C15": "10",
+            "C16": "10",
+            "C17": "10",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "left",
+            "C2": "YY.MM.DD",
+            "C3": "left",
+            "C4": "left",
+            "C5": "left",
+            "C6": "left",
+            "C7": "left",
+            "C8": "decimal('purch_qty')",
+            "C9": "decimal('purch_prc')",
+            "C10": "decimal('purch_amt')",
+            "C11": "left",
+            "C12": "left",
+            "C13": "left",
+            "C14": "left",
+            "C15": "left",
+            "C16": "left",
+            "C17": "left",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        }
+    ]
+}

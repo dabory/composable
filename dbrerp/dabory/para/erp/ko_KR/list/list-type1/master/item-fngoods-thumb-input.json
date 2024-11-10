@@ -1,0 +1,277 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "상품 이미지 리스트",
+        "PageApi": "list-type1-page",
+        "ActApi": "list-type1-upload"
+    },
+
+    "QueryVars": {
+        "QueryName": "master/item-fngoods-thumb-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "PrintVars": {
+        "QueryName": "federated/crystal/master/item-fngoods-input",
+        "ReportPath": "standard/master/item-fngoods-input.rpt",
+        "ExportFmt": "PDF",
+        "ServerPrinter": "",
+        "CustomCode": "item-fngoods-input"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "clear-all-filter",
+            "Caption": "초기화"
+        },
+        {
+            "Value": "barcode-print",
+            "Caption": "바코드 인쇄"
+        },
+        {
+            "Value": "rpt-print",
+            "Caption": "빠른 표준 보고서"
+        },
+        {
+            "Value": "rpt-custom",
+            "Caption": "커스텀 보고서"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.item_code",
+            "Caption": "품목코드"
+        },
+        {
+            "Value": "mx.item_name",
+            "Caption": "품명"
+        },
+        {
+            "Value": "mx.sub_name",
+            "Caption": "서브명"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "mx.expose_type='0'",
+            "Caption": "온라인 게시"
+        },
+        {
+            "Value": "mx.expose_type='1'",
+            "Caption": "온라인 누락"
+        },
+        {
+            "Value": "",
+            "Caption": "전체"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "상품 입력/수정/삭제",
+            "Component": "popup-form1.form-a.item-form",
+            "Parameter": "/popup/popup-form1/form-a/item"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.list_prc desc",
+            "Caption": "소비자가 높은순"
+        },
+        {
+            "Value": "mx.list_prc asc",
+            "Caption": "소비자가 낮은순"
+        },
+        {
+            "Value": "mx.sales_prc desc",
+            "Caption": "판매가 높은순"
+        },
+        {
+            "Value": "mx.sales_prc asc",
+            "Caption": "판매가 낮은순"
+        },
+        {
+            "Value": "",
+            "Caption": "할인율 높은순"
+        },
+        {
+            "Value": "",
+            "Caption": "조회수 많은 순"
+        },
+        {
+            "Value": "",
+            "Caption": "조회수 적은"
+        },
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "최근 등록 순"
+        },
+        {
+            "Value": "mx.updated_on desc",
+            "Caption": "최근 수정 순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "ThumbContainerVars": {
+        "ListWidth": 50,
+        "ListHeight": 50
+    },
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsExcelColumn" : false,
+        "IsSplitColumn" : true,
+        "InitLines" : 10,
+        "IsC1Popup": "1",
+        "HeadHeight": "130",
+        "BodyHeight": "600"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "샹품코드 | 품명 | 서브명 | 공급/입점사",
+            "C2": "이미지",
+            "C3": "",
+            "C4": "매출가 | 매입가",
+            "C5": "매출가",
+            "C6": "매입가",
+            "C7": "상품 구분 | 공급/입점사",
+            "C8": "공급/입점사",
+            "C9": "온라인누락"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "No": "4",
+            "C1": "4",
+            "C2": "25",
+            "C3": "12",
+            "C4": "8",
+            "C5": "6",
+            "C6": "6",
+            "C7": "6",
+            "C8": "8",
+            "C9": "8"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "$_ThumbNail",
+            "C2": "center|^center|^center",
+            "C3": "left",
+            "C4": "decimal('sales_prc')|^decimal('purch_prc')",
+            "C5": "decimal('sales_prc')",
+            "C6": "decimal('purch_prc')",
+            "C7": "center|^center",
+            "C8": "center",
+            "C9": "check"
+        }
+    ]
+}

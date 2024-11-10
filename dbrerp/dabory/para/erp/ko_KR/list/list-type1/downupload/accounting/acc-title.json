@@ -1,0 +1,222 @@
+{
+    "General": {
+        "Title": "회계 계정과목 불러오기",
+        "PageApi": "list-type1-page",
+        "ActApi": "list-type1-upload"
+    },
+
+    "QueryVars": {
+        "QueryName": "download/accounting/acc-title",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "xls-report",
+            "Caption": "(1)엑셀 다운로드"
+        },
+        {
+            "Value": "excel-upload",
+            "Caption": "(2)엑셀 업로드"
+        },
+        {
+            "Value": "dummy",
+            "Caption": "(3)적용",
+            "Component": "popup-form1.form-insert",
+            "Parameter": "/popup/popup-form1/form-insert/accounting/acc-title"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "",
+            "To": "",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "다운로드 리스트",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.title_code",
+            "Caption": "계정과목코드"
+        },
+        {
+            "Value": "mx.title_name",
+            "Caption": "메뉴명"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.is_skipped='1'",
+            "Caption": "메뉴스킵"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "사용자 메뉴 입력/수정/삭제",
+            "Component": "popup-form1.form-a.menu-form",
+            "Parameter": "/popup/popup-form1/form-a/user-menu"
+        }
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsAddTotalLine": false,
+        "IsExcelColumn": true,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "160",
+        "BodyHeight": "570"
+    },
+
+    "OrderByOptions": [
+        {
+            "Value": "mx.title_code asc",
+            "Caption": "메뉴코드 순서"
+        },
+        {
+            "Value": "mx.title_code desc",
+            "Caption": "메뉴코드 역순"
+        },
+        {
+            "Value": "mx.title_name asc",
+            "Caption": "메뉴명 순서"
+        },
+        {
+            "Value": "mx.title_name desc",
+            "Caption": "메뉴명 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "No": "번호",
+            "C1": "ID",
+            "C2": "계정코드",
+            "C3": "차대변",
+            "C4": "계정과목명",
+            "C5": "집합계정코드",
+            "C6": "증가차감",
+            "C7": "충당금",
+            "C8": "합산",
+            "C9": "수입비용",
+            "C10": "집합계정코드",
+            "C11": "대표계정코드",
+            "C12": "업체존재",
+            "C13": "사용않음"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "4",
+            "C1": "4",
+            "C2": "6",
+            "C3": "5",
+            "C4": "15",
+            "C5": "6",
+            "C6": "6",
+            "C7": "6",
+            "C8": "6",
+            "C9": "6",
+            "C10": "6",
+            "C11": "6",
+            "C12": "6",
+            "C13": "6"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "center",
+            "C2": "left",
+            "C3": "center",
+            "C4": "left",
+            "C5": "left",
+            "C6": "center ",
+            "C7": "center",
+            "C8": "center",
+            "C9": "center",
+            "C10": "center",
+            "C11": "center",
+            "C12": "center",
+            "C13": "center"
+        }
+    ]
+}

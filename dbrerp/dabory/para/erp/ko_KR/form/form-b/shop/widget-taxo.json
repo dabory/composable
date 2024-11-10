@@ -1,0 +1,167 @@
+{
+    "General": {
+        "Title": "위젯 분류(Pro) 입력",
+        "PickApi": "slip-form-book",
+        "ActApi": "widget-taxo-act",
+        "Instruction": "분류번호 prefix 번호 주는 방법 <br> (1)(cm:공통), (m:메인페이지), (s:서브페이지) <br>(2) 예: 메인페이지 둘째번 widget mb-xxx-xxx, 2번째 서브메뉴의 드롭 다운 <br>3번째 메뉴 페이지의 세번째 위젯: s23c-xxx-xxx   cm은 여러페이지에서 공유되는 푸터나 사이드바 위젯 예: cm-footer"
+    },
+
+    "QueryVars": {
+        "QueryName": "shop/widget-taxo"
+    },
+
+    "SlipNoOptions": [
+        {
+            "Value": "cm-common-pavicon",
+            "Caption": "cm-common-pavicon"
+        },
+        {
+            "Value": "cm-common-logo",
+            "Caption": "cm-common-logo"
+        },
+        {
+            "Value": "cm-left-sidebar",
+            "Caption": "cm-left-sidebar"
+        },
+        {
+            "Value": "cm-right-sidebar",
+            "Caption": "cm-right-sidebar"
+        },
+        {
+            "Value": "cm-footer",
+            "Caption": "cm-footer"
+        },
+        {
+            "Value": "ma-main-slider",
+            "Caption": "ma-main-slider"
+        },
+        {
+            "Value": "mb-sub-slider",
+            "Caption": "mb-sub-slider"
+        },
+        {
+            "Value": "mc-carousel",
+            "Caption": "mc-carousel"
+        }
+    ],
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "새 위젯",
+            "Parameter": ""
+        },
+        {
+            "Value": "copy-to-another",
+            "Caption": "위젯 복사",
+            "Parameter": "shop/widget-widget"
+        },
+        {
+            "Value": "delete",
+            "Caption": "위젯 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "multi-delete",
+            "Caption": "컨텐츠 일괄 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "위젯 컨텐츠(내용) 추가",
+            "AutoSlipNo": "위젯번호(예약)*",
+            "TaxoCode": "위젯코드(지정 위젯)*",
+            "LangType": "언어구분",
+            "DeviceType": "기기구분",
+            "DirectInput": "위젯코드 직접입력(커스텀 위젯)*",
+            "Date": "일자*",
+            "TaxoName": "위젯명",
+            "MediaSize": "디자이너 참조용 미디어크기",
+            "Remarks": "비고"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "AutoSlipNo": "left",
+            "TaxoCode": "left",
+            "LangType": "left",
+            "DeviceType": "left",
+            "DirectInput": "left",
+            "Date": "left",
+            "TaxoName": "left",
+            "MediaSize": "left",
+            "Remarks": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "AutoSlipNo": "500",
+            "TaxoCode": "500",
+            "LangType": "500",
+            "DeviceType": "500",
+            "DirectInput": "500",
+            "Date": "500",
+            "TaxoName": "500",
+            "MediaSize": "128",
+            "Remarks": "500"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "AutoSlipNo": "required",
+            "TaxoCode": "required",
+            "LangType": "",
+            "DeviceType": "",
+            "DirectInput": "",
+            "Date": "required",
+            "TaxoName": "",
+            "MediaSize": "",
+            "Remarks": ""
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "BdFileUrl": "미디어 연결이미지",
+            "MediaId": "미디어 연결",
+            "LinkUrl": "페이지 링크",
+            "WidgetDesc": "설명(H)-더블클릭",
+            "IsSkipped": "표시누락",
+            "SaveButton": "버튼"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "BdFileUrl": "4",
+            "MediaId": "8",
+            "LinkUrl": "6",
+            "WidgetDesc": "5",
+            "IsSkipped": "5",
+            "SaveButton": "7"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "BdFileUrl": "center",
+            "MediaId": "center",
+            "LinkUrl": "left",
+            "WidgetDesc": "left",
+            "IsSkipped": "center",
+            "SaveButton": "center"
+        }
+    ],
+    "FooterVars": [
+        {
+            "SumTotal": "위젯분류 갯수"
+        }
+    ]
+}

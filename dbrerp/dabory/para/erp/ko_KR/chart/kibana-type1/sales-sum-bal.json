@@ -1,0 +1,101 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Iframe": "https://kibana-seoul-a.daboryhost.com:5601/app/kibana#/dashboard/706834a0-13e5-11ee-a283-e1f69ada928d?embed=true&_g=(refreshInterval:(pause:!f,value:900000),time:(from:'$from',to:'$to'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(vis:(colors:('review_count%EC%9D%98%20%ED%95%A9%EA%B3%84':%23F29191),legendOpen:!f)),gridData:(h:17,i:'87d5a2d3-32a0-4a2a-a174-2f0ff6bd666e',w:48,x:0,y:0),id:d02b8b90-13e4-11ee-a283-e1f69ada928d,panelIndex:'87d5a2d3-32a0-4a2a-a174-2f0ff6bd666e',type:visualization,version:'7.6.1')),query:(language:kuery,query:''),timeRestore:!f,title:TEST2,viewMode:edit)"
+    },
+
+    "QueryMapper": {
+        "FirstRange": "SorderNo",
+        "SecondRange": "CgroupName",
+        "ThirdRange": "ItemCode",
+        "FourthRange": "CompanyName",
+        "FilterOptions": "",
+        "SimpleOptions": ""
+    },
+
+
+    "PopupList1Vars": {
+        "PopupFilterName": "mx.id",
+        "PopupWidth": "1200"
+    },
+
+    "HeadSelectOptions": [
+
+    ],
+
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-format",
+    "FormVars": [
+        {
+            "HeadFirst": "zzzz",
+            "HeadSecond": "정식명칭",
+            "HeadThird": "시작일",
+            "HeadFourth": "종료일",
+
+            "ColumnFirst": "",
+            "ColumnSecond": "",
+            "ColumnThird": "",
+            "ColumnFourth": "",
+
+            "TextFirst": "",
+            "TextSecond": "",
+            "TextThird": "",
+            "TextFourth": "",
+
+            "FootFirst": "이월 잔액",
+            "FootSecond": "매입 합계",
+            "FootThird": "출금/출금할인",
+            "FootFourth": "현재 잔액"
+        },
+        {
+            "HeadFirst": "center",
+            "HeadSecond": "center",
+            "HeadThird": "yy.mm.dd",
+            "HeadFourth": "yy.mm.dd",
+
+            "ColumnFirst": "left",
+            "ColumnSecond": "left",
+            "ColumnThird": "",
+            "ColumnFourth": "",
+
+            "TextFirst": "left",
+            "TextSecond": "left",
+            "TextThird": "left",
+            "TextFourth": "left",
+
+            "FootFirst": "decimal('purch_amt')",
+            "FootSecond": "decimal('purch_amt')",
+            "FootThird": "decimal('purch_amt')",
+            "FootFourth": "decimal('purch_amt')"
+        }
+
+    ],
+
+    "DateRangeOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsntPagination": true,
+        "IsExcelColumn": false,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsListFirst" : true,
+        "InitLines" : 15,
+        "HeadHeight": "",
+        "BodyHeight": "500"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": ""
+        },
+        {
+            "$Radio": "3"
+        },
+        {
+            "$Radio": "center"
+        }
+    ]
+}

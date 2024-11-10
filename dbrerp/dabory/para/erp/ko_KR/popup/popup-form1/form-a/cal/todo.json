@@ -1,0 +1,96 @@
+{
+    "General": {
+        "PickApi": "todo-pick",
+        "ActApi": "todo-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "0",
+            "Caption": "status('todo','0')"
+        },
+        {
+            "Value": "1",
+            "Caption": "status('todo','1')"
+        },
+        {
+            "Value": "2",
+            "Caption": "status('todo','2')"
+        },
+        {
+            "Value": "3",
+            "Caption": "status('todo','3')"
+        }
+    ],
+
+    "SortOptions": [
+        {
+            "Value": "0",
+            "Caption": "sort('todo','0')"
+        },
+        {
+            "Value": "1",
+            "Caption": "sort('todo','1')"
+        },
+        {
+            "Value": "2",
+            "Caption": "sort('todo','2')"
+        },
+        {
+            "Value": "3",
+            "Caption": "sort('todo','3')"
+        },
+        {
+            "Value": "4",
+            "Caption": "sort('todo','4')"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "TodoDate": "할일일자*",
+            "TodoTime": "할일시간*",
+            "TodoTitle": "할일제목*",
+            "TodoMemo": "할일내용",
+            "Sort": "종류",
+            "Status": "상태"
+        },
+        {
+            "SaveButton": "left",
+            "TodoDate": "left",
+            "TodoTime": "left",
+            "TodoTitle": "left",
+            "TodoMemo": "left",
+            "Sort": "left",
+            "Status": "left"
+        },
+        {
+            "SaveButton": "0",
+            "TodoDate": "100",
+            "TodoTime": "100",
+            "TodoTitle": "100",
+            "TodoMemo": "100",
+            "Sort": "500",
+            "Status": "500"
+        },
+        {
+            "SaveButton": "",
+            "TodoDate": "required",
+            "TodoTime": "required",
+            "TodoTitle": "required",
+            "TodoMemo": "",
+            "Sort": "",
+            "Status": ""
+        }
+    ]
+}

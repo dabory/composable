@@ -1,0 +1,153 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "PickApi": "simple-join-page",
+        "ActApi": "post-act",
+        "QueryName": "post-member-user",
+        "PostCode": "banner"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "배너/팝업 삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "배너/팝업 복사"
+        }
+    ],
+
+    "Pc1Options": [
+        {
+            "Value": "0",
+            "Caption": "같은창"
+        },
+        {
+            "Value": "1",
+            "Caption": "새창"
+        }
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "0",
+            "Caption": "status('post-banner','0')"
+        },
+        {
+            "Value": "1",
+            "Caption": "status('post-banner','1')"
+        }
+    ],
+
+    "Pc8Options": [
+        {
+            "Value": "main",
+            "Caption": "메인"
+        },
+        {
+            "Value": "main-mobile",
+            "Caption": "모바일"
+        }
+    ],
+
+    "DisplayVars": {
+        "Width": "800",
+        "Chunk": "7"
+    },
+
+    "// FormPostVars": "FormPostVars[0]-caption, FormPostVars[1]-size(px), FormPostVars[2]-format, FormPostVars[3]-required, FormPostVars[4]-ui, FormPostVars[5]-type",
+    "FormPostVars": [
+        {
+            "SaveButton": "저장",
+            "PostTitle": "제목*",
+            "Pc1": "링크 형식",
+            "Pt1": "링크 URL*",
+            "Status": "처리상태",
+            "Pc3": "노출순위*",
+            "Pc4": "노출위치(왼쪽으로부터 px)",
+            "Pc5": "노출위치(위쪽으로부터 px)",
+            "PostTypeId": "구분",
+            "Pc6": "시작일자*",
+            "Pc7": "종료일자*",
+            "MediaId": "이미지",
+            "Pc8": "장치구분"
+        },
+        {
+            "SaveButton": "center",
+            "PostTitle": "center",
+            "Pc1": "Pc1Options",
+            "Pt1": "center",
+            "Status": "StatusOptions",
+            "Pc3": "center",
+            "Pc4": "center",
+            "Pc5": "center",
+            "PostTypeId": "SortOptions",
+            "Pc6": "YYYY-MM-DD",
+            "Pc7": "YYYY-MM-DD",
+            "MediaId": "center",
+            "Pc8": "Pc8Options"
+        },
+        {
+            "SaveButton": "",
+            "PostTitle": "1000",
+            "Pc1": "2",
+            "Pt1": "1000",
+            "Status": "2",
+            "Pc3": "1000",
+            "Pc4": "1000",
+            "Pc5": "1000",
+            "PostTypeId": "2",
+            "Pc6": "1000",
+            "Pc7": "1000",
+            "MediaId": "1000",
+            "Pc8": "2"
+        },
+        {
+            "SaveButton": "",
+            "PostTitle": "required",
+            "Pc1": "required",
+            "Pt1": "required",
+            "Status": "required",
+            "Pc3": "required",
+            "Pc4": "",
+            "Pc5": "",
+            "PostTypeId": "required",
+            "Pc6": "required",
+            "Pc7": "required",
+            "MediaId": "",
+            "Pc8": "required"
+        },
+        {
+            "SaveButton": "",
+            "PostTitle": "text",
+            "Pc1": "select",
+            "Pt1": "text",
+            "Status": "select",
+            "Pc3": "text",
+            "Pc4": "text",
+            "Pc5": "text",
+            "PostTypeId": "postType",
+            "Pc6": "date",
+            "Pc7": "date",
+            "MediaId": "media",
+            "Pc8": "select"
+        },
+        {
+            "SaveButton": "",
+            "PostTitle": "string",
+            "Pc1": "string",
+            "Pt1": "string",
+            "Status": "string",
+            "Pc3": "string",
+            "Pc4": "string",
+            "Pc5": "string",
+            "PostTypeId": "number",
+            "Pc6": "string",
+            "Pc7": "string",
+            "MediaId": "number",
+            "Pc8": "string"
+        }
+    ]
+}

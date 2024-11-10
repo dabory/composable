@@ -1,0 +1,58 @@
+{
+    "General": {
+        "PickApi": "theme-setup-pick",
+        "ActApi": "theme-setup-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "SetupName": "설정명*",
+            "SetupCode": "셋업코드*",
+            "SetupType": "설정구분",
+            "Parameter": "파라메터경로",
+            "Component": "컴포넌트경로",
+            "IsOnUse": "사용여부",
+            "IsDefault": "기본설정여부"
+        },
+        {
+            "SaveButton": "left",
+            "SetupName": "left",
+            "SetupCode": "left",
+            "SetupType": "left",
+            "Parameter": "left",
+            "Component": "left",
+            "IsOnUse": "left",
+            "IsDefault": "left"
+        },
+        {
+            "SaveButton": "0",
+            "SetupName": "20",
+            "SetupCode": "100",
+            "SetupType": "100",
+            "Parameter": "100",
+            "Component": "100",
+            "IsOnUse": "0",
+            "IsDefault": "0"
+        },
+        {
+            "SaveButton": "",
+            "SetupName": "required",
+            "SetupCode": "required",
+            "SetupType": "",
+            "Parameter": "required",
+            "Component": "required",
+            "IsOnUse": "",
+            "IsDefault": ""
+        }
+    ]
+}

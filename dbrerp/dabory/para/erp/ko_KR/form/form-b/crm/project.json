@@ -1,0 +1,140 @@
+{
+    "General": {
+        "Title": "프로젝트 등록",
+        "PickApi": "slip-form-book",
+        "ActApi": "project-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "crm/project"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "delete",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "BodySelectOptions": [
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "품목 추가",
+            "AutoSlipNo": "프로젝트번호(자동채번)*",
+            "Date": "프로젝트일자*",
+            "ProjectName": "프로젝트명*",
+            "ContractAmt": "계약금액",
+            "PreCostAmt": "예상비용금액",
+            "Buyer": "고객*",
+            "BuyerContact": "고객담당자*",
+            "VatType": "부가세*",
+            "VatTypeRate": "부가세율",
+            "Status": "상황",
+            "Delivery": "납품기한",
+            "PayTerms": "지불조건",
+            "Destination": "납품장소",
+            "IsClosed": "종결",
+            "SgroupName": "영업부서*",
+            "UserName": "입력사용자*",
+            "Remarks": "비고"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "AutoSlipNo": "left",
+            "Date": "left",
+            "ProjectName": "left",
+            "ContractAmt": "decimal('purch_prc')",
+            "PreCostAmt": "decimal('purch_prc')",
+            "Buyer": "left",
+            "BuyerContact": "left",
+            "VatType": "left",
+            "VatTypeRate": "left",
+            "Status": "left",
+            "Delivery": "left",
+            "PayTerms": "left",
+            "Destination": "left",
+            "IsClosed": "left",
+            "SgroupName": "left",
+            "UserName": "left",
+            "Remarks": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "100",
+            "AutoSlipNo": "100",
+            "Date": "100",
+            "ProjectName": "100",
+            "ContractAmt": "100",
+            "PreCostAmt": "100",
+            "Buyer": "100",
+            "BuyerContact": "100",
+            "VatType": "100",
+            "VatTypeRate": "100",
+            "Status": "100",
+            "Delivery": "100",
+            "PayTerms": "100",
+            "Destination": "100",
+            "IsClosed": "0",
+            "SgroupName": "100",
+            "UserName": "100",
+            "Remarks": "0"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "AutoSlipNo": "required",
+            "Date": "required",
+            "ProjectName": "required",
+            "ContractAmt": "",
+            "PreCostAmt": "",
+            "Buyer": "required",
+            "BuyerContact": "required",
+            "VatType": "required",
+            "VatTypeRate": "",
+            "Status": "",
+            "Delivery": "",
+            "PayTerms": "",
+            "Destination": "",
+            "IsClosed": "",
+            "SgroupName": "required",
+            "UserName": "required",
+            "Remarks": ""
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center"
+        }
+    ],
+    "FooterVars": [
+        {
+            "StorageName": "창고",
+            "BranchName": "점포명",
+            "QtyTotal": "수량 합계",
+            "SupplyTotal": "공급가액 소계",
+            "VatTotal": "부가세액 소계",
+            "SumTotal": "합계액 소계"
+        }
+    ]
+}

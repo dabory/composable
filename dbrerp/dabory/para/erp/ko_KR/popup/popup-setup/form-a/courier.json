@@ -1,0 +1,24 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "Name": "배송업체명",
+            "TrackUrl": "배송추적URL"
+        },
+        {
+            "SaveButton": "center",
+            "Name": "center",
+            "AccountNo": "center"
+        }
+    ]
+}

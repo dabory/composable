@@ -1,0 +1,88 @@
+{
+    "General": {
+        "PickApi": "igroup-pick",
+        "ActApi": "igroup-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "0",
+            "Caption": "status('igroup','0')"
+        },
+        {
+            "Value": "1",
+            "Caption": "status('igroup','1')"
+        },
+        {
+            "Value": "2",
+            "Caption": "status('igroup','2')"
+        }
+    ],
+
+    "SortOptions": [
+        {
+            "Value": "0",
+            "Caption": "sort('igroup','0')"
+        },
+        {
+            "Value": "1",
+            "Caption": "sort('igroup','1')"
+        },
+        {
+            "Value": "2",
+            "Caption": "sort('igroup','2')"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "IgroupCode": "구분 코드*",
+            "IgroupName": "구분 명*",
+            "IgroupSlug": "구분 슬러그*",
+            "MediaId": "미디어 ID",
+            "Status": "상태",
+            "Sort": "분류",
+            "IsEndLevel": "마지막(말단) 레벨 / 경유 레벨"
+        },
+        {
+            "SaveButton": "left",
+            "IgroupCode": "left",
+            "IgroupName": "left",
+            "IgroupSlug": "left",
+            "MediaId": "left",
+            "Status": "left",
+            "Sort": "left",
+            "IsEndLevel": "left"
+        },
+        {
+            "SaveButton": "0",
+            "IgroupCode": "10",
+            "IgroupName": "100",
+            "IgroupSlug": "100",
+            "MediaId": "100",
+            "Status": "100",
+            "Sort": "100",
+            "IsEndLevel": "100"
+        },
+        {
+            "SaveButton": "",
+            "IgroupCode": "required",
+            "IgroupName": "required",
+            "IgroupSlug": "required",
+            "MediaId": "",
+            "Status": "",
+            "Sort": "",
+            "IsEndLevel": ""
+        }
+    ]
+}

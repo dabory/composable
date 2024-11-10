@@ -1,0 +1,43 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://cdn.jsdelivr.net/gh/leetaewook/gmarket-sans-dynamic-subset/GmarketSans.css");
+
+html, body {width:100%; height:100%; margin:0; padding:0; font-size:16px;}
+body * {margin:0; padding:0; font-family: "Pretendard Variable", Pretendard, sans-serif;  color:#666; box-sizing:border-box;}
+ul, ol, li, dl, dt, dd {margin:0; padding:0; list-style:none;}
+img {display:inline-block; max-width:100%; vertical-align:middle;}
+
+/*공사중*/
+.construct-part {display:flex; align-items:center; justify-content:center; width:100%; height:100%; }
+.construct-part .conts_wrap {display:flex; width:100%; max-width:1200px; margin:0 auto; }
+.construct-part .img_box {margin-right:4.25rem; padding-top:10px;}
+.construct-part .conts_box > *:not(dl) {padding-left:5px;}
+.construct-part .brand {display:flex; align-items:center; gap:4px; margin-bottom:3.75rem; color:#191919; font-weight:500;}
+.construct-part .title {color:#121b92; font-size:1.125rem; font-weight:500;}
+.construct-part .title h1 {margin-left:-3px; margin-bottom:6px; font-family: 'Gmarket Sans', sans-serif; font-size:52px; font-weight:700; color:inherit; letter-spacing:-1.5px;}
+.construct-part dl {display:flex; flex-wrap:wrap; width:100%; max-width:360px; margin:40px 0 20px; padding:calc(1.25rem - 5px) 1.25rem; background:#f4f4fa; border-radius:20px;}
+.construct-part dt {position:relative; width:90px; padding:5px 0; padding-left: 10px; color:#191919;}
+.construct-part dt:before {content:""; position:absolute; top:12px; left:0;  width:4px; height:4px; background:#191919; border-radius:50px;}
+.construct-part dd {width:calc(100% - 90px); padding:5px 0;}
+.construct-part .comment {padding-left:3px; line-height:1.3;}
+.construct-part .btm {margin:2.5rem 0; padding:1rem 4px; border-top:1px solid #ddd; font-size:0.875rem; color:#787878}
+.construct-part .btm img {margin-left:6px;}
+
+@media (max-width:1200px) {
+	.construct-part .conts_wrap {padding-left:20px; padding-right:20px;}
+}
+
+@media (max-width:768px) {
+	html, body {font-size:14px;}
+
+	.construct-part .conts_wrap {padding-left:24px; padding-right:24px;}
+	.construct-part {align-items:flex-start; }
+	.construct-part .conts_wrap {flex-direction:column; max-width:none;}
+	.construct-part .img_box {margin:0; padding:80px 0 20px;text-align:center;}
+	.construct-part .img_box img {max-width:90%; margin:0 auto;}
+	.construct-part .conts_box > *:not(dl) {padding-left:0;}
+	.construct-part .brand {position:absolute; top:20px; left:20px;}
+	.construct-part .title h1 {font-size:30px;}
+	.construct-part dl {width:100%; max-width:none; margin:20px 0; border-radius:10px;}
+	.construct-part dt {width:80px;}
+	.construct-part dd {width:calc(100% - 80px);}
+}

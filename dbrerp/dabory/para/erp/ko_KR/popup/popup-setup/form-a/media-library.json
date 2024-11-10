@@ -1,0 +1,67 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "ThumbSize": "썸네일 크기(관리자 리스트)",
+            "IsCutThumbImage": "지정 크기로 썸내일 축소   (미지정시 너비에 맞추어 비례)",
+            "MiddleSize": "최대 중간 크기(갤러리)",
+            "BigSize": "최대 큰 크기(상세페이지 메인이미지)",
+            "Width": "너비",
+            "Height": "높이",
+            "IsYearMonthFolder": "*년월 폴더",
+            "IsYearMonthDayFolder": "*년월일 폴더",
+            "SubDir": "서브폴더 추가",
+            "FileUpload": "파일 업로드 할 때",
+
+            "TabButton1": "기본",
+            "TabButton2": "커스텀1",
+            "TabButton3": "커스텀2",
+
+            "Ud1Size": "UD1 크기",
+            "Ud2Size": "UD2 크기",
+            "Ud3Size": "UD3 크기",
+            "Ud4Size": "UD4 크기",
+
+            "Ud5Size": "UD5 크기",
+            "Ud6Size": "UD6 크기",
+            "Ud7Size": "UD7 크기",
+            "Ud8Size": "UD8 크기"
+        },
+        {
+            "SaveButton": "center",
+            "ThumbSize": "right",
+            "IsCutThumbImage": "center",
+            "MiddleSize": "center",
+            "BigSize": "center",
+            "Width": "center",
+            "Height": "center",
+            "IsYearMonthFolder": "center",
+            "IsYearMonthDayFolder": "center",
+            "SubDir": "center",
+
+            "TabButton1": "center",
+            "TabButton2": "center",
+            "TabButton3": "center",
+
+            "Ud1Size": "center",
+            "Ud2Size": "center",
+            "Ud3Size": "center",
+            "Ud4Size": "center",
+
+            "Ud5Size": "center",
+            "Ud6Size": "center",
+            "Ud7Size": "center",
+            "Ud8Size": "center"
+        }
+    ]
+}

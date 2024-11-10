@@ -1,0 +1,61 @@
+{
+    "General": {
+        "Title": "월별 재정산(마감)",
+        "ActApi": "monthly-settle"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "복사"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Title, ListVars[1]-Format, ListVars[2]-MaxLength, ListVars[3]-Required",
+    "FormVars": [
+        {
+            "ReCalulationButton": "재정산 실행",
+            "IsBalBuyer": "매출 원장 재정산",
+            "IsBalSupplier": "매입 원장 재정산",
+            "IsBalItem": "수불 원장 재정산",
+            "IsBalReward": "적립금 원장 재정산",
+            "IsBalCredit": "충전금 원장 재정산",
+            "YyyyMm": "정산년월"
+        },
+        {
+            "ReCalulationButton": "",
+            "IsBalBuyer": "",
+            "IsBalSupplier": "",
+            "IsBalItem": "",
+            "IsBalReward": "",
+            "IsBalCredit": "",
+            "YyyyMm": ""
+        },
+        {
+            "ReCalulationButton": "0",
+            "IsBalBuyer": "0",
+            "IsBalSupplier": "0",
+            "IsBalItem": "0",
+            "IsBalReward": "0",
+            "IsBalCredit": "0",
+            "YyyyMm": ""
+        },
+        {
+            "ReCalulationButton": "",
+            "IsBalBuyer": "",
+            "IsBalSupplier": "",
+            "IsBalItem": "",
+            "IsBalReward": "",
+            "IsBalCredit": "",
+            "YyyyMm": "required"
+        }
+    ]
+}

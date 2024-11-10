@@ -1,0 +1,14 @@
+{
+    "FormVars": [
+        {
+            "Home": "홈",
+            "ClearCache": "전체 캐시삭제",
+            "Logout": "로그아웃",
+            "ShortcutIn": "메뉴추가",
+            "ShortcutOut": "메뉴빼기",
+            "SelfManual": "매뉴얼보기",
+            "OpenMenuNewTab": "새탭에 메뉴열기",
+            "IsRun": "실행"
+        }
+    ]
+}

@@ -1,0 +1,107 @@
+{
+    "General": {
+        "PickApi": "main-menu-pick",
+        "ActApi": "main-menu-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "MenuCode": "메뉴코드*",
+            "MenuName": "메뉴명",
+            "PageUri": "페이지 URI",
+            "LangType": "언어구분",
+            "LinkType": "링크 타입",
+            "DirectInput": "종류 직접입력",
+            "TypeCode": "타입 코드",
+            "Sort": "종류",
+            "Status": "상태",
+            "Icon": "지정아이콘",
+            "IsSkipped": "메뉴표시 누락",
+            "IsTgtBlank": "target=_blank 인가",
+            "IsOffPc": "PC에서누락",
+            "IsOffMobile": "Mobile에서누락",
+            "IsOffTablet": "테블릿에서누락",
+            "IsLoginOnly": "로그인경우만",
+            "IsLogoutOnly": "로그아웃경우만",
+            "CustomVar": "커스터마이징 변수",
+            "TabbedMenuHash" : "탭메뉴해쉬"
+        },
+        {
+            "SaveButton": "left",
+            "MenuCode": "left",
+            "MenuName": "left",
+            "PageUri": "left",
+            "TaxoCode": "left",
+            "LangType": "left",
+            "LinkType": "left",
+            "DirectInput": "left",
+            "TypeCode": "left",
+            "Sort": "left",
+            "Status": "left",
+            "Icon": "left",
+            "IsSkipped": "left",
+            "IsTgtBlank": "left",
+            "IsOffPc": "left",
+            "IsOffMobile": "left",
+            "IsOffTablet": "left",
+            "IsLoginOnly": "left",
+            "IsLogoutOnly": "left",
+            "CustomVar": "left",
+            "TabbedMenuHash" : "left"
+        },
+        {
+            "SaveButton": "0",
+            "MenuCode": "10",
+            "MenuName": "100",
+            "PageUri": "100",
+            "LangType": "500",
+            "LinkType": "100",
+            "DirectInput": "100",
+            "TypeCode": "191",
+            "Sort": "100",
+            "Status": "100",
+            "Icon": "69",
+            "IsSkipped": "0",
+            "IsTgtBlank": "0",
+            "IsOffPc": "0",
+            "IsOffMobile": "0",
+            "IsOffTablet": "0",
+            "IsLoginOnly": "0",
+            "IsLogoutOnly": "0",
+            "CustomVar": "500",
+            "TabbedMenuHash": "500"
+        },
+        {
+            "SaveButton": "",
+            "MenuCode": "required",
+            "MenuName": "",
+            "PageUri": "",
+            "LangType": "",
+            "LinkType": "",
+            "DirectInput": "",
+            "TypeCode": "",
+            "Sort": "",
+            "Status": "",
+            "Icon": "",
+            "IsSkipped": "",
+            "IsTgtBlank": "",
+            "IsOffPc": "",
+            "IsOffMobile": "",
+            "IsOffTablet": "",
+            "IsLoginOnly": "",
+            "IsLogoutOnly": "",
+            "CustomVar": "",
+            "TabbedMenuHash": ""
+        }
+    ]
+}

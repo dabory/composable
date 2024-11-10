@@ -1,0 +1,29 @@
+{
+    "General": {
+        "Title": "프로세스 모니터링",
+        "PickApi": "-pick",
+        "ActApi": "-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "//175.126.146.153:3000/d/jRDq7MJ7z/cpu?var-user=root|qmaill&kiosk=tv&orgId=1&refresh=5s&from=now-1h&to=now",
+            "Caption": "CPU / Network"
+        },
+        {
+            "Value": "//175.126.146.153:3000/d/WsJtbV1nk/traffic?var-user=root|qmaill&kiosk=tv",
+            "Caption": "Traffix Rx / Tx"
+        },
+        {
+            "Value": "//175.126.146.153:3000/d/SS56J41nk/mem?kiosk=tv",
+            "Caption": "Memory / Disk"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-Caption",
+    "FormVars": [
+        {
+            "RenewButton" : "새로고침"
+        }
+    ]
+}

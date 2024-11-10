@@ -1,0 +1,40 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "RequestUrl": "RequestUrl",
+            "Key": "Key",
+            "UserId": "UserId",
+            "Sender": "Sender",
+            "TestReceiver": "TestReceiver",
+            "TestModeYn": "TestModeYn",
+            "SmsPrice": "SmsPrice",
+            "LmsPrice": "LmsPrice",
+            "MmsPrice": "MmsPrice",
+            "ReserveMinuteLimit": "ReserveMinuteLimit"
+        },
+        {
+            "SaveButton": "center",
+            "RequestUrl": "center",
+            "Key": "center",
+            "UserId": "center",
+            "Sender": "center",
+            "TestReceiver": "center",
+            "TestModeYn": "center",
+            "SmsPrice": "decimal('sales_prc')",
+            "LmsPrice": "decimal('sales_prc')",
+            "MmsPrice": "decimal('sales_prc')",
+            "ReserveMinuteLimit": "center"
+        }
+    ]
+}

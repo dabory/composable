@@ -1,0 +1,314 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "주문 통합 리스트(팝업필터)",
+        "PageApi": "list-type1-page",
+        "ActApi": "sorder-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "shop-order/sorder-pro-total-popfil",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "sorder_date"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "dummy",
+            "Caption": "조회 조건 설정",
+            "Component": "erp::popup-form1.form-filter.shop-order.sorder-pro-total-popfil",
+            "Parameter": "/popup/popup-form1/form-filter/shop-order/sorder-pro-total-popfil"
+        },
+        {
+            "Value": "clear-all-filter",
+            "Caption": "입력값 리셋"
+        },
+        {
+            "Value": "pdf-report",
+            "Caption": "PDF 화일 다운로드"
+        },
+        {
+            "Value": "modified-report",
+            "Caption": "변형 서식"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "",
+            "To": "",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "==조회 선택=="
+        },
+        {
+            "Value": "item_name",
+            "Caption": "품명"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "status('sorder','')"
+        },
+        {
+            "Value": "mx.status='0'",
+            "Caption": "status('sorder','0')"
+        },
+        {
+            "Value": "mx.status='1'",
+            "Caption": "status('sorder','1')"
+        },
+        {
+            "Value": "mx.status='2'",
+            "Caption": "status('sorder','2')"
+        },
+        {
+            "Value": "mx.status='3'",
+            "Caption": "status('sorder','3')"
+        },
+        {
+            "Value": "mx.status='4'",
+            "Caption": "status('sorder','4')"
+        },
+        {
+            "Value": "mx.status='5'",
+            "Caption": "status('sorder','5')"
+        },
+        {
+            "Value": "mx.status='F' or mx.status='C' or mx.status='R' or mx.status='E' or mx.status='M'",
+            "Caption": "=클레임전체="
+        },
+        {
+            "Value": "mx.status='F'",
+            "Caption": "status('sorder','F')"
+        },
+        {
+            "Value": "mx.status='C'",
+            "Caption": "status('sorder','C')"
+        },
+        {
+            "Value": "mx.status='R'",
+            "Caption": "status('sorder','R')"
+        },
+        {
+            "Value": "mx.status='E'",
+            "Caption": "status('sorder','E')"
+        },
+        {
+            "Value": "mx.status='M'",
+            "Caption": "status('sorder','M')"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "주문 상세 보기",
+            "Component": "erp::list-type.list1-form",
+            "Parameter": "/popup/popup-list1/sorder-pro-no-total"
+        }
+    ],
+
+    "MultiPopupOptions": [
+
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "sorder_no desc",
+            "Caption": "수주 번호 역순"
+        },
+        {
+            "Value": "sorder_no asc",
+            "Caption": "수주 번호 정렬순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "ThumbContainerVars": {
+        "ListWidth": 50,
+        "ListHeight": 50
+    },
+
+    "DisplayVars": {
+        "IsntPagination": true,
+        "IsAddTotalLine": false,
+        "IsExcelColumn": false,
+        "IsSplitColumn" : true,
+        "IsDownloadList": false,
+        "IsShowOnlyClosed": false,
+        "IsListFirst": false,
+        "IsSelectPopupHidden": false,
+        "IsC1Popup": "2",
+        "InitLines": 10,
+        "HeadHeight": "1",
+        "BodyHeight": "580"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "주문 번호 | 일자 | 입점사 ",
+            "C2": "상품 코드 | 품명 | 서브명 ",
+            "C3": "사진",
+            "C4": "주문ID | 주문자 | 수취인",
+            "C5": "주문연락 | 수취연락",
+            "C6": "수량 | 금액",
+            "C7": "배송 | 기한 | 택배",
+            "C8": "상태 | 변경일시 | 클레임"
+
+        },
+        {
+            "$Radio": "10",
+            "$Check": "3",
+            "No": "0",
+            "C1": "10",
+            "C2": "23",
+            "C3": "3",
+            "C4": "8",
+            "C5": "7",
+            "C6": "5",
+            "C7": "8",
+            "C8": "8"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "center|^unixtime|^center",
+            "C2": "center|^center|^center",
+            "C3": "$_ThumbNail",
+            "C4": "center|^center|^center",
+            "C5": "center|^center",
+            "C6": "decimal('sales_prc')|^decimal('sales_amt')",
+            "C7": "center",
+            "C8": "status('sorder')|^unixtime|^situation('sorder')"
+        }
+    ]
+}

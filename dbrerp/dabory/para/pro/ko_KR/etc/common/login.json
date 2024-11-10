@@ -1,0 +1,12 @@
+{
+    "FormVars": [
+        {
+            "Welcome": "환영합니다.",
+            "ForgetPassword": "비밀번호 찾기",
+            "Signup": "회원가입",
+            "Login": "로그인",
+            "ClearCache": "캐시삭제",
+            "GoHome": "홈페이지로 이동 ->"
+        }
+    ]
+}

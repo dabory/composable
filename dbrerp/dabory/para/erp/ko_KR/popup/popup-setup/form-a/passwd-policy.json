@@ -1,0 +1,30 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "PolicyDesc": "정책설명",
+            "MinLength": "최소 길이",
+            "IsUpperMixed": "대문자 혼합",
+            "IsSpecialMixed": "특수문자 혼합",
+            "IsProhibitReuse": "이전 패스워드 재사용 금지"
+        },
+        {
+            "SaveButton": "center",
+            "PolicyDesc": "center",
+            "MinLength": "center",
+            "IsUpperMixed": "center",
+            "IsSpecialMixed": "center",
+            "IsProhibitReuse": "center"
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "General": {
+        "Title": "고객 찾기",
+        "PageApi": "company-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "customer",
+        "FilterName": "company_class",
+        "FilterValue": "AA"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "CompanyName": "고객코드(고객명)",
+            "MainContact": "고객실명",
+            "MobileNo": "모바일번호",
+            "TelNo": "전화번호"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "company_name asc",
+            "Caption": "고객명 정렬"
+        },
+        {
+            "Value": "mobile_no asc",
+            "Caption": "모바일 정렬"
+        },
+        {
+            "Value": "tel_no asc",
+            "Caption": "전화번호 정렬"
+        },
+        {
+            "Value": "card_char4 asc",
+            "Caption": "신용카드번호 정렬"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "CompanyName": "고객코드(고객명)",
+            "MainContact": "고객실명",
+            "CgroupName": "고객구분",
+            "MobileNo": "모바일번호",
+            "TelNo": "전화번호",
+            "Email": "이메일",
+            "FullName": "주소",
+            "BirthDate": "생년월일"
+        },
+        {
+            "No": "7",
+            "CompanyName": "15",
+            "MainContact": "15",
+            "CgroupName": "12",
+            "MobileNo": "10",
+            "TelNo": "10",
+            "Email": "15",
+            "FullName": "15",
+            "BirthDate": "10"
+        },
+        {
+            "No": "center",
+            "CompanyName": "left",
+            "MainContact": "left",
+            "CgroupName": "left",
+            "MobileNo": "left",
+            "TelNo": "left",
+            "Email": "left",
+            "FullName": "left",
+            "BirthDate": "left"
+        }
+    ]
+}

@@ -1,0 +1,261 @@
+{
+    "General": {
+        "Title": "배송장 배치 업로드",
+        "PageApi": "list-type1-page",
+        "ActApi": "list-type1-upload"
+    },
+
+    "QueryVars": {
+        "QueryName": "download/shop-order/sorder-bd-ship",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "sorder_date"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "xls-report",
+            "Caption": "(1)엑셀 다운로드"
+        },
+        {
+            "Value": "excel-upload",
+            "Caption": "(2)엑셀 업로드"
+        },
+        {
+            "Value": "dummy",
+            "Caption": "(3)배송장 Batch Upload 처리",
+            "Component": "popup-form1.upload-batch",
+            "Parameter": "/popup/popup-form1/upload-batch/shop-order/sorder-bd-ship"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "주문일자 범위",
+            "DateNavi": "",
+            "Date": "일자",
+            "From": "에서",
+            "To": "까지",
+            "FirstRange": "주문번호",
+            "SecondRange": "고객",
+            "ThirdRange": "품목",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "shp.invoice_no",
+            "Caption": "송장번호"
+        },
+        {
+            "Value": "shp.ship_date",
+            "Caption": "배송일:YyyyMmDd"
+        },
+        {
+            "Value": "shp.courier_code",
+            "Caption": "택배사코드"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "shp.id is null",
+            "Caption": "배송장 미결"
+        },
+        {
+            "Value": "shp.id is not null",
+            "Caption": "배송장 완료"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "sorder_no",
+            "SecondRange": "company_name",
+            "ThirdRange": "item_code",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "slip",
+            "SecondRange": "company",
+            "ThirdRange": "item",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "/search/slip-search/sales/sorder",
+            "SecondRange": "/search/company-search/customer",
+            "ThirdRange": "/search/item-search/fn-goods",
+            "FourthRange": ""
+        }
+    ],
+
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "당일"
+        },
+        {
+            "Value": "yesterday",
+            "Caption": "어제"
+        },
+        {
+            "Value": "week",
+            "Caption": "금주"
+        },
+        {
+            "Value": "last-week",
+            "Caption": "전주"
+        },
+        {
+            "Value": "month",
+            "Caption": "당월"
+        },
+        {
+            "Value": "last-month",
+            "Caption": "전월"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "배송장 배치 입력/수정/삭제",
+            "Component": "popup-form1.form-a.shop.sorder-bd-ship-form",
+            "Parameter": "/popup/popup-form1/form-a/shop/sorder-bd-ship"
+        }
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsRawDownload": true,
+        "IsListFirst" : true,
+        "IsAddTotalLine": false,
+        "IsExcelColumn": true,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "180",
+        "BodyHeight": "570"
+    },
+
+    "OrderByOptions": [
+        {
+            "Value": "mx.menu_code asc",
+            "Caption": "메뉴코드 순서"
+        },
+        {
+            "Value": "mx.menu_code desc",
+            "Caption": "메뉴코드 역순"
+        },
+        {
+            "Value": "mx.menu_lang0 asc",
+            "Caption": "메뉴명 순서"
+        },
+        {
+            "Value": "mx.menu_lang0 desc",
+            "Caption": "메뉴명 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "No": "번호",
+            "C1": "주문번호",
+            "C2": "주문순서",
+            "C3": "품목코드",
+            "C4": "품명",
+            "C5": "서브명",
+            "C6": "수량",
+            "C7": "배송Id",
+            "C8": "배송일",
+            "C9": "택배사코드",
+            "C10": "송장번호",
+            "C11": "종류",
+            "C12": "상황",
+            "C13": "세부내역"
+
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "4",
+            "C1": "8",
+            "C2": "4",
+            "C3": "8",
+            "C4": "20",
+            "C5": "15",
+            "C6": "7",
+            "C7": "7",
+            "C8": "8",
+            "C9": "8",
+            "C10": "12",
+            "C11": "8",
+            "C12": "8",
+            "C13": "8"
+
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "center",
+            "C2": "center",
+            "C3": "left",
+            "C4": "center",
+            "C5": "center",
+            "C6": "decimal('sales_qty')",
+            "C7": "center",
+            "C8": "yy.mm.dd",
+            "C9": "center",
+            "C10": "center",
+            "C11": "sort('sorder-bd-ship')",
+            "C12": "status('sorder-bd-ship')",
+            "C13": "center"
+        }
+    ]
+}

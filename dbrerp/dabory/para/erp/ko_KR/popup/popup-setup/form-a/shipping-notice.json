@@ -1,0 +1,34 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "ShipType": "배송구분",
+            "AvgShipPeriod": "평균배송기간",
+            "ReturnAddress": "보내실 곳",
+            "ReturnPeriod": "반품/교환 가능 기간",
+            "ReturnNotice": "반품/교환 불가능 사유",
+            "Filler1Period": "Filler1Period",
+            "Filler1Notice": "ReturnPeriod"
+        },
+        {
+            "SaveButton": "center",
+            "ShipType": "center",
+            "AvgShipPeriod": "center",
+            "ReturnAddress": "center",
+            "ReturnPeriod": "center",
+            "ReturnNotice": "center",
+            "Filler1Period": "center",
+            "Filler1Notice": "center"
+        }
+    ]
+}

@@ -1,0 +1,285 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "회원 관리 리스트",
+        "PageApi": "list-type1-page",
+        "ActApi": "member-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "myapp:pro/member-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "mx.member_date",
+        "SimpleFilter": "",
+        "ExtractFilter": {
+            "MemberCompanyId": "mc.seller_id"
+        }
+    },
+
+    "HeadSelectOptions": [
+
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "이전 | (오늘지정) | 이후",
+            "Date": "회원등록일",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "팝업 선택(라디오 버튼)",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "email",
+            "Caption": "아이디(이메일)"
+        },
+        {
+            "Value": "nick_name",
+            "Caption": "이름"
+        },
+        {
+            "Value": "ext.mobile_no",
+            "Caption": "전화번호"
+        },
+        {
+            "Value": "status",
+            "Caption": "상태",
+            "Reverse": "status_rev('member')"
+        }
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.status='0'",
+            "Caption": "승인 대기"
+        },
+        {
+            "Value": "mx.status='1'",
+            "Caption": "승인 완료"
+        },
+        {
+            "Value": "mx.status='2'",
+            "Caption": "미승인"
+        },
+        {
+            "Value": "mx.status='3'",
+            "Caption": "승인 취소"
+        },
+        {
+            "Value": "mx.status='4'",
+            "Caption": "회원 차단"
+        },
+        {
+            "Value": "mx.status='5'",
+            "Caption": "휴면 상태"
+        },
+        {
+            "Value": "mx.status='R'",
+            "Caption": "휴면 복원중"
+        },
+        {
+            "Value": "mx.status='9'",
+            "Caption": "탈퇴 회원"
+        }
+
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "등록일자 역순"
+        },
+        {
+            "Value": "mx.created_on asc",
+            "Caption": "등록일자 순서"
+        },
+        {
+            "Value": "mx.email desc",
+            "Caption": "이메일 역순"
+        },
+        {
+            "Value": "mx.email asc",
+            "Caption": "이메일 순서"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst": true,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines": 15,
+        "HeadHeight": "130",
+        "BodyHeight": "570",
+        "InitDateRange" : "all"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "아이디(이메일)",
+            "C2": "닉네임",
+            "C3": "등급",
+            "C4": "이름",
+            "C5": "전화번호",
+            "C6": "상태",
+            "C7": "앱사용여부"
+        },
+        {
+            "$Radio": "2",
+            "$Check": "2",
+            "No": "4",
+            "C1": "10",
+            "C2": "10",
+            "C3": "10",
+            "C4": "10",
+            "C5": "10",
+            "C6": "10",
+            "C7": "10"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "center",
+            "C2": "center",
+            "C3": "sort('member')",
+            "C4": "center",
+            "C5": "center",
+            "C6": "status('member')",
+            "C7": "check"
+        }
+    ]
+}

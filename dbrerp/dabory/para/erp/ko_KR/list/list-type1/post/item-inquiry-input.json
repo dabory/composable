@@ -1,0 +1,212 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "상품문의",
+        "PageApi": "list-type1-page",
+        "ActApi": "list-type1-upload"
+    },
+
+    "QueryVars": {
+        "QueryName": "post/item-inquiry-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "",
+        "SimpleFilter": "mx.post_type_id = 10"
+    },
+
+    "HeadSelectOptions": [
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "",
+            "To": "",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        }
+    ],
+
+    "SimpleSelectOptions": [
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "상품문의 댓글작성",
+            "Component": "popup-form1.form-a.shop.item-inquiry-reply-form",
+            "Parameter": "/popup/popup-form1/form-a/shop/item-inquiry-reply"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "등록일자 역순"
+        },
+        {
+            "Value": "mx.created_on asc",
+            "Caption": "등록일자 순서"
+        },
+        {
+            "Value": "mb.item_code asc",
+            "Caption": "상품 코드 순서"
+        },
+        {
+            "Value": "mb.item_code desc",
+            "Caption": "상품 코드 역순"
+        },
+        {
+            "Value": "mx.item_name asc",
+            "Caption": "품명 순서"
+        },
+        {
+            "Value": "mx.item_name desc",
+            "Caption": "품명 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "ThumbContainerVars": {
+        "ListWidth": 50,
+        "ListHeight": 50
+    },
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsExcelColumn" : false,
+        "IsSplitColumn" : true,
+        "InitLines" : 10,
+        "IsC1Popup": "1",
+        "HeadHeight": "1",
+        "BodyHeight": "700"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "등록일시 | 수정일시",
+            "C2": "샹품코드 | 품명 | 서브명 | 공급/입점사",
+            "C3": "사진",
+            "C4": "상품구분 | 브랜드",
+            "C5": "정가 | 판매가",
+            "C6": "질문제목 | 이메일 ",
+            "C7": "상태"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "No": "3",
+            "C1": "7",
+            "C2": "23",
+            "C3": "3",
+            "C4": "8",
+            "C5": "5",
+            "C6": "8",
+            "C7": "4"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "unixtime|^unixtime",
+            "C2": "center|^center|^center|center",
+            "C3": "$_ThumbNail",
+            "C4": "center|^center",
+            "C5": "decimal('sales_prc')|^decimal('purch_prc')",
+            "C6": "center|^center",
+            "C7": "status('post-item-inquiry')"
+        }
+    ]
+}

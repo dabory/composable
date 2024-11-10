@@ -1,0 +1,29 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "Logo": "eMail용 로고",
+            "Name": "회사명/단체명",
+            "Url": "전송 웹사이트",
+            "Footer": "회사 상세 정보"
+        },
+        {
+            "SaveButton": "center",
+            "Logo": "center",
+            "Name": "center",
+            "Url": "center",
+            "Footer": "center"
+        }
+
+    ]
+}

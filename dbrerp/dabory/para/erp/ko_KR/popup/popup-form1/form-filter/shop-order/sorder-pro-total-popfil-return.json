@@ -1,0 +1,54 @@
+{
+    "DisplayVars": {
+        "SorderStatus": [
+            "C"
+        ],
+        "SorderSituation": [
+            "RA", "RJ"
+        ]
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "Company": "공급/입점사",
+            "OrderSearch": "주문항목",
+            "SorderStatus": "배송유형",
+            "SorderSituation": "배송 클레임 유형",
+            "CargoType": "화물유형",
+            "ShipType": "배송타입",
+            "DelayType": "처리지연"
+        },
+        {
+            "SaveButton": "",
+            "Company": "left",
+            "OrderSearch": "left",
+            "SorderStatus": "left",
+            "SorderSituation": "left",
+            "CargoType": "left",
+            "ShipType": "left",
+            "DelayType": "left"
+        },
+        {
+            "SaveButton": "0",
+            "Company": "6",
+            "OrderSearch": "20",
+            "SorderStatus": "20",
+            "SorderSituation": "20",
+            "CargoType": "20",
+            "ShipType": "20",
+            "DelayType": "20"
+        },
+        {
+            "SaveButton": "",
+            "Company": "",
+            "OrderSearch": "",
+            "SorderStatus": "",
+            "SorderSituation": "",
+            "CargoType": "",
+            "ShipType": "",
+            "DelayType": ""
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "General": {
+        "PickApi": "api23-app-pick",
+        "ActApi": "api23-app-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "Delete",
+            "Parameter": ""
+        }
+    ],
+
+    "SelectOptions": [
+		{
+			"Value": "web",
+			"Caption": "web"
+		},
+        {
+			"Value": "js",
+			"Caption": "js"
+		},
+        {
+			"Value": "native-app",
+			"Caption": "native-app"
+		}
+	],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "Save",
+            "FirstCardTitle": "Api23 Keys",
+            "AppType": "App Type*",
+            "Sort": "Sort*",
+            "OriginUrl": "OriginUrl",
+            "GenerateKeys": "Generate New Api23 Keys",
+            "Api23Key": "Api23Key"
+        },
+        {
+            "SaveButton": "left",
+            "AppType": "left",
+            "Sort": "left",
+            "OriginUrl": "left",
+            "GenerateKeys": "left",
+            "Api23Key": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AppType": "50",
+            "Sort": "50",
+            "OriginUrl": "100",
+            "GenerateKeys": "100",
+            "Api23Key": "100"
+        },
+        {
+            "SaveButton": "",
+            "AppType": "required",
+            "Sort": "required",
+            "OriginUrl": "",
+            "GenerateKeys": "",
+            "Api23Key": ""
+        }
+    ]
+}

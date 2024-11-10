@@ -1,0 +1,66 @@
+{
+	"General": {
+		"Title": "품목 구분 찾기(standard)",
+        "PageApi": "setting-search-page"
+	},
+
+    "QueryVars": {
+		"QueryName": "igroup"
+	},
+
+    "FilterSelectOptions": [
+        {
+            "Value": "bread_crumb",
+            "Caption": "구분경로"
+        },
+        {
+            "Value": "igroup_name",
+            "Caption": "구분명"
+        },
+        {
+            "Value": "igroup_code",
+            "Caption": "구분코드"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+
+        {
+            "Value": "mx.is_end_level='1'",
+            "Caption": "말단 레벨"
+        },
+        {
+            "Value": "mx.is_end_level='0'",
+            "Caption": "경유 레벨"
+        },
+		        {
+            "Value": "",
+            "Caption": "전체"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+	"ListVars": [
+		{
+			"No": "번호",
+			"Code": "구분코드",
+			"Name": "구분 경로",
+			"ThirdField": "구문명(슬러그)",
+			"IsCheck": "말단 레벨"
+		},
+		{
+			"No": "5",
+			"Code": "6",
+			"Name": "20",
+			"ThirdField": "20",
+			"IsCheck": "6"
+		},
+		{
+			"No": "center",
+			"Code": "center",
+			"Name": "left",
+			"ThirdField": "left",
+			"IsCheck": "check"
+		}
+	]
+}

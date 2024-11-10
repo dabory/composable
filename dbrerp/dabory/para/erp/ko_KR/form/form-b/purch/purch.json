@@ -1,0 +1,216 @@
+{
+    "General": {
+        "Title": "매입등록",
+        "PickApi": "slip-form-book",
+        "ActApi": "purch-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "purch/purch"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "save-and-new",
+            "Caption": "저장후 추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "copy-to-another",
+            "Caption": "발주에서 매입으로 복사",
+            "Parameter": "purch/porder-purch"
+        },
+        {
+            "Value": "delete",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "body-copy",
+            "Caption": "발주에서 매입으로 전체 연관복사",
+            "Parameter": "purch/porder-purch"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "품목 일괄 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "항목추가",
+            "AutoSlipNo": "매입번호*(자동채번)",
+            "PurchDate": "매입일자*",
+            "StockDate": "수불일자*",
+            "PorderNo": "연관 발주번호(옵션)",
+            "Status": "상황",
+            "Supplier": "매입업체*",
+            "Contact": "업체담당자",
+            "DealType": "거래구분*",
+            "VatType": "부가세*",
+            "VatTypeRate": "부가세율",
+            "Delivery": "납품기한",
+            "PayTerms": "지불조건",
+            "Destination": "납품장소#",
+            "Column1": "컬럼1#",
+            "Column2": "컬럼2#",
+            "Remarks": "비고",
+            "RefNo": "참고번호",
+            "IsClosed": "발주종결",
+            "OurContact": "발주담당자",
+            "SgroupName": "영업부서*",
+            "UserName": "사용자명*"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "AutoSlipNo": "left",
+            "PurchDate": "left",
+            "StockDate": "left",
+            "PorderNo": "left",
+            "Status": "left",
+            "Supplier": "left",
+            "Contact": "left",
+            "DealType": "left",
+            "VatType": "left",
+            "VatTypeRate": "left",
+            "Delivery": "left",
+            "PayTerms": "left",
+            "Destination": "left",
+            "Column1": "left",
+            "Column2": "left",
+            "Remarks": "left",
+            "RefNo": "left",
+            "IsClosed": "left",
+            "OurContact": "left",
+            "SgroupName": "left",
+            "UserName": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "AutoSlipNo": "20",
+            "PurchDate": "20",
+            "StockDate": "20",
+            "PorderNo": "20",
+            "Status": "20",
+            "Supplier": "20",
+            "Contact": "20",
+            "DealType": "20",
+            "VatType": "20",
+            "VatTypeRate": "20",
+            "Delivery": "20",
+            "PayTerms": "20",
+            "Destination": "20",
+            "Column1": "20",
+            "Column2": "20",
+            "Remarks": "20",
+            "RefNo": "20",
+            "IsClosed": "0",
+            "OurContact": "20",
+            "SgroupName": "20",
+            "UserName": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "AutoSlipNo": "required",
+            "PurchDate": "required",
+            "StockDate": "required",
+            "PorderNo": "",
+            "Status": "",
+            "Supplier": "required",
+            "Contact": "",
+            "DealType": "required",
+            "VatType": "required",
+            "VatTypeRate": "",
+            "Delivery": "",
+            "PayTerms": "",
+            "Destination": "",
+            "Column1": "",
+            "Column2": "",
+            "Remarks": "",
+            "RefNo": "",
+            "IsClosed": "",
+            "OurContact": "",
+            "SgroupName": "required",
+            "UserName": "required"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "",
+            "$Check": "$Check",
+            "ItemCode": "품목코드*",
+            "ItemName": "품명*",
+            "SubName": "서브명#",
+            "CountUnit": "단위#",
+            "PurchQty": "매입수량*",
+            "PurchPrc": "발주단가*",
+            "SupplyAmt": "공급가액*",
+            "VatAmt": "세액*",
+            "SumAmt": "합계금액*",
+            "StdPurchPrc": "표준매입가#",
+            "Ref1": "참고1",
+            "Ref2": "참고2",
+            "PorderMemo": "품목설명(M)"
+        },
+        {
+            "$Radio": "",
+            "$Check": "3",
+            "ItemCode": "10",
+            "ItemName": "30",
+            "SubName": "10",
+            "CountUnit": "5",
+            "PurchQty": "10",
+            "PurchPrc": "10",
+            "SupplyAmt": "10",
+            "VatAmt": "10",
+            "SumAmt": "10",
+            "StdPurchPrc": "10",
+            "Ref1": "15",
+            "Ref2": "15",
+            "PorderMemo": "10"
+        },
+        {
+            "$Radio": "",
+            "$Check": "center",
+            "ItemCode": "left",
+            "ItemName": "left",
+            "SubName": "left",
+            "CountUnit": "center",
+            "PurchQty": "decimal('purch_qty')",
+            "PurchPrc": "decimal('purch_prc')",
+            "SupplyAmt": "decimal('purch_amt')",
+            "VatAmt": "decimal('purch_amt')",
+            "SumAmt": "decimal('purch_amt')",
+            "StdPurchPrc": "decimal('purch_prc')",
+            "Ref1": "right",
+            "Ref2": "right",
+            "PorderMemo": "left"
+        }
+    ],
+    "FooterVars": [
+        {
+            "StorageName": "창고",
+            "BranchName": "점포명",
+            "QtyTotal": "수량 합계",
+            "SupplyTotal": "공급가액 소계",
+            "VatTotal": "부가세액 소계",
+            "SumTotal": "합계액 소계"
+        }
+    ]
+}

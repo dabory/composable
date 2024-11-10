@@ -1,0 +1,37 @@
+.spinner {
+    display: none;
+    margin-right: 5px;
+}
+
+.form-control-feedback i {
+    line-height: unset !important;
+}
+
+.user-signup-verify .agree_check dt:first-of-type {
+    border-top: 1px solid #000;
+}
+
+.user-signup-verify .agree_check dt {
+    padding: 15px 15px;
+    border-bottom: 1px solid #ddd;
+    background: #f9f9f9;
+    color: #212121;
+    font-weight: 500;
+}
+
+.user-signup-verify-form {
+    width: 500px !important;
+}
+
+.user-signup-verify-form .card-body {
+    padding: 30px 40px !important;
+}
+
+.certi-btn {
+    height: 100% !important;
+    line-height: 1 !important;
+    width: 140px !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    font-size: 12px !important;
+}

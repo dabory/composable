@@ -1,0 +1,130 @@
+{
+    "General": {
+        "Title": "프로젝트 조회",
+        "PageApi": "slip-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "crm/project"
+    },
+
+    "//SlipSearchFields": "쿼리를 공통하기 위한 테이블 필드변수들",
+    "SlipSearchFields": {
+        "SlipDateField": "project_date",
+        "SlipNoField": "project_no"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "날짜",
+            "QuerySpeed": "표시속도",
+            "SlipNo": "주문번호",
+            "CompanyName": "매입처명",
+            "ItemCode": "품목코드",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "QuerySpeedOptions": [
+        {
+            "Value": "quick",
+            "Caption": "빠른검색"
+        },
+        {
+            "Value": "normal",
+            "Caption": "일반검색"
+        }
+    ],
+
+    "OrderByOptions": [
+        {
+            "Value": "project_no desc",
+            "Caption": "프로젝트번호 역순"
+        },
+        {
+            "Value": "project_no asc",
+            "Caption": "프로젝트번호 정렬"
+        },
+        {
+            "Value": "company_name asc",
+            "Caption": "업체명 정렬"
+        },
+        {
+            "Value": "company_name desc",
+            "Caption": "업체명 역순"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "SlipNo": "프로젝트번호",
+            "DealCode": "프로젝트명",
+            "Company": "고객(거래업체)",
+            "SetGroup": "담당부서",
+            "Item": "납품장소",
+            "Amt": "합계금액",
+            "Status": "상황",
+            "Ref": "관련정보"
+        },
+        {
+            "No": "6",
+            "SlipNo": "13",
+            "DealCode": "8",
+            "Company": "13",
+            "SetGroup": "13",
+            "Item": "35",
+            "Amt": "10",
+            "Status": "10",
+            "Ref": "10"
+        },
+        {
+            "No": "center",
+            "SlipNo": "center",
+            "DealCode": "left",
+            "Company": "center",
+            "SetGroup": "center",
+            "Item": "left",
+            "Amt": "decimal('purch_amt')",
+            "Status": "status('project')",
+            "Ref": "left"
+        }
+    ]
+}

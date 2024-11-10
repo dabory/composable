@@ -1,0 +1,130 @@
+{
+    "General": {
+        "Title": "SSO App User Manager",
+        "PickApi": "slip-form-book",
+        "ActApi": "sso-app-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "pro:sso/sso_app"
+    },
+
+    "AppTypeOptions": [
+        {
+            "Value": "Web App",
+            "Caption": "Web App"
+        },
+        {
+            "Value": "Desktop App",
+            "Caption": "Desktop App"
+        },
+        {
+            "Value": "Android App",
+            "Caption": "Android App"
+        },
+        {
+            "Value": "iOS App",
+            "Caption": "iOS App"
+        }
+    ],
+
+    "HeadSelectOptions": [
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "multi-delete",
+            "Caption": "품목 일괄 삭제",
+            "Parameter": ""
+        },
+        {
+            "Value": "multi-update",
+            "Caption": "품목 일괄 수정",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "앱 추가",
+            "AutoSlipNo": "앱 번호(자동채번)*",
+            "Date": "일자*",
+            "RedirectURI": "Redirect URI",
+            "AppType": "앱 종류*",
+            "AppName": "앱 이름*",
+            "ClientId": "Client ID*",
+            "ClientSecret": "Client Secret*",
+            "PublicKey": "Public Key"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "AutoSlipNo": "left",
+            "Date": "left",
+            "RedirectURI": "left",
+            "AppType": "left",
+            "AppName": "left",
+            "ClientId": "left",
+            "ClientSecret": "left",
+            "PublicKey": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "AutoSlipNo": "20",
+            "Date": "20",
+            "RedirectURI": "20",
+            "AppType": "20",
+            "AppName": "20",
+            "ClientId": "20",
+            "ClientSecret": "20",
+            "PublicKey": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "AutoSlipNo": "required",
+            "Date": "required disabled",
+            "RedirectURI": "disabled",
+            "AppType": "required disabled",
+            "AppName": "required disabled",
+            "ClientId": "required disabled",
+            "ClientSecret": "required disabled",
+            "PublicKey": "required disabled"
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "IsDiscarded": "DisCarded",
+            "MemberId": "SSOSubId",
+            "AppBase64": "AppBase64#",
+            "Ab64Desc": "Ab64Desc"
+        },
+        {
+            "$Radio": "1",
+            "$Check": "1",
+            "IsDiscarded": "3",
+            "MemberId": "6",
+            "AppBase64": "10",
+            "Ab64Desc": "7"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "IsDiscarded": "center",
+            "MemberId": "left",
+            "AppBase64": "left",
+            "Ab64Desc": "left"
+        }
+    ],
+    "FooterVars": [
+        {
+            "SumTotal": "전체 앱 수"
+        }
+    ]
+}

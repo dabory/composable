@@ -1,0 +1,32 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "IsNewRecAutoSlipNo": "IsNewRecAutoSlipNo",
+            "SlipPrefix": "SlipPrefix",
+            "YymmddFormat": "YymmddFormat",
+            "SerialDigit": "SerialDigit",
+            "IsLastSlipGet": "IsLastSlipGet",
+            "IsAutoSaveHdByItemButton": "IsAutoSaveHdByItemButton"
+        },
+        {
+            "SaveButton": "left",
+            "IsNewRecAutoSlipNo": "left",
+            "SlipPrefix": "left",
+            "YymmddFormat": "left",
+            "SerialDigit": "left",
+            "IsLastSlipGet": "left",
+            "IsAutoSaveHdByItemButton": "left"
+        }
+    ]
+}

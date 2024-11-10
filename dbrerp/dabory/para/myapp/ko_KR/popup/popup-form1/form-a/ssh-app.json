@@ -1,0 +1,130 @@
+{
+    "General": {
+        "PickApi": "sso-app-pick",
+        "ActApi": "sso-app-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "Delete",
+            "Parameter": ""
+        }
+    ],
+
+    "SelectOptions": [
+		{
+			"Value": "Web App",
+			"Caption": "Web App"
+		},
+        {
+			"Value": "Desktop App",
+			"Caption": "Desktop App"
+		},
+        {
+			"Value": "Android App",
+			"Caption": "Android App"
+		},
+        {
+			"Value": "iOS App",
+			"Caption": "iOS App"
+		}
+	],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "③Save",
+            "FirstCardTitle": "Api Keys",
+            "AppType": "App Type*",
+            "AppName": "App Name*",
+            "ClientId": "Client ID",
+            "ClientSecret": "Client Secret",
+            "RedirectURI": "Redirect URI or App Domain URL (without SSO function)*",
+            "UseDaboryApp": "Use Dabory App",
+            "GenerateKeys": "①Generate New Keys",
+            "ExtractKeys": "①_①Extract Keys from the Existing Keys",
+            "PublicKey": "Public Key",
+            "Keypair": "Keypair",
+
+            "SecondCardTitle": "Information to create .env.dabory (You should TEST DB Conn with srdbm2 before this procedure)",
+            "ApiHost": "API Host:Port* ex) http://13.124.2.254:18080  (Do NOT OMIT 'http://' )",
+            "DbHost": "DB Host:Port* ex) localhost:3306 or 13.124.2.254:3306 (do NOT ADD http:// )",
+            "DbUser": "DB User*",
+            "DbPassword": "DB Password*",
+            "DbName": "DB Name*",
+            "Prefix": "",
+            "BeforeBase64" : "BeforeBase64",
+            "CreateBeforeBase64Key": "②Create and Download .env.dabory file =>  !! Make sure Save after Creation"
+        },
+        {
+            "SaveButton": "left",
+            "AppType": "left",
+            "AppName": "left",
+            "ClientId": "left",
+            "ClientSecret": "left",
+            "RedirectURI": "left",
+            "UseDaboryApp": "left",
+            "GenerateKeys": "left",
+            "ExtractKeys": "left",
+            "PublicKey": "left",
+            "Keypair": "left",
+
+            "SecondCardTitle": "left",
+            "ApiHost": "left",
+            "DbHost": "left",
+            "DbUser": "left",
+            "DbPassword": "left",
+            "DbName": "left",
+            "Prefix": "left",
+            "BeforeBase64" : "left",
+            "CreateBeforeBase64Key": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AppType": "20",
+            "AppName": "100",
+            "ClientId": "200",
+            "ClientSecret": "200",
+            "RedirectURI": "200",
+            "UseDaboryApp": "100",
+            "GenerateKeys": "20",
+            "ExtractKeys": "20",
+            "PublicKey": "200",
+            "Keypair": "200",
+
+            "SecondCardTitle": "0",
+            "ApiHost": "1000",
+            "DbHost": "1000",
+            "DbUser": "1000",
+            "DbPassword": "1000",
+            "DbName": "1000",
+            "Prefix": "500",
+            "BeforeBase64" : "0",
+            "CreateBeforeBase64Key": "0"
+        },
+        {
+            "SaveButton": "",
+            "AppType": "required",
+            "AppName": "required",
+            "ClientId": "",
+            "ClientSecret": "",
+            "RedirectURI": "required",
+            "UseDaboryApp": "",
+            "GenerateKeys": "",
+            "ExtractKeys": "",
+            "PublicKey": "",
+            "Keypair": "",
+
+            "SecondCardTitle": "",
+            "ApiHost": "required",
+            "DbHost": "required",
+            "DbUser": "required",
+            "DbPassword": "required",
+            "DbName": "required",
+            "Prefix": "hidden",
+            "BeforeBase64" : "",
+            "CreateBeforeBase64Key": ""
+        }
+    ]
+}

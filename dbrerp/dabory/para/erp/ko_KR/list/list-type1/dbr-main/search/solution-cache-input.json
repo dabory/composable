@@ -1,0 +1,232 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "solution cache",
+        "PageApi": "list-type1-page",
+        "ActApi": "solution-cache-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "dbr-main/solution-cache-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "cache_date"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "일괄 삭제"
+        },
+        {
+            "Value": "clear-all-filter",
+            "Caption": "초기화"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "일자방향(오늘)",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.domain_url",
+            "Caption": "Domain URL"
+        },
+        {
+            "Value": "mx.solution_code",
+            "Caption": "Solution Code"
+        },
+        {
+            "Value": "mx.search_tool",
+            "Caption": "Search Tool"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.status='0'",
+            "Caption": "Waiting"
+        },
+        {
+            "Value": "mx.status='1'",
+            "Caption": "Confirmed"
+        },
+        {
+            "Value": "mx.status='2'",
+            "Caption": "GivingUp"
+        },
+        {
+            "Value": "mx.status='9'",
+            "Caption": "Exception"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "solution cache 입력/수정/삭제",
+            "Component": "popup-form1.form-a.dbr-main.search.solution-cache-form",
+            "Parameter": "/popup/popup-form1/form-a/dbr-main/search/solution-cache"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsExcelColumn" : false,
+        "InitLines" : 15,
+        "HeadHeight": "130",
+        "InitDateRange" : "all",
+        "IsC1Popup": "1",
+        "BodyHeight": "680"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "No",
+            "C1": "해쉬값*",
+            "C2": "로그일자",
+            "C3": "domain url",
+            "C4": "ai code",
+            "C5": "사람이 수정했나 ?",
+            "C6": "solution code",
+            "C7": "read cnt",
+            "C8": "sort",
+            "C9": "status"
+        },
+        {
+            "$Radio": "5",
+            "$Check": "5",
+            "No": "5",
+            "C1": "20",
+            "C2": "15",
+            "C3": "20",
+            "C4": "20",
+            "C5": "15",
+            "C6": "13",
+            "C7": "10",
+            "C8": "10",
+            "C9": "10"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "center",
+            "C3": "center",
+            "C4": "center",
+            "C5": "check",
+            "C6": "center",
+            "C7": "center",
+            "C8": "sort('igroup-cache')",
+            "C9": "status('igroup-cache')"
+        }
+    ]
+}

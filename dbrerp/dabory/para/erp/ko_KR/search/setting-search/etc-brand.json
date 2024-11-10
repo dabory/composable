@@ -1,0 +1,48 @@
+{
+    "General": {
+        "Title": "브랜드 조회",
+        "PageApi": "setting-search-page"
+    },
+    "QueryVars": {
+        "QueryName": "etc-brand"
+    },
+
+    "FilterSelectOptions": [
+        {
+            "Value": "mx.caption",
+            "Caption": "브랜드명"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "mx.select_name = 'brand'",
+            "Caption": "전체"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "Code": "브랜드명",
+            "Name": "사용않음",
+            "ThirdField": "사용않음",
+            "IsCheck": "사용않음"
+        },
+        {
+            "No": "10",
+            "Code": "20",
+            "Name": "0",
+            "ThirdField": "0",
+            "IsCheck": "0"
+        },
+        {
+            "No": "center",
+            "Code": "center",
+            "Name": "center",
+            "ThirdField": "center",
+            "IsCheck": "center"
+        }
+    ]
+}

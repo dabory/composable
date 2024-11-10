@@ -1,0 +1,33 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "GuestApp": "Guest App",
+            "ActiveMonth": "Active Month",
+            "ActiveNoticeDays": "Active Notice Days",
+            "FinishMonth": "Finish Month",
+            "FinishNoticeDays": "Finish Notice Days",
+            "NoticeIntervalDays": "Notice Interval Days"
+        },
+        {
+            "SaveButton": "center",
+            "GuestApp": "center",
+            "ActiveMonth": "center",
+            "ActiveNoticeDays": "center",
+            "FinishMonth": "center",
+            "FinishNoticeDays": "center",
+            "NoticeIntervalDays": "center"
+        }
+
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "General": {
+        "PickApi": "time-sales-pick",
+        "ActApi": "time-sales-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "TimeSalesNo": "타임세일번호*",
+            "SalesDate": "입력일자",
+            "ItemId": "품목ID",
+            "TimePrice": "할인가격",
+            "StartOn": "타임세일 시작일시",
+            "EndOn": "타임세일 종료일시",
+            "Status": "표시않음",
+            "MainPageOn": "메인노출"
+        },
+        {
+            "SaveButton": "left",
+            "TimeSalesNo": "left",
+            "SalesDate": "left",
+            "ItemId": "left",
+            "TimePrice": "left",
+            "StartOn": "left",
+            "EndOn": "left",
+            "Status": "left",
+            "MainPageOn": "left"
+        },
+        {
+            "SaveButton": "0",
+            "TimeSalesNo": "10",
+            "SalesDate": "100",
+            "ItemId": "100",
+            "TimePrice": "1000",
+            "StartOn": "0",
+            "EndOn": "0",
+            "Status": "0",
+            "MainPageOn": "0"
+        },
+        {
+            "SaveButton": "",
+            "TimeSalesNo": "required",
+            "SalesDate": "",
+            "ItemId": "",
+            "TimePrice": "",
+            "StartOn": "",
+            "EndOn": "",
+            "Status": "",
+            "MainPageOn": ""
+        }
+    ]
+}

@@ -1,0 +1,107 @@
+{
+    "//popup-form1-form-p": "Form Process",
+
+    "General": {
+        "PageApi": "func-type1-proc"
+    },
+
+    "FuncVars": {
+        "FuncName": "settlement",
+        "FilterDate": "pquote_date"
+    },
+
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-format",
+    "FormVars": [
+        {
+            "ExecuteButton": "실행",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "날짜",
+            "From": "부터",
+            "To": "까지",
+
+            "FirstRange": "범위1",
+            "SecondRange": "범위2",
+            "ThirdRange": "범위3",
+            "FourthRange": "",
+
+            "IsFirstCheck": "체크1",
+            "IsSecondCheck": "체크2",
+            "IsThirdCheck": "체크3",
+            "IsFourthCheck": "체크4",
+
+            "FirstSelect": "선택1",
+            "SecondSelect": "선택2",
+            "ThirdCSelect": "선택3",
+            "FourthSelect": "선택4"
+        }
+
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "slip_no",
+            "SecondRange": "company_name",
+            "ThirdRange": "item_code",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "slip",
+            "SecondRange": "company",
+            "ThirdRange": "item",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "/search/slip-search/acc-slip",
+            "SecondRange": "/search/company-search/supplier",
+            "ThirdRange": "/search/item-search/supplier",
+            "FourthRange": ""
+        }
+    ],
+
+    "DisplayVars": {
+        "IsFirstCheck": true,
+        "IsSecondCheck": true,
+        "IsThirdCheck": true,
+        "IsFourthCheck": true,
+
+        "FirstSelect": "0",
+        "SecondSelect": "0",
+        "ThirdCSelect": "0",
+        "FourthSelect": "0"
+    }
+}

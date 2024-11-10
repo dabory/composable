@@ -1,0 +1,220 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+      "Title": "업체조회",
+      "PageApi": "list-type1-page",
+      "ActApi": "list-type1-upload"
+    },
+
+    "QueryVars": {
+      "QueryName": "company-input",
+      "FilterName": "",
+      "FilterValue": "",
+      "SimpleFilter": ""
+    },
+    "HeadSelectOptions": [
+      {
+        "Value": "new",
+        "Caption": "추가"
+      },
+      {
+        "Value": "multi-delete",
+        "Caption": "일괄 삭제"
+      }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+      {
+        "ListButton": "조회",
+        "DateRange": "일자범위",
+              "DateNavi": "",
+        "Date": "",
+        "From": "부터",
+        "To": "까지",
+        "FirstRange": "",
+        "SecondRange": "",
+        "ThirdRange": "",
+        "FourthRange": "",
+        "AddTotalLine": "",
+        "SelectPopup": "",
+        "MultiPopup": "",
+        "ChartPopup": "",
+        "DownloadList": "",
+        "ShowOnlyClosed": "",
+        "Balance": "",
+        "OrderBy": "표시 순서",
+        "FilterOption": "조건조회",
+        "SimpleOption": "카테고리 지정"
+      }
+    ],
+
+    "FilterSelectOptions": [
+      {
+        "Value": "",
+        "Caption": "=검색 조건="
+      },
+      {
+        "Value": "",
+        "Caption": "메뉴코드"
+      }
+    ],
+
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "온라인 게시"
+        },
+        {
+            "Value": "",
+            "Caption": "온라인 누락"
+        },
+        {
+            "Value": "",
+            "Caption": "전체"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+      {
+        "FirstRange": "",
+        "SecondRange": "",
+        "ThirdRange": "",
+        "FourthRange": ""
+      },
+      {
+        "FirstRange": "",
+        "SecondRange": "",
+        "ThirdRange": "",
+        "FourthRange": ""
+      },
+      {
+        "FirstRange": "",
+        "SecondRange": "",
+        "ThirdRange": "",
+        "FourthRange": ""
+      }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+      {
+        "Value": "day",
+        "Caption": "일"
+      },
+      {
+        "Value": "week",
+        "Caption": "주"
+      },
+      {
+        "Value": "month",
+        "Caption": "월"
+      },
+      {
+        "Value": "quarterly",
+        "Caption": "분기"
+      },
+      {
+        "Value": "semiannual",
+        "Caption": "반기"
+      },
+      {
+        "Value": "year",
+        "Caption": "년"
+      },
+      {
+        "Value": "all",
+        "Caption": "전체"
+      }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "업체 출력(새탭)",
+            "Component": "",
+            "Parameter": "",
+            "TabbedMenuHash": "4f8b2accfc78fd2889adb860692136e8"
+        }
+    ],
+
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+      {
+        "Value": "",
+        "Caption": "상품 코드 순서"
+      },
+      {
+        "Value": "",
+        "Caption": "상품 코드 역순"
+      }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+      {
+        "Value": "",
+        "Caption": "전체 보기"
+      },
+      {
+        "Value": "c10 > 0",
+        "Caption": "잔량있는 것만"
+      }
+    ],
+
+    "DisplayVars": {
+      "IsSimpleSelectPage": true,
+      "IsListFirst": true,
+      "IsExcelColumn": true,
+      "InitLines": 15,
+      "HeadHeight": "130",
+      "IsC1Popup": "3",
+      "BodyHeight": "570"
+    },
+
+    "//Theme": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+          {
+              "$Radio": "$Radio",
+              "$Check": "$Check",
+              "No": "번호",
+              "C1": "업체명",
+              "C2": "담당자",
+              "C3": "업체구분",
+              "C4": "모바일번호",
+              "C5": "전화번호",
+              "C6": "이메일",
+              "C7": "상호",
+              "C8": "업체번호"
+          },
+          {
+              "$Radio": "3",
+              "$Check": "3",
+              "No": "3",
+              "C1": "5",
+              "C2": "5",
+              "C3": "10",
+              "C4": "5",
+              "C5": "6",
+              "C6": "6",
+              "C7": "6",
+              "C8": "6"
+          },
+          {
+              "$Radio": "center",
+              "$Check": "center",
+              "No": "center",
+              "C1": "left",
+              "C2": "left",
+              "C3": "left",
+              "C4": "left",
+              "C5": "left",
+              "C6": "left",
+              "C7": "left",
+              "C8": "left"
+          }
+      ]
+  }

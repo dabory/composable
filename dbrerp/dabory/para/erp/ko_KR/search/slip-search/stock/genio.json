@@ -1,0 +1,137 @@
+{
+    "General": {
+        "Title": "재고 변경 조회",
+        "PageApi": "slip-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "stock/genio"
+    },
+
+    "//SlipSearchFields": "쿼리를 공통하기 위한 테이블 필드변수들",
+    "SlipSearchFields": {
+        "SlipDateField": "genio_date",
+        "SlipNoField": "genio_no"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "DateRange": "",
+            "DateNavi": "일자방향(오늘)",
+            "Date": "날짜",
+            "QuerySpeed": "조회 방법",
+            "SlipNo": "재고 변경번호",
+            "CompanyName": "거래 업체명",
+            "ItemCode": "품목코드",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "QuerySpeedOptions": [
+        {
+            "Value": "normal",
+            "Caption": "일반 조회"
+        },
+        {
+            "Value": "detailed",
+            "Caption": "품목 조회"
+        }
+    ],
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "genio_no desc",
+            "Caption": "재고 변경번호 역순"
+        },
+        {
+            "Value": "genio_no asc",
+            "Caption": "재고 변경번호 정렬"
+        },
+        {
+            "Value": "company_name asc",
+            "Caption": "거래업체명 정렬"
+        },
+        {
+            "Value": "company_name desc",
+            "Caption": "거래업체명 역순"
+        },
+        {
+            "Value": "item_code asc",
+            "Caption": "품목코드 정렬"
+        },
+        {
+            "Value": "item_code desc",
+            "Caption": "품목코드 역순"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "SlipNo": "재고 변경번호",
+            "DealCode": "거래구분",
+            "Company": "거래업체",
+            "SetGroup": "담당부서",
+            "Item": "대표품목",
+            "Amt": "합계 금액",
+            "Status": "상황",
+            "Ref": "관련정보"
+        },
+        {
+            "No": "6",
+            "SlipNo": "10",
+            "DealCode": "13",
+            "Company": "16",
+            "SetGroup": "10",
+            "Item": "35",
+            "Amt": "10",
+            "Status": "10",
+            "Ref": "10"
+        },
+        {
+            "No": "center",
+            "SlipNo": "center",
+            "DealCode": "center",
+            "Company": "left",
+            "SetGroup": "left",
+            "Item": "left",
+            "Amt": "decimal('purch_amt')",
+            "Status": "status('genio')",
+            "Ref": "center"
+        }
+    ]
+}

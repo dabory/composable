@@ -1,0 +1,278 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "공지 리스트",
+        "PageApi": "list-type1-page",
+        "ActApi": "notice-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "notice-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "신규 등록"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "공지 삭제"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "팝업 선택(라디오 버튼)",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "mx.subject",
+            "Caption": "제목"
+        },
+        {
+            "Value": "users.name",
+            "Caption": "등록자"
+        },
+        {
+            "Value": "mx.notice_date",
+            "Caption": "등록일자"
+        },
+        {
+            "Value": "mx.status",
+            "Caption": "상태"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "공지 입력/수정/삭제",
+            "Component": "popup-form1.form-a.notice-form",
+            "Parameter": "/popup/popup-form1/form-a/notice"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "공지일자 역순"
+        },
+        {
+            "Value": "mx.created_on asc",
+            "Caption": "공지일자 순서"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "80",
+        "BodyHeight": "570"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "제목",
+            "C2": "등록일시",
+            "C3": "등록자",
+            "C4": "상황",
+            "C5": "",
+            "C6": "",
+            "C7": "",
+            "C8": "",
+            "C9": "",
+            "C10": "",
+            "C11": "",
+            "C12": "",
+            "C13": "",
+            "C14": "",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "2",
+            "$Check": "2",
+            "No": "2",
+            "C1": "15",
+            "C2": "4",
+            "C3": "5",
+            "C4": "3",
+            "C5": "",
+            "C6": "",
+            "C7": "",
+            "C8": "",
+            "C9": "",
+            "C10": "",
+            "C11": "",
+            "C12": "",
+            "C13": "",
+            "C14": "",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "unixtime",
+            "C3": "center",
+            "C4": "status('post-notice')",
+            "C5": "",
+            "C6": "",
+            "C7": "",
+            "C8": "",
+            "C9": "",
+            "C10": "",
+            "C11": "",
+            "C12": "",
+            "C13": "",
+            "C14": "",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        }
+    ]
+}

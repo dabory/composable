@@ -1,0 +1,110 @@
+{
+    "General": {
+        "Title": "회계전표 입력 팝업",
+        "PickApi": "slip-form-book",
+        "ActApi": "acc-slip-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "acc_slip-popup-eye"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "save-and-new",
+            "Caption": "저장 후 추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "delete",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AutoSlipNo": "입출금전표 번호(자동채번)*",
+            "AccDate": "입금일자*",
+            "SorderNo": "",
+            "PorderNo": "",
+            "SlipAmt": "금액*",
+            "BillColumn1": "지불방법상세",
+            "CardCheckNo": "카드승인/수표번호"
+        },
+        {
+            "SaveButton": "",
+            "AutoSlipNo": "",
+            "AccDate": "left",
+            "SorderNo": "left",
+            "PorderNo": "left",
+            "SlipAmt": "decimal('purch_prc')",
+            "BillColumn1": "left",
+            "CardCheckNo": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AutoSlipNo": "20",
+            "AccDate": "20",
+            "SorderNo": "20",
+            "PorderNo": "20",
+            "SlipAmt": "10",
+            "BillColumn1": "20",
+            "CardCheckNo": "20"
+        },
+        {
+            "SaveButton": "",
+            "AutoSlipNo": "Required",
+            "AccDate": "Required",
+            "SorderNo": "",
+            "PorderNo": "",
+            "SlipAmt": "Required",
+            "BillColumn1": "",
+            "CardCheckNo": ""
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "AccSlipNo": "전표번호",
+            "AccDate": "입금일자",
+            "SlipAmt": "입금액",
+            "BillColumn1": "지불방법",
+            "CardCheckNo": "카드승인/수표번호"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "AccSlipNo": "8",
+            "AccDate": "8",
+            "SlipAmt": "8",
+            "BillColumn1": "15",
+            "CardCheckNo": "15"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "AccSlipNo": "center",
+            "AccDate": "YY-MM-DD",
+            "SlipAmt": "decimal('purch_prc')",
+            "BillColumn1": "center",
+            "CardCheckNo": "center"
+        }
+    ],
+
+    "FooterVars": [
+        {
+            "SumTotal": "입금액 소계"
+        }
+    ]
+}

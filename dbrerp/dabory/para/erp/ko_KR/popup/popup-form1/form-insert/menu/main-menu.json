@@ -1,0 +1,37 @@
+{
+    "General": {
+        "ActApi": "list-type1-insert"
+    },
+
+    "SelectButtonOptions": [
+    ],
+
+    "NoticeVars": {
+        "Notice": "(1) 업로드 후 실테이블에 적용하기하면 기존의 메인(홈페이지) 메뉴]는 완전히 삭제되고 새로운 메인 메뉴가 업로드 됩니다.",
+        "Warning": "(1)기존의 [메인 메뉴]는 완전 삭제/재생성되므로 전문적인 경험이 없으면 사용을 권장하지 않습니다.<br>(2) [메인 메뉴]는 메인화면의 우측 상단의 '캐시삭제' 버튼을 클릭하기 이전에는 게시되지 않습니다. 실수로 메뉴업로드를 했을 경우 '캐시삭제'버튼을 클릭하지 마십시요."
+    },
+
+    "FormVars": [
+        {
+            "SaveButton": "[메인(홈페이지) 메뉴] 테이블에 반영",
+            "TruncateTable": "통합 설정 테이블 비운 후 추가",
+            "BackupTable": "'pro_main_menu_yy_mm_dd_mm_ss' 테이블로 백업",
+            "BackupDb": "'DB_name_yy_mm_dd_mm_ss' 테이블로 백업"
+        }
+    ],
+
+    "ConditionVars": {
+        "IsVisible": true
+    },
+
+    "InsertVars": {
+        "QueryName": "menu/main-menu",
+        "InsertType": "bulk",
+        "//InsertType": "one-by-one",
+        "PreProcess"  : "",
+        "PostProcess"  : "main-menu",
+        "IsTruncateTable": true,
+        "IsBackupTable": false,
+        "IsBackupDb": false
+    }
+}

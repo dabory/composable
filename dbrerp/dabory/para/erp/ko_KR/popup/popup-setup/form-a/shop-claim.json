@@ -1,0 +1,36 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "IsCancelStockRec": "재고 수량 복원",
+            "IsCancelCouponRec": "쿠폰 복원",
+            "IsExchCouponRec": "교환 쿠폰 복원",
+            "IsExchGiftRec": "교환 사은품 복원",
+            "IsExchRewardRec": "교환 마일리지 복원",
+            "IsRefundStockRec": "환불 수량 복원",
+            "IsRefundCouponRec": "환불쿠폰 복원",
+            "ShopClaimCom": "주문 클레임 처리 시 재고, 쿠폰복원 등 처리방안의 기본 선택값을 설정할 수 있습니다. 클레임 처리 화면 접근 시 설정한 값이 기본으로 선택되어 노출됩니다."
+        },
+        {
+            "SaveButton": "center",
+            "IsCancelStockRec": "center",
+            "IsCancelCouponRec": "center",
+            "IsExchCouponRec": "center",
+            "IsExchGiftRec": "center",
+            "IsExchRewardRec": "center",
+            "IsRefundStockRec": "center",
+            "IsRefundCouponRec": "center",
+            "ShopClaimCom": "center"
+        }
+    ]
+}

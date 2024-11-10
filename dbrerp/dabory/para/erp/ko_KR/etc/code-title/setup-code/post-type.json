@@ -1,0 +1,22 @@
+[
+    {
+        "Code": "",
+        "Title": "분류 필요"
+    },
+    {
+        "Code": "text",
+        "Title": "텍스트"
+    },
+    {
+        "Code": "image",
+        "Title": "이미지"
+    },
+    {
+        "Code": "gallery",
+        "Title": "갤러리"
+    },
+    {
+        "Code": "movie",
+        "Title": "동영상"
+    }
+]

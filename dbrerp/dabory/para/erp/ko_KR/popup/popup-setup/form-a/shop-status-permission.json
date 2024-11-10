@@ -1,0 +1,66 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+
+            "ShipPreShip": "배송준비",
+            "ShipInTrans": "배송중",
+            "ShipFinish": "배송완료",
+            "OrderComplete": "구매확정",
+
+            "CancelSoldOut": "품절취소",
+            "CancelAdmin": "관리자취소",
+            "CancelMemberReq": "고객취소요청",
+            "CancelConfirm": "취소승인",
+            "CancelComplete": "취소완료",
+
+            "ReturnRequest": "반품요청",
+            "ReturnReceive": "반품접수",
+            "ReturnPickup": "반품회수",
+            "ReturnComfirm": "반품승인",
+            "ReturnComplete": "반품완료",
+
+            "ExchangeRequest": "교환요청",
+            "ExchangeReceive": "교환접수",
+            "ExchangePickup": "교환회수",
+            "ExchangeShip": "교환발송",
+            "ExchangeComplete": "교환완료"
+        },
+        {
+            "SaveButton": "center",
+
+            "ShipPreShip": "center",
+            "ShipInTrans": "center",
+            "ShipFinish": "center",
+            "OrderComplete": "center",
+
+            "CancelSoldOut": "center",
+            "CancelAdmin": "center",
+            "CancelMemberReq": "center",
+            "CancelConfirm": "center",
+            "CancelComplete": "center",
+
+            "ReturnRequest": "center",
+            "ReturnReceive": "center",
+            "ReturnPickup": "center",
+            "ReturnComfirm": "center",
+            "ReturnComplete": "center",
+
+            "ExchangeRequest": "center",
+            "ExchangeReceive": "center",
+            "ExchangePickup": "center",
+            "ExchangeShip": "center",
+            "ExchangeComplete": "center"
+        }
+    ]
+}

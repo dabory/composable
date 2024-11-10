@@ -1,0 +1,217 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "사용자 메뉴 리스트",
+        "PageApi": "list-type1-page",
+        "ActApi": "user-menu-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "user-menu-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "일괄 삭제"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "팝업 선택(라디오 버튼)",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.menu_code",
+            "Caption": "메뉴코드"
+        },
+        {
+            "Value": "mx.menu_lang0",
+            "Caption": "메뉴명"
+        },
+        {
+            "Value": "mx.page_uri",
+            "Caption": "페이지 URL"
+        },
+        {
+            "Value": "mx.para_name",
+            "Caption": "파라메터명"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.is_skipped='1'",
+            "Caption": "메뉴스킵"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "사용자 메뉴 입력/수정/삭제",
+            "Component": "popup-form1.form-a.menu-form",
+            "Parameter": "/popup/popup-form1/form-a/user-menu"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.menu_code asc",
+            "Caption": "메뉴코드 순서"
+        },
+        {
+            "Value": "mx.menu_code desc",
+            "Caption": "메뉴코드 역순"
+        },
+        {
+            "Value": "mx.menu_lang0 asc",
+            "Caption": "메뉴명 순서"
+        },
+        {
+            "Value": "mx.menu_lang0 desc",
+            "Caption": "메뉴명 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst": true,
+        "IsExcelColumn": false,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines": 15,
+        "HeadHeight": "140",
+        "BodyHeight": "670"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "메뉴코드",
+            "C2": "메뉴명",
+            "C3": "페이지URL",
+            "C4": "파라메터명",
+            "C5": "테마폴더",
+            "C6": "메뉴스킵",
+            "C7": "아이콘",
+            "C8": "좌측메뉴",
+            "C9": "우측메뉴",
+            "C10": "매뉴얼URL",
+            "C11": "MainApp",
+            "C12": "GuestApp"
+        },
+        {
+            "$Radio": "2",
+            "$Check": "2",
+            "No": "6",
+            "C1": "10",
+            "C2": "15",
+            "C3": "35",
+            "C4": "30",
+            "C5": "12",
+            "C6": "8",
+            "C7": "10",
+            "C8": "8",
+            "C9": "8",
+            "C10": "10",
+            "C11": "12",
+            "C12": "12"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "center",
+            "C2": "left",
+            "C3": "left",
+            "C4": "left",
+            "C5": "left",
+            "C6": "check",
+            "C7": "left",
+            "C8": "check",
+            "C9": "check",
+            "C11": "left",
+            "C12": "left"
+        }
+    ]
+}

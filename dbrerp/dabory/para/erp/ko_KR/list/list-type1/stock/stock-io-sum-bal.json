@@ -1,0 +1,211 @@
+{
+    "General": {
+        "Title": "상품재고 합산내역",
+        "PageApi": "list-type1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "stock/stock-io-sum-bal",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+    "HeadSelectOptions": [
+        {
+            "Value": "clear-all-filter",
+            "Caption": "입력필터 초기화"
+        },
+        {
+            "Value": "xls-report",
+            "Caption": "엑셀 다운로드"
+        },
+        {
+            "Value": "pdf-report",
+            "Caption": "PDF로 다운로드"
+        },
+        {
+            "Value": "modified-report",
+            "Caption": "변형서식으로 보기"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "일자방향(오늘)",
+            "Date": "날짜",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "품목구분",
+            "SecondRange": "창고구분",
+            "ThirdRange": "품목",
+            "FourthRange": "",
+            "AddTotalLine": "합산라인 보기",
+            "SelectPopup": "팝업 선택",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시순서",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+    ],
+
+    "SimpleSelectOptions": [
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "igroup_code",
+            "SecondRange": "storage_code",
+            "ThirdRange": "item_code",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "setting",
+            "SecondRange": "setting",
+            "ThirdRange": "item",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "/search/setting-search/igroup",
+            "SecondRange": "/search/setting-search/storage",
+            "ThirdRange": "/search/item-search/fn-goods",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+    "DateNaviOptions": [
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "수불원장(상세)",
+            "Component": "list-type.list1-form",
+            "Parameter": "/popup/popup-list1/stock-io-ledger-detail"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "item_code asc",
+            "Caption": "품명코드 순서"
+        },
+        {
+            "Value": "cgroup_code asc, company_name asc",
+            "Caption": "업체구분코드 순서, 업체명 순서"
+        },
+        {
+            "Value": "company_name desc, cgroup_code desc",
+            "Caption": "업체명 역순, 업체구분코드 역순"
+        },
+        {
+            "Value": "cgroup_code desc, company_name desc",
+            "Caption": "업체구분코드 역순, 업체명 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : false,
+        "IsExcelColumn" : false,
+        "IsAddTotalLine": true,
+        "IsDownloadList" : true,
+        "InitLines" : 15,
+        "InitDateRange" : "month",
+        "IsC1Popup": "1",
+        "HeadHeight": "190",
+        "BodyHeight": "700"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "",
+            "$Check": "",
+            "No": "번호",
+            "C1": "폼목코드",
+            "C2": "품명",
+            "C3": "서브명",
+            "D1": "이월재고",
+            "D2": "입고량",
+            "D3": "출고량",
+            "D4": "마감(현)재고",
+            "D5": "불량재고증감",
+            "D6": "마감불량재고",
+            "C4": "품목구분",
+            "C5": "구분코드"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "5",
+            "C1": "8",
+            "C2": "25",
+            "C3": "8",
+            "D1": "7",
+            "D2": "7",
+            "D3": "7",
+            "D4": "7",
+            "D5": "7",
+            "D6": "7",
+            "C4": "8",
+            "C5": "8"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "center",
+            "C2": "left",
+            "C3": "left",
+            "D1": "decimal('stock_qty', 'nz')",
+            "D2": "decimal('stock_qty', 'nz')",
+            "D3": "decimal('stock_qty', 'nz')",
+            "D4": "decimal('stock_qty', 'nz')",
+            "D5": "decimal('stock_qty', 'nz')",
+            "D6": "decimal('stock_qty', 'nz')",
+            "C4": "left",
+            "C5": "center"
+        }
+    ]
+}

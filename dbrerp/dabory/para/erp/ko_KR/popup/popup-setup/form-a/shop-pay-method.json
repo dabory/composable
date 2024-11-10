@@ -1,0 +1,42 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "IsRemit": "무통장입금",
+            "IsCrCard": "신용카드",
+            "IsPgTransfer": "계좌이체",
+            "IsVirtAccount": "가상계좌",
+            "IsMobilePay": "휴대폰",
+            "IsEscCrcard": "에스크로신용카드",
+            "IsEscTransfer": "에스크로계좌이체",
+            "IsEscVirtual": "에스크로가상계좌",
+            "IsCrypto1": "암호화폐1",
+            "IsCrypto2": "암호화폐2",
+            "ShopPayMethod": "전자결제(PG) 신청 전인 경우 먼저 서비스를 신청하세요."
+        },
+        {
+            "SaveButton": "center",
+            "IsRemit": "center",
+            "IsCrCard": "center",
+            "IsPgTransfer": "center",
+            "IsVirtAccount": "center",
+            "IsMobilePay": "center",
+            "IsEscCrcard": "center",
+            "IsEscTransfer": "center",
+            "IsEscVirtual": "center",
+            "IsCrypto1": "center",
+            "IsCrypto2": "center",
+            "ShopPayMethod": "center"
+        }
+    ]
+}

@@ -1,0 +1,203 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "문자 발송 템플릿",
+        "PageApi": "list-type1-page",
+        "ActApi": "text-template-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "text-template-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "품목 일괄 삭제"
+        },
+        {
+            "Value": "clear-all-filter",
+            "Caption": "Clear All Filter"
+        },
+        {
+            "Value": "xls-report",
+            "Caption": "엑셀 다운로드"
+        },
+        {
+            "Value": "pdf-report",
+            "Caption": "Show PDF report"
+        },
+        {
+            "Value": "modified-report",
+            "Caption": "Modified Report"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색조건",
+            "SimpleOption": "메시지구분"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.text_name",
+            "Caption": "문자송신명"
+        },
+        {
+            "Value": "mx.text_code",
+            "Caption": "송신코드"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.sort='0'",
+            "Caption": "sort('text-template','0')"
+        },
+        {
+            "Value": "mx.sort='1'",
+            "Caption": "sort('text-template','1')"
+        },
+        {
+            "Value": "mx.sort='2'",
+            "Caption": "sort('text-template','2')"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "문자송신 입력/수정/삭제",
+            "Component": "popup-form1.form-a.text-template-form",
+            "Parameter": "/popup/popup-form1/form-a/text-template"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "text_code asc",
+            "Caption": "문자송신 코드 정렬순"
+        },
+        {
+            "Value": "text_code desc",
+            "Caption": "문자송신 코드 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsExcelColumn": false,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "130",
+        "BodyHeight": "540"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "템플릿명",
+            "C2": "템플릿코드",
+            "C3": "메시지구분",
+            "C4": "제목",
+            "C5": "내용"
+        },
+        {
+            "$Radio": "2",
+            "$Check": "2",
+            "No": "2",
+            "C1": "4",
+            "C2": "4",
+            "C3": "3",
+            "C4": "8",
+            "C5": "10"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "left",
+            "C3": "sort('text-template')",
+            "C4": "left",
+            "C5": "left"
+        }
+    ]
+}

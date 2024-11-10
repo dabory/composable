@@ -1,0 +1,40 @@
+{
+    "FormVars": [
+        {
+          "type" : "hidden",
+          "id" : "Id",
+          "caption" : "구분 코드",
+          "data-copy" : "false"
+        },
+        {
+          "type" : "textbox",
+          "id" : "StorageCode",
+          "caption" : "구분 코드",
+          "data-copy" : "true"
+        },
+        {
+          "type" : "textbox",
+          "id" : "StorageName",
+          "caption" : "구분 명",
+          "data-copy" : "false"
+        },
+        {
+          "type" : "textbox",
+          "id" : "Location",
+          "caption" : "창고 위치",
+          "data-copy" : "false"
+        },
+        {
+          "type" : "checkbox",
+          "id" : "IsMainStorage",
+          "caption" : "메인 창고",
+          "data-copy" : "false"
+        },
+        {
+          "type" : "checkbox",
+          "id" : "IsBadStorage",
+          "caption" : "파손 창고",
+          "data-copy" : "false"
+        }
+    ]
+}

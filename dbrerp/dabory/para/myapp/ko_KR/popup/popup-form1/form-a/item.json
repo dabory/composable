@@ -1,0 +1,190 @@
+{
+    "General": {
+        "Title": "품목 입력",
+        "PickApi": "item-pick",
+        "ActApi": "item-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "복사"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "TabA": "기본",
+            "ItemCode": "품목코드*",
+            "IgroupId": "품목구분*",
+            "ItemName": "품명",
+            "SubName": "서브명",
+            "ItemSlug": "검색엔진 최적화 슬러그*",
+            "Quantity": "",
+            "CountUnit": "단위",
+            "MainSupplier": "공급/입점사",
+            "Brand": "브랜드",
+            "PurchPrc": "표준매입가*",
+            "SalesPrc": "표준매출가*",
+            "DiscountPrc": "할인가",
+            "IsMaterial": "자재여부",
+            "IsItemEnd": "단종품목",
+            "ItemMemo": "품목설명-ERP(더블클릭)",
+            "ItemDesc": "품목설명(더블클릭)",
+            "IsntPro": "온라인 누락",
+            "IsCreditProduct": "충전금 품목",
+            "IsStyle": "옵션품목(저장 필수)",
+            "IsSelfOption": "자체옵션",
+            "IsntStkio": "수불처리않음",
+            "OfferCredit": "제공 충전금",
+            "RewardRate": "적립금율",
+            "MediaId": "미디어 ID",
+            "FileUpload": "미디어 업로드",
+
+            "CurrStkQty": "현재고",
+            "IsErpStk": "ERP재고사용",
+
+            "TabB": "뱃지",
+            "Badge": "뱃지",
+
+            "TabC": "연관상품",
+            "ItemRelated": "연관상품 불러오기",
+
+            "TabD": "리뷰",
+            "Revindex": "리뷰 평가목록"
+        },
+        {
+            "SaveButton": "",
+            "TabA": "left",
+            "ItemCode": "left",
+            "IgroupId": "left",
+            "ItemName": "left",
+            "SubName": "left",
+            "ItemSlug": "left",
+            "Quantity": "",
+            "CountUnit": "left",
+            "MainSupplier": "left",
+            "Brand": "left",
+            "PurchPrc": "left",
+            "SalesPrc": "left",
+            "DiscountPrc": "left",
+            "IsMaterial": "left",
+            "IsItemEnd": "left",
+            "ItemMemo": "left",
+            "ItemDesc": "left",
+            "IsntPro": "left",
+            "IsCreditProduct": "left",
+            "IsStyle": "left",
+            "IsSelfOption": "left",
+            "IsntStkio": "left",
+            "OfferCredit": "left",
+            "RewardRate": "left",
+            "MediaId": "left",
+            "FileUpload": "left",
+
+            "CurrStkQty": "left",
+            "IsErpStk": "left",
+
+            "TabB": "left",
+            "Badge": "left",
+
+            "TabC": "left",
+            "ItemRelated": "left",
+
+            "TabD": "left",
+            "Revindex": "left"
+        },
+        {
+            "SaveButton": "0",
+            "TabA": "0",
+            "ItemCode": "100",
+            "IgroupId": "100",
+            "ItemName": "100",
+            "SubName": "100",
+            "ItemSlug": "100",
+            "Quantity": "",
+            "CountUnit": "100",
+            "MainSupplier": "100",
+            "Brand": "100",
+            "PurchPrc": "7",
+            "SalesPrc": "7",
+            "DiscountPrc": "7",
+            "IsMaterial": "0",
+            "IsItemEnd": "0",
+            "ItemMemo": "0",
+            "ItemDesc": "0",
+            "IsntPro": "0",
+            "IsCreditProduct": "0",
+            "IsStyle": "0",
+            "IsSelfOption": "0",
+            "IsntStkio": "0",
+            "OfferCredit": "7",
+            "RewardRate": "7",
+            "MediaId": "10",
+            "FileUpload": "10",
+
+            "CurrStkQty": "10",
+            "IsErpStk": "10",
+
+            "TabB": "10",
+            "Badge": "10",
+
+            "TabC": "10",
+            "ItemRelated": "10",
+
+            "TabD": "10",
+            "Revindex": "10"
+        },
+        {
+            "SaveButton": "",
+            "TabA": "",
+            "ItemCode": "required",
+            "IgroupId": "required",
+            "ItemName": "",
+            "SubName": "",
+            "ItemSlug": "",
+            "Quantity": "",
+            "CountUnit": "",
+            "MainSupplier": "hidden",
+            "Brand": "disabled",
+            "PurchPrc": "",
+            "SalesPrc": "required",
+            "DiscountPrc": "",
+            "IsMaterial": "",
+            "IsItemEnd": "",
+            "ItemMemo": "",
+            "ItemDesc": "",
+            "IsntPro": "",
+            "IsCreditProduct": "",
+            "IsStyle": "",
+            "IsSelfOption": "",
+            "IsntStkio": "",
+            "OfferCredit": "",
+            "RewardRate": "",
+            "MediaId": "",
+            "FileUpload": "",
+
+            "CurrStkQty": "",
+            "IsErpStk": "",
+
+            "TabB": "",
+            "Badge": "",
+
+            "TabC": "",
+            "ItemRelated": "",
+
+            "TabD": "",
+            "Revindex": ""
+        }
+    ]
+}

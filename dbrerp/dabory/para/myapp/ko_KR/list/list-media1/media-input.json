@@ -1,0 +1,234 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "미디어 라이브러리",
+        "PageApi": "list-type1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "media-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "media_date"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "새 미디어 업로드"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "선택 미디어 삭제"
+        },
+        {
+            "Value": "clear-all-filter",
+            "Caption": "검색 조건 리셋"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "날짜",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "미디어 번호",
+            "SecondRange": "미디어 분류",
+            "ThirdRange": "작업매장",
+            "FourthRange": "작업자",
+            "SelectPopup": "팝업 선택",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "조건검색",
+            "SimpleOption": "브랜드별검색"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "slip_no",
+            "SecondRange": "company_name",
+            "ThirdRange": "item_code",
+            "FourthRange": "company_name"
+        },
+        {
+            "FirstRange": "slip",
+            "SecondRange": "company",
+            "ThirdRange": "item",
+            "FourthRange": "company"
+        },
+        {
+            "FirstRange": "/search/slip-search/purch/porder",
+            "SecondRange": "/search/company-search/supplier",
+            "ThirdRange": "/search/item-search/supplier",
+            "FourthRange": "/search/company-search/customer"
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "미디어 입력/수정/삭제",
+            "Component": "popup-form1.form-b.media-form",
+            "Parameter": "/popup/popup-form1/form-b/media-library"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "media_name",
+            "Caption": "미디어명"
+        },
+        {
+            "Value": "search_file_name",
+            "Caption": "검색용:미디어화일명"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "media_brand='post'",
+            "Caption": "sort('media-brand','post')"
+        },
+        {
+            "Value": "media_brand='item'",
+            "Caption": "sort('media-brand','item')"
+        },
+        {
+            "Value": "media_brand='igroup'",
+            "Caption": "sort('media-brand','igroup')"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "media_no desc",
+            "Caption": "미디어 번호 역순"
+        },
+        {
+            "Value": "media_no asc",
+            "Caption": "미디어 번호 정렬순"
+        }
+    ],
+
+    "DisplayVars": {
+        "DateRangeLimit": 10000000,
+        "IsExcelColumn": false,
+        "IsSelectPopupHidden": true,
+        "IsDownloadList": false,
+        "IsShowOnlyClosed": false,
+        "IsListFirst" : true,
+        "InitLines" : 10,
+        "IsC1Popup": "1",
+        "HeadHeight": "250",
+        "BodyHeight": "450"
+    },
+
+    "ThumbContainerVars": {
+        "ListWidth": 150,
+        "ListHeight": 75,
+        "GalleryWidth" : 200,
+        "GalleryHeight" : 200,
+        "ImagePerLine": 0
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "미디어번호",
+            "C2": "작성일자",
+            "C3": "썸네일",
+            "C4": "미디어브랜드",
+            "C5": "미디어명",
+            "C6": "화일주소",
+            "C7": "화일명",
+            "C8": "첨부대상",
+            "C9": "첨부",
+            "C10": "작성자",
+            "C11": "작성지사"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "No": "4",
+            "C1": "10",
+            "C2": "10",
+            "C3": "10",
+            "C4": "10",
+            "C5": "10",
+            "C6": "10",
+            "C7": "10",
+            "C8": "10",
+            "C9": "10",
+            "C10": "10",
+            "C11": "10"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "YYYY.MM.DD",
+            "C3": "$_ThumbNail",
+            "C4": "left",
+            "C5": "left",
+            "C6": "left",
+            "C7": "$_FileName",
+            "C8": "left",
+            "C9": "check",
+            "C10": "left",
+            "C11": "left"
+        }
+    ]
+}

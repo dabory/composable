@@ -1,0 +1,284 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "관리자 계정 리스트",
+        "PageApi": "list-type1-page",
+        "ActApi": "users-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "users-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "일괄 삭제"
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "팝업 선택(라디오 버튼)",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.email",
+            "Caption": "아이디(이메일)"
+        },
+        {
+            "Value": "mx.nick_name",
+            "Caption": "이름"
+        },
+        {
+            "Value": "mx.status",
+            "Caption": "상태",
+            "Reverse": "status_rev('users')"
+        },
+        {
+            "Value": "N_mx.id",
+            "Caption": "mx.id"
+        }
+
+    ],
+
+    "SimpleSelectOptions": [
+
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "관리자 상태 수정",
+            "Component": "popup-form1.form-a.users-form",
+            "Parameter": "/popup/popup-form1/form-a/users"
+        },
+        {
+            "Caption": "수퍼유저 이메일/모바일폰 변경",
+            "Component": "popup-form1.superuser-email-change-form",
+            "Parameter": "/popup/popup-form1/form-a/superuser-email-change"
+        }
+    ],
+
+    "MultiPopupOptions": [
+        {
+            "Caption": "일반관리자 로그",
+            "Component": "charts.lines",
+            "Parameter": "/chart/chart-line2/pquote-day-item"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "등록일자 순서"
+        },
+        {
+            "Value": "mx.created_on asc",
+            "Caption": "등록일자 역순"
+        },
+        {
+            "Value": "mx.email asc",
+            "Caption": "이메일 순서"
+        },
+        {
+            "Value": "mx.email desc",
+            "Caption": "이메일 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsSelectPopupHidden": false,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "130",
+        "BodyHeight": "570"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "아이디(이메일)",
+            "C2": "이름",
+            "C3": "등급",
+            "C4": "상태",
+            "C5": "",
+            "C6": "",
+            "C7": "",
+            "C8": "",
+            "C9": "",
+            "C10": "",
+            "C11": "",
+            "C12": "",
+            "C13": "",
+            "C14": "",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "2",
+            "$Check": "2",
+            "No": "4",
+            "C1": "10",
+            "C2": "6",
+            "C3": "10",
+            "C4": "6",
+            "C5": "",
+            "C6": "",
+            "C7": "",
+            "C8": "",
+            "C9": "",
+            "C10": "",
+            "C11": "",
+            "C12": "",
+            "C13": "",
+            "C14": "",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "left",
+            "C3": "sort('users')",
+            "C4": "status('users')",
+            "C5": "",
+            "C6": "",
+            "C7": "",
+            "C8": "",
+            "C9": "",
+            "C10": "",
+            "C11": "",
+            "C12": "",
+            "C13": "",
+            "C14": "",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        }
+    ]
+}

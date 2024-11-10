@@ -1,0 +1,67 @@
+{
+    "//bal-item-finished-good": "bal-item has 2 categoires: finished goods and materials",
+
+    "General": {
+        "Title": "Buyer Balance Amount",
+        "PageApi": "list-form-balance-page",
+        "ActApi": "list-form-balance-mact"
+    },
+
+    "QueryVars": {
+        "QueryName": "buyer",
+        "FilterName": "",
+        "FilterValue": ""
+    },
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "Bulk Save",
+            "Month": "Receivable Balance Year/Month",
+            "Storage": "",
+            "CodeRange": ""
+        }
+    ],
+
+    "SelectButtonOptions": [
+        {
+            "Value": "get-new-list",
+            "Caption": "새 리스트 가져오기"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-hidden, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "No",
+            "Code": "",
+            "Name": "Buyer Name",
+            "SecondName": "",
+            "Balance": "",
+            "Balance2": "Receivable Balance Amt"
+        },
+        {
+            "No": "10",
+            "Code": "10",
+            "Name": "10",
+            "Name2": "10",
+            "Balance": "10",
+            "Balance2": "10"
+        },
+        {
+            "No": "center",
+            "Code": "left",
+            "Name": "left",
+            "Name2": "left",
+            "Balance": "right",
+            "Balance2": "right"
+        }
+    ],
+
+    "FooterVars": [
+        {
+            "BalanceTotal": "",
+            "Balance2Total": "Receivable Balance Total"
+        }
+    ]
+}

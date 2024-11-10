@@ -1,0 +1,92 @@
+{
+    "General": {
+        "PickApi": "dbupdate-pick",
+        "ActApi": "dbupdate-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "복사"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "DbupdateNo": "번호(자동채번)*",
+            "SqlCommand": "SQL명령어",
+            "RelatedTables": "관련 테이블",
+            "Sort": "구분*",
+            "IsConfirmed": "실행 승인"
+        },
+        {
+            "SaveButton": "left",
+            "DbupdateNo": "left",
+            "SqlCommand": "left",
+            "RelatedTables": "left",
+            "Sort": "left",
+            "IsConfirmed": "left"
+        },
+        {
+            "SaveButton": "0",
+            "DbupdateNo": "15",
+            "SqlCommand": "500",
+            "RelatedTables": "100",
+            "Sort": "10",
+            "IsConfirmed": "5"
+        },
+        {
+            "SaveButton": "",
+            "DbupdateNo": "required",
+            "SqlCommand": "",
+            "RelatedTables": "",
+            "Sort": "required",
+            "IsConfirmed": ""
+        }
+    ],
+
+    "SortSelectOptions": [
+        {
+            "Value": "",
+            "Caption": ""
+        },
+        {
+            "Value": "0",
+            "Caption": "sort('dbupdate','0')"
+        },
+        {
+            "Value": "1",
+            "Caption": "sort('dbupdate','1')"
+        },
+        {
+            "Value": "2",
+            "Caption": "sort('dbupdate','2')"
+        },
+        {
+            "Value": "3",
+            "Caption": "sort('dbupdate','3')"
+        },
+        {
+            "Value": "4",
+            "Caption": "sort('dbupdate','4')"
+        },
+        {
+            "Value": "5",
+            "Caption": "sort('dbupdate','5')"
+        },
+        {
+            "Value": "6",
+            "Caption": "sort('dbupdate','6')"
+        }
+    ]
+}

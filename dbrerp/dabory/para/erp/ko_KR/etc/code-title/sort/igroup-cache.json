@@ -1,0 +1,18 @@
+[
+    {
+        "Code": "",
+        "Title": "분류 필요"
+    },
+    {
+        "Code": "0",
+        "Title": "외부ai"
+    },
+    {
+        "Code": "1",
+        "Title": "자체ai"
+    },
+    {
+        "Code": "9",
+        "Title": "Human"
+    }
+]

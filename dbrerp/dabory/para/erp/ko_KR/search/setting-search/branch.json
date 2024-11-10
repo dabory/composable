@@ -1,0 +1,61 @@
+{
+    "General": {
+        "Title": "지점 조회",
+        "PageApi": "setting-search-page"
+    },
+    "QueryVars": {
+        "QueryName": "branch"
+    },
+
+    "FilterSelectOptions": [
+        {
+            "Value": "branch_code",
+            "Caption": "지점코드"
+        },
+        {
+            "Value": "branch_name",
+            "Caption": "지점명"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.expose_type='0'",
+            "Caption": "온라인 게시"
+        },
+        {
+            "Value": "mx.expose_type='1'",
+            "Caption": "온라인 누락"
+        }
+    ],
+
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "Code": "지점코드",
+            "Name": "지점명",
+            "ThirdField": "매니저",
+            "IsCheck": "사용않음"
+        },
+        {
+            "No": "10",
+            "Code": "20",
+            "Name": "20",
+            "ThirdField": "30",
+            "IsCheck": "10"
+        },
+        {
+            "No": "center",
+            "Code": "center",
+            "Name": "center",
+            "ThirdField": "center",
+            "IsCheck": "center"
+        }
+    ]
+}

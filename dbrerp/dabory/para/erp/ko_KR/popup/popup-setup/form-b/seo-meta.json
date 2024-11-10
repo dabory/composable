@@ -1,0 +1,71 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "HeadSelectOptions": [
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "확정",
+            "Caption": "확정"
+        },
+        {
+            "Value": "취소",
+            "Caption": "취소"
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "multi-delete",
+            "Caption": "품목 일괄 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "품목 추가"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": ""
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "Name": "이름*"
+        },
+        {
+            "$Radio": "1",
+            "$Check": "1",
+            "Name": "5"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "Name": "left"
+        }
+    ],
+    "FooterVars": [
+        {
+            "SumTotal": ""
+        }
+    ]
+}

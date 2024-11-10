@@ -1,0 +1,58 @@
+.tab-close {
+    right: 0!important;
+    top: 0!important;
+    position: absolute !important;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    z-index: 99999;
+    background-color: transparent !important;
+    cursor: pointer !important;
+}
+
+.tab-close > img {
+    width: 100%;
+    height: 100%;
+}
+
+.button--loading::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+.button--loading .button__text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.button__text {
+    color: #ffffff;
+    transition: all 0.2s;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}

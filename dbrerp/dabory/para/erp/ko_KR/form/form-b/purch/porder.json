@@ -1,0 +1,263 @@
+{
+    "General": {
+        "Title": "발주등록",
+        "PickApi": "slip-form-book",
+        "ActApi": "porder-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "purch/porder"
+    },
+
+    "PrintVars": {
+        "QueryName": "federated/crystal/purch/porder",
+        "ReportPath": "standard/purch/porder.rpt",
+        "ExportFmt": "PDF",
+        "ServerPrinter": "",
+        "CustomCode": "porder"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "save-and-new",
+            "Caption": "저장 후 추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "copy-to-another",
+            "Caption": "발주에서 발주로 복사(-)",
+            "Parameter": "purch/porder-porder"
+        },
+        {
+            "Value": "copy-to-another",
+            "Caption": "매입 가격표에서 발주로 복사",
+            "Parameter": "purch/pquote-porder"
+        },
+        {
+            "Value": "copy-to-another",
+            "Caption": "수주에서 발주로 복사(-)",
+            "Parameter": "sales/sorder-porder"
+        },
+        {
+            "Value": "delete",
+            "Caption": "삭제",
+            "Parameter": ""
+        },
+        {
+            "Value": "rpt-print",
+            "Caption": "발주서 PDF",
+            "Parameter": ""
+        },
+        {
+            "Value": "rpt-custom",
+            "Caption": "커스텀 발주서 PDF",
+            "Parameter": ""
+        }
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "확정",
+            "Caption": "확정"
+        },
+        {
+            "Value": "취소",
+            "Caption": "취소"
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "body-copy",
+            "Caption": "발주에서 발주로 품목 복사(-)",
+            "Parameter": "purch/porder-porder"
+        },
+        {
+            "Value": "body-copy",
+            "Caption": "매입 가격표에서 발주로 품목 복사",
+            "Parameter": "purch/pquote-porder"
+        },
+        {
+            "Value": "body-copy",
+            "Caption": "수주에서 발주로 품목 복사(-)",
+            "Parameter": "sales/sorder-porder"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "품목 일괄 삭제",
+            "Parameter": ""
+        },
+        {
+            "Value": "multi-update",
+            "Caption": "품목 일괄 수정",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "품목 추가",
+            "AutoSlipNo": "발주번호(자동채번)*",
+            "Date": "발주일자*",
+            "Supplier": "매입업체*",
+            "Contact": "업체담당자",
+            "DealType": "거래구분*",
+            "VatType": "부가세*",
+            "VatTypeRate": "부가세율",
+            "Status": "상황",
+            "Delivery": "납품기한",
+            "PayTerms": "지불조건",
+            "Destination": "납품장소",
+            "RefNo": "참고번호",
+            "OurContact": "발주담당자",
+            "SorderNo": "연관수주번호",
+            "IsClosed": "종결",
+            "SgroupName": "영업부서*",
+            "UserName": "입력사용자*",
+            "Remarks": "비고"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "AutoSlipNo": "left",
+            "Date": "left",
+            "Supplier": "left",
+            "Contact": "left",
+            "DealType": "left",
+            "VatType": "left",
+            "VatTypeRate": "left",
+            "Status": "left",
+            "Delivery": "left",
+            "PayTerms": "left",
+            "Destination": "left",
+            "RefNo": "left",
+            "OurContact": "left",
+            "SorderNo": "left",
+            "IsClosed": "left",
+            "SgroupName": "left",
+            "UserName": "left",
+            "Remarks": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "20",
+            "AutoSlipNo": "20",
+            "Date": "20",
+            "Supplier": "20",
+            "Contact": "20",
+            "DealType": "20",
+            "VatType": "20",
+            "VatTypeRate": "20",
+            "Status": "20",
+            "Delivery": "20",
+            "PayTerms": "20",
+            "Destination": "20",
+            "RefNo": "20",
+            "OurContact": "20",
+            "SorderNo": "20",
+            "IsClosed": "0",
+            "SgroupName": "20",
+            "UserName": "20",
+            "Remarks": "0"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "AutoSlipNo": "required",
+            "Date": "required",
+            "Supplier": "required",
+            "Contact": "",
+            "DealType": "required",
+            "VatType": "required",
+            "VatTypeRate": "",
+            "Status": "",
+            "Delivery": "",
+            "PayTerms": "",
+            "Destination": "",
+            "RefNo": "",
+            "OurContact": "",
+            "SorderNo": "",
+            "IsClosed": "",
+            "SgroupName": "required",
+            "UserName": "required",
+            "Remarks": ""
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "",
+            "$Check": "$Check",
+            "ItemCode": "품목코드*",
+            "ItemName": "품명*",
+            "SubName": "서브명#",
+            "CountUnit": "단위#",
+            "PorderQty": "발주수량*",
+            "PorderPrc": "발주단가*",
+            "SupplyAmt": "공급가액*",
+            "VatAmt": "세액*",
+            "SumAmt": "합계금액*",
+            "StdPurchPrc": "표준매입가#",
+            "ConfirmDate": "요청납기일",
+            "DeliDate": "확정납기일*",
+            "Ref1": "참고1",
+            "Ref2": "참고2",
+            "PorderMemo": "품목설명(M)"
+        },
+        {
+            "$Radio": "",
+            "$Check": "3",
+            "ItemCode": "10",
+            "ItemName": "30",
+            "SubName": "10",
+            "CountUnit": "5",
+            "PorderQty": "10",
+            "PorderPrc": "10",
+            "SupplyAmt": "10",
+            "VatAmt": "10",
+            "SumAmt": "10",
+            "StdPurchPrc": "10",
+            "DeliDate": "12",
+            "ConfirmDate": "12",
+            "Ref1": "15",
+            "Ref2": "15",
+            "PorderMemo": "10"
+        },
+        {
+            "$Radio": "",
+            "$Check": "center",
+            "ItemCode": "left",
+            "ItemName": "left",
+            "SubName": "left",
+            "CountUnit": "center",
+            "PorderQty": "decimal('purch_qty')",
+            "PorderPrc": "decimal('purch_prc')",
+            "SupplyAmt": "decimal('purch_amt')",
+            "VatAmt": "decimal('purch_amt')",
+            "SumAmt": "decimal('purch_amt')",
+            "StdPurchPrc": "decimal('purch_prc')",
+            "DeliDate": "right",
+            "ConfirmDate": "right",
+            "Ref1": "right",
+            "Ref2": "right",
+            "PorderMemo": "right"
+        }
+    ],
+    "FooterVars": [
+        {
+            "StorageName": "창고",
+            "BranchName": "점포명",
+            "QtyTotal": "수량 합계",
+            "SupplyTotal": "공급가액 소계",
+            "VatTotal": "부가세액 소계",
+            "SumTotal": "합계액 소계"
+        }
+    ]
+}

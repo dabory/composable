@@ -1,0 +1,191 @@
+{
+    "General": {
+        "Title": "위젯 분류 조회",
+        "PageApi": "slip-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "shop/widget-taxo",
+        "FilterName": "",
+        "FilterValue": "",
+        "SimpleFilter": ""
+    },
+
+    "//SlipSearchFields": "쿼리를 공통하기 위한 테이블 필드변수들",
+    "SlipSearchFields": {
+        "SlipDateField": "",
+        "SlipNoField": "widget_taxo_no"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "QuerySpeed": "표시속도",
+            "SlipNo": "",
+            "CompanyName": "",
+            "ItemCode": "",
+            "FilterOption": "검색조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "QuerySpeedOptions": [
+        {
+            "Value": "quick",
+            "Caption": "빠르게"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.taxo_code",
+            "Caption": "위젯코드"
+        },
+        {
+            "Value": "mx.taxo_name",
+            "Caption": "위젯명"
+        },
+        {
+            "Value": "mx.lang_type",
+            "Caption": "언어구분"
+        },
+        {
+            "Value": "mx.device_type",
+            "Caption": "기기구분"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.device_type = 'desktop'",
+            "Caption": "데스트탑"
+        },
+        {
+            "Value": "mx.device_type = 'mobile'",
+            "Caption": "모바일폰"
+        },
+        {
+            "Value": "mx.device_type = 'tablet'",
+            "Caption": "태블릿"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "widget_taxo_no desc",
+            "Caption": "위젯번호 역순"
+        },    {
+            "Value": "widget_taxo_no asc",
+            "Caption": "위젯번호 정렬"
+        },
+        {
+            "Value": "taxo_code asc, lang_type asc",
+            "Caption": "위젯코드, 언어 정렬"
+        },
+        {
+            "Value": "taxo_type asc, device_type asc",
+            "Caption": "위젯코드, 기기 정렬"
+        },
+        {
+            "Value": "lang_type asc, taxo_code asc",
+            "Caption": "언어, 위젯코드 정렬"
+        },
+        {
+            "Value": "device_type asc, taxo_code asc",
+            "Caption": "기기, 위젯코드 정렬"
+        },
+        {
+            "Value": "taxo_code desc",
+            "Caption": "위젯코드 역순"
+        },
+        {
+            "Value": "taxo_name asc",
+            "Caption": "위젯명 정렬"
+        },
+        {
+            "Value": "taxo_name desc",
+            "Caption": "위젯명 역순"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "SlipNo": "위젯번호",
+            "DealCode": "위젯코드",
+            "Company": "언어",
+            "SetGroup": "기기",
+            "Item": "위젯명",
+            "Amt": "작성자",
+            "Status": "담당부서",
+            "Ref": ""
+        },
+        {
+            "No": "6",
+            "SlipNo": "7",
+            "DealCode": "10",
+            "Company": "7",
+            "SetGroup": "8",
+            "Item": "18",
+            "Amt": "10",
+            "Status": "8",
+            "Ref": "8"
+        },
+        {
+            "No": "center",
+            "SlipNo": "center",
+            "DealCode": "left",
+            "Company": "center",
+            "SetGroup": "center",
+            "Item": "left",
+            "Amt": "center",
+            "Status": "center",
+            "Ref": "left"
+        }
+    ]
+}

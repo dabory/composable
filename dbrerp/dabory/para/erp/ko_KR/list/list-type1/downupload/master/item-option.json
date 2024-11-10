@@ -1,0 +1,159 @@
+{
+    "General": {
+        "Title": "품목옵션 불러오기",
+        "PageApi": "list-type1-page",
+        "ActApi": "list-type1-upload"
+    },
+
+    "QueryVars": {
+        "QueryName": "download/master/item_option",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "xls-report",
+            "Caption": "(1)엑셀 다운로드"
+        },
+        {
+            "Value": "excel-upload",
+            "Caption": "(2)엑셀 업로드"
+        },
+        {
+            "Value": "dummy",
+            "Caption": "(3)적용",
+            "Component": "popup-form1.form-insert",
+            "Parameter": "/popup/popup-form1/form-insert/master/item-option"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "",
+            "To": "",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+    ],
+
+    "SimpleSelectOptions": [
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "SelectPopupOptions": [
+
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsAddTotalLine": false,
+        "IsExcelColumn": true,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "1",
+        "BodyHeight": "570"
+    },
+
+    "OrderByOptions": [
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+    ],
+
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "No": "번호",
+            "C1": "ID",
+            "C2": "옵션타입",
+            "C3": "국가별옵션",
+            "C4": "국가별옵션캡션",
+            "C5": "순번",
+            "C6": "옵션구분",
+            "C7": "옵션명",
+            "C8": "사용않음"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "6",
+            "C1": "6",
+            "C2": "8",
+            "C3": "6",
+            "C4": "10",
+            "C5": "10",
+            "C6": "10",
+            "C7": "10",
+            "C8": "10"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "center",
+            "C2": "center",
+            "C3": "center",
+            "C4": "center",
+            "C5": "center",
+            "C6": "center",
+            "C7": "center",
+            "C8": "center"
+        }
+    ]
+}

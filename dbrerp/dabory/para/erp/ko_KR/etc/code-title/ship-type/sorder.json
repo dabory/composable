@@ -1,0 +1,30 @@
+[
+    {
+        "Code": "",
+        "Title": ""
+    },
+    {
+        "Code": "normal",
+        "Title": "일반배송"
+    },
+    {
+        "Code": "today",
+        "Title": "당일출발"
+    },
+    {
+        "Code": "today-arrive",
+        "Title": "당일도착"
+    },
+    {
+        "Code": "dawn-arrive",
+        "Title": "새벽배송"
+    },
+    {
+        "Code": "abroad",
+        "Title": "해외배송"
+    },
+    {
+        "Code": "freezer-arrive",
+        "Title": "냉동배송"
+    }
+]

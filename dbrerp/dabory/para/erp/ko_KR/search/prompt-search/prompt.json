@@ -1,0 +1,64 @@
+{
+	"General": {
+		"Title": "프롬프트 찾기",
+        "PageApi": "setting-search-page"
+	},
+
+    "QueryVars": {
+		"QueryName": "xai-prompt"
+	},
+
+    "FilterSelectOptions": [
+        {
+            "Value": "prompt_no",
+            "Caption": "템플릿번호"
+        },
+        {
+            "Value": "prompt_feed",
+            "Caption": "프롬프트 피드"
+        },
+        {
+            "Value": "test_feed",
+            "Caption": "테스트 피드"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+		{
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.func_title='meta'",
+            "Caption": "메타태그"
+        },
+        {
+            "Value": "mx.func_title='schema'",
+            "Caption": "구조화된 데이터"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+	"ListVars": [
+		{
+			"No": "번호",
+			"Code": "템플릿 번호",
+			"Name": "기능타이틀",
+			"ThirdField": "기능버전"
+
+		},
+		{
+			"No": "10",
+			"Code": "15",
+			"Name": "20",
+			"ThirdField": "30"
+
+		},
+		{
+			"No": "center",
+			"Code": "center",
+			"Name": "center",
+			"ThirdField": "center"
+		}
+	]
+}

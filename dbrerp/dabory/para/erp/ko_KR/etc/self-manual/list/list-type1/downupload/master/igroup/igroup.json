@@ -1,0 +1,28 @@
+{
+    "//Path": "텍스트,이미지의 기본폴더는 json화일의 .json이 빠진 화일명이다.",
+
+    "Text": [
+        {
+            "Title": "자습서",
+            "Path": "1.md"
+        },
+        {
+            "Title": "설명서",
+            "Path": "2.md"
+        }
+    ],
+
+    "Images": [
+        {
+            "Title": "테스트시나리오",
+            "Path": "테스트시나리오.png"
+        }
+    ],
+
+    "Movies": [
+        {
+            "Title": "동영상 메뉴얼",
+            "LinkUrl": "https://www.youtube.com/embed/nfQzseYn-ow"
+        }
+    ]
+}

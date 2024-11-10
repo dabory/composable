@@ -1,0 +1,129 @@
+{
+    "General": {
+        "Title": "수주에서 출금으로 금액 복사",
+        "PageApi": "body-copy-page",
+        "ActApi": "body-copy-mact"
+    },
+
+    "TargetHdTableFullName": "dbr_acc_slip",
+
+    "QueryVars": {
+        "QueryName": "sales/sorder-acc-slip"
+    },
+
+    "LastSlipNoVars": {
+		"TableName": "acc_slip"
+	},
+
+    "LastSeqNoVars": {
+		"BdTableName": "dbr_acc_slip_bd",
+		"HdIdName": "acc_slip_id"
+	},
+
+    "BodyCopyPageVars": {
+		"GroupBy": "dbr_sorder_bd.id",
+		"SlipNoField": "sorder_no"
+	},
+
+    "//FormVars": "ListVars[0]-Caption,",
+    "FormVars": [
+        {
+            "SlipNoButton": "수주번호",
+            "ItemCodeButton": "",
+            "CompanyNameButton": "업체명",
+            "AutoCreateSlipChecked": "",
+            "ShowOnlyClosedChecked": "종결처리만 표시",
+            "BalanceOption": "잔액",
+            "DayFromTodayOption": "배송예정 일수",
+            "SelectedItems": "선택항목",
+            "SelectedQty": ""
+        }
+    ],
+
+    "// BalanceOptions": "",
+    "BalanceOptions": [
+        {
+            "Value": "bal_qty > 0",
+            "Caption": "있는 경우만"
+        },
+        {
+            "Value": "bal_qty >= -900000000",
+            "Caption": "없는 경우도 포함"
+        }
+    ],
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "sorder_no desc",
+            "Caption": "수주번호 역순"
+        },
+        {
+            "Value": "sorder_no asc",
+            "Caption": "수주번호 정렬순"
+        },
+        {
+            "Value": "company_name asc",
+            "Caption": "업체명 정렬"
+        },
+        {
+            "Value": "company_name desc",
+            "Caption": "업체명 역순"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "$Check": "$Check",
+            "No": "번호",
+            "SlipNo": "수주번호",
+            "CompanyName": "공급업체",
+            "ItemCode": "",
+            "ItemName": "",
+            "SubName": "",
+            "OrderQty": "금액",
+            "BalQty": "잔액",
+            "Ref": "관련정보"
+        },
+        {
+            "$Check": "3",
+            "No": "10",
+            "SlipNo": "15",
+            "CompanyName": "15",
+            "ItemCode": "10",
+            "ItemName": "10",
+            "SubName": "10",
+            "OrderQty": "10",
+            "BalQty": "10",
+            "Ref": "10"
+        },
+        {
+            "$Check": "center",
+            "No": "center",
+            "SlipNo": "center",
+            "CompanyName": "left",
+            "ItemCode": "left",
+            "ItemName": "left",
+            "SubName": "left",
+            "OrderQty": "right",
+            "BalQty": "right",
+            "Ref": "left"
+        }
+    ],
+
+    "//BodyCopyPopupVars": "[0]-filter, [1]-component, [2]-parameter",
+    "BodyCopyPopupVars": [
+        {
+            "SlipNo": "slip_no",
+            "CompanyName": "company_name"
+        },
+        {
+            "SlipNo": "slip",
+            "CompanyName": "company"
+        },
+        {
+            "SlipNo": "/search/slip-search/sales/sorder",
+            "CompanyName": "/search/company-search/company"
+        }
+    ]
+}

@@ -1,0 +1,584 @@
+@extends('layouts.master')
+@section('title', $formB['General']['Title'])
+@section('content')
+<div class="content type1">
+    <div class="row">
+        <div class="col-xl-12">
+            {{-- act button include --}}
+            <div class="mb-1 pt-2 text-right">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-primary pquote-act" data-value="list">
+                        List
+                    </button>
+                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-icon"
+                        data-toggle="dropdown" aria-expanded="false">
+                        <span class="sr-only" style="padding-left: 10px;">Toggle Dropdown</span>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            @foreach ($formB['HeadSelectOptions'] as $key => $title)
+                            <li class="dropdown-item pquote-act"
+                                data-value={{ $formB['HeadSelectOptions'][$key]['Value'] }}>
+                                {{ $formB['HeadSelectOptions'][$key]['Caption'] }}</li>
+                            <li class="dropdown-divider"></li>
+                            @endforeach
+                        </ul>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body pdb-3">
+                    <div id="type1Body">
+                        <form id="frm" method="POST" action="/frm-submit-nomal" target="ifrm" autocomplete="off">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card card card-primry mb-3 mb-md-0 border-light" style="height: 210px">
+                                        {{-- <div class="card-header p-1 mb-2"> Col 1 </div> --}}
+                                        <div class="card-body">
+                                            <input type="hidden" id="Id" name="Id" value="0">
+                                            <div class="d-flex flex-column mb-2">
+                                                <label
+                                                    class="m-0 overflow-hidden text-nowrap">{{ $formB['FormVars']['Title']['DateRange'] }}</label>
+                                                <div class="d-flex align-items-center" style="height: 28px;">
+                                                    <input autocomplete="off" name="date-range" type="radio"
+                                                        value="month" id="date-range-1" class="mgb-8 mgt-1 mgr-3 ">
+                                                    <label for="date-range-1"
+                                                        class="w-100 rounded overflow-hidden mr-0 text-nowrap">월
+                                                    </label>
+                                                    <input autocomplete="off" name="date-range" type="radio"
+                                                        value="quarterly" id="date-range-2" class="mgb-8 mgt-1 mgr-3 ">
+                                                    <label for="date-range-2"
+                                                        class="w-100 rounded overflow-hidden mr-0 text-nowrap">분기
+                                                    </label>
+                                                    <input autocomplete="off" name="date-range" type="radio"
+                                                        value="semiannual" id="date-range-3" class="mgb-8 mgt-1 mgr-3 ">
+                                                    <label for="date-range-3"
+                                                        class="w-100 rounded overflow-hidden mr-0 text-nowrap">반기
+                                                    </label>
+                                                    <input autocomplete="off" name="date-range" type="radio"
+                                                        value="year" id="date-range-4" class="mgb-8 mgt-1 mgr-3 ">
+                                                    <label for="date-range-4"
+                                                        class="w-100 rounded overflow-hidden mr-0 text-nowrap">년
+                                                    </label>
+                                                    <input autocomplete="off" name="date-range" type="radio" value="all"
+                                                        id="date-range-5" checked="" class="mgb-8 mgt-1 mgr-3 ">
+                                                    <label for="date-range-5"
+                                                        class="w-100 rounded overflow-hidden mr-0 text-nowrap">전체
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column mb-2">
+                                                <label class="m-0">{{ $formB['FormVars']['Title']['From'] }}</label>
+                                                <div class="d-flex">
+                                                    <input class="rounded overflow-hidden w-100 text-nowrap start-date"
+                                                        id="date-start" type="date" value="">
+                                                    <button class="btn disabled p-1 text-center">~</button>
+                                                    <input class="rounded overflow-hidden w-100 text-nowrap end-date"
+                                                        id="date-end" type="date" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card card card-primry mb-3 mb-md-0 border-light" style="height: 210px">
+                                        {{-- <div class="card-header p-1 mb-2"> Col 2 </div> --}}
+                                        <div class="card-body">
+                                            <label class="m-0">{{ $formB['FormVars']['Title']['FirstRange'] }}</label>
+                                            <div class="d-flex mb-2">
+                                                <input class="rounded overflow-hidden w-100 text-nowrap start-date"
+                                                    id="supplier-from" type="input" value="">&nbsp;
+                                                <button type="button"
+                                                    class="btn-dark rounded btn-open-modal border-0 col-13"
+                                                    data-target="company" data-clicked="get_supplier_id"
+                                                    data-variable="companyModal" onclick="companyFromClicked()">
+                                                    {{ $formB['FormVars']['Title']['From'] }}
+                                                </button>&nbsp;
+                                                <input class="rounded overflow-hidden w-100 text-nowrap end-date"
+                                                    id="supplier-to" type="input" value="">&nbsp;
+                                                <button type="button"
+                                                    class="btn-dark rounded btn-open-modal border-0  col-13"
+                                                    data-target="company" data-clicked="get_supplier_id"
+                                                    data-variable="companyModal" onclick="companyToClicked()">
+                                                    {{ $formB['FormVars']['Title']['To'] }}
+                                                </button>&nbsp;
+                                                <button class="btn-dark rounded border-0 col-1"
+                                                    onclick="supplierRnageEqualBtn()"></button>
+                                            </div>
+
+                                            <label class="m-0">{{ $formB['FormVars']['Title']['SecondRange'] }}</label>
+                                            <div class="d-flex mb-2">
+                                                <input class="rounded overflow-hidden w-100 text-nowrap start-date"
+                                                    id="pquote-from" type="input" value="">&nbsp;
+                                                <button type="button"
+                                                    class="btn-dark rounded btn-open-modal border-0 col-13"
+                                                    data-target="slip" data-clicked="get_pquote_id"
+                                                    data-variable="pquoteModal" onclick="pquoteFromClicked()">
+                                                    {{ $formB['FormVars']['Title']['From'] }}
+                                                </button>&nbsp;
+                                                <input class="rounded overflow-hidden w-100 text-nowrap end-date"
+                                                    id="pquote-to" type="input" value="">&nbsp;
+                                                <button type="button"
+                                                    class="btn-dark rounded btn-open-modal border-0 col-13"
+                                                    data-target="slip" data-clicked="get_pquote_id"
+                                                    data-variable="pquoteModal" onclick="pquoteToClicked()">
+                                                    {{ $formB['FormVars']['Title']['To'] }}
+                                                </button>&nbsp;
+                                                <button class="btn-dark rounded border-0 col-1"
+                                                    onclick="pquoteRnageEqualBtn()">=</button>
+                                            </div>
+
+                                            <label class="m-0">{{ $formB['FormVars']['Title']['ThirdRange'] }}</label>
+                                            <div class="d-flex">
+                                                <input class="rounded overflow-hidden w-100 text-nowrap start-date"
+                                                    id="item-from" type="input" value="">&nbsp;
+                                                <button type="button"
+                                                    class="btn-dark rounded btn-open-modal border-0 col-13"
+                                                    data-target="item" data-clicked="Btype.get_item_id"
+                                                    data-variable="itemModal" onclick="itemFromClicked()">
+                                                    {{ $formB['FormVars']['Title']['From'] }}
+                                                </button>&nbsp;
+                                                <input class="rounded overflow-hidden w-100 text-nowrap end-date"
+                                                    id="item-to" type="input" value="">&nbsp;
+                                                <button type="button"
+                                                    class="btn-dark rounded btn-open-modal border-0  col-13"
+                                                    data-target="item" data-clicked="Btype.get_item_id"
+                                                    data-variable="itemModal" onclick="itemToClicked()">
+                                                    {{ $formB['FormVars']['Title']['To'] }}
+                                                </button>&nbsp;
+                                                <button class="btn-dark rounded border-0  col-1"
+                                                    onclick="itemRnageEqualBtn()">=</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 box-3">
+                                    <div class="card card card-primry mb-3 mb-md-0 border-light" style="height: 210px">
+                                        {{-- <div class="card-header p-1 mb-2"> Col 3 </div> --}}
+                                        <div class="card-body d-flex flex-row">
+
+                                            <div class="d-flex  mgt-1 pdl-3">
+                                                <div class="mb-1">
+                                                    <input type="checkbox" value="1" name="EqualLabel"
+                                                        id="AddTotalLine">
+                                                    <input type="hidden" name="AddTotalLine" value="0"
+                                                        id="AddTotalLine_hidden">
+                                                </div>
+                                            </div>
+                                            <label
+                                                class="m-0">{{ $formB['FormVars']['Title']['IsAddTotalLine'] }}</label>
+
+
+                                            <div class="d-flex   mgt-1 pdl-3">
+                                                <div class="mb-1">
+                                                    <input type="checkbox" value="1" name="EqualLabel" id="ExcelColumn">
+                                                    <input type="hidden" name="ExcelColumn" value="0"
+                                                        id="ExcelColumn_hidden">
+                                                </div>
+                                            </div>
+                                            <label
+                                                class="m-0">{{ $formB['FormVars']['Title']['IsExcelColumn'] }}</label>
+
+
+                                            <div class="d-flex mb-2  mgt-1 pdl-3">
+                                                <div class="mb-1">
+                                                    <input type="checkbox" value="1" name="EqualLabel" id="QuickList">
+                                                    <input type="hidden" name="QuickList" value="0"
+                                                        id="QuickList_hidden">
+                                                </div>
+                                            </div>
+                                            <label
+                                                class="m-0 mb-2">{{ $formB['FormVars']['Title']['IsQuicklist'] }}</label>
+
+                                            <label
+                                                class="m-0 w-100">{{ $formB['FormVars']['Title']['SelectPopup'] }}</label>
+                                            <div class="d-flex w-100">
+                                                <select class="rounded w-100" id="delivery-select">
+                                                    <option value="">{{ $formB['SelectPopupOptions'][0]['Caption']}}
+                                                    </option>
+                                                    <option value="">{{ $formB['SelectPopupOptions'][1]['Caption']}}
+                                                    </option>
+                                                </select>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card-body p-0 mt-2 mx-2">
+                    <div id="type1-table">
+                        <div class="table-responsive mt-2" style="height:415px;">
+                            <table class="table-row type1-table">
+                                <thead id="type1-table-head">
+                                    @include('front.dabory.erp.partial.make-thead', [
+                                    'listVars' => $formB['ListVars'],
+                                    'checkboxName' => 'bd-cud-check'
+                                    ])
+                                </thead>
+                                <tbody id="type1-table-body">
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mg-2010 px-md-0 px-1  d-flex  align-items-stretch align-items-md-center flex-column flex-md-row btn_wrap"
+                            id="modal-type1">
+                            <select class="modal-line-select mb-md-0 mb-2 rounded" data-target="type1"
+                                id="type1-pages">
+                                @include('front.outline.moption')
+                            </select>
+                            <div class="d-flex mb-md-0 mb-2 flex-column flex-md-row align-items-stretch align-items-md-center">
+                                <label class="m-0 mr-1 w-20 font-weight-bold" id="oderby-label"></label>
+                                <select class="modal-order-by-select w-100 w-md-80 rounded" data-target="type1"
+                                    id="type1-sort">
+                                    <option value="{{ $formB['OrderByOptions'][0]['Value']}}">{{ $formB['OrderByOptions'][0]['Caption']}}</option>
+                                    <option value="{{ $formB['OrderByOptions'][1]['Value']}}">{{ $formB['OrderByOptions'][1]['Caption']}}</option>
+                                </select>
+                            </div>
+                            <ul class="pagination pagination-sm "></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('modal')
+@include('front.outline.static.slip', ['moealSetFile' => $pquoteModal])
+@include('front.outline.static.company', ['moealSetFile' => $companyModal])
+@include('front.outline.static.item', ['moealSetFile' => $itemModal])
+@endsection
+
+@section('js')
+<script src="/js/modals-controller/a-type/BasicSettings/modal-a.js?{{date('YmdHis')}}"></script>
+<script src="/js/modals-controller/b-type/slip.js?{{date('YmdHis')}}"></script>
+<script src="/js/modals-controller/a-type/company.js?{{date('YmdHis')}}"></script>
+<script src="/js/modals-controller/a-type/item.js?{{date('YmdHis')}}"></script>
+<script src="{{ asset('/js/modals-controller/b-type/common.js?').date('YmdHis') }}"></script>
+<script>
+    window.onload = function () {
+        make_dynamic_table_css('.type1-table', make_dynamic_table_px(formB['ListVars']['Size']))
+
+        $('input:radio[name=date-range]').on('click', function () {
+            let firDay, lasDay;
+            [firDay, lasDay] = date_range_vending_machine($(this).val());
+
+            $('#frm').find('#date-start').val(date_to_sting(firDay))
+            $('#frm').find('#date-end').val(date_to_sting(lasDay))
+        });
+
+        $("#date-range-5").trigger('click');
+    }
+
+    var update_data = (id) => {
+        $.when( get_api_data(moealSetFile['General']['PageApi'], {
+            QueryVars: {
+                QueryName: 'type1',
+                FilterName: 'dbr_type1.id',
+                FilterValue: String(id),
+            },
+            PageVars: {
+                Limit: 10,
+                Offset: 0,
+            }
+        })  ).done(function(response){
+            let d = response.data
+            for(let i in d.Page){
+                var result = d.Page[i]
+                if(result.Id != id) continue
+                $("#Id").val(result.Id)
+                $("#type1Code").val(result.Code)
+                $("#type1Name").val(result.Name)
+                $("#Location").val(result.ThirdField)
+                $("#IsMaintype1").prop("checked", result.IsCheck == 1 ? true : false )
+                $(`#modal-type1`).modal('hide');
+                $('.search-moadal-text').val('');
+            }
+        });
+        }
+
+        async function get_supplier_id(supplier_id){
+
+        }
+
+        async function get_supplier_id_from(supplier_id) {
+            let response = await get_api_data('company-pick', {
+                Page : [
+                    {Id: supplier_id }
+                ]
+            })
+            let company = response.data.Page[0];
+            $('#supplier-from').data('id', company.Id);
+            $('#supplier-from').val(company.CompanyName);
+
+            $('#modal-company').modal('hide');
+        }
+
+        async function get_supplier_id_to(supplier_id) {
+            let response = await get_api_data('company-pick', {
+                Page : [
+                    {Id: supplier_id }
+                ]
+            })
+            let company = response.data.Page[0];
+            $('#supplier-to').data('id', company.Id);
+            $('#supplier-to').val(company.CompanyName);
+
+            $('#modal-company').modal('hide');
+        }
+
+        function companyFromClicked(){
+            get_supplier_id = get_supplier_id_from
+        }
+
+        function companyToClicked(){
+            get_supplier_id = get_supplier_id_to
+        }
+
+        function supplierRnageEqualBtn(){
+            $('#supplier-to').data('id', $('#supplier-from').data('id'));
+            $('#supplier-to').val($('#supplier-from').val());
+        }
+
+        async function get_pquote_id(slip_no){
+
+        }
+
+        async function get_pquote_id_from(slip_no) {
+            let response = await get_api_data('pquote-form-book', {
+                SlipNo: slip_no,
+                BookVars: [{ Query: '' }, { Asc: 'SeqNo' }]
+            })
+
+            hd_page = response.data.HdPage[0]
+
+            $('#modal-slip').modal('hide');
+            $('#pquote-from').data('id', hd_page.Id);
+            $('#pquote-from').val(hd_page.PquoteNo);
+        }
+
+        async function get_pquote_id_to(slip_no) {
+            let response = await get_api_data('pquote-form-book', {
+                SlipNo: slip_no,
+                BookVars: [{ Query: '' }, { Asc: 'SeqNo' }]
+            })
+
+            hd_page = response.data.HdPage[0]
+
+            $('#modal-slip').modal('hide');
+            $('#pquote-to').data('id', hd_page.Id);
+            $('#pquote-to').val(hd_page.PquoteNo);
+        }
+
+        function pquoteFromClicked(){
+            get_pquote_id = get_pquote_id_from
+        }
+
+        function pquoteToClicked(){
+            get_pquote_id = get_pquote_id_to
+        }
+
+        function pquoteRnageEqualBtn(){
+            $('#pquote-to').data('id', $('#pquote-from').data('id'));
+            $('#pquote-to').val($('#pquote-from').val());
+        }
+
+        async function get_item_id_from(item_id) {
+            let response = await get_api_data('item-pick', {
+                Page : [
+                    {Id: item_id }
+                ]
+            })
+            let item = response.data.Page[0];
+
+            $('#modal-item').modal('hide');
+            $('#item-from').data('id', item.Id);
+            $('#item-from').val(item.ItemName);
+        }
+
+        async function get_item_id_to(item_id) {
+            let response = await get_api_data('item-pick', {
+                Page : [
+                    {Id: item_id }
+                ]
+            })
+            let item = response.data.Page[0];
+
+            $('#modal-item').modal('hide');
+            $('#item-to').data('id', item.Id);
+            $('#item-to').val(item.ItemName);
+        }
+
+        function itemFromClicked(){
+            get_item_id = get_item_id_from
+        }
+
+        function itemToClicked(){
+            get_item_id = get_item_id_to
+        }
+
+        function itemRnageEqualBtn(){
+            $('#item-to').data('id', $('#item-from').data('id'));
+            $('#item-to').val($('#item-from').val());
+        }
+
+        $('.pquote-act').on('click', function () {
+            // console.log($(this).data('value'))
+            switch( $(this).data('value') ) {
+                case 'list' : type1_open(); break;
+                case 'clear-all-filter': type1_clear(); break;
+                case 'xls-report': console.log('excel'); break;
+                case 'pdf-report': console.log('pdf'); break;
+                case 'modified-report': console.log('custompdf'); break;
+            }
+        });
+
+        function type1_open(limit = 10, offset, page = 1) {
+            let html = ``;
+            $.when(get_api_data('list-type1-page', {
+                QueryVars: {
+                    QueryName: formB.QueryVars['QueryName'],
+                    FilterName: formB.QueryVars['FilterName'],
+                    FilterValue: formB.QueryVars['FilterValue'],
+                },
+                ListType1Vars: {
+                    ListToken: "",
+
+                    FilterDate: "pquote_date",
+                    StartDate: date_to_sting(new Date($('#frm').find('#date-start').val()), 2),
+                    EndDate: date_to_sting(new Date($('#frm').find('#date-end').val()), 2),
+
+                    FilterFirst: "pquote_no",
+                    StartFirst: $("#pquote-from").val() != "" ? $("#pquote-from").val() : "",
+                    EndFirst: $("#pquote-to").val() != "" ? $("#pquote-to").val() : "",
+
+                    FilterSecond: "company_name",
+                    StartSecond: $("#supplier-from").val() != "" ? $("#supplier-from").val() : "",
+                    EndSecond: $("#supplier-to").val() != "" ? $("#supplier-to").val() : "",
+
+                    FilterThird: "item_code",
+                    StartThird: $("#item-from").val() != "" ? $("#item-from").val() : "",
+                    EndThird: $("#item-to").val() != "" ? $("#item-to").val() : "",
+
+                    FilterFourth: "",
+                    StartFourth: "",
+                    EndFourth: "",
+
+                    IsAddTotalLine: $("#AddTotalLine").is(":checked") ? "1" : "0",
+                    IsExcelColumn: $("#ExcelColumn").is(":checked") ? "1" : "0",
+                    IsShowOnlyClosed: "0",
+                    Balance: "",
+
+                    OrderBy: $('#type1-table').find('.modal-order-by-select').val(),
+
+                    IsQuickList: $("#QuickList").is(":checked") ? "1" : "0"
+                },
+                PageVars: {
+                    Limit: parseInt(limit),
+                    Offset: parseInt(offset),
+                }
+            })).done(function(response) {
+                let d = response.data
+                if( d.Page ) {
+                    make_pagination('type1', d.PageVars.QueryCnt, page);
+                    let no = get_table_no(d.PageVars.QueryCnt, page, limit);
+                    for (let i in d.Page) {
+                        html +=
+                        `<tr>
+                            <td class="text-${formB.ListVars['Align'].$Radio} px-import-0">
+                                <input name="bd-cursor-state" type="radio" value="1" tabindex="-1"
+                                class="text-${formB.ListVars['Align'].$Radio}"
+                                onclick="Btype.(this)">
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].No}" ${formB.ListVars['Hidden'].No}>${no--}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C1}" ${formB.ListVars['Hidden'].C1}>${d.Page[i].C1}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C2}" ${formB.ListVars['Hidden'].C2}>${isEmpty(d.Page[i].C2) ? '' : moment(d.Page[i].C2).format(formB.ListVars['Format'].C2)}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C3}" ${formB.ListVars['Hidden'].C3}>${d.Page[i].C3}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C4}" ${formB.ListVars['Hidden'].C4}>${d.Page[i].C4}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C5}" ${formB.ListVars['Hidden'].C5}>${d.Page[i].C5}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C6}" ${formB.ListVars['Hidden'].C6}>${d.Page[i].C6}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C7}" ${formB.ListVars['Hidden'].C7}>${d.Page[i].C7}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C8}" ${formB.ListVars['Hidden'].C8}>${format_decimal(d.Page[i].C8, window.User[formB.ListVars['Format'].C8])}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C9}" ${formB.ListVars['Hidden'].C9}>${isEmpty(d.Page[i].C9) ? '' : format_decimal(d.Page[i].C9, window.User[formB.ListVars['Format'].C9])}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C10}" ${formB.ListVars['Hidden'].C10}>${format_decimal(d.Page[i].C10, window.User[formB.ListVars['Format'].C10])}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C11}" ${formB.ListVars['Hidden'].C11}>${d.Page[i].C11}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C12}" ${formB.ListVars['Hidden'].C12}>${d.Page[i].C12}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C13}" ${formB.ListVars['Hidden'].C13}>${d.Page[i].C13}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C14}" ${formB.ListVars['Hidden'].C14}>${d.Page[i].C14}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C15}" ${formB.ListVars['Hidden'].C15}>${d.Page[i].C15}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C16}" ${formB.ListVars['Hidden'].C16}>${d.Page[i].C16}
+                            </td>
+                            <td
+                                class="text-${formB.ListVars['Align'].C17}" ${formB.ListVars['Hidden'].C17}>${d.Page[i].C17}
+                            </td>
+                        </tr>`;
+                    }
+                } else {
+                    html = `<tr><td class="text-center" colspan="${formB.ListVars['Count']}">${$('#no-data-found').text()}</td></tr>`;
+                    make_pagination('type1', 1, 1 );
+                }
+                $('#type1-table-body').html(html);
+            })
+        }
+
+        function type1_clear(){
+            $('#pquote-table-body').html('')
+            $('#supplier-from').val('');
+            $('#supplier-to').val('');
+            $('#item-from').val('');
+            $('#item-to').val('');
+            $('#pquote-from').val('');
+            $('#pquote-to').val('');
+            $("#AddTotalLine").prop('checked', false);
+            $("#ExcelColumn").prop('checked', false);
+            $("#QuickList").prop('checked', false);
+            $("#date-start").val("")
+            $("#date-end").val("")
+            $("#date-range-5").prop('checked', true);
+        }
+
+        const formB = {!! json_encode($formB) !!};
+        let pquoteModal = {!! json_encode($pquoteModal) !!};
+        let companyModal = {!! json_encode($companyModal) !!};
+        let itemModal = {!! json_encode($itemModal) !!};
+
+        // type1_open()
+</script>
+@endsection

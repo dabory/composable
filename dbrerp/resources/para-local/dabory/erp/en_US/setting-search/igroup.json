@@ -1,0 +1,49 @@
+{
+	"General": {
+		"Title": "Item Group Search(local)",
+        "PickApi": "igroup-pick",
+        "ActApi": "igroup-act"
+	},
+	"SelectOptions": [
+		{
+			"Value": "igroup_code",
+			"Caption": "Code"
+		},
+		{
+			"Value": "igroup_name",
+			"Caption": "Name"
+		}
+	],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-hidden, ListVars[2]-size(%), ListVars[3]-align",
+	"ListVars": [
+		{
+			"No": "No",
+			"Code": "Code",
+			"Name": "Name",
+			"ThirdField": "N/A",
+			"IsCheck": "End Level"
+		},
+        {
+			"No": "",
+			"Code": "",
+			"Name": "",
+			"ThirdField": "",
+			"IsCheck": ""
+		},
+		{
+			"No": "40",
+			"Code": "20",
+			"Name": "20",
+			"ThirdField": "10",
+			"IsCheck": "10"
+		},
+		{
+			"No": "center",
+			"Code": "center",
+			"Name": "center",
+			"ThirdField": "center",
+			"IsCheck": "left"
+		}
+	]
+}

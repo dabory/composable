@@ -1,0 +1,59 @@
+{
+    "General": {
+        "PickApi": "ssh-apps-pick",
+        "ActApi": "ssh-apps-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "Delete",
+            "Parameter": ""
+        }
+    ],
+
+    "SelectOptions": [
+		{
+			"Value": "Web App",
+			"Caption": "Web App"
+		},
+        {
+			"Value": "Desktop App",
+			"Caption": "Desktop App"
+		},
+        {
+			"Value": "Android App",
+			"Caption": "Android App"
+		},
+        {
+			"Value": "iOS App",
+			"Caption": "iOS App"
+		}
+	],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "Save",
+            "AppName": "App Name",
+            "AppType": "App Type*",
+            "ClientId": "Client ID",
+            "ClientSecret": "Client Secret",
+            "RedirectURI": "Redirect URI",
+            "UseDaboryApp": "Use Dabory App",
+            "GenerateKeys": "Generate Keys(Caution: Please save public key in your acrchive because it is volatile !!",
+            "PublicKey": "Public Key"
+        },
+        {
+            "SaveButton": "left",
+            "AppType": "left",
+            "AppName": "left",
+            "ClientId": "left",
+            "ClientSecret": "left",
+            "RedirectURI": "left",
+            "UseDaboryApp": "left",
+            "GenerateKeys": "left",
+            "PublicKey": "left"
+        }
+    ]
+}

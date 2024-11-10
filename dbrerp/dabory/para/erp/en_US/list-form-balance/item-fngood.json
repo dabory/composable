@@ -1,0 +1,67 @@
+{
+    "//bal-item-finished-good": "bal-item has 2 categoires: finished goods and materials",
+
+    "General": {
+        "Title": "Finished Goods Balance Qty",
+        "PageApi": "list-form-balance-page",
+        "ActApi": "list-form-balance-mact"
+    },
+
+    "QueryVars": {
+        "QueryName": "master/item",
+        "FilterName": "is_material",
+        "FilterValue": "0"
+    },
+
+    "//FormVars": "ListVars[0]-Caption, Li",
+    "FormVars": [
+        {
+            "SaveButton": "Bulk Save",
+            "Month": "Finished Goods Balance Qty Year/Month",
+            "Storage": "Storage",
+            "CodeRange": "Item Code Range"
+        }
+    ],
+
+    "SelectButtonOptions": [
+        {
+            "Value": "get-new-list",
+            "Caption": "Get New List"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "No",
+            "Code": "Item Code",
+            "Name": "Item Name",
+            "SecondName": "Sub Name",
+            "Balance": "Balance Qty",
+            "Balance2": "Bad Bal Qty"
+        },
+        {
+            "No": "10",
+            "Code": "10",
+            "Name": "10",
+            "Name2": "10",
+            "Balance": "10",
+            "Balance2": "10"
+        },
+        {
+            "No": "center",
+            "Code": "left",
+            "Name": "left",
+            "Name2": "left",
+            "Balance": "right",
+            "Balance2": "right"
+        }
+    ],
+
+    "FooterVars": [
+        {
+            "BalanceTotal": "Balance Total",
+            "Balance2Total": "Bad Bal Total"
+        }
+    ]
+}

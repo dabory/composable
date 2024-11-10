@@ -1,0 +1,83 @@
+{
+    "//popup-form1-form-p": "Form Select",
+
+    "General": {
+        "PageApi": "select-type1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "crm/account-item",
+        "FilterName": "",
+        "FilterValue": ""
+    },
+
+    "PopupList1Vars": {
+        "PopupWidth": "1500"
+    },
+    "HeadSelectOptions": [
+        {
+            "Value": "clear-all-filter",
+            "Caption": "초기화"
+        }
+    ],
+
+    "FormVars": [
+        {
+            "ListButton": "리스트 생성",
+            "From": "부터",
+            "To": "까지",
+            "TabA": "고객/금액 필터 항목",
+            "TabB": "품목 필터 항목",
+            "StrTitle": "지정필터",
+            "ChkTitle": "체크필터",
+            "RngTitle": "문자범위",
+            "DecTitle": "금액범위",
+            "NoCheck": "무관",
+            "NoCheck시에는": "초기에는 무관에 체크, 무관체크시 ChkxOpt에 Empty값을 넣기, 일반옵션체크시 무관 Uncheck로 만들기",
+
+            "Str": [
+                { "FilterName": "고객명" },
+                { "FilterName": "전화번호" },
+                { "FilterName": "휴대폰" },
+                { "FilterName": "이메일" }
+            ],
+            "Chk": [
+                {
+                    "FilterName": "성별",
+                    "Opt": [{ "FilterName": "남자" }, { "FilterName": "여자" }]
+                },
+                { "FilterName": "SMS", "Opt": [{ "FilterName": "발송" }] },
+                {
+                    "FilterName": "이메일",
+                    "Opt": [{ "FilterName": "발송" }]
+                },
+                { "FilterName": "DM", "Opt": [{ "FilterName": "발송" }] }
+            ],
+            "Rng": [
+                { "FilterName": "생년월일(양력)(YYYYMMDD)" },
+                { "FilterName": "생년월일(음력)(YYYYMMDD)" },
+                { "FilterName": "최근방문일(YYYYMMDD)" },
+                { "FilterName": "최근납품일(YYYYMMDD)" },
+                { "FilterName": "판매사명" }
+            ],
+            "Dec": [
+                { "FilterName": "매출합계(콤마없이)" },
+                { "FilterName": "누적마일리지(콤마없이)" }
+            ],
+
+            "StrItem": [
+                { "FilterName": "구매상품명" },
+                { "FilterName": "카드종류" },
+                { "FilterName": "검안R-(SPH)" },
+                { "FilterName": "_____CYL" },
+                { "FilterName": "_____AXIS" },
+                { "FilterName": "검안L-(SPH)" },
+                { "FilterName": "_____CYL" },
+                { "FilterName": "도수(콘택트)" }
+            ],
+            "ChkItem": [],
+            "RngItem": [],
+            "DecItem": []
+        }
+    ]
+}

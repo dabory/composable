@@ -1,0 +1,343 @@
+@extends('layouts.master')
+{{-- @section('title', $formB['General']['Title']) --}}
+@section('content')
+
+<div class="content purchase">
+    <div class="row">
+        <div class="col-xl-12">
+
+            <div class="mb-1 pt-2 text-right">
+                {{-- <button type="button" hidden
+                    class="btn btn-success btn-open-modal item-modal-btn"
+                    data-target="item"
+                    data-clicked="get_item_id"
+                    data-variable="itemModal">
+                </button>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-primary pquote-act" data-value="save" {{  }}>
+
+                    </button>
+                    @include('front.dabory.erp.partial.select-btn-options', [
+                        'selectBtns' => $formB['HeadSelectOptions'],
+                        'eventClassName' => 'pquote-act',
+                    ])
+                </div> --}}
+            </div>
+
+            <div id="dialog" title="Basic dialog">
+            </div>
+            <div class="card">
+                <div class="card-header p-0 mt-2 mx-2">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <ul class="nav nav-tabs nav-tabs-solid rounded border-0 mb-2">
+                                <li class="nav-item"><a href="#header-rounded-tab1" class="nav-link rounded-left active" data-toggle="tab">고객처방</a></li>
+                                <li class="nav-item"><a href="#header-rounded-tab2" class="nav-link" data-toggle="tab">문자발송</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="header-rounded-tab1">
+                                    <div class="border border-dark" style="height: 250px">
+                                    </div>
+                                    <div class="table-responsive mt-2" style="height:300px;">
+                                        <table class="table-row" style="min-width: 1024px;">
+                                            <thead id="table-head">
+                                                <th class="text-center" style="width: 1%"
+                                                    tabindex="0" rowspan="1" colspan="1">검안번호</th>
+                                                <th class="text-center" style="width: 1%"
+                                                    tabindex="0" rowspan="1" colspan="1">검안일자</th>
+                                                <th class="text-center" style="width: 1%"
+                                                    tabindex="0" rowspan="1" colspan="1">SPM</th>
+                                                <th class="text-center" style="width: 1%"
+                                                    tabindex="0" rowspan="1" colspan="1">CYL</th>
+                                                <th class="text-center" style="width: 1%"
+                                                    tabindex="0" rowspan="1" colspan="1">AXIS</th>
+                                                <th class="text-center" style="width: 1%"
+                                                    tabindex="0" rowspan="1" colspan="1">근용PD</th>
+                                                {{-- @include('front.dabory.erp.partial.make-thead', [
+                                                    'listVars' => $formB['ListVars'],
+                                                    'checkboxName' => 'bd-cud-check'
+                                                ]) --}}
+                                            </thead>
+                                            <tbody id="table-body">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="mt-2 px-md-0 px-1 w-100 d-flex justify-content-around align-items-stretch align-items-md-center flex-column flex-md-row btn_wrap">
+                                        <select class="modal-line-select mb-md-0 mb-2 rounded" data-target="company">
+                                            @include('front.outline.moption')
+                                        </select>
+                                        <div class="d-flex mb-md-0 mb-2 flex-column flex-md-row align-items-stretch align-items-md-center">
+                                            <label class="m-0 mr-1 w-20 font-weight-bold" id="oderby-label"></label>
+                                            <select class="modal-order-by-select w-100 w-md-80 rounded" data-target="company">
+                                            </select>
+                                        </div>
+                                        <ul class="pagination pagination-sm"></ul>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="header-rounded-tab2">
+                                    <div class="d-flex flex-column mb-2">
+                                        <label class="m-0">문자 템플릿</label>
+                                        <input class="rounded w-100" type="text" required>
+                                    </div>
+                                    <div class="d-flex flex-column mb-2">
+                                        <label class="m-0">송신번호</label>
+                                        <input class="rounded w-100" type="text" required>
+                                    </div>
+                                    <div class="d-flex flex-column mb-2">
+                                        <label class="m-0">수신번호</label>
+                                        <input class="rounded w-100" type="text" required>
+                                    </div>
+                                    <div class="d-flex flex-column mb-2">
+                                        <textarea style="height: 250px" class="rounded w-100" id="remarks-txt-area"></textarea>
+                                    </div>
+                                    <div class="d-flex justify-content-around">
+                                        <button class="btn btn-light w-100 text-nowrap overflow-hidden mr-3">고객명</button>
+                                        <button class="btn btn-light w-100 text-nowrap overflow-hidden mr-3">판매사</button>
+                                        <button class="btn btn-light w-100 text-nowrap overflow-hidden mr-3">이메일</button>
+                                        <button class="btn btn-light w-100 text-nowrap overflow-hidden mr-3">수주일</button>
+                                        <button class="btn btn-light w-100 text-nowrap overflow-hidden mr-3">매출일</button>
+                                        <button class="btn btn-light w-100 text-nowrap overflow-hidden">생일</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body p-0 mt-2 mx-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs nav-tabs-solid rounded border-0 mb-2">
+                                <li class="nav-item"><a href="#body-rounded-tab1" class="nav-link rounded-left active" data-toggle="tab">수출</a></li>
+                                <li class="nav-item"><a href="#body-rounded-tab2" class="nav-link" data-toggle="tab">매출</a></li>
+                                <li class="nav-item"><a href="#body-rounded-tab3" class="nav-link" data-toggle="tab">입금</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="body-rounded-tab1">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="row">
+                                                <div class="col-12 col-md-4 col-lg card-header-item">
+                                                    <div class="card card card-primary my-2 border-light" style="height: 250px">
+                                                        <div class="card-header p-0 mb-2">
+                                                            {{-- <p class="card-title p-1 ml-2">주요 정보</p> --}}
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <input type="hidden" id="Id" name="Id" value="0">
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0 overflow-hidden text-nowrap">11</label>
+                                                                <div class="col-12 d-flex p-0">
+                                                                    <button id="auto-slip-no-btn" class="btn-dark border-white rounded overflow-hidden col-3 text-center text-white text-nowrap radius-r0"
+                                                                        onclick="get_last_slip_no(this)">
+                                                                        <span class="icon-cogs"></span>
+                                                                    </button>
+                                                                    <input type="text" id="auto-slip-no-txt" class="rounded w-100 radius-l0" autocomplete="off" required disabled>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0">22</label>
+                                                                <input name="" type="date" value="">
+                                                                {{-- <input class="rounded w-100" type="text"> --}}
+                                                            </div>
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0 ">33</label>
+                                                                <div class="d-flex">
+                                                                    <input type="text" id="supplier-txt" data-id="0" class="rounded w-100 radius-r0" autocomplete="off" required disabled>
+                                                                    <button type="button"
+                                                                        class="btn-dark rounded btn-open-modal border-0 radius-l0 col-3"
+                                                                        data-target="company"
+                                                                        data-clicked="get_supplier_id"
+                                                                        data-variable="companyModal">
+                                                                        <i class="icon-folder-open"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex flex-column">
+                                                                <label class="m-0">44</label>
+                                                                <input class="rounded w-100" type="text" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4 col-lg card-header-item">
+                                                    <div class="card card card-info my-2 border-light" style="height: 250px">
+                                                        <div class="card-header p-0 mb-2">
+                                                            {{-- <p class="card-title p-1 ml-2">거래구분 / 세율</p> --}}
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0 ">11</label>
+                                                                <select class="rounded w-100" id="deal-type-select" required>
+                                                                </select>
+                                                            </div>
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0">22</label>
+                                                                <select class="rounded w-100" id="vat-type-select" onchange="set_vat_type_rate(this)" required>
+                                                                </select>
+                                                            </div>
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0">33</label>
+                                                                <input type="text" id="vat-type-rate-text" class="rounded w-100" autocomplete="off" value="" disabled>
+                                                            </div>
+                                                            <div class="d-flex flex-column ">
+                                                                <label class="m-0">44</label>
+                                                                <select class="rounded w-100" data-closed="0" id="status-select" onchange="set_is_closed_val(this)">
+                                                                    <option value=""></option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4 col-lg card-header-item">
+                                                    <div class="card card card-success my-2 border-light" style="height: 250px"><!--260-->
+                                                        <div class="card-header p-0 mb-2">
+                                                            {{-- <p class="card-title p-1 ml-2">거래 조건</p> --}}
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0">11</label>
+                                                                <select class="rounded w-100" id="delivery-select"></select>
+                                                            </div>
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0">22</label>
+                                                                <select class="rounded w-100" id="payTerms-select"></select>
+                                                            </div>
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0">33</label>
+                                                                <select class="rounded w-100" id="-select"></select>
+                                                            </div>
+                                                            <div class="d-flex flex-column">
+                                                                <label class="m-0">44</label>
+                                                                <input class="rounded w-100" type="text" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4 col-lg card-header-item">
+                                                    <div class="card card card-danger my-2 border-light" style="height: 250px">
+                                                        <div class="card-header p-0 mb-2">
+                                                            {{-- <p class="card-title p-1 ml-2">기타</p> --}}
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0">11</label>
+                                                                <textarea style="height: 85px" class="rounded w-100" id="remarks-txt-area"></textarea>
+                                                            </div>
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0">22</label>
+                                                                <input class="rounded w-100" type="text" required>
+                                                            </div>
+                                                            <div class="d-flex flex-column">
+                                                                <label class="m-0">33</label>
+                                                                <input class="rounded w-100" type="text" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4 col-lg card-header-item">
+                                                    <div class="card card card-danger my-2 border-light" style="height: 250px">
+                                                        <div class="card-header p-0 mb-2">
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0">44</label>
+                                                                <select class="rounded w-100" data-closed="0" id="">
+                                                                    <option value=""></option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="d-flex flex-column mb-2">
+                                                                <label class="m-0">22</label>
+                                                                <input class="rounded w-100" type="text" required>
+                                                            </div>
+                                                            <div class="d-flex flex-column ">
+                                                                <label class="m-0">33</label>
+                                                                <select class="rounded w-100" data-closed="0" id="">
+                                                                    <option value=""></option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive mt-2" style="height:300px;">
+                                                <table class="table-row" style="min-width: 1024px;">
+                                                    <thead id="table-head">
+                                                        <th class="text-center" style="width: 1%"
+                                                            tabindex="0" rowspan="1" colspan="1">검안번호</th>
+                                                        <th class="text-center" style="width: 1%"
+                                                            tabindex="0" rowspan="1" colspan="1">검안일자</th>
+                                                        <th class="text-center" style="width: 1%"
+                                                            tabindex="0" rowspan="1" colspan="1">SPM</th>
+                                                        <th class="text-center" style="width: 1%"
+                                                            tabindex="0" rowspan="1" colspan="1">CYL</th>
+                                                        <th class="text-center" style="width: 1%"
+                                                            tabindex="0" rowspan="1" colspan="1">AXIS</th>
+                                                        <th class="text-center" style="width: 1%"
+                                                            tabindex="0" rowspan="1" colspan="1">근용PD</th>
+                                                        {{-- @include('front.dabory.erp.partial.make-thead', [
+                                                            'listVars' => $formB['ListVars'],
+                                                            'checkboxName' => 'bd-cud-check'
+                                                        ]) --}}
+                                                    </thead>
+                                                    <tbody id="table-body">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="body-rounded-tab2">
+                                    <div class="d-flex flex-column mb-2">
+                                        <label class="m-0 ">매출</label>
+                                        <div class="d-flex">
+                                            <input type="text" id="supplier-txt" data-id="0" class="rounded w-100 radius-r0" autocomplete="off" required disabled>
+                                            <button type="button"
+                                                class="btn-dark rounded btn-open-modal border-0 radius-l0 col-3"
+                                                data-target="company"
+                                                data-clicked="get_supplier_id"
+                                                data-variable="companyModal">
+                                                <i class="icon-folder-open"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="body-rounded-tab3">
+                                    <div class="d-flex flex-column">
+                                        <label class="m-0">입금</label>
+                                        <input class="rounded w-100" type="text" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection
+
+@section('modal')
+
+@endsection
+
+@section('js')
+    <script>
+        $( function() {
+            $( "#dialog" ).dialog({
+                width: 1000,
+                height: 500
+            });
+        } );
+    </script>
+@endsection

@@ -1,0 +1,82 @@
+{
+    "General": {
+        "PickApi": "member-ext-pick",
+        "ActApi": "member-ext-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "MobileNo": "MobileNo*",
+            "MemberPermId": "MemberPermId",
+            "SgroupId": "SgroupId",
+            "BranchId": "BranchId",
+            "StorageId": "StorageId",
+            "AgroupId": "AgroupId",
+            "CountryCode": "CountryCode",
+            "IsExpired": "IsExpired"
+        },
+        {
+            "SaveButton": "left",
+            "MobileNo": "left",
+            "MemberPermId": "left",
+            "SgroupId": "left",
+            "BranchId": "left",
+            "StorageId": "left",
+            "AgroupId": "left",
+            "CountryCode": "left",
+            "IsExpired": "left"
+        },
+        {
+            "SaveButton": "0",
+            "MobileNo": "15",
+            "MemberPermId": "15",
+            "SgroupId": "15",
+            "BranchId": "15",
+            "StorageId": "15",
+            "AgroupId": "15",
+            "CountryCode": "15",
+            "IsExpired": "15"
+        },
+        {
+            "SaveButton": "",
+            "MobileNo": "",
+            "MemberPermId": "",
+            "SgroupId": "",
+            "BranchId": "",
+            "StorageId": "",
+            "AgroupId": "",
+            "CountryCode": "",
+            "IsExpired": ""
+        }
+    ],
+
+    "SelectStatusOptions": [
+        {
+            "Value": "0",
+            "Caption": "승인전"
+        },
+        {
+            "Value": "1",
+            "Caption": "사용중"
+        },
+        {
+            "Value": "2",
+            "Caption": "중지"
+        },
+        {
+            "Value": "3",
+            "Caption": "취소"
+        }
+    ]
+
+}

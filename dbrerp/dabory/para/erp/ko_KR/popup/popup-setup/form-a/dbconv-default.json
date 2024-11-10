@@ -1,0 +1,35 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+
+            "CgroupId": "CgroupId",
+            "IgroupId": "IgroupId",
+            "SgroupId": "SgroupId",
+            "StorageId": "StorageId",
+            "BranchId": "BranchId",
+            "DealTypeId": "DealTypeId",
+            "VatRateId": "VatRateId"
+        },
+        {
+            "SaveButton": "left",
+            "CgroupId": "left",
+            "IgroupId": "left",
+            "SgroupId": "left",
+            "StorageId": "left",
+            "BranchId": "left",
+            "DealTypeId": "left",
+            "VatRateId": "left"
+        }
+    ]
+}

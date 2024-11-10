@@ -1,0 +1,108 @@
+{
+    "//bal-item-finished-good": "bal-item has 2 categoires: finished goods and materials",
+
+    "General": {
+        "Title": "매입 잔액 설정",
+        "PageApi": "list-form-balance-page",
+        "ActApi": "list-form-balance-mact"
+    },
+
+    "QueryVars": {
+        "QueryName": "supplier",
+        "FilterName": "",
+        "FilterValue": ""
+    },
+
+    "FormVars": [
+        {
+            "ListButton": "①장기저장소에서 조회",
+            "Month": "마감잔액 년월(매출 시작월이 5월이면 4월 마감잔액으로 저장)",
+            "Branch": "지사/가맹점",
+            "Storage": "",
+            "CodeRange": "",
+            "OrderBy": "표시 순서"
+        },
+        {
+            "ListButton": "left",
+            "Month": "left",
+            "Branch": "left",
+            "Storage": "left",
+            "CodeRange": "left",
+            "OrderBy": "left"
+        },
+        {
+            "ListButton": "0",
+            "Month": "20",
+            "Branch": "20",
+            "Storage": "20",
+            "CodeRange": "20",
+            "OrderBy": "20"
+        },
+        {
+            "ListButton": "",
+            "Month": "",
+            "Branch": "",
+            "Storage": "",
+            "CodeRange": "",
+            "OrderBy": ""
+        }
+    ],
+
+    "SelectButtonOptions": [
+        {
+            "Value": "multi-save",
+            "Caption": "②장기저장소에 일괄저장"
+        },
+        {
+            "Value": "save-and-appply-balace",
+            "Caption": "③장기저장소와 매출 월말 잔액에 동시저장"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "company_no asc",
+            "Caption": "업체 번호 정렬순"
+        },
+        {
+            "Value": "company_no desc",
+            "Caption": "업체 번호 역순"
+        }
+    ],
+
+    "//ListVars": "ListVars[0]-caption, ListVars[1]-hidden, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "순번",
+            "Code": "업체코드",
+            "Name": "매입업체",
+            "Name2": "",
+            "Balance": "",
+            "Balance2": "매입잔액"
+        },
+        {
+            "No": "10",
+            "Code": "10",
+            "Name": "10",
+            "Name2": "10",
+            "Balance": "10",
+            "Balance2": "10"
+        },
+        {
+            "No": "center",
+            "Code": "left",
+            "Name": "left",
+            "Name2": "left",
+            "Balance": "decimal('sales_qty')",
+            "Balance2": "decimal('sales_qty')"
+        }
+    ],
+
+    "FooterVars": [
+        {
+            "BalanceTotal": "",
+            "Balance2Total": "매입잔액 합계"
+        }
+    ]
+}

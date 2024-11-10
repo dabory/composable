@@ -1,0 +1,36 @@
+{
+    "General": {
+        "Title": "견적서에서 수주로 단순복사",
+        "ActApi": "copy-to-another",
+        "PickApi": "sorder-pick",
+        "SourceTable": "sales/squote",
+        "TargetTable": "sorder"
+    },
+
+    "TargetHdTableFullName":"dbr_sorder",
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SourceButton": "복사할 견적서 번호",
+            "TargetButton": "복사될 수주 번호",
+            "EqualLabel": "복사할 번호를 복사될 번호의 컬럼에 복사하기",
+            "ItemCopyLabel": "전체 품목 복사 선택",
+            "CopyItemRadio": "복사 함",
+            "DontCopyRadio": "복사 않음"
+        }
+    ],
+
+    "//CopyToAnotherPopupVars": "[0]-filter, [1]-component, [2]-parameter",
+    "CopyToAnotherPopupVars": [
+        {
+            "Source": "slip_no"
+        },
+        {
+            "Source": "slip"
+        },
+        {
+            "Source": "/search/slip-search/sales/squote"
+        }
+    ]
+}

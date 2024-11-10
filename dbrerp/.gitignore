@@ -1,0 +1,33 @@
+# [Dabory]
+/.env-sites
+/.env.dabory
+/.env.aws.s3
+/dabory/themes
+
+# [Site Verification & SEO]
+/public/BingSiteAuth.xml
+/public/naver*.html
+/public/google*.html
+/public/sitemap.xml
+/public/robots.txt
+
+# [Apache]
+/.htaccess*
+
+# [Laravel]
+/.env
+/node_modules
+/public/hot
+/public/storage
+/storage
+/theme
+/vendor
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+/.gitmodules

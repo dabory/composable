@@ -1,0 +1,62 @@
+{
+    "General": {
+        "Title": "품목 입력",
+        "PickApi": "item-thm-pick",
+        "ActApi": "item-thm-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "복사"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "MediaId1": "추가 이미지1",
+            "MediaId2": "추가 이미지2",
+            "MediaId3": "추가 이미지3",
+            "MediaId4": "추가 이미지4",
+            "MediaId5": "추가 이미지5",
+            "FileUpload": "미디어 업로드"
+        },
+        {
+            "SaveButton": "",
+            "MediaId1": "left",
+            "MediaId2": "left",
+            "MediaId3": "left",
+            "MediaId4": "left",
+            "MediaId5": "left",
+            "FileUpload": "left"
+        },
+        {
+            "SaveButton": "0",
+            "MediaId1": "7",
+            "MediaId2": "7",
+            "MediaId3": "7",
+            "MediaId4": "7",
+            "MediaId5": "7",
+            "FileUpload": "7"
+        },
+        {
+            "SaveButton": "",
+            "MediaId1": "",
+            "MediaId2": "",
+            "MediaId3": "",
+            "MediaId4": "",
+            "MediaId5": "",
+            "FileUpload": ""
+        }
+    ]
+}

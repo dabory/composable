@@ -1,0 +1,80 @@
+{
+    "General": {
+        "PickApi": "coupon-pick",
+        "ActApi": "coupon-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "CouponType": "쿠폰유형*",
+            "IssueType": "발행유형*",
+            "IssueDate": "발행일자*",
+            "CouponName": "쿠폰명",
+            "CouponCode": "쿠폰코드(자동생성:변경불가)",
+            "IsRate": "할인율 적용(할인율 적용시 금액에 퍼센트입력)",
+            "CouponNum": "쿠폰금액*(또는 할인%)",
+            "ExpireDate": "만료일자",
+            "CouponDesc": "쿠폰설명",
+            "UserName": "작성자",
+            "BranchName": "점포명"
+        },
+        {
+            "SaveButton": "left",
+            "CouponType": "left",
+            "IssueType": "left",
+            "IssueDate": "center",
+            "CouponName": "left",
+            "CouponCode": "left",
+            "IsRate": "left",
+            "CouponNum": "sales_amt",
+            "ExpireDate": "center",
+            "CouponDesc": "left",
+            "UserName": "left",
+            "BranchName": "left"
+        }
+    ],
+
+    "SelectCouponTypeOptions": [
+        {
+            "Value": "0",
+            "Caption": "상품적용"
+        },
+        {
+            "Value": "1",
+            "Caption": "주문적용"
+        },
+        {
+            "Value": "2",
+            "Caption": "배송비할인"
+        },
+        {
+            "Value": "3",
+            "Caption": "기프티콘"
+        }
+    ],
+
+    "SelectIssueTypeOptions": [
+        {
+            "Value": "0",
+            "Caption": "수동 발행"
+        },
+        {
+            "Value": "1",
+            "Caption": "자동 발행"
+        },
+        {
+            "Value": "2",
+            "Caption": "회원 다운로드"
+        }
+    ]
+}

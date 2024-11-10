@@ -1,0 +1,227 @@
+{
+    "General": {
+        "Title": "매입 분석 차트",
+        "PageApi": "list-type1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "sales/sales-sum-bal",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+    "HeadSelectOptions": [
+        {
+            "Value": "view-chart",
+            "Caption": "차트 보기",
+            "Parameter": ""
+        },
+        {
+            "Value": "xls-report",
+            "Caption": "엑셀 다운로드"
+        },
+        {
+            "Value": "pdf-report",
+            "Caption": "Show PDF report"
+        }
+    ],
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "리스",
+            "DateRange": "",
+            "DateNavi": "일자방향(오늘)",
+            "Date": "날짜",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "주문번호",
+            "SecondRange": "업체구분",
+            "ThirdRange": "품목",
+            "FourthRange": "공급업체",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "차트 선택",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "ItemName",
+            "Caption": "품목이름"
+        },
+        {
+            "Value": "CompanyName",
+            "Caption": "업체이름"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "IsPro.keyword:'0'",
+            "Caption": "오프라인매출"
+        },
+        {
+            "Value": "IsPro.keyword:'1'",
+            "Caption": "온라인매출"
+        },
+        {
+            "Value": "Status.keyword:'C'",
+            "Caption": "구매취소"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "slip_no",
+            "SecondRange": "cgroup_code",
+            "ThirdRange": "item_code",
+            "FourthRange": "company_name"
+        },
+        {
+            "FirstRange": "slip",
+            "SecondRange": "setting",
+            "ThirdRange": "item",
+            "FourthRange": "company"
+        },
+        {
+            "FirstRange": "/search/slip-search/sales/sorder",
+            "SecondRange": "/search/setting-search/cgroup",
+            "ThirdRange": "/search/item-search/fn-goods",
+            "FourthRange": "/search/company-search/supplier"
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "ChartPopupOptions": [
+        {
+            "Caption": "매입 분석 차트",
+            "Component": "charts.kibana-type1",
+            "Parameter": "/chart/kibana-type1/sorder-daily"
+        }
+    ],
+
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : false,
+        "IsExcelColumn" : false,
+        "IsAddTotalLine": false,
+        "IsDownloadList" : false,
+        "IsKibana" :true,
+        "IsHideBody" :false,
+        "InitLines" : 10,
+        "InitDateRange" : "year",
+        "IsC1Popup": "1",
+        "HeadHeight": "250",
+        "BodyHeight": "700"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "",
+            "$Check": "",
+            "No": "번호",
+            "C1": "고객(업체)",
+            "D1": "이월잔액",
+            "D2": "매출액",
+            "D3": "반품액",
+            "D4": "입금액",
+            "D5": "입금할인",
+            "D6": "마감잔액",
+            "C2": "업체구분",
+            "C3": "구분코드",
+            "C4": "업체명+코드"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "10",
+            "C1": "10",
+            "D1": "10",
+            "D2": "10",
+            "D3": "10",
+            "D4": "10",
+            "D5": "10",
+            "D6": "10",
+            "C2": "10",
+            "C3": "10",
+            "C4": "10"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "left",
+            "D1": "decimal('sales_amt')",
+            "D2": "decimal('sales_amt')",
+            "D3": "decimal('sales_amt')",
+            "D4": "decimal('sales_amt')",
+            "D5": "decimal('sales_amt')",
+            "D6": "decimal('sales_amt')",
+            "C2": "left",
+            "C3": "center",
+            "C4": "left"
+        }
+    ]
+}

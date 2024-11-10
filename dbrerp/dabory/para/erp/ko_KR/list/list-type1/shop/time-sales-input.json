@@ -1,0 +1,236 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "타임 세일",
+        "PageApi": "list-type1-page",
+        "ActApi": "time-sales-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "shop/time-sales-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "",
+        "SubSimpleFilter": "image_type = 'thumb'"
+    },
+
+    "PrintVars": {
+        "QueryName": "federated/crystal/master/item-fngoods-input",
+        "ReportPath": "standard/master/item-fngoods-input.rpt",
+        "ExportFmt": "PDF",
+        "ServerPrinter": "",
+        "CustomCode": "item-fngoods-input"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "품목 일괄 삭제"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "일자방향(오늘)",
+            "Date": "일자범위",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "품목",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.item_code",
+            "Caption": "품목코드"
+        },
+        {
+            "Value": "mx.item_name",
+            "Caption": "품명"
+        },
+        {
+            "Value": "mx.sub_name",
+            "Caption": "서브명"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "mx.status='0'",
+            "Caption": "노출"
+        },
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.status='1'",
+            "Caption": "비노출"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "item_code",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "item",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "/search/item-search/fn-goods",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "타임 세일 입력/수정/삭제",
+            "Component": "popup-form1.form-a.shop.time-sales-form",
+            "Parameter": "/popup/popup-form1/form-a/shop/time-sales"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "생성일시 역순"
+        },
+        {
+            "Value": "mx.created_on asc",
+            "Caption": "생성일시 순서"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "ThumbContainerVars": {
+        "ListWidth": 50,
+        "ListHeight": 50
+    },
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsExcelColumn" : false,
+        "IsSplitColumn" : true,
+        "InitLines" : 15,
+        "IsC1Popup": "1",
+        "HeadHeight": "130",
+        "BodyHeight": "600"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "세일번호 | 메인노출",
+            "C2": "시작일시 | 종료일시 | 생성일시",
+            "C3": "품목이미지",
+            "C4": "품목코드 | 품명",
+            "C5": "서브명 | 단위",
+            "C6": "할인가 | 매출가",
+            "C7": "할인율 | 공급사 | 중지"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "No": "3",
+            "C1": "5",
+            "C2": "7",
+            "C3": "4",
+            "C4": "15",
+            "C5": "6",
+            "C6": "6",
+            "C7": "6"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "center|^check",
+            "C2": "unixtime|^unixtime|^unixtime",
+            "C3": "$_ThumbNail",
+            "C4": "center|^center",
+            "C5": "left|^left",
+            "C6": "decimal('sales_prc')|^decimal('sales_prc')",
+            "C7": "center|^center|^center|^check"
+        }
+    ]
+}

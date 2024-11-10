@@ -1,0 +1,25 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+    "SelectButtonOptions": [
+        {
+            "Value": "view-source",
+            "Caption": "웹페이스 소스코드 보기 URL 복사",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "PageHtml": "메타 복사붙여넣기"
+        },
+        {
+            "SaveButton": "center",
+            "PageHtml": "center"
+        }
+    ]
+}

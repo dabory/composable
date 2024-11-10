@@ -1,0 +1,188 @@
+{
+    "General": {
+        "PickApi": "post-type-pick",
+        "ActApi": "post-type-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "copy",
+            "Caption": "복사",
+            "Parameter": ""
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "0",
+            "Caption": "status('post-type','0')"
+        },
+        {
+            "Value": "1",
+            "Caption": "status('post-type','1')"
+        }
+    ],
+
+    "SortOptions": [
+        {
+            "Value": "100",
+            "Caption": "sort('post-type','100')"
+        },
+        {
+            "Value": "200",
+            "Caption": "sort('post-type','200')"
+        },
+        {
+            "Value": "300",
+            "Caption": "sort('post-type','300')"
+        }
+    ],
+
+    "SetupCodeOptions": [
+        {
+            "Value": "text",
+            "Caption": "setup_code('post-type','text')"
+        },
+        {
+            "Value": "image",
+            "Caption": "setup_code('post-type','image')"
+        },
+        {
+            "Value": "gallery",
+            "Caption": "setup_code('post-type','gallery')"
+        },
+        {
+            "Value": "movie",
+            "Caption": "setup_code('post-type','movie')"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "PostCode": "게시판 코드(중복불가)*",
+            "BrandCode": "종속코드",
+            "SetupCode": "게시판설정코드",
+            "SortDesc": "중류설명",
+            "TypeTitle": "게시판명",
+            "TypeSlug": "게시판구분슬러그",
+            "Status": "상태",
+            "SeqNo": "리스트 순서",
+            "Sort": "종류코드",
+            "IsUnused": "미사용",
+
+            "PcTitleLeng": "제목 길이",
+            "PcPageLeng": "페이지당 목록 수",
+            "PcGalleryLeng": "갤러리 이미지 수",
+            "PcGalleryWidth": "갤러리 이미지 폭",
+            "PcGalleryHeight": "갤러리 이미지 높이",
+            "PcVideoLeng": "비디오 이미지 수",
+            "PcVideoWidth": "비디오 이미지 폭",
+            "PcVideoHeight": "비디오 이미지 높이",
+            "MoTitleLeng": "모바일 제목 길이",
+            "MoPageLeng": "모바일 페이지당 목록 수",
+            "MoGalleryLeng": "모바일 갤러리 이미지 수",
+            "MoGalleryWidth": "모바일 갤러리 이미지 폭",
+            "MoGalleryHeight": "모바일 갤러리 이미지 높이",
+            "MoVideoLeng": "모바일 비디오 이미지 수",
+            "MoVideoWidth": "모바일 비디오 이미지 폭",
+            "MoVideoHeight": "모바일 비디오 이미지 높이"
+        },
+        {
+            "SaveButton": "left",
+            "PostCode": "left",
+            "BrandCode": "left",
+            "SetupCode": "left",
+            "SortDesc": "left",
+            "TypeTitle": "left",
+            "TypeSlug": "left",
+            "Status": "left",
+            "SeqNo": "left",
+            "Sort": "left",
+            "IsUnused": "left",
+
+            "PcTitleLeng": "left",
+            "PcPageLeng": "left",
+            "PcGalleryLeng": "left",
+            "PcGalleryWidth": "left",
+            "PcGalleryHeight": "left",
+            "PcVideoLeng": "left",
+            "PcVideoWidth": "left",
+            "PcVideoHeight": "left",
+            "MoTitleLeng": "left",
+            "MoPageLeng": "left",
+            "MoGalleryLeng": "left",
+            "MoGalleryWidth": "left",
+            "MoGalleryHeight": "left",
+            "MoVideoLeng": "left",
+            "MoVideoWidth": "left",
+            "MoVideoHeight": "left"
+        },
+        {
+            "SaveButton": "0",
+            "PostCode": "21",
+            "BrandCode": "100",
+            "SetupCode": "100",
+            "SortDesc": "100",
+            "TypeTitle": "100",
+            "TypeSlug": "100",
+            "Status": "191",
+            "SeqNo": "100",
+            "Sort": "100",
+            "IsUnused": "100",
+
+            "PcTitleLeng": "100",
+            "PcPageLeng": "100",
+            "PcGalleryLeng": "100",
+            "PcGalleryWidth": "100",
+            "PcGalleryHeight": "100",
+            "PcVideoLeng": "100",
+            "PcVideoWidth": "100",
+            "PcVideoHeight": "100",
+            "MoTitleLeng": "100",
+            "MoPageLeng": "100",
+            "MoGalleryLeng": "100",
+            "MoGalleryWidth": "100",
+            "MoGalleryHeight": "100",
+            "MoVideoLeng": "100",
+            "MoVideoWidth": "100",
+            "MoVideoHeight": "100"
+        },
+        {
+            "SaveButton": "",
+            "PostCode": "required",
+            "BrandCode": "",
+            "SetupCode": "",
+            "SortDesc": "",
+            "TypeTitle": "",
+            "TypeSlug": "",
+            "Status": "",
+            "SeqNo": "",
+            "Sort": "",
+            "IsUnused": "",
+
+            "PcTitleLeng": "",
+            "PcPageLeng": "",
+            "PcGalleryLeng": "",
+            "PcGalleryWidth": "",
+            "PcGalleryHeight": "",
+            "PcVideoLeng": "",
+            "PcVideoWidth": "",
+            "PcVideoHeight": "",
+            "MoTitleLeng": "",
+            "MoPageLeng": "",
+            "MoGalleryLeng": "",
+            "MoGalleryWidth": "",
+            "MoGalleryHeight": "",
+            "MoVideoLeng": "",
+            "MoVideoWidth": "",
+            "MoVideoHeight": ""
+        }
+    ]
+}

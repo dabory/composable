@@ -1,0 +1,105 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "ext-json": "*",
+        "ext-sodium": "*",
+        "appslabke/lara-izitoast": "^1.1",
+        "barryvdh/laravel-dompdf": "^0.9.0",
+        "codezero/laravel-localized-routes": "^2.9",
+        "elasticsearch/elasticsearch": "^7.17",
+        "eusonlito/laravel-meta": "^3.2",
+        "fideloper/proxy": "^4.4",
+        "fruitcake/laravel-cors": "^2.0",
+        "gettext/gettext": "3.6.*",
+        "google/cloud-vision": "^1.6",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "^2.7",
+        "jenssegers/agent": "^2.6",
+        "laravel/framework": "^8.40",
+        "laravel/socialite": "^5.2",
+        "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.4",
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "maatwebsite/excel": "^3.1",
+        "mews/captcha": "*",
+        "mguinea/laravel-robots": "^3.1",
+        "milon/barcode": "^10.0",
+        "predis/predis": "^2.1",
+        "simplesoftwareio/simple-qrcode": "^4.2",
+        "socialiteproviders/apple": "^4.1",
+        "socialiteproviders/google": "^4.1",
+        "socialiteproviders/kakao": "^4.2",
+        "socialiteproviders/naver": "^4.1",
+        "wikimedia/composer-merge-plugin": "^2.1",
+        "wngur6076/wngurest-php80": "dev-master"
+    },
+    "require-dev": {
+        "facade/ignition": "^2.5",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.0.1",
+        "mockery/mockery": "^1.4.2",
+        "nunomaduro/collision": "^5.0",
+        "phpunit/phpunit": "^9.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Themes\\": "dabory/themes/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        },
+        "merge-plugin": {
+            "include": [
+                "dabory/themes/erponly/composer.json"
+            ],
+            "recurse": true,
+            "replace": false,
+            "merge-dev": false
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "platform-check": false,
+        "allow-plugins": {
+            "0.0.0/composer-include-files": true,
+            "wikimedia/composer-merge-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

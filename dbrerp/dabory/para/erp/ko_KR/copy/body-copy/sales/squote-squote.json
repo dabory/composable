@@ -1,0 +1,135 @@
+{
+    "General": {
+        "Title": "견적서 항목 복사",
+        "PageApi": "body-copy-page",
+        "ActApi": "body-copy-mact"
+    },
+
+    "TargetHdTableFullName": "dbr_squote",
+
+    "QueryVars": {
+        "QueryName": "sales/squote-squote",
+        "GroupBy": "dbr_squote_bd.id"
+    },
+
+    "LastSeqNoVars": {
+		"TableName": "squote"
+	},
+
+    "BodyCopyPageVars": {
+		"SlipNoField": "squote_no"
+	},
+
+    "//FormVars": "ListVars[0]-Caption,",
+    "FormVars": [
+        {
+            "SlipNoButton": "견적서 번호",
+            "ItemCodeButton": "품목코드",
+            "CompanyNameButton": "업체명",
+            "AutoCreateSlipChecked": "",
+            "ShowOnlyClosedChecked": "종결처리만 표시",
+            "BalanceOption": "잔량",
+            "DayFromTodayOption": "배송예정 일수",
+            "SelectedItems": "선택항목",
+            "SelectedQty": "선택수량"
+        }
+    ],
+
+    "// BalanceOptions": "",
+    "BalanceOptions": [
+        {
+            "Value": "bal_qty > 0",
+            "Caption": "있는 경우만"
+        },
+        {
+            "Value": "bal_qty >= -900000000",
+            "Caption": "없는 경우도 표함"
+        }
+    ],
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "squote_no desc",
+            "Caption": "전표번호 역순"
+        },
+        {
+            "Value": "squote_no asc",
+            "Caption": "전표번호 정렬"
+        },
+        {
+            "Value": "company_name asc",
+            "Caption": "업체명 정렬"
+        },
+        {
+            "Value": "company_name desc",
+            "Caption": "업체명 역순"
+        },
+        {
+            "Value": "item_code asc",
+            "Caption": "품목코드 정렬"
+        },
+        {
+            "Value": "item_code desc",
+            "Caption": "품목코드 역순"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "$Check": "$Check",
+            "No": "번호",
+            "SlipNo": "견적서 번호",
+            "CompanyName": "공급업체",
+            "ItemCode": "품목코드",
+            "ItemName": "품명",
+            "SubName": "서브명",
+            "OrderQty": "수량",
+            "BalQty": "복사수량",
+            "Ref": "관련정보"
+        },
+        {
+            "$Check": "3",
+            "No": "5",
+            "SlipNo": "10",
+            "CompanyName": "10",
+            "ItemCode": "10",
+            "ItemName": "30",
+            "SubName": "8",
+            "OrderQty": "8",
+            "BalQty": "8",
+            "Ref": "10"
+        },
+        {
+            "$Check": "center",
+            "No": "center",
+            "SlipNo": "center",
+            "CompanyName": "left",
+            "ItemCode": "center",
+            "ItemName": "left",
+            "SubName": "left",
+            "OrderQty": "right",
+            "BalQty": "right",
+            "Ref": "left"
+        }
+    ],
+
+    "//BodyCopyPopupVars": "[0]-filter, [1]-component, [2]-parameter",
+    "BodyCopyPopupVars": [
+        {
+            "SlipNo": "slip_no",
+            "CompanyName": "company_name",
+            "ItemCode": "item_code"
+        },
+        {
+            "SlipNo": "slip",
+            "CompanyName": "company",
+            "ItemCode": "item"
+        },
+        {
+            "SlipNo": "/search/slip-search/sales/squote",
+            "CompanyName": "/search/company-search/company",
+            "ItemCode": "/search/item-search/supplier"
+        }
+    ]
+}

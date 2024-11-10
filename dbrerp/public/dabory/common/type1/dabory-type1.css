@@ -1,0 +1,300 @@
+.dabory-type1-box {
+    position: relative !important;
+    background-color: #fff !important;
+    padding: 0.425rem;
+}
+
+.dabory-type1-box .dabory-type1-body {
+    padding: 0 !important;
+}
+
+.dabory-type1-box .dabory-type1-responsive {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+    padding-bottom: 1px !important;
+    box-sizing: border-box !important;
+    margin-top: 0.425rem !important;
+}
+
+.dabory-type1-box .dabory-type1-table {
+    border-style: hidden !important;
+    box-shadow: 0 0 0 1px #ddd !important;
+    border-radius: 0.25rem !important;
+    width: 100% !important;
+    font-size: 13px !important;
+    display: table !important;
+    border-spacing: 2px !important;
+    border-color: gray !important;
+}
+
+.dabory-type1-box thead {
+    position: sticky !important;
+    top: 0 !important;
+    display: table-header-group !important;
+    vertical-align: middle !important;
+    border-color: inherit !important;
+}
+.dabory-type1-box thead th:first-of-type {
+    border-top-left-radius: 0.25rem !important;
+}
+
+.dabory-type1-box thead th:last-of-type {
+    border-top-right-radius: 0.25rem !important;
+}
+
+.dabory-type1-box thead th {
+    font-size: 13px !important;
+    height: 35px !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+
+    background-color: #5c6bc0 !important;
+    color: #FFF !important;
+    border-right: 1px #ccc solid !important;
+    font-weight: 400 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    word-wrap: break-word !important;
+    -webkit-box-orient: vertical !important;
+    line-height: 1.2em !important;
+}
+
+.dabory-type1-box .dabory-type1-table {
+    border-collapse: collapse !important;
+}
+
+.dabory-type1-box tbody {
+    display: table-row-group !important;
+    vertical-align: middle !important;
+}
+
+.dabory-type1-box tbody tr {
+    display: table-row !important;
+    vertical-align: inherit !important;
+    border-color: inherit !important;
+}
+
+.dabory-type1-box tbody td:first-child {
+    border-left: 1px #ddd solid;
+}
+
+.dabory-type1-box tbody td {
+    height: 35px !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+
+    padding: 1px 5px !important;
+    border-bottom: 1px #ddd solid !important;
+    border-right: 1px #ddd solid !important;
+}
+
+.dabory-type1-box table th, table td {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    word-wrap: break-word !important;
+    -webkit-box-orient: vertical !important;
+    line-height: 1.2em !important;
+}
+
+/* dabory-type1-head */
+
+.dabory-type1-head-item {
+    min-width: 1px !important;
+    flex: 0 0 32.96% !important;
+    max-width: 32.96% !important;
+    margin-right: 0.425rem !important;
+}
+
+.dabory-type1-head-item:last-child {
+    margin-right: 0!important;
+}
+
+.dabory-type1-head-card {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+    word-wrap: break-word !important;
+    background-color: #fff !important;
+    background-clip: border-box !important;
+    border: 1px solid rgba(0,0,0,.125) !important;
+    border-radius: 0.25rem !important;
+}
+
+.dabory-type1-head-card-body {
+    flex: 1 1 auto !important;
+    min-height: 1px !important;
+    padding: 0.75rem !important;
+    font-size: 13px !important;
+    height: 137px !important;
+}
+
+.dabory-type1-box .type1-date-navi-prev-btn {
+    color: #777 !important;
+    line-height: 1 !important;
+    background-color: #f0f2f5 !important;
+    border-color: #cad1dc !important;
+    padding: 0.125rem 0.3125rem !important;
+    margin-right: 0.3125rem !important;
+    border-radius: 0.25rem!important;
+}
+
+.dabory-type1-box .type1-date-navi-next-btn {
+    color: #777 !important;
+    line-height: 1 !important;
+    background-color: #f0f2f5 !important;
+    border-color: #cad1dc !important;
+    padding: 0.125rem 0.3125rem !important;
+    margin-left: 0.3125rem !important;
+    border-radius: 0.25rem!important;
+}
+
+.dabory-type1-box .type1-date-navi-btn {
+    color: #777 !important;
+    background-color: #f0f2f5 !important;
+    border-color: #cad1dc !important;
+    border-radius: 0.25rem!important;
+    text-transform: none !important;
+    overflow: visible !important;
+    padding: 0 0.3125rem !important;
+}
+
+.dabory-type1-box .type1-date-navi-div {
+    display: flex!important;
+    align-items: center!important;
+    justify-content: space-around!important;
+    margin-bottom: 0.3125rem !important;
+}
+
+.dabory-type1-box .type1-date-navi-col {
+    display: flex!important;
+    align-items: center!important;
+}
+
+.dabory-type1-box input[type=text] {
+    width: 100%!important;
+    border-radius: 0.25rem!important;
+    height: 28px !important;
+    color: #373737 !important;
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+    text-indent: 2px !important;
+    transition: all 0.5s !important;
+    vertical-align: middle !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    overflow: visible !important;
+}
+
+.dabory-type1-box .type1-date-navi-col input[type="radio"] {
+    display: inline-block !important;
+    width: 14px !important;
+    height: 14px !important;
+    min-width: 15px !important;
+    margin-right: 3px !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    overflow: visible !important;
+}
+
+.dabory-type1-box input[type="radio"] + label {
+    margin-bottom: 0 !important;
+}
+
+.dabory-type1-box .dabory-type1-head select {
+    width: 100% !important;
+}
+
+.dabory-type1-box select {
+    height: 28px !important;
+    padding: 0 2px !important;
+    color: #373737 !important;
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+    box-sizing: border-box !important;
+    word-wrap: normal !important;
+    border-radius: 5px !important;
+}
+
+.dabory-type1-box .type1-head-col{
+    display: flex !important;
+    margin-bottom: 0.3125rem !important;
+    flex-direction: column !important;
+}
+
+.dabory-type1-box .row {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important;
+    margin-right: -0.625rem !important;
+    margin-left: -0.625rem !important;
+}
+
+.dabory-type1-box .d-flex {
+    display: flex !important;
+}
+
+.dabory-type1-box label {
+    display: inline-block !important;
+    margin: 0 !important;
+    font-size: 13px !important;
+}
+
+.dabory-type1-box .type1-start-date,
+.dabory-type1-box .type1-end-date {
+    height: 28px !important;
+    color: #373737 !important;
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+    text-indent: 2px !important;
+    transition: all 0.5s !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
+    overflow: hidden!important;
+    border-radius: 0.25rem!important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.dabory-type1-box .filter-name-div {
+    padding-right: 0.3125rem !important;
+    flex: 0 0 41.66667% !important;
+    max-width: 41.66667% !important;
+    position: relative !important;
+    width: 100% !important;
+    padding-left: 0.625rem !important;
+}
+
+.dabory-type1-box .filter-value-div {
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding-left: 0!important;
+    position: relative;
+    width: 100%;
+    padding-right: 0.625rem;
+}
+
+.dabory-type1-box .simple-filter-select-div {
+    flex-direction: column!important;
+    display: flex!important;
+}
+
+.dabory-type1-head button {
+    outline: none !important;
+    border: none !important;
+}
+
+.type1-head-col button {
+    background-color: transparent !important;
+}

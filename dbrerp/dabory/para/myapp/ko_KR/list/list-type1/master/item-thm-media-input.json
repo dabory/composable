@@ -1,0 +1,237 @@
+{
+  "//list-type-1": "simple and plain list by query of table join",
+
+  "General": {
+    "Title": "품목 추가 이미지2",
+    "PageApi": "list-type1-page",
+    "ActApi": "item-act"
+  },
+
+  "QueryVars": {
+    "QueryName": "master/item-thm-media-input",
+    "FilterName": "",
+    "FilterValue": "",
+    "SimpleFilter": "",
+    "SubSimpleFilter": "image_type = 'thumb'"
+  },
+
+  "HeadSelectOptions": [
+  ],
+
+  "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+  "FormVars": [
+    {
+      "ListButton": "조회",
+      "DateRange": "일자범위",
+            "DateNavi": "",
+      "Date": "",
+      "From": "부터",
+      "To": "까지",
+      "FirstRange": "",
+      "SecondRange": "",
+      "ThirdRange": "",
+      "FourthRange": "",
+      "AddTotalLine": "",
+      "SelectPopup": "",
+      "MultiPopup": "",
+        "ChartPopup": "",
+      "DownloadList": "",
+      "ShowOnlyClosed": "",
+      "Balance": "",
+      "OrderBy": "표시 순서",
+      "FilterOption": "조건조회",
+      "SimpleOption": "카테고리 지정"
+    }
+  ],
+
+  "FilterSelectOptions": [
+    {
+      "Value": "",
+      "Caption": "=검색 조건="
+    },
+    {
+      "Value": "mx.item_code",
+      "Caption": "품목코드"
+
+    },
+    {
+      "Value": "mx.item_name",
+      "Caption": "품명"
+
+    },
+    {
+      "Value": "mx.sub_name",
+      "Caption": "서브명"
+    }
+  ],
+
+  "SimpleSelectPage": {
+    "QueryVars": {
+      "QueryName": "select-option/igroup-whole",
+      "FilterName": "",
+      "FilterValue": "",
+      "SimpleFilter": ""
+    },
+
+    "PageVars": {
+      "MyFilter": "",
+      "Query": "",
+      "Fields": "",
+      "Asc": "id",
+      "Desc": "",
+      "Limit": 10,
+      "Offset": 0
+    }
+  },
+
+  "SimpleSelectOptions": [],
+
+  "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+  "ListType1RangeVars": [
+    {
+      "FirstRange": "",
+      "SecondRange": "",
+      "ThirdRange": "",
+      "FourthRange": ""
+    },
+    {
+      "FirstRange": "",
+      "SecondRange": "",
+      "ThirdRange": "",
+      "FourthRange": ""
+    },
+    {
+      "FirstRange": "",
+      "SecondRange": "",
+      "ThirdRange": "",
+      "FourthRange": ""
+    }
+  ],
+
+  "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+  "DateRangeOptions": [
+    {
+      "Value": "day",
+      "Caption": "일"
+    },
+    {
+      "Value": "week",
+      "Caption": "주"
+    },
+    {
+      "Value": "month",
+      "Caption": "월"
+    },
+    {
+      "Value": "quarterly",
+      "Caption": "분기"
+    },
+    {
+      "Value": "semiannual",
+      "Caption": "반기"
+    },
+    {
+      "Value": "year",
+      "Caption": "년"
+    },
+    {
+      "Value": "all",
+      "Caption": "전체"
+    }
+  ],
+
+  "SelectPopupOptions": [
+    {
+      "Caption": "상품 입력/수정/삭제",
+      "Component": "popup-form1.form-a.master.item-thm-media-form",
+      "Parameter": "/popup/popup-form1/form-a/master/item-thm-media"
+    }
+  ],
+
+  "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+  "OrderByOptions": [
+    {
+      "Value": "mx.item_code asc",
+      "Caption": "상품 코드 순서"
+    },
+    {
+      "Value": "mx.item_code desc",
+      "Caption": "상품 코드 역순"
+    }
+  ],
+
+  "//BalanceOptions": "Show OnlyBalaceRemained or All",
+  "BalanceOptions": [
+    {
+      "Value": "",
+      "Caption": "전체 보기"
+    },
+    {
+      "Value": "c10 > 0",
+      "Caption": "잔량있는 것만"
+    }
+  ],
+
+  "DisplayVars": {
+    "IsSimpleSelectPage": true,
+    "IsListFirst": true,
+    "IsExcelColumn": true,
+    "InitLines": 10,
+    "HeadHeight": "120",
+    "IsC1Popup": "1",
+    "BodyHeight": "750"
+  },
+
+  "ThumbContainerVars": {
+    "ListWidth": 150,
+    "ListHeight": 75
+  },
+    "//Theme": "베스트여부(CheckBox):pc1, 토큰가격:pc2, 베스트섬네일:media_id1, 유의사항:pc3, 한정판매:pc4, 배송비:pd1",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "품목코드",
+            "C2": "품명",
+            "C3": "서브명",
+            "C4": "품목구분",
+            "C5": "표준매출가",
+            "C6": "섬네일1",
+            "C7": "섬네일2",
+            "C8": "섬네일3",
+            "C9": "섬네일4",
+            "C10": "섬네일5"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "No": "3",
+            "C1": "8",
+            "C2": "10",
+            "C3": "15",
+            "C4": "8",
+            "C5": "15",
+            "C6": "6",
+            "C7": "6",
+            "C8": "6",
+            "C9": "6",
+            "C10": "6"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "left",
+            "C3": "left",
+            "C4": "left",
+            "C5": "left",
+            "C6": "$_ThumbNail",
+            "C7": "$_ThumbNail",
+            "C8": "$_ThumbNail",
+            "C9": "$_ThumbNail",
+            "C10": "$_ThumbNail"
+        }
+    ]
+}

@@ -1,0 +1,154 @@
+@extends('layouts.master')
+
+@section('title', 'Dashboard')
+
+@section('content')
+    <div class="content">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="mb-1 pt-2">
+                    <h6 class="mb-0 font-weight-semibold">Search</h6>
+                </div>
+                <div class="card">
+                    <div class="card-header header-elements-inline">
+                        <h6 class="card-title">Card Name Header</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table-col">
+                                <tr>
+                                    <th>th name</th>
+                                    <td>
+                                        <input name="" type="text" value="">
+                                        <input name="" type="date" value="">
+                                    </td>
+                                    <th>th name</th>
+                                    <td>
+                                        <select name="">
+                                            <option value="">선택하세요</option>
+                                            <option value="">선택하세요 2323</option>
+                                            <option value="">선택하세요 231</option>
+                                            <option value="">선택하세요 65 4656</option>
+                                            <option value="">선택하세요 5 465 4 64</option>
+                                            <option value="">선택하세요 546 54 65 4</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>th name</th>
+                                    <td>
+                                        <input name="radio" type="radio" value="" id="radio-1" checked>
+                                        <label for="radio-1">라디오</label>
+                                        <input name="radio" type="radio" value="" id="radio-2">
+                                        <label for="radio-2">라디오</label>
+                                    </td>
+                                    <th>th name</th>
+                                    <td>
+                                        <input name="checkbox[]" type="checkbox" value="" id="checkbox-1" checked><label
+                                            for="checkbox-1">체크박스</label>
+                                        <input name="checkbox[]" type="checkbox" value="" id="checkbox-2"><label
+                                            for="checkbox-2">체크박스</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>th name</th>
+                                    <td>
+                                        <input name="" type="text" value="" readonly>
+                                    </td>
+                                    <th>th name</th>
+                                    <td>
+                                        <select name="" disabled>
+                                            <option value="">선택하세요</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        Card Footer 샹략 가능
+                        <button type="button" class="btn btn-success" onclick="alert('success 메시지를 보여줍니다.', 'success')">
+                            success alert
+                        </button>
+                        <button type="button" class="btn btn-info" onclick="alert('info 메시지를 보여줍니다.', 'info')">info
+                            alert
+                        </button>
+                        <button type="button" class="btn btn-warning" onclick="alert('warning 메시지를 보여줍니다.', 'warning')">
+                            warning alert
+                        </button>
+                        <button type="button" class="btn btn-danger" onclick="alert('error 메시지를 보여줍니다.', 'error')">error
+                            alert
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="mb-1 pt-2">
+                    <h6 class="mb-0 font-weight-semibold">List</h6>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive" style="height:400px">
+                            <table class="table-row">
+                                <thead>
+                                <tr>
+                                    <th>PquoteNo</th>
+                                    <th>CompanyContact</th>
+                                    <th>Status</th>
+                                    <th>DealName</th>
+                                    <th>CompanyName</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @forelse ( $data ?? [] as $row )
+                                    <tr>
+                                        <td class="text-center">{{$row['PquoteNo']}}</td>
+                                        <td class="text-center">{{$row['CompanyContact']}}</td>
+                                        <td class="text-center">{{$row['Status']}}</td>
+                                        <td class="text-center">{{$row['DealName']}}</td>
+                                        <td class="text-center">{{$row['CompanyName']}}</td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="5" class="text-center">검색결과가 없습니다</td>
+                                    </tr>
+                                @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="mb-3 pt-2">
+                    <h6 class="mb-0 font-weight-semibold">Basic layouts</h6>
+                    <span class="text-muted d-block">Basic layouts</span>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">Card Name Header</h6>
+                    </div>
+                    <div class="card-body">
+                        Card Body
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="mb-3 pt-2">
+                    <h6 class="mb-0 font-weight-semibold">Basic layouts</h6>
+                    <span class="text-muted d-block">Basic layouts</span>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">Card Name Header</h6>
+                    </div>
+                    <div class="card-body">
+                        Card Body
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

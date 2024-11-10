@@ -1,0 +1,30 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "OrderWaitPayDays": "주문후 입금대기 영업일수(자동취소)",
+            "ShipWaitDays": "결제후 발송대기 영업일수(발송지연표시)",
+            "CancelWaitDays": "취소요청후 완료대기 영업일수(자동취소)",
+            "ReturnWaitDays": "반품요청후 완료대기 영업일수(반품지연표시)",
+            "ExchangeWaitDays": "교환요청후 완료대기 영업일수(교환지연표시)"
+        },
+        {
+            "SaveButton": "center",
+            "OrderWaitPayDays": "center",
+            "ShipWaitDays": "center",
+            "CancelWaitDays": "center",
+            "ReturnWaitDays": "center",
+            "ExchangeWaitDays": "center"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "ClientId": "Client ID(다보리 로그인은 공백으로 입력하세요)",
+            "ClientSecret": "Client Secret(다보리 로그인은 공백으로 입력하세요)",
+            "IsAppleLogin": "애플 로그인",
+            "TeamId": "Team Id",
+            "KeyId": "Key Id",
+            "PrivateKey": "Private Key",
+            "LoginButtonString": "Login Button String",
+            "AfterMemberLoginUri": "After Member Login Uri",
+            "AfterUsersLoginUri": "After Users Login Uri",
+            "IsLocalSsoServer": "Check if you are using local SSO host server",
+            "AuthorizeUri": "Authorize URI",
+            "TokenUri": "Token URI",
+            "UserInfoUri": "User Info URI"
+        },
+        {
+            "SaveButton": "left",
+            "ClientId": "left",
+            "ClientSecret": "left",
+            "IsAppleLogin": "left",
+            "TeamId": "left",
+            "KeyId": "left",
+            "PrivateKey": "left",
+            "LoginButtonString": "left",
+            "AfterMemberLoginUri": "left",
+            "AfterUsersLoginUri": "left",
+            "IsLocalSsoServer": "left",
+            "AuthorizeUri": "left",
+            "TokenUri": "left",
+            "UserInfoUri": "left"
+        }
+    ]
+}

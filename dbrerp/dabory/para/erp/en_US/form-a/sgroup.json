@@ -1,0 +1,41 @@
+{
+    "General": {
+        "Title": "Sales Group",
+        "PickApi": "sgroup-pick",
+        "ActApi": "sgroup-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "Add New"
+        },
+        {
+            "Value": "",
+            "Caption": ""
+        },
+        {
+            "Value": "del",
+            "Caption": "Delete"
+        },
+        {
+            "Value": "",
+            "Caption": ""
+        },
+        {
+            "Value": "copy",
+            "Caption": "Duplicate"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "Save",
+            "SgroupCode": "Group Code",
+            "SgroupName": "Group Name",
+            "SgroupManager": "Manager",
+            "IsUnused": "Unused"
+        }
+    ]
+}

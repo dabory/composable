@@ -1,0 +1,15 @@
+{
+    "include": [
+        "./ts/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "rootDir": "./ts/",
+        "outDir": "./js/",
+        "target": "es6",
+        "moduleResolution": "node",
+        "strictNullChecks": true
+    }
+}

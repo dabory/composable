@@ -1,0 +1,18 @@
+[
+    {
+        "Code": "",
+        "Title": "분류값 없슴"
+    },
+    {
+        "Code": "0",
+        "Title": "SMS"
+    },
+    {
+        "Code": "1",
+        "Title": "LMS"
+    },
+    {
+        "Code": "2",
+        "Title": "MMS"
+    }
+]

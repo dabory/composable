@@ -1,0 +1,288 @@
+{
+    "General": {
+        "Title": "방문/재방문 분석 차트",
+        "PageApi": "list-type1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "elastic/sales/sorder-export",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "sorder_date"
+    },
+    "HeadSelectOptions": [
+        {
+            "Value": "view-chart",
+            "Caption": "차트 보기",
+            "Parameter": ""
+        },
+        {
+            "Value": "xls-report",
+            "Caption": "엑셀 다운로드"
+        },
+        {
+            "Value": "pdf-report",
+            "Caption": "Show PDF report"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "일자방향(오늘)",
+            "Date": "날짜",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "주문번호",
+            "SecondRange": "업체구분",
+            "ThirdRange": "품목",
+            "FourthRange": "공급업체",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "차트 선택",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "ItemName",
+            "Caption": "품목이름"
+        },
+        {
+            "Value": "CompanyName",
+            "Caption": "업체이름"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "IsPro.keyword:'0'",
+            "Caption": "오프라인매출"
+        },
+        {
+            "Value": "IsPro.keyword:'1'",
+            "Caption": "온라인매출"
+        },
+        {
+            "Value": "Status.keyword:'C'",
+            "Caption": "구매취소"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "slip_no",
+            "SecondRange": "cgroup_code",
+            "ThirdRange": "item_code",
+            "FourthRange": "company_name"
+        },
+        {
+            "FirstRange": "slip",
+            "SecondRange": "setting",
+            "ThirdRange": "item",
+            "FourthRange": "company"
+        },
+        {
+            "FirstRange": "/search/slip-search/sales/sorder",
+            "SecondRange": "/search/setting-search/cgroup",
+            "ThirdRange": "/search/item-search/fn-goods",
+            "FourthRange": "/search/company-search/supplier"
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "ChartPopupOptions": [
+        {
+            "Caption": "방문/재방문 분석 차트",
+            "Component": "charts.kibana-type1",
+            "Parameter": "/chart/kibana-type1/visit-chart-basic1"
+        }
+    ],
+
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : false,
+        "IsExcelColumn" : false,
+        "IsAddTotalLine": false,
+        "IsDownloadList" : true,
+        "IsKibana" :true,
+        "IsHideBody" :false,
+        "InitLines" : 10,
+        "InitDateRange" : "year",
+        "IsC1Popup": "1",
+        "HeadHeight": "250",
+        "BodyHeight": "700"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "No": "번호",
+            "C1": "수주 일자",
+            "C2": "고객",
+            "C3": "수주 번호",
+            "C4": "거래구분",
+            "C5": "품목코드",
+            "C6": "품명",
+            "C7": "서브명",
+            "C8": "영업구분",
+            "C9": "품목구분",
+            "C10": "업체구분",
+            "C11": "지불조건",
+            "C12": "상태",
+            "C13": "온라인판매",
+            "C14": "생일",
+            "C15": "첫 번째 주문",
+            "C16": "성별",
+            "C17": "수량",
+            "C18": "가격",
+            "C19": "합계",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "6",
+            "C1": "12",
+            "C2": "9",
+            "C3": "15",
+            "C4": "8",
+            "C5": "10",
+            "C6": "15",
+            "C7": "10",
+            "C8": "10",
+            "C9": "10",
+            "C10": "10",
+            "C11": "10",
+            "C12": "10",
+            "C13": "10",
+            "C14": "10",
+            "C15": "10",
+            "C16": "10",
+            "C17": "10",
+            "C18": "10",
+            "C19": "10",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "left",
+            "C2": "center",
+            "C3": "left",
+            "C4": "left",
+            "C5": "left",
+            "C6": "left",
+            "C7": "left",
+            "C8": "left",
+            "C9": "left",
+            "C10": "left",
+            "C11": "left",
+            "C12": "status('sorder')",
+            "C13": "check",
+            "C14": "left",
+            "C15": "check",
+            "C16": "left",
+            "C17": "decimal('sales_qty')",
+            "C18": "decimal('sales_prc')",
+            "C19": "decimal('sales_amt')",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        }
+    ]
+}

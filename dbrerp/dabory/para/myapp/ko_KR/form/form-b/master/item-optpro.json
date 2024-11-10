@@ -1,0 +1,152 @@
+{
+    "General": {
+        "Title": "품목별 옵션 설정",
+        "PickApi": "slip-form-book",
+        "ActApi": "item-act",
+        "BdActApi": "item-optpro-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "master/item_optpro"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "generate-item-assort",
+            "Caption": "옵션 품목 생성",
+            "Parameter": ""
+        },
+        {
+            "Value": "delete-all-item-assort",
+            "Caption": "옵션 품목 삭제",
+            "Parameter": ""
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "옵션 일괄 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "옵션 추가",
+            "ItemCode": "스타일No(대표품목코드)*",
+            "ItemName": "품명*",
+            "SubName": "서브명*",
+            "IgroupName": "품목구분",
+            "PurchPrc": "매입가*",
+            "SalesPrc": "매출가*",
+            "MediaId": "메인 이미지",
+            "Remarks": "상세 설명",
+            "TAB1": "옵션 할당",
+            "TAB2": "생성된 옵션 품목",
+            "IsSelfOption": "비표준 옵션 사용",
+            "IsStyle": "옵션품목(저장 필수)",
+            "IsntStkio": "수불처리 않음"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "ItemCode": "left",
+            "ItemName": "left",
+            "SubName": "left",
+            "IgroupName": "left",
+            "PurchPrc": "left",
+            "SalesPrc": "left",
+            "MediaId": "left",
+            "Remarks": "left",
+            "TAB1": "left",
+            "TAB2": "left",
+            "IsSelfOption": "left",
+            "IsStyle": "left",
+            "IsntStkio": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "ItemCode": "20",
+            "ItemName": "20",
+            "SubName": "20",
+            "IgroupName": "20",
+            "PurchPrc": "20",
+            "SalesPrc": "20",
+            "MediaId": "20",
+            "Remarks": "0",
+            "TAB1": "20",
+            "TAB2": "20",
+            "IsSelfOption": "20",
+            "IsStyle": "20",
+            "IsntStkio": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "ItemCode": "required disabled",
+            "ItemName": "required disabled",
+            "SubName": "required disabled",
+            "IgroupName": "disabled",
+            "PurchPrc": "required disabled",
+            "SalesPrc": "required disabled",
+            "MediaId": "disabled",
+            "Remarks": "",
+            "TAB1": "",
+            "TAB2": "",
+            "IsSelfOption": "",
+            "IsStyle": "",
+            "IsntStkio": ""
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "Color": "표준 컬러 옵션@",
+            "Size": "표준 사이즈 옵션@",
+            "SelfColorName": "비표준 컬러 옵션명@",
+            "SelfSizeName": "비표준 사이즈 옵션명@",
+            "SelfOptionCode": "비표준 옵션코드*",
+            "PurchPrc": "매입가*",
+            "SalesPrc": "매출가*"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "Color": "4",
+            "Size": "4",
+            "SelfColorName": "5",
+            "SelfSizeName": "5",
+            "SelfOptionCode": "5",
+            "PurchPrc": "6",
+            "SalesPrc": "6"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "Color": "left",
+            "Size": "left",
+            "SelfColorName": "left",
+            "SelfSizeName": "left",
+            "SelfOptionCode": "left",
+            "PurchPrc": "decimal('purch_prc')",
+            "SalesPrc": "decimal('sales_qty')"
+        }
+    ],
+    "FooterVars": [
+        {
+            "SumTotal": "옵션 수"
+        }
+    ]
+}

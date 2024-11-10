@@ -1,0 +1,10 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://www.kbgolf.co.kr/sitemap.xml

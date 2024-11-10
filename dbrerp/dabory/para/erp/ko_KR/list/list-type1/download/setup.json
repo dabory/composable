@@ -1,0 +1,171 @@
+{
+    "General": {
+        "Title": "통합설정 불러오기",
+        "PageApi": "list-type1-page",
+        "ActApi": "list-type1-upload"
+    },
+
+    "QueryVars": {
+        "QueryName": "download/setup",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "xls-report",
+            "Caption": "(1)엑셀 다운로드"
+        },
+        {
+            "Value": "excel-upload",
+            "Caption": "(2)엑셀 업로드"
+        },
+        {
+            "Value": "dummy",
+            "Caption": "(3)적용",
+            "Component": "popup-form1.form-insert",
+            "Parameter": "/popup/popup-form1/form-insert/setup"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "",
+            "From": "",
+            "To": "",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "다운로드 리스트",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+    ],
+
+    "SimpleSelectOptions": [
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "SelectPopupOptions": [
+
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsAddTotalLine": false,
+        "IsExcelColumn": true,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "160",
+        "BodyHeight": "570"
+    },
+
+    "OrderByOptions": [
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+    ],
+
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "No": "번호",
+            "C1": "설정코드",
+            "C2": "설정구분",
+            "C3": "지사id",
+            "C4": "브랜드코드",
+            "C5": "순서",
+            "C6": "설정명",
+            "C7": "컴포넌트",
+            "C8": "파라메터",
+            "C9": "언어",
+            "C10": "사용",
+            "C11": "기본적용",
+            "T1": "설정내용"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "6",
+            "C1": "10",
+            "C2": "8",
+            "C3": "6",
+            "C4": "10",
+            "C5": "5",
+            "C6": "10",
+            "C7": "22",
+            "C8": "22",
+            "C9": "8",
+            "C10": "8",
+            "C11": "8",
+            "T1": "10"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "center",
+            "C2": "left",
+            "C3": "center",
+            "C4": "center",
+            "C5": "center",
+            "C6": "left",
+            "C7": "left",
+            "C8": "left",
+            "C9": "center",
+            "C10": "center",
+            "C11": "center",
+            "T1": "left"
+        }
+    ]
+}

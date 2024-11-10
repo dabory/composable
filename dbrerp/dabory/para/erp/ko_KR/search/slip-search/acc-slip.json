@@ -1,0 +1,141 @@
+{
+    "General": {
+        "Title": "회계전표 조회",
+        "PageApi": "slip-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "accounting/acc_slip"
+    },
+
+    "//SlipSearchFields": "쿼리를 공통하기 위한 테이블 필드변수들",
+    "SlipSearchFields": {
+        "SlipDateField": "acc_date",
+        "SlipNoField": "acc_slip_no"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "DateRange": "",
+            "DateNavi": "일자방향(오늘)",
+            "Date": "날짜",
+            "QuerySpeed": "표시속도",
+            "SlipNo": "전표번호",
+            "CompanyName": "관련업체명",
+            "ItemCode": "",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "QuerySpeedOptions": [
+        {
+            "Value": "normal",
+            "Caption": "일반"
+        },
+        {
+            "Value": "quick",
+            "Caption": "빠르게"
+        },
+        {
+            "Value": "detailed",
+            "Caption": "상세하게"
+        }
+    ],
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "acc_slip_no desc",
+            "Caption": "회계전표번호 역순"
+        },
+        {
+            "Value": "acc_slip_no asc",
+            "Caption": "회계전표번호 정렬"
+        },
+        {
+            "Value": "company_name asc",
+            "Caption": "업체명 정렬"
+        },
+        {
+            "Value": "company_name desc",
+            "Caption": "업체명 역순"
+        },
+        {
+            "Value": "item_code asc",
+            "Caption": "품목코드 정렬"
+        },
+        {
+            "Value": "item_code desc",
+            "Caption": "품목코드 역순"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "SlipNo": "전표 번호",
+            "DealName": "거래구분",
+            "Company": "관련 업체",
+            "SetGroup": "지불방법",
+            "Item": "부서/담당자/적요",
+            "Amt": "금액",
+            "Status": "승인",
+            "Ref": "관련정보"
+        },
+        {
+            "No": "6",
+            "SlipNo": "13",
+            "DealName": "10",
+            "Company": "20",
+            "SetGroup": "20",
+            "Item": "30",
+            "Amt": "10",
+            "Status": "10",
+            "Ref": "10"
+        },
+        {
+            "No": "center",
+            "SlipNo": "center",
+            "DealName": "center",
+            "Company": "left",
+            "SetGroup": "bill_type('bill-type')",
+            "Item": "center",
+            "Amt": "decimal('purch_amt')",
+            "Status": "check",
+            "Ref": "center"
+        }
+    ]
+}

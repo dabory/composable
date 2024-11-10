@@ -1,0 +1,260 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "회계전표 승인",
+        "PageApi": "list-type1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "accounting/acc-slip-approval",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "acc_date"
+    },
+    "HeadSelectOptions": [
+        {
+            "Value": "clear-all-filter",
+            "Caption": "필터 리셋"
+        },
+        {
+            "Value": "xls-report",
+            "Caption": "엑셀 다운로드"
+        },
+        {
+            "Value": "pdf-report",
+            "Caption": "PDF 다운로드"
+        },
+        {
+            "Value": "modified-report",
+            "Caption": "변형서식"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "날짜",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "전표번호",
+            "SecondRange": "거래구분",
+            "ThirdRange": "거래업체",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "잔량",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색필터",
+            "SimpleOption": "발의/승인 상태"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.menu_code",
+            "Caption": "지불방법"
+        },
+        {
+            "Value": "mx.menu_lang0",
+            "Caption": "지불방법상세"
+        },
+        {
+            "Value": "mx.menu_lang0",
+            "Caption": "연관수주번호"
+        },
+        {
+            "Value": "mx.menu_lang0",
+            "Caption": "연관발주번호"
+        },
+        {
+            "Value": "mx.menu_lang0",
+            "Caption": "카드승인번호"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "is_approved = '0'",
+            "Caption": "미결전표"
+        },
+        {
+            "Value": "is_approved = '1'",
+            "Caption": "승인전표"
+        },
+        {
+            "Value": "",
+            "Caption": "전체전표"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "slip_no",
+            "SecondRange": "deal_code",
+            "ThirdRange": "company_name",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "slip",
+            "SecondRange": "setting",
+            "ThirdRange": "company",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "/search/slip-search/acc-slip",
+            "SecondRange": "/search/setting-search/deal-type",
+            "ThirdRange": "/search/company-search/company",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "회계전표 승인/취소",
+            "Component": "accounting.acc-slip-form",
+            "Parameter": "/popup/popup-form1/form-b/acc-slip"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "acc_slip_no desc",
+            "Caption": "전표번호 역순"
+        },
+        {
+            "Value": "acc_slip_no asc",
+            "Caption": "전표번호 정렬"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsExcelColumn" : false,
+        "IsSelectPopupHidden": false,
+        "InitLines" : 10,
+        "HeadHeight": "200",
+        "BodyHeight": "400"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "No": "번호",
+            "C1": "회계전표 번호",
+            "C2": "회계일자",
+            "C3": "고객/업체",
+            "C4": "거래구분",
+            "C5": "금액",
+            "C6": "전표승인",
+            "C7": "지불방법",
+            "C8": "지불방법상세",
+            "C9": "연관수주번호",
+            "C10": "연관발주번호",
+            "C11": "카드승인번호",
+            "C12": "일자(월)",
+            "C13": "일자(주)",
+            "C14": "영업부서",
+            "C15": "수정불가"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "5",
+            "C1": "10",
+            "C2": "8",
+            "C3": "15",
+            "C4": "8",
+            "C5": "10",
+            "C6": "8",
+            "C7": "10",
+            "C8": "10",
+            "C9": "10",
+            "C10": "10",
+            "C11": "10",
+            "C12": "10",
+            "C13": "10",
+            "C14": "10",
+            "C15": "10"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "center",
+            "C2": "yy.mm.dd",
+            "C3": "left",
+            "C4": "center",
+            "C5": "decimal('purch_amt')",
+            "C6": "check",
+            "C7": "center",
+            "C8": "center",
+            "C9": "center",
+            "C10": "center",
+            "C11": "center",
+            "C12": "date_month",
+            "C13": "date_week",
+            "C14": "left",
+            "C15": "check"
+        }
+    ]
+}

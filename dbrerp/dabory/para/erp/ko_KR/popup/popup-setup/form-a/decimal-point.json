@@ -1,0 +1,41 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "SalesQtyPoint": "매출수량 소수점자리",
+            "SalesPrcPoint": "매출가격 소수점자리",
+            "SalesAmtPoint": "매출금액 소수점자리",
+            "PurchQtyPoint": "매입수량 소수점자리",
+            "PurchPrcPoint": "매입가격 소수점자리",
+            "PurchAmtPoint": "매입금액 소수점자리",
+            "StockQtyPoint": "재고수량 소수점자리",
+            "StockPrcPoint": "재고가격 소수점자리",
+            "StockAmtPoint": "재고금액 소수점자리",
+            "AccAmtPoint": "회계금액 소수점자리"
+        },
+        {
+            "SaveButton": "center",
+            "SalesQtyPoint": "center",
+            "SalesPrcPoint": "center",
+            "SalesAmtPoint": "center",
+            "PurchQtyPoint": "center",
+            "PurchPrcPoint": "center",
+            "PurchAmtPoint": "center",
+            "StockQtyPoint": "center",
+            "StockPrcPoint": "center",
+            "StockAmtPoint": "center",
+            "AccAmtPoint": "center"
+        }
+
+    ]
+}

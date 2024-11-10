@@ -1,0 +1,69 @@
+{
+    "General": {
+        "PickApi": "sso-app-bd-pick",
+        "ActApi": "sso-app-bd-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "Delete",
+            "Parameter": ""
+        }
+    ],
+
+    "SelectOptions": [
+		{
+			"Value": "Web App",
+			"Caption": "Web App"
+		},
+        {
+			"Value": "Desktop App",
+			"Caption": "Desktop App"
+		},
+        {
+			"Value": "Android App",
+			"Caption": "Android App"
+		},
+        {
+			"Value": "iOS App",
+			"Caption": "iOS App"
+		}
+	],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "Save",
+            "AppType": "App Type*",
+            "AppName": "App Name*",
+            "RedirectURI": "Dabory App Uri",
+            "Ab64Desc": "Ab64Desc",
+            "AppBase64": "AppBase64"
+        },
+        {
+            "SaveButton": "left",
+            "AppType": "left",
+            "AppName": "left",
+            "RedirectURI": "left",
+            "Ab64Desc": "left",
+            "AppBase64": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AppType": "20",
+            "AppName": "100",
+            "RedirectURI": "200",
+            "Ab64Desc": "200",
+            "AppBase64": "200"
+        },
+        {
+            "SaveButton": "",
+            "AppType": "disabled",
+            "AppName": "readonly",
+            "RedirectURI": "readonly",
+            "Ab64Desc": "readonly",
+            "AppBase64": "readonly"
+        }
+    ]
+}

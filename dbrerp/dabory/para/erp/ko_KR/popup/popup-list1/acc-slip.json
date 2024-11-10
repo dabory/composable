@@ -1,0 +1,185 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "PageApi": "popup-list1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "acc_slip",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "PopupList1Vars": {
+        "PopupFilterName": "",
+        "PopupFilterValue": "",
+        "PopupWidth": "1200",
+        "BodyHeight": "100"
+    },
+
+    "HeadSelectOptions": [
+
+    ],
+
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-format",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "",
+
+            "HeadFirst": "전표번호",
+            "HeadSecond": "거래구분",
+            "HeadThird": "금액",
+            "HeadFourth": "비고",
+
+            "ColumnFirst": "",
+            "ColumnSecond": "",
+            "ColumnThird": "",
+            "ColumnFourth": "",
+
+            "TextFirst": "",
+            "TextSecond": "",
+            "TextThird": "",
+            "TextFourth": "",
+
+            "FootFirst": "",
+            "FootSecond": "",
+            "FootThird": "",
+            "FootFourth": ""
+        },
+        {
+            "ListButton": "left",
+            "DateRange": "left",
+            "Date": "left",
+            "From": "left",
+            "To": "left",
+            "DownloadList": "left",
+            "ShowOnlyClosed": "left",
+            "Balance": "right",
+            "OrderBy": "left",
+
+            "HeadFirst": "center",
+            "HeadSecond": "center",
+            "HeadThird": "decimal('purch_amt')",
+            "HeadFourth": "center",
+
+            "ColumnFirst": "left",
+            "ColumnSecond": "left",
+            "ColumnThird": "",
+            "ColumnFourth": "",
+
+            "TextFirst": "left",
+            "TextSecond": "left",
+            "TextThird": "left",
+            "TextFourth": "left",
+
+            "FootFirst": "decimal('purch_amt')",
+            "FootSecond": "decimal('purch_amt')",
+            "FootThird": "decimal('purch_amt')",
+            "FootFourth": "decimal('purch_amt')"
+        }
+
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsntPagination": true,
+        "IsExcelColumn": false,
+        "IsDownloadList": false,
+        "IsShowOnlyClosed": false,
+        "IsListFirst" : true,
+        "InitLines" : 15,
+        "HeadHeight": "",
+        "BodyHeight": "0"
+    },
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "No": "번호",
+            "C2": "전표번호*순서",
+            "C3": "거래구분",
+            "C4": "품목*서브명",
+            "D1": "수량",
+            "D2": "단가",
+            "D3": "매입+VAT",
+            "D4": "출금 금액",
+            "D5": "현재 잔액"
+        },
+        {
+            "$Radio": "3",
+            "No": "2",
+            "C2": "5",
+            "C3": "4",
+            "C4": "20",
+            "D1": "4",
+            "D2": "4",
+            "D3": "4",
+            "D4": "4",
+            "D5": "4"
+        },
+        {
+            "$Radio": "center",
+            "No": "center",
+            "C2": "left",
+            "C3": "deal_type('deal-type')",
+            "C4": "left",
+            "D1": "decimal('purch_qty', 'zn')",
+            "D2": "decimal('purch_prc', 'zn')",
+            "D3": "decimal('purch_amt', 'zn')",
+            "D4": "decimal('purch_amt', 'zn')",
+            "D5": "decimal('purch_amt', 'nz')"
+        }
+    ]
+}

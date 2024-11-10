@@ -1,0 +1,886 @@
+<!--- eyetest-more --->
+<div class="modal fade" id="modal-eyetest-more" aria-hidden="true" data-backdrop="static" style="z-index: 1050; overflow: auto;">
+    <div class="modal-dialog m-auto pt-4" style="min-width: 924px;">
+        <div class="modal-content">
+            <div class="modal-header bg-black">
+                <h4 class="modal-title text-white" id="myModalLabel">상세처방</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body p-2" style="background-color: #f5f5f5;">
+                <div class="mb-1 text-right" style="margin-top: -5px;">
+                    <div class="btn-group" id="eyetest-more-btn-group">
+                        <button type="button" class="btn btn-sm btn-black eyetest-more-act save-button" data-value="save" {{ $formB['FormVars']['Hidden']['SaveButton'] }}>
+                            {{ $formB['FormVars']['Title']['SaveButton'] }}
+                        </button>
+                        @include('front.dabory.erp.partial.select-btn-options', [
+                            'selectBtns' => [
+                                [ 'Value' => 'new', 'Caption' => '처방 초기화' ],
+                                [ 'Value' => 'print', 'Caption' => '양안시 처방인쇄' ],
+                            ],
+                            'color' => 'btn-black',
+                            'eventClassName' => 'eyetest-more-act',
+                        ])
+                    </div>
+                </div>
+
+                <div class="prescript_detail">
+                    <div class="card input_info mb-0">
+                        <div class="card_inner">
+
+{{--                            <div class="row m-0 mb-2 mb-lg-4">--}}
+{{--                                <button type="button" tabindex="-1" class="btn btn-sm btn-black col-2">--}}
+{{--                                    처방 초기화--}}
+{{--                                </button>--}}
+{{--                                <h1 class="col-6 text-center mb-0">상세처방</h1>--}}
+{{--                                <div class="col-4 p-0 d-flex">--}}
+{{--                                    <button type="button" tabindex="-1" class="btn btn-sm btn-black col-8 mr-1">--}}
+{{--                                        양안시 처방인쇄--}}
+{{--                                    </button>--}}
+{{--                                    <button type="button" tabindex="-1" class="btn btn-sm btn-black col" data-dismiss="modal">--}}
+{{--                                        닫기--}}
+{{--                                    </button>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+
+                            <div class="row col-6 mb-1e">
+                                <div class="ml-n2 col-12">
+                                    <div>방문이유&주요증상</div>
+                                    <textarea id="symptoms-textarea" class="col" style="height: 50px;"></textarea>
+                                </div>
+                            </div>
+
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border mb-1">구안경도수</legend>
+                                @include('front.dabory.erp.induspex.optical-pos.eyetest-sale.partial.eye-lens-table', [
+                                    'eyeLens' => $formB['EyeTestVars']['Title']['EyeLens'],
+                                    'rightTitle' => 'OD',
+                                    'leftTitle' => 'OS',
+                                    'fixedTabindex' => 50,
+                                    'className' => 'old-eye-lens-table'
+                                ])
+                            </fieldset>
+
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border mb-1">완전교정도수</legend>
+                                @include('front.dabory.erp.induspex.optical-pos.eyetest-sale.partial.eye-lens-table', [
+                                    'eyeLens' => $formB['EyeTestVars']['Title']['EyeLens'],
+                                    'rightTitle' => 'OD',
+                                    'leftTitle' => 'OS',
+                                    'fixedTabindex' => 100,
+                                    'className' => 'cc-eye-lens-table'
+                                ])
+                            </fieldset>
+
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border mb-1">처방도수</legend>
+                                @include('front.dabory.erp.induspex.optical-pos.eyetest-sale.partial.eye-lens-table', [
+                                    'eyeLens' => $formB['EyeTestVars']['Title']['EyeLens'],
+                                    'rightTitle' => 'OD',
+                                    'leftTitle' => 'OS',
+                                    'fixedTabindex' => 150,
+                                    'className' => 'px-eye-lens-table'
+                                ])
+                            </fieldset>
+
+                            <div class="section sec1">
+                                <div class="row m-0 mt-1 r2">
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border mb-1 .col-2">주시안</legend>
+                                        <div>
+                                            <div>OD <input type="radio" value="0" name="fix_eye"></div>
+                                            <div>OS <input type="radio" value="1" name="fix_eye"></div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border mb-1 .col-2">입체시 검사</legend>
+                                        <div>
+                                            <div>정상 <input type="radio" value="0" name="stereosia"></div>
+                                            <div>이상 <input type="radio" value="1" name="stereosia"></div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border mb-1 .col-2">색각 검사</legend>
+                                        <div>
+                                            <div>정상 <input type="radio" value="0" name="color_vision"></div>
+                                            <div>이상 <input type="radio" value="1" name="color_vision"></div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border mb-1">임슬러 그리드 검사</legend>
+                                        <div>
+                                            <div>OD : <span>정상 <input type="radio" value="0" name="od_im_grid"></span>  <span>이상 <input type="radio" value="1" name="od_im_grid"></span></div>
+                                            <div>OS : <span>정상 <input type="radio" value="0" name="os_im_grid"></span>  <span>이상 <input type="radio" value="1" name="os_im_grid"></span></div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+
+                            <div class="section sec2 screen">
+                                <h3>선별검사</h3>
+                                <div class="row m-0">
+                                    <fieldset class="scheduler-border col-4 shielding">
+                                        <legend class="scheduler-border mb-1">차폐검사</legend>
+                                        <div>
+                                            <div>원거리 : <input type="text" class="input_line" id="long-txt"></div>
+                                            <div>근거리 : <input type="text" class="input_line" id="short-txt"></div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-4 wfd four-dot">
+                                        <legend class="scheduler-border mb-1">Worth Four-Dot (억제,복시)</legend>
+                                        <div>
+                                            <div>
+												원거리 :
+												<span>정상 <input type="radio" name="long" value="0"></span>
+												<span>억제 <input type="radio" name="long" value="1"> <input type="text" class="input_line" id="long-str-txt"></span>
+												<span>복시 <input type="radio" name="long" value="2"></span>
+											</div>
+                                            <div>
+												근거리 :
+												<span>정상 <input type="radio" name="short" value="0"></span>
+												<span>억제 <input type="radio" name="short" value="1"> <input type="text" class="input_line" id="short-str-txt"></span>
+												<span>복시 <input type="radio" name="short" value="2"></span>
+											</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-4 eye-close converge">
+                                        <legend class="scheduler-border mb-1">눈 모임 근점 검사 (폭주 근점)</legend>
+                                        <div>
+                                            <div>정상 <input type="radio" name="normal" value="0"></div>
+											<div>이상 <input type="radio" name="normal" value="1">&nbsp;&nbsp;(약 <input type="text" class="input_line" id="str-txt"> cm)</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-2 near">
+                                        <legend class="scheduler-border mb-1">조절 근점 검사</legend>
+                                        <div class="justify-content-center">
+                                            <div class="flex-1">OD : <input type="text" class="input_line" id="od-str-txt"> cm(100/cm = D)</div>
+                                            <div class="flex-1">OS : <input type="text" class="input_line" id="os-str-txt"> cm(100/cm = D)</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-2 easy">
+                                        <legend class="scheduler-border mb-1">조절 용이 검사</legend>
+                                        <div>
+                                            <div>OU : <input type="text" class="input_line" id="ou-str-txt"> cpm</div>
+                                            <div>OD : <input type="text" class="input_line" id="od-str-txt"> cpm</div>
+                                            <div>OS : <input type="text" class="input_line" id="os-str-txt"> cpm</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-1" id="chief-complaint">
+                                        <legend class="scheduler-border mb-1">브로드 H 검사</legend>
+                                        <div class="position-relative p-0" id="canvasDiv1" style="background: url('/images/pic.jpg') no-repeat; background-position: 50%;">
+                                            <button type="button" tabindex="-1" class="px-0 border border-right-0 border-bottom-0 border-success bg-white position-absolute right-0 bottom-0"
+                                                    onclick="EyetestMore.clear_canvas()">
+                                                <i class="fas fa-eraser px-1"></i>
+                                            </button>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+
+                            <div class="section sec3 bincular">
+                                <h3>양안시 검사</h3>
+
+                                <div class="row m-0">
+                                    <fieldset class="scheduler-border col-2 add_line location">
+                                        <legend class="scheduler-border mb-1">사위 검사</legend>
+                                        <div class="flex-flow-column align-items-center justify-content-center">
+                                            <div class="stit_c">[원거리]</div>
+                                            <div>수평 <input type="text" class="input_line" id="long-hori-txt"> △ / 수직 : <input type="text" class="input_line" id="long-vert-txt"> △</div>
+                                        </div>
+
+                                        <div class="flex-flow-column align-items-center justify-content-center ">
+                                            <div class="stit_c">[근거리]</div>
+                                            <div>수평 <input type="text" class="input_line" id="short-hori-txt"> △ / 수직 : <input type="text" class="input_line" id="short-vert-txt"> △</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-2 add_line relative">
+                                        <legend class="scheduler-border mb-1">상대 조절력</legend>
+                                        <div class="flex-flow-column align-items-center justify-content-center">
+                                            <div class="stit_c">[PRA - 양성]</div>
+                                            <div><span class="in_txt"><input type="text" class="input_line" id="pra-txt"></span></div>
+                                        </div>
+
+                                        <div class="flex-flow-column align-items-center justify-content-center">
+                                            <div class="stit_c">[NRA + 음성]</div>
+                                            <div><span class="in_txt_plus in_txt"><input type="text" class="input_line" id="nra-txt"></span></div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-2 justify-content-between">
+                                        <legend class="scheduler-border mb-1">조절 래그</legend>
+                                        <div>
+                                            <div><input type="radio" name="lag" value="0">이상 (PL~(-) 방향) < <input type="radio" name="lag" value="1">정상 (+0.50~ +0.75) < <input type="radio" name="lag" value="2">이상 (+1.00~)</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-2 justify-content-center ac-a">
+                                        <legend class="scheduler-border mb-1">AC/A 비</legend>
+                                        <div>
+                                            <div>
+												<input type="text" class="input_line" id="ac-a-txt">
+                                                <em class="txt_info">AC/A비=PD(cm)+(근거리<strong>*사위량</strong>-원거리<strong>*사위량</strong>)÷근거리 조절 자극량<br>
+                                                    <strong>*외사위(-)│내사위(+)</strong></em>
+											</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border d-flex flex-wrap col-1 add_line_lb fusion">
+                                        <legend class="scheduler-border mb-1">융합검사</legend>
+                                        <div class="flex-column col-2 justify-content-center long-bo">
+                                            <div class="stit_l">[원거리 수평융합 - BO(양성융합)]</div>
+                                            <ul>
+                                                <li>
+                                                    흐린점 (<input type="text" class="input_line" id="clo-txt">△)
+                                                </li>
+                                                <li>
+                                                    분리점 (<input type="text" class="input_line" id="dis-txt">△)
+                                                </li>
+                                                <li>
+                                                    회복점 (<input type="text" class="input_line" id="rec-txt">△)
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="flex-column col-2 justify-content-center long-bi">
+                                            <div class="stit_l">[원거리 수평융합 - BI(음성융합)]</div>
+                                            <ul>
+                                                <li>
+                                                    흐린점 (<input type="text" class="input_line" id="clo-txt">△)
+                                                </li>
+                                                <li>
+                                                    분리점 (<input type="text" class="input_line" id="dis-txt">△)
+                                                </li>
+                                                <li>
+                                                    회복점 (<input type="text" class="input_line" id="rec-txt">△)
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="flex-column col-2 justify-content-center">
+                                            <div class="stit_l">[원거리 수직융합 - OD]</div>
+                                            <dl class="long-od-bd">
+                                                <dt>BD -</dt>
+                                                <dd>
+                                                    분리점 (<input type="text" class="input_line" id="dis-txt">△)
+                                                </dd>
+                                                <dd>
+                                                    회복점 (<input type="text" class="input_line" id="rec-txt">△)
+                                                </dd>
+                                            </dl>
+                                            <dl class="long-od-bu">
+                                                <dt>BU -</dt>
+                                                <dd>
+                                                    분리점 (<input type="text" class="input_line" id="dis-txt">△)
+                                                </dd>
+                                                <dd>
+                                                    회복점 (<input type="text" class="input_line" id="rec-txt">△)
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+                                        <div class="flex-column col-2 justify-content-center">
+                                            <div class="stit_l">[원거리 수직융합 - OS]</div>
+                                            <dl class="long-os-bd">
+                                                <dt>BD -</dt>
+                                                <dd>
+                                                    분리점 (<input type="text" class="input_line" id="dis-txt">△)
+                                                </dd>
+                                                <dd>
+                                                    회복점 (<input type="text" class="input_line" id="rec-txt">△)
+                                                </dd>
+                                            </dl>
+                                            <dl class="long-os-bu">
+                                                <dt>	BU -</dt>
+                                                <dd>
+                                                    분리점 (<input type="text" class="input_line" id="dis-txt">△)
+                                                </dd>
+                                                <dd>
+                                                    회복점 (<input type="text" class="input_line" id="rec-txt">△)
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+                                        <div class="flex-column col-2 justify-content-center">
+                                            <div class="stit_l">[근거리 수평융합 - BO (양성융합)]</div>
+                                            <ul class="short-bo">
+                                                <li>흐린점 (<input type="text" class="input_line" id="clo-txt">△)</li>
+                                                <li>분리점 (<input type="text" class="input_line" id="dis-txt">△)</li>
+                                                <li>회복점 (<input type="text" class="input_line" id="rec-txt">△) </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="flex-column col-2 justify-content-center">
+                                            <div class="stit_l">[근거리 수평융합 - BI (음성융합)]</div>
+                                            <ul class="short-bi">
+                                                <li>흐린점 (<input type="text" class="input_line" id="clo-txt">△)</li>
+                                                <li>분리점 (<input type="text" class="input_line" id="dis-txt">△)</li>
+                                                <li>회복점 (<input type="text" class="input_line" id="rec-txt">△) </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="flex-column col-2 justify-content-center ">
+                                            <div class="stit_l">[근거리 수직융합 - OD]</div>
+                                            <dl class="short-od-bd">
+                                                <dt>BD -</dt>
+                                                <dd>
+                                                    분리점 (<input type="text" class="input_line" id="dis-txt">△)
+                                                </dd>
+                                                <dd>
+                                                    회복점 (<input type="text" class="input_line" id="rec-txt">△)
+                                                </dd>
+                                            </dl>
+                                            <dl class="short-od-bu">
+                                                <dt>	BU -</dt>
+                                                <dd>
+                                                    분리점 (<input type="text" class="input_line" id="dis-txt">△)
+                                                </dd>
+                                                <dd>
+                                                    회복점 (<input type="text" class="input_line" id="rec-txt">△)
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+                                        <div class="flex-column col-2 justify-content-center">
+                                            <div class="stit_l">[근거리 수직융합 - OS]</div>
+                                            <dl class="short-os-bd">
+                                                <dt>BD -</dt>
+                                                <dd>
+                                                    분리점 (<input type="text" class="input_line" id="dis-txt">△)
+                                                </dd>
+                                                <dd>
+                                                    회복점 (<input type="text" class="input_line" id="rec-txt">△)
+                                                </dd>
+                                            </dl>
+                                            <dl class="short-os-bu">
+                                                <dt>	BU -</dt>
+                                                <dd>
+                                                    분리점 (<input type="text" class="input_line" id="dis-txt">△)
+                                                </dd>
+                                                <dd>
+                                                    회복점 (<input type="text" class="input_line" id="rec-txt">△)
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+                                    </fieldset>
+
+                                </div>
+                            </div>
+
+                            <fieldset class="section border-bottom-0 sec4 pameter">
+                                <h3>개인파라미터</h3>
+                                <div class="row m-0 r1">
+                                    <fieldset class="scheduler-border col-4 ml-0 oh">
+                                        <legend class="scheduler-border mb-1">피팅 높이 (OH)</legend>
+                                        <div>
+                                            <div><span>R :</span><input type="text" class="input_line" id="r-txt"> mm</div>
+                                            <div><span>L :</span><input type="text" class="input_line" id="l-txt"> mm</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-4 pd">
+                                        <legend class="scheduler-border mb-1">단안 PD</legend>
+                                        <div>
+                                            <div><span>R :</span><input type="text" class="input_line" id="r-txt"> mm</div>
+                                            <div><span>L :</span><input type="text" class="input_line" id="l-txt"> mm</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-4 distance">
+                                        <legend class="scheduler-border mb-1">정점간 거리</legend>
+                                        <div>
+                                            <div><span>R :</span><input type="text" class="input_line" id="r-txt"> mm</div>
+                                            <div><span>L :</span><input type="text" class="input_line" id="l-txt"> mm</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-4 inset">
+                                        <legend class="scheduler-border mb-1">Inset (인셋)</legend>
+                                        <div>
+                                            <div><span>R :</span><input type="text" class="input_line" id="r-txt"> mm</div>
+                                            <div>L  : <input type="text" class="input_line" id="l-txt"> mm</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-5">
+                                        <legend class="scheduler-border mb-1">안면각</legend>
+                                        <div>
+                                            <div class="d-flex align-items-start"><input type="text" class="input_line" id="face-txt"> º</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-5">
+                                        <legend class="scheduler-border mb-1">경사각</legend>
+                                        <div>
+                                            <div class="d-flex align-items-start"><input type="text" class="input_line" id="tilt-txt"> º</div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="scheduler-border col-5">
+                                        <legend class="scheduler-border mb-1">누진대 길이</legend>
+                                        <div>
+                                            <div class="d-flex align-items-start"><input type="text" class="input_line" id="length-txt"> mm</div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </fieldset>
+                        </div>
+                        <!--// card_inner 끝 -->
+                    </div>
+                    <!--// card 끝 -->
+                </div>
+
+                <div class="mb-1 text-right mt-1">
+                    <div class="btn-group" id="eyetest-more-btn-group">
+                        <button type="button" class="btn btn-sm btn-black eyetest-more-act save-button" data-value="save" {{ $formB['FormVars']['Hidden']['SaveButton'] }}>
+                            {{ $formB['FormVars']['Title']['SaveButton'] }}
+                        </button>
+                        @include('front.dabory.erp.partial.select-btn-options', [
+                            'selectBtns' => [
+                                [ 'Value' => 'new', 'Caption' => '처방 초기화' ],
+                                [ 'Value' => 'print', 'Caption' => '양안시 처방인쇄' ],
+                            ],
+                            'color' => 'btn-black',
+                            'eventClassName' => 'eyetest-more-act',
+                        ])
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@once
+@push('js')
+<script src="/js/utils/canvas.js?{{date('YmdHis')}}"></script>
+    <script>
+        $(document).ready(async function() {
+            $('.eyetest-more-act').on('click', function () {
+                // console.log($(this).data('value'))
+                switch( $(this).data('value') ) {
+                    case 'save': btn_act_save('#sorder-tab #frm'); break;
+                    case 'new': EyetestMore.btn_act_new(); break;
+                }
+            });
+
+            $(document).on('change', '.px-eye-lens-table input, .px-eye-lens-table select', function (e) {
+                const pre_class_name = '.' + $(e.target).attr('class').split(' ').join('.')
+                const tr_class_name = '.' + $(e.target).closest('tr').attr('class')
+
+                $('.eye-lens-table').find(`${tr_class_name} ${pre_class_name}`).val($(e.target).val())
+            });
+        });
+
+        $(document).on('show.prescript-detail','#modal-eyetest-more', function () {
+            // EyetestMore.canvas.clearCanvas()
+            EyetestMore.resize_canvas()
+
+            $('#modal-eyetest-more').modal('show')
+        });
+
+        (function( EyetestMore, $, undefined ) {
+            EyetestMore.canvas = new Canvas('canvasDiv1', 'canvas');
+
+            EyetestMore.btn_act_new = function () {
+                input_box_reset_for('#modal-eyetest-more .prescript_detail')
+                input_box_reset_for('#lens-frm .eye-lens-table')
+                EyetestMore.clear_canvas()
+            }
+
+            EyetestMore.get_parameter = function () {
+                const $eyetest_more = $('#modal-eyetest-more')
+                return {
+                    ...EyetestMore.get_eye_lens_data(),
+                    Symptoms: $($eyetest_more).find('#symptoms-textarea').val(),
+                    FixEye: Number(get_radio_value_for($eyetest_more, 'fix_eye')),
+                    Stereosia: Number(get_radio_value_for($eyetest_more, 'stereosia')),
+                    ColorVision: Number(get_radio_value_for($eyetest_more, 'color_vision')),
+                    OdImGrid: Number(get_radio_value_for($eyetest_more, 'od_im_grid')),
+                    OsImGrid: Number(get_radio_value_for($eyetest_more, 'os_im_grid')),
+                    Screen: EyetestMore.get_screen_data($($eyetest_more).find('.screen')),
+                    Bincular: EyetestMore.get_bincular_data($($eyetest_more).find('.bincular')),
+                    Pameter: EyetestMore.get_pameter_data($($eyetest_more).find('.pameter')),
+                    BroadH: EyetestMore.get_broad_h_data()
+                }
+            }
+
+            EyetestMore.get_pameter_data = function ($pameter) {
+                return {
+                    Oh: {
+                        R: $($pameter).find('.oh #r-txt').val(),
+                        L: $($pameter).find('.oh #l-txt').val()
+                    },
+                    Pd: {
+                        R: $($pameter).find('.pd #r-txt').val(),
+                        L: $($pameter).find('.pd #l-txt').val()
+                    },
+                    Distance: {
+                        R: $($pameter).find('.distance #r-txt').val(),
+                        L: $($pameter).find('.distance #l-txt').val()
+                    },
+                    Inset: {
+                        R: $($pameter).find('.inset #r-txt').val(),
+                        L: $($pameter).find('.inset #l-txt').val()
+                    },
+                    Face: $($pameter).find('#face-txt').val(),
+                    Tilt: $($pameter).find('#tilt-txt').val(),
+                    Length: $($pameter).find('#length-txt').val(),
+                }
+            }
+
+            EyetestMore.set_pameter_data = function ($pameter, data) {
+                $($pameter).find('.oh #r-txt').val(data.Oh.R)
+                $($pameter).find('.oh #l-txt').val(data.Oh.L)
+
+                $($pameter).find('.pd #r-txt').val(data.Pd.R)
+                $($pameter).find('.pd #l-txt').val(data.Pd.L)
+
+                $($pameter).find('.distance #r-txt').val(data.Distance.R)
+                $($pameter).find('.distance #l-txt').val(data.Distance.L)
+
+                $($pameter).find('.inset #r-txt').val(data.Inset.R)
+                $($pameter).find('.inset #l-txt').val(data.Inset.L)
+
+                $($pameter).find('#face-txt').val(data.Face)
+                $($pameter).find('#tilt-txt').val(data.Tilt)
+                $($pameter).find('#length-txt').val(data.Length)
+            }
+
+            EyetestMore.get_bincular_data = function ($bincular) {
+                return {
+                    Location: {
+                        LongHori: $($bincular).find('.location #long-hori-txt').val(),
+                        LongVert: $($bincular).find('.location #long-vert-txt').val(),
+                        ShortHori: $($bincular).find('.location #short-hori-txt').val(),
+                        ShortVert: $($bincular).find('.location #short-vert-txt').val()
+                    },
+                    Relative: {
+                        Pra: $($bincular).find('.relative #pra-txt').val(),
+                        Nra: $($bincular).find('.relative #nra-txt').val()
+                    },
+                    Lag: Number(get_radio_value_for($bincular, 'lag')),
+                    Aca: $($bincular).find('#ac-a-txt').val(),
+                    Fusion: {
+                        LongBo: {
+                            Clo: $($bincular).find('.fusion .long-bo #clo-txt').val(),
+                            Dis: $($bincular).find('.fusion .long-bo #dis-txt').val(),
+                            Rec: $($bincular).find('.fusion .long-bo #rec-txt').val()
+                        },
+                        LongBi: {
+                            Clo: $($bincular).find('.fusion .long-bi #clo-txt').val(),
+                            Dis: $($bincular).find('.fusion .long-bi #dis-txt').val(),
+                            Rec: $($bincular).find('.fusion .long-bi #rec-txt').val()
+                        },
+                        LongOdBd: {
+                            Dis: $($bincular).find('.fusion .long-od-bd #dis-txt').val(),
+                            Rec: $($bincular).find('.fusion .long-od-bd #rec-txt').val()
+                        },
+                        LongOdBu: {
+                            Dis: $($bincular).find('.fusion .long-od-bu #dis-txt').val(),
+                            Rec: $($bincular).find('.fusion .long-od-bu #rec-txt').val()
+                        },
+                        LongOsBd: {
+                            Dis: $($bincular).find('.fusion .long-os-bd #dis-txt').val(),
+                            Rec: $($bincular).find('.fusion .long-os-bd #rec-txt').val()
+                        },
+                        LongOsBu: {
+                            Dis: $($bincular).find('.fusion .long-os-bu #dis-txt').val(),
+                            Rec: $($bincular).find('.fusion .long-os-bu #rec-txt').val()
+                        },
+                        ShortBo: {
+                            Clo: $($bincular).find('.fusion .short-bo #clo-txt').val(),
+                            Dis: $($bincular).find('.fusion .short-bo #dis-txt').val(),
+                            Rec: $($bincular).find('.fusion .short-bo #rec-txt').val()
+                        },
+                        ShortBi: {
+                            Clo: $($bincular).find('.fusion .short-bi #clo-txt').val(),
+                            Dis: $($bincular).find('.fusion .short-bi #dis-txt').val(),
+                            Rec: $($bincular).find('.fusion .short-bi #rec-txt').val()
+                        },
+                        ShortOdBd: {
+                            Dis: $($bincular).find('.fusion .short-od-bd #dis-txt').val(),
+                            Rec: $($bincular).find('.fusion .short-od-bd #rec-txt').val()
+                        },
+                        ShortOdBu: {
+                            Dis: $($bincular).find('.fusion .short-od-bu #dis-txt').val(),
+                            Rec: $($bincular).find('.fusion .short-od-bu #rec-txt').val()
+                        },
+                        ShortOsBd: {
+                            Dis: $($bincular).find('.fusion .short-os-bd #dis-txt').val(),
+                            Rec: $($bincular).find('.fusion .short-os-bd #rec-txt').val()
+                        },
+                        ShortOsBu: {
+                            Dis: $($bincular).find('.fusion .short-os-bu #dis-txt').val(),
+                            Rec: $($bincular).find('.fusion .short-os-bu #rec-txt').val()
+                        }
+                    }
+                }
+            }
+
+            EyetestMore.set_bincular_data = function ($bincular, data) {
+                // Location
+                $($bincular).find('.location #long-hori-txt').val(data.Location.LongHori)
+                $($bincular).find('.location #long-vert-txt').val(data.Location.LongVert)
+                $($bincular).find('.location #short-hori-txt').val(data.Location.ShortHori)
+                $($bincular).find('.location #short-vert-txt').val(data.Location.ShortVert)
+
+                // Relative
+                $($bincular).find('.relative #pra-txt').val(data.Relative.Pra)
+                $($bincular).find('.relative #nra-txt').val(data.Relative.Nra)
+
+                set_radio_value_for($bincular, 'lag', data.Lag)
+                $($bincular).find('#ac-a-txt').val(data.Aca)
+
+                // Fusion
+                // LongBo
+                $($bincular).find('.fusion .long-bo #clo-txt').val(data.Fusion.LongBo.Clo)
+                $($bincular).find('.fusion .long-bo #dis-txt').val(data.Fusion.LongBo.Dis)
+                $($bincular).find('.fusion .long-bo #rec-txt').val(data.Fusion.LongBo.Rec)
+                // LongBi
+                $($bincular).find('.fusion .long-bi #clo-txt').val(data.Fusion.LongBi.Clo)
+                $($bincular).find('.fusion .long-bi #dis-txt').val(data.Fusion.LongBi.Dis)
+                $($bincular).find('.fusion .long-bi #rec-txt').val(data.Fusion.LongBi.Rec)
+                // LongOdBd
+                $($bincular).find('.fusion .long-od-bd #dis-txt').val(data.Fusion.LongOdBd.Dis)
+                $($bincular).find('.fusion .long-od-bd #rec-txt').val(data.Fusion.LongOdBd.Rec)
+                // LongOdBu
+                $($bincular).find('.fusion .long-od-bu #dis-txt').val(data.Fusion.LongOdBu.Dis)
+                $($bincular).find('.fusion .long-od-bu #rec-txt').val(data.Fusion.LongOdBu.Rec)
+                // LongOsBd
+                $($bincular).find('.fusion .long-os-bd #dis-txt').val(data.Fusion.LongOsBd.Dis)
+                $($bincular).find('.fusion .long-os-bd #rec-txt').val(data.Fusion.LongOsBd.Rec)
+                // LongOsBu
+                $($bincular).find('.fusion .long-os-bu #dis-txt').val(data.Fusion.LongOsBu.Dis)
+                $($bincular).find('.fusion .long-os-bu #rec-txt').val(data.Fusion.LongOsBu.Rec)
+
+                // ShortBo
+                $($bincular).find('.fusion .short-bo #clo-txt').val(data.Fusion.ShortBo.Clo)
+                $($bincular).find('.fusion .short-bo #dis-txt').val(data.Fusion.ShortBo.Dis)
+                $($bincular).find('.fusion .short-bo #rec-txt').val(data.Fusion.ShortBo.Rec)
+                // ShortBi
+                $($bincular).find('.fusion .short-bi #clo-txt').val(data.Fusion.ShortBi.Clo)
+                $($bincular).find('.fusion .short-bi #dis-txt').val(data.Fusion.ShortBi.Dis)
+                $($bincular).find('.fusion .short-bi #rec-txt').val(data.Fusion.ShortBi.Rec)
+                // ShortOdBd
+                $($bincular).find('.fusion .short-od-bd #dis-txt').val(data.Fusion.ShortOdBd.Dis)
+                $($bincular).find('.fusion .short-od-bd #rec-txt').val(data.Fusion.ShortOdBd.Rec)
+                // ShortOdBu
+                $($bincular).find('.fusion .short-od-bu #dis-txt').val(data.Fusion.ShortOdBu.Dis)
+                $($bincular).find('.fusion .short-od-bu #rec-txt').val(data.Fusion.ShortOdBu.Rec)
+                // ShortOsBd
+                $($bincular).find('.fusion .short-os-bd #dis-txt').val(data.Fusion.ShortOsBd.Dis)
+                $($bincular).find('.fusion .short-os-bd #rec-txt').val(data.Fusion.ShortOsBd.Rec)
+                // ShortOsBu
+                $($bincular).find('.fusion .short-os-bu #dis-txt').val(data.Fusion.ShortOsBu.Dis)
+                $($bincular).find('.fusion .short-os-bu #rec-txt').val(data.Fusion.ShortOsBu.Rec)
+            }
+
+            EyetestMore.get_screen_data = function ($screen) {
+                return {
+                    Shielding: {
+                        Long: $($screen).find('.shielding #long-txt').val(),
+                        Short: $($screen).find('.shielding #short-txt').val()
+                    },
+                    FourDot: {
+                        Long: Number(get_radio_value_for($($screen).find('.four-dot'), 'long')),
+                        Short: Number(get_radio_value_for($($screen).find('.four-dot'), 'short')),
+                        LongStr: $($screen).find('.four-dot #long-str-txt').val(),
+                        ShortStr: $($screen).find('.four-dot #short-str-txt').val()
+                    },
+                    Converge: {
+                        Normal: Number(get_radio_value_for($($screen).find('.converge'), 'normal')),
+                        Str: $($screen).find('.converge #str-txt').val()
+                    },
+                    Near: {
+                        OdStr: $($screen).find('.near #od-str-txt').val(),
+                        OsStr: $($screen).find('.near #os-str-txt').val()
+                    },
+                    Easy: {
+                        OuStr: $($screen).find('.easy #ou-str-txt').val(),
+                        OdStr: $($screen).find('.easy #od-str-txt').val(),
+                        OsStr: $($screen).find('.easy #os-str-txt').val()
+                    }
+                }
+            }
+
+            EyetestMore.set_screen_data = function ($screen, data) {
+                $($screen).find('.shielding #long-txt').val(data.Shielding.Long)
+                $($screen).find('.shielding #short-txt').val(data.Shielding.Short)
+
+                set_radio_value_for($($screen).find('.four-dot'), 'long', data.FourDot.Long)
+                set_radio_value_for($($screen).find('.four-dot'), 'short', data.FourDot.Short)
+                $($screen).find('.four-dot #long-str-txt').val(data.FourDot.LongStr)
+                $($screen).find('.four-dot #short-str-txt').val(data.FourDot.ShortStr)
+
+                set_radio_value_for($($screen).find('.converge'), 'normal', data.Converge.Normal)
+                $($screen).find('.converge #str-txt').val(data.Converge.Str)
+
+                $($screen).find('.near #od-str-txt').val(data.Near.OdStr)
+                $($screen).find('.near #os-str-txt').val(data.Near.OsStr)
+
+                $($screen).find('.easy #ou-str-txt').val(data.Easy.OuStr)
+                $($screen).find('.easy #od-str-txt').val(data.Easy.OdStr)
+                $($screen).find('.easy #os-str-txt').val(data.Easy.OsStr)
+            }
+
+            EyetestMore.get_eye_lens_data = function () {
+                return {
+                    OldREyeLens: {
+                        Sph: $('.old-eye-lens-table .r-eye-lens').find('.sph-txt').val(),
+                        Cyl: $('.old-eye-lens-table .r-eye-lens').find('.cyl-txt').val(),
+                        Axis: $('.old-eye-lens-table .r-eye-lens').find('.axis-txt').val(),
+                        LongPd: $('.old-eye-lens-table .r-eye-lens').find('.long-pd-txt').val(),
+                        Add: $('.old-eye-lens-table .r-eye-lens').find('.add-txt').val(),
+                        ShortPd: $('.old-eye-lens-table .r-eye-lens').find('.short-pd-txt').val(),
+                        BaseIo: $('.old-eye-lens-table .r-eye-lens').find('.base-i-txt').val() + '/' + $('.old-eye-lens-table .r-eye-lens').find('.base-o-txt').val(),
+                        BaseUd: $('.old-eye-lens-table .r-eye-lens').find('.base-u-txt').val() + '/' + $('.old-eye-lens-table .r-eye-lens').find('.base-d-txt').val(),
+                        BareEye: $('.old-eye-lens-table .r-eye-lens').find('.bare-eye-txt').val(),
+                        Adjust: $('.old-eye-lens-table .r-eye-lens').find('.adjust-txt').val(),
+                    },
+                    OldLEyeLens: {
+                        Sph: $('.old-eye-lens-table .l-eye-lens').find('.sph-txt').val(),
+                        Cyl: $('.old-eye-lens-table .l-eye-lens').find('.cyl-txt').val(),
+                        Axis: $('.old-eye-lens-table .l-eye-lens').find('.axis-txt').val(),
+                        LongPd: $('.old-eye-lens-table .l-eye-lens').find('.long-pd-txt').val(),
+                        Add: $('.old-eye-lens-table .l-eye-lens').find('.add-txt').val(),
+                        ShortPd: $('.old-eye-lens-table .l-eye-lens').find('.short-pd-txt').val(),
+                        BaseIo: $('.old-eye-lens-table .l-eye-lens').find('.base-i-txt').val() + '/' + $('.old-eye-lens-table .l-eye-lens').find('.base-o-txt').val(),
+                        BaseUd: $('.old-eye-lens-table .l-eye-lens').find('.base-u-txt').val() + '/' + $('.old-eye-lens-table .l-eye-lens').find('.base-d-txt').val(),
+                        BareEye: $('.old-eye-lens-table .l-eye-lens').find('.bare-eye-txt').val(),
+                        Adjust: $('.old-eye-lens-table .l-eye-lens').find('.adjust-txt').val(),
+                    },
+                    CcREyeLens: {
+                        Sph: $('.cc-eye-lens-table .r-eye-lens').find('.sph-txt').val(),
+                        Cyl: $('.cc-eye-lens-table .r-eye-lens').find('.cyl-txt').val(),
+                        Axis: $('.cc-eye-lens-table .r-eye-lens').find('.axis-txt').val(),
+                        LongPd: $('.cc-eye-lens-table .r-eye-lens').find('.long-pd-txt').val(),
+                        Add: $('.cc-eye-lens-table .r-eye-lens').find('.add-txt').val(),
+                        ShortPd: $('.cc-eye-lens-table .r-eye-lens').find('.short-pd-txt').val(),
+                        BaseIo: $('.cc-eye-lens-table .r-eye-lens').find('.base-i-txt').val() + '/' + $('.cc-eye-lens-table .r-eye-lens').find('.base-o-txt').val(),
+                        BaseUd: $('.cc-eye-lens-table .r-eye-lens').find('.base-u-txt').val() + '/' + $('.cc-eye-lens-table .r-eye-lens').find('.base-d-txt').val(),
+                        BareEye: $('.cc-eye-lens-table .r-eye-lens').find('.bare-eye-txt').val(),
+                        Adjust: $('.cc-eye-lens-table .r-eye-lens').find('.adjust-txt').val(),
+                    },
+                    CcLEyeLens: {
+                        Sph: $('.cc-eye-lens-table .l-eye-lens').find('.sph-txt').val(),
+                        Cyl: $('.cc-eye-lens-table .l-eye-lens').find('.cyl-txt').val(),
+                        Axis: $('.cc-eye-lens-table .l-eye-lens').find('.axis-txt').val(),
+                        LongPd: $('.cc-eye-lens-table .l-eye-lens').find('.long-pd-txt').val(),
+                        Add: $('.cc-eye-lens-table .l-eye-lens').find('.add-txt').val(),
+                        ShortPd: $('.cc-eye-lens-table .l-eye-lens').find('.short-pd-txt').val(),
+                        BaseIo: $('.cc-eye-lens-table .l-eye-lens').find('.base-i-txt').val() + '/' + $('.cc-eye-lens-table .l-eye-lens').find('.base-o-txt').val(),
+                        BaseUd: $('.cc-eye-lens-table .l-eye-lens').find('.base-u-txt').val() + '/' + $('.cc-eye-lens-table .l-eye-lens').find('.base-d-txt').val(),
+                        BareEye: $('.cc-eye-lens-table .l-eye-lens').find('.bare-eye-txt').val(),
+                        Adjust: $('.cc-eye-lens-table .l-eye-lens').find('.adjust-txt').val(),
+                    },
+                    // REyeLens: {
+                    //     Sph: $('.px-eye-lens-table .r-eye-lens').find('.sph-txt').val(),
+                    //     Cyl: $('.px-eye-lens-table .r-eye-lens').find('.cyl-txt').val(),
+                    //     Axis: $('.px-eye-lens-table .r-eye-lens').find('.axis-txt').val(),
+                    //     LongPd: $('.px-eye-lens-table .r-eye-lens').find('.long-pd-txt').val(),
+                    //     Add: $('.px-eye-lens-table .r-eye-lens').find('.add-txt').val(),
+                    //     ShortPd: $('.px-eye-lens-table .r-eye-lens').find('.short-pd-txt').val(),
+                    //     BaseIo: $('.px-eye-lens-table .r-eye-lens').find('.base-i-txt').val() + '/' + $('.px-eye-lens-table .r-eye-lens').find('.base-o-txt').val(),
+                    //     BaseUd: $('.px-eye-lens-table .r-eye-lens').find('.base-u-txt').val() + '/' + $('.px-eye-lens-table .r-eye-lens').find('.base-d-txt').val(),
+                    //     BareEye: $('.px-eye-lens-table .r-eye-lens').find('.bare-eye-txt').val(),
+                    //     Adjust: $('.px-eye-lens-table .r-eye-lens').find('.adjust-txt').val(),
+                    // },
+                    // LEyeLens: {
+                    //     Sph: $('.px-eye-lens-table .l-eye-lens').find('.sph-txt').val(),
+                    //     Cyl: $('.px-eye-lens-table .l-eye-lens').find('.cyl-txt').val(),
+                    //     Axis: $('.px-eye-lens-table .l-eye-lens').find('.axis-txt').val(),
+                    //     LongPd: $('.px-eye-lens-table .l-eye-lens').find('.long-pd-txt').val(),
+                    //     Add: $('.px-eye-lens-table .l-eye-lens').find('.add-txt').val(),
+                    //     ShortPd: $('.px-eye-lens-table .l-eye-lens').find('.short-pd-txt').val(),
+                    //     BaseIo: $('.px-eye-lens-table .l-eye-lens').find('.base-i-txt').val() + '/' + $('.px-eye-lens-table .l-eye-lens').find('.base-o-txt').val(),
+                    //     BaseUd: $('.px-eye-lens-table .l-eye-lens').find('.base-u-txt').val() + '/' + $('.px-eye-lens-table .l-eye-lens').find('.base-d-txt').val(),
+                    //     BareEye: $('.px-eye-lens-table .l-eye-lens').find('.bare-eye-txt').val(),
+                    //     Adjust: $('.px-eye-lens-table .l-eye-lens').find('.adjust-txt').val(),
+                    // },
+                }
+            }
+
+            EyetestMore.set_eye_lens_data = function (json1) {
+                update_eye_lens_input(json1['OldREyeLens'], '.old-eye-lens-table .r-eye-lens')
+                update_eye_lens_input(json1['OldLEyeLens'], '.old-eye-lens-table .l-eye-lens')
+
+                update_eye_lens_input(json1['CcREyeLens'], '.cc-eye-lens-table .r-eye-lens')
+                update_eye_lens_input(json1['CcLEyeLens'], '.cc-eye-lens-table .l-eye-lens')
+
+                update_eye_lens_input(json1['REyeLens'], '.px-eye-lens-table .r-eye-lens')
+                update_eye_lens_input(json1['LEyeLens'], '.px-eye-lens-table .l-eye-lens')
+            }
+
+            EyetestMore.get_broad_h_data = function () {
+                return {
+                    X: JSON.stringify(EyetestMore.canvas.getClickX()),
+                    Y: JSON.stringify(EyetestMore.canvas.getClickY()),
+                    Drage: JSON.stringify(EyetestMore.canvas.getClickDrag()),
+                }
+            }
+
+            EyetestMore.set_broad_h_data = function (data) {
+                if (isEmpty(data['X']) && isEmpty(data['Y']) && isEmpty(data['Drage'])) {
+                    EyetestMore.clear_canvas()
+                    return
+                }
+                EyetestMore.canvas.setClickX(JSON.parse(data['X']))
+                EyetestMore.canvas.setClickY(JSON.parse(data['Y']))
+                EyetestMore.canvas.setClickDrag(JSON.parse(data['Drage']))
+
+                EyetestMore.canvas.redraw()
+            }
+
+            EyetestMore.update_json1_ui = async function (sorder_id, json1) {
+                // console.log(json1)
+                EyetestMore.set_eye_lens_data(json1)
+
+                const $eyetest_more = $('#modal-eyetest-more')
+                $($eyetest_more).find('#symptoms-textarea').val(json1.Symptoms)
+
+                set_radio_value_for($eyetest_more, 'fix_eye', json1.FixEye)
+                set_radio_value_for($eyetest_more, 'stereosia', json1.Stereosia)
+                set_radio_value_for($eyetest_more, 'color_vision', json1.ColorVision)
+                set_radio_value_for($eyetest_more, 'od_im_grid', json1.OdImGrid)
+                set_radio_value_for($eyetest_more, 'os_im_grid', json1.OsImGrid)
+
+                EyetestMore.set_broad_h_data(json1.BroadH)
+
+                EyetestMore.set_screen_data($($eyetest_more).find('.screen'), json1.Screen)
+                EyetestMore.set_bincular_data($($eyetest_more).find('.bincular'), json1.Bincular)
+                EyetestMore.set_pameter_data($($eyetest_more).find('.pameter'), json1.Pameter)
+            }
+
+            EyetestMore.resize_canvas = function () {
+                if (EyetestMore.canvas.getCanvasSize()) { return }
+                setTimeout(()=>{
+                    const width = $('#canvasDiv1').width()
+                    const height = $('#chief-complaint').innerHeight()
+                    EyetestMore.canvas.setCanvasSize(width, height)
+                    EyetestMore.canvas.setCanvasWidth(width)
+                    EyetestMore.canvas.setCanvasHeight(height)
+
+                    EyetestMore.canvas.redraw()
+                }, 601)
+            }
+
+            EyetestMore.clear_canvas = function () {
+                EyetestMore.canvas.clearCanvas()
+            }
+
+        }( window.EyetestMore = window.EyetestMore || {}, jQuery ));
+
+    </script>
+@endpush
+@endonce

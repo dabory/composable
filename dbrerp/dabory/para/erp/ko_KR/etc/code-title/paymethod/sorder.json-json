@@ -1,0 +1,51 @@
+[
+    {
+        "Code": "",
+        "Title": "분류 입력"
+    },
+    {
+        "Code": "CC",
+        "Title": "신용카드"
+    },
+    {
+        "Code": "RM",
+        "Title": "무통장입금"
+    },
+    {
+        "Code": "CD",
+        "Title": "착불"
+    },
+    {
+        "Code": "PT",
+        "Title": "계좌이체"
+    },
+
+    {
+        "Code": "VA",
+        "Title": "가상계좌"
+    },
+    {
+        "Code": "MP",
+        "Title": "휴대폰결제"
+    },
+    {
+        "Code": "EC",
+        "Title": "에스크로신용카드"
+    },
+    {
+        "Code": "ET",
+        "Title": "에스크로계좌이체"
+    },
+    {
+        "Code": "EV",
+        "Title": "에스크로가상계좌"
+    },
+    {
+        "Code": "P1",
+        "Title": "암호화폐1"
+    },
+    {
+        "Code": "P2",
+        "Title": "암호화폐2"
+    }
+]

@@ -1,0 +1,131 @@
+{
+    "General": {
+
+        "Title": "상용구 등록",
+        "PickApi": "slip-form-book",
+        "ActApi": "squote-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "sales/squote"
+    },
+
+    "PrintVars": {
+        "QueryName": "federated/crystal/sales/squote",
+        "ReportPath": "standard/sales/squote.rpt",
+        "ExportFmt": "PDF",
+        "ServerPrinter": "",
+        "CustomCode": "squote"
+    },
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "mx.etc_type='domestic' ",
+            "Caption": "내수거래조건"
+        },
+        {
+            "Value": "mx.etc_type='trade' ",
+            "Caption": "무역거래조건"
+        },
+        {
+            "Value": "mx.etc_type='product-ipn' ",
+            "Caption": "상품정보제공고시"
+        },
+        {
+            "Value": "mx.etc_type='smart-courier' ",
+            "Caption": "택배사"
+        }
+    ],
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "save-and-new",
+            "Caption": "저장후 추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "delete",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "multi-delete",
+            "Caption": "항목 삭제",
+            "Parameter": ""
+        },
+        {
+            "Value": "multi-update",
+            "Caption": "항목 수정",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "항목 추가",
+            "SelectName": "선택명 지정"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "SelectName": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "SelectName": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "EtcType": "",
+            "SelectName": ""
+
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "",
+            "$Check": "$Check",
+            "ItemCode": "저장값*",
+            "ItemName": "캡션명*",
+            "SubName": "인기/특성*",
+            "CountUnit": "수정불가*",
+            "SquoteQty": "삭제불가*"
+        },
+        {
+            "$Radio": "",
+            "$Check": "3",
+            "ItemCode": "5",
+            "ItemName": "20",
+            "SubName": "10",
+            "CountUnit": "5",
+            "SquoteQty": "5"
+        },
+        {
+            "$Radio": "",
+            "$Check": "center",
+            "ItemCode": "left",
+            "ItemName": "left",
+            "SubName": "left",
+            "CountUnit": "center",
+            "SquoteQty": "center"
+        }
+    ],
+    "FooterVars": [
+        {
+
+        }
+    ]
+}

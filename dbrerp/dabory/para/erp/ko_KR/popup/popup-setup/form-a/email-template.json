@@ -1,0 +1,30 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "email-send-test",
+            "Caption": "테스트송신자로 메일전송"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "FilePath": "BladeFile Path",
+            "Subject": "메일 제목",
+            "Message": "메일 내용"
+        },
+        {
+            "SaveButton": "center",
+            "FilePath": "center",
+            "Subject": "center",
+            "Message": "center"
+        }
+
+    ]
+}

@@ -1,0 +1,138 @@
+{
+    "General": {
+        "Title": "연관상품 불러오기",
+        "PageApi": "item-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "master/item",
+        "FilterName": "is_material",
+        "FilterValue": "0"
+    },
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SelectButton": "품목 일괄 선택",
+            "ItemCode": "품목코드",
+            "ItemName": "품명",
+            "SubName": "서브명",
+            "CountUnit": "수량단위",
+            "CurrStockQty": "현재고",
+            "PurchPrc": "표준매입가",
+            "SalesPrc": "표준매출가",
+            "ItemDesc": "품목설명",
+            "FilterOption": "검색조건",
+            "SimpleOption": "상태별 검색"
+        },
+        {
+            "SelectButton": "left",
+            "ItemCode": "left",
+            "ItemName": "left",
+            "SubName": "left",
+            "CountUnit": "left",
+            "CurrStockQty": "decimal('stock_qty')",
+            "PurchPrc": "decimal('purch_prc')",
+            "SalesPrc": "decimal('sales_prc')",
+            "ItemDesc": "left",
+            "FilterOption": "left",
+            "SimpleOption": "left"
+        }
+    ],
+
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default, 필수(Required)",
+    "OrderByOptions": [
+        {
+            "Value": "item_code asc",
+            "Caption": "품목코드 정렬"
+        },
+        {
+            "Value": "item_name asc",
+            "Caption": "품명 정렬"
+        },
+        {
+            "Value": "sub_name asc",
+            "Caption": "서브명 정렬"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.item_code",
+            "Caption": "품목코드"
+        },
+        {
+            "Value": "mx.item_slug",
+            "Caption": "슬러그"
+        },
+        {
+            "Value": "mx.item_name",
+            "Caption": "품명"
+        },
+        {
+            "Value": "mx.sub_name",
+            "Caption": "서브명"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "mx.expose_type='0'",
+            "Caption": "온라인 게시(일반상품+스타일상품)"
+        },
+        {
+            "Value": "mx.expose_type='1'",
+            "Caption": "온라인 누락(옵션상품)"
+        },
+        {
+            "Value": "",
+            "Caption": "전체"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(%), ListVars[2]-align",
+    "// Price": "Prices show with comma and truncate numbers under decimal !!",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "ItemCode": "품목 코드",
+            "ItemName": "품명",
+            "SubName": "서브명",
+            "IgroupName": "품목구분",
+            "SalesPrc": "매출가",
+            "PurchPrc": "매입가",
+            "MoreInfo": "추가정보"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "No": "5",
+            "ItemCode": "12",
+            "ItemName": "25",
+            "SubName": "12",
+            "IgroupName": "8",
+            "SalesPrc": "7",
+            "PurchPrc": "7",
+            "MoreInfo": "5"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "ItemCode": "left",
+            "ItemName": "left",
+            "SubName": "left",
+            "IgroupName": "left",
+            "SalesPrc": "decimal('sales_qty')",
+            "PurchPrc": "decimal('purch_prc')",
+            "MoreInfo": "left"
+        }
+    ]
+}

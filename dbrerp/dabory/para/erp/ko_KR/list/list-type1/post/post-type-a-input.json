@@ -1,0 +1,232 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "게시판 구분A(공지/소개/문의)",
+        "PageApi": "list-type1-page",
+        "ActApi": "post-type-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "post/post-type-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "",
+        "SimpleFilter": "mx.sort != '400'"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "게시판 구분 등록"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "게시판 구분 일괄 삭제"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "",
+            "To": "",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "팝업 선택(라디오 버튼)",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.subject",
+            "Caption": "제목"
+        },
+        {
+            "Value": "mx.email",
+            "Caption": "아이디"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.status='0'",
+            "Caption": "sort('post-type','000')"
+        },
+        {
+            "Value": "mx.status='1'",
+            "Caption": "sort('post-type','001')"
+        },
+        {
+            "Value": "mx.status='2'",
+            "Caption": "sort('post-type','002')"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "게시판 구분 입력/수정/삭제",
+            "Component": "popup-form1.form-a.post-type-form",
+            "Parameter": "/popup/popup-form1/form-a/post-type"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.sort asc",
+            "Caption": "게시판코드 순서"
+        },
+        {
+            "Value": "mx.sort desc",
+            "Caption": "게시판코드 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst": true,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines": 15,
+        "HeadHeight": "140",
+        "BodyHeight": "570"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "No": "번호",
+            "C1": "일련번호",
+            "C2": "구분코드",
+            "C3": "PostCode",
+            "C4": "BrandCode",
+            "C5": "SetupCode",
+            "C6": "종류설명",
+            "C7": "게시판(블로그)카테고리명",
+            "C8": "상태",
+            "C9": "사용중지",
+            "T1": "세팅 Json"
+        },
+        {
+            "$Radio": "2",
+            "$Check": "2",
+            "No": "3",
+            "C1": "10",
+            "C2": "10",
+            "C3": "10",
+            "C4": "10",
+            "C5": "10",
+            "C6": "10",
+            "C7": "10",
+            "C8": "10",
+            "C9": "10",
+            "T1": "10"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "center",
+            "C2": "sort('post-type')",
+            "C3": "left",
+            "C4": "left",
+            "C5": "setup_code('post-type')",
+            "C6": "left",
+            "C7": "left",
+            "C8": "status('post-type')",
+            "C9": "check",
+            "T1": "left"
+        }
+    ]
+}

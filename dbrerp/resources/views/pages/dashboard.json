@@ -1,0 +1,161 @@
+{
+    "접속소스": {
+        "NewVisitors": {
+            "qty": 30,
+            "height": 35
+        },
+        "NewSessions": {
+            "qty": 30,
+            "height": 35
+        },
+        "TotalOnline": {
+            "qty": 30,
+            "height": 35
+        },
+        "TrafficSources": [
+            {
+                "key": "Youtube videos",
+                "value": "100",
+                "date": "01/06/15 00:00"
+            },
+            {
+                "key": "Youtube videos",
+                "value": "150",
+                "date": "01/06/15 01:00"
+            },
+            {
+                "key": "Youtube videos",
+                "value": "350",
+                "date": "01/06/15 02:00"
+            },
+            {
+                "key": "Youtube videos",
+                "value": "380",
+                "date": "01/06/15 03:00"
+            },
+            {
+                "key": "Youtube videos",
+                "value": "220",
+                "date": "01/06/15 04:00"
+            },
+            {
+                "key": "Facebook",
+                "value": "350",
+                "date": "01/06/15 00:00"
+            },
+            {
+                "key": "Facebook",
+                "value": "360",
+                "date": "01/06/15 01:00"
+            },
+            {
+                "key": "Facebook",
+                "value": "370",
+                "date": "01/06/15 02:00"
+            },
+            {
+                "key": "Facebook",
+                "value": "220",
+                "date": "01/06/15 03:00"
+            },
+            {
+                "key": "Facebook",
+                "value": "240",
+                "date": "01/06/15 04:00"
+            }
+        ]
+    },
+    "접속 통계": {
+        "NewOrders": 5689,
+        "ThisMonth": 32568,
+        "ExpectedProfit": 23464,
+        "AppSales": [
+            {
+                "type": "val1",
+                "date": "2015/06/15",
+                "Alpha": "110",
+                "Delta": "30",
+                "Sigma": "190"
+            },
+            {
+                "type": "val1",
+                "date": "2015/06/16",
+                "Alpha": "90",
+                "Delta": "48",
+                "Sigma": "170"
+            },
+            {
+                "type": "val2",
+                "date": "2015/06/15",
+                "Alpha": "12",
+                "Delta": "22",
+                "Sigma": "43"
+            },
+            {
+                "type": "val2",
+                "date": "2015/06/16",
+                "Alpha": "21",
+                "Delta": "31",
+                "Sigma": "50"
+            }
+        ],
+        "MonthlySalesAreaChart": [
+            {
+                "date": "2014-07-01",
+                "value": 1203
+            },
+            {
+                "date": "2014-07-02",
+                "value": 480
+            },
+            {
+                "date": "2014-07-03",
+                "value": 903
+            },
+            {
+                "date": "2014-07-04",
+                "value": 790
+            },
+            {
+                "date": "2014-07-05",
+                "value": 1423
+            },
+            {
+                "date": "2014-07-06",
+                "value": 1222
+            },
+            {
+                "date": "2014-07-07",
+                "value": 948
+            },
+            {
+                "date": "2014-07-08",
+                "value": 1338
+            },
+            {
+                "date": "2014-07-09",
+                "value": 543
+            },
+            {
+                "date": "2014-07-10",
+                "value": 940
+            },
+            {
+                "date": "2014-07-11",
+                "value": 1245
+            },
+            {
+                "date": "2014-07-12",
+                "value": 683
+            },
+            {
+                "date": "2014-07-13",
+                "value": 898
+            }
+        ]
+    },
+    "총 회원수": {
+        "active": 28
+    }
+
+}

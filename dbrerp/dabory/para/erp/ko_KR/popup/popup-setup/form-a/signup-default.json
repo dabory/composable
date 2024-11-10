@@ -1,0 +1,48 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+
+            "UserPermId": "User PermId",
+            "UserSgroupId": "User SgroupId",
+            "UserBranchId": "User BranchId",
+            "UserStorageId": "User StorageId",
+            "UserAgroupId": "User AgroupId",
+            "UserCountryCode": "User CountryCode",
+
+            "MemberPermId": "Member PermId",
+            "MemberSgroupId": "Member SgroupId",
+            "MemberBranchId": "Member BranchId",
+            "MemberStorageId": "Member StorageId",
+            "MemberAgroupId": "Member AgroupId",
+            "MemberCountryCode": "Member CountryCode"
+        },
+        {
+            "SaveButton": "left",
+            "UserPermId": "left",
+            "UserSgroupId": "left",
+            "UserBranchId": "left",
+            "UserStorageId": "left",
+            "UserAgroupId": "left",
+            "UserCountryCode": "left",
+
+            "SaveButton": "left",
+            "MemberPermId": "left",
+            "MemberSgroupId": "left",
+            "MemberBranchId": "left",
+            "MemberStorageId": "left",
+            "MemberAgroupId": "left",
+            "MemberCountryCode": "left"
+        }
+    ]
+}

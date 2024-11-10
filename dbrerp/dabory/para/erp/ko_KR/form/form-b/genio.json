@@ -1,0 +1,243 @@
+{
+    "General": {
+        "Title": "재고 변경 처리",
+        "PickApi": "slip-form-book",
+        "ActApi": "genio-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "stock/genio"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "save-and-new",
+            "Caption": "저장 후 추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "copy-to-another",
+            "Caption": "복사",
+            "Parameter": "stock/genio-genio"
+        },
+        {
+            "Value": "delete",
+            "Caption": "삭제",
+            "Parameter": ""
+        },
+        {
+            "Value": "rpt-print",
+            "Caption": "인쇄",
+            "Parameter": ""
+        },
+        {
+            "Value": "rpt-custom",
+            "Caption": "커스텀 인쇄",
+            "Parameter": ""
+        },
+        {
+            "Value": "linked",
+            "Caption": "고객업체 등록",
+            "Parameter": "",
+            "Linked": "/dabory/erp/master-data/company?bpa=eyJtZW51X25hbWUiOiJcdWFjNzBcdWI3OThcdWNjOTggXHVhZDAwXHViOWFjIiwibWVudV9jb2RlIjoiMDMxMDAwIiwiZGlzYWJsZV9sX21lbnUiOiIwIiwiZW5hYmxlX3JfbWVudSI6IjAiLCJwZXJtaXNzaW9uIjp7ImlzX215bWVudSI6IjAiLCJpc19saXN0IjoiMSIsImlzX3JlYWQiOiIxIiwiaXNfY3JlYXRlIjoiMSIsImlzX3VwZGF0ZSI6IjEiLCJpc19kZWxldGUiOiIxIiwiaXNfbmV3dGFiIjoiMCJ9LCJwYWdlX3VyaSI6IlwvZGFib3J5XC9lcnBcL21hc3Rlci1kYXRhXC9jb21wYW55IiwicGFyYV9uYW1lIjoiXC9mb3JtXC9mb3JtLWFcL2NvbXBhbnkiLCJ0aGVtZV9kaXIiOiIiLCJtYWluX2FwcF9pZCI6MCwiZ3Vlc3RfYXBwX2lkIjowLCJjdXN0b21fdmFyIjoiIn0="
+        },
+        {
+            "Value": "linked",
+            "Caption": "상용구 등록",
+            "Parameter": "",
+            "Linked": "https://newerp.daboryhost.com/dabory/erp/basic-settings/etc?bpa=eyJtZW51X25hbWUiOiJcdWMwYzFcdWM2YTlcdWFkNmMgXHViNGYxXHViODVkIiwibWVudV9jb2RlIjoiNzcyMDA4IiwiZGlzYWJsZV9sX21lbnUiOiIwIiwiZW5hYmxlX3JfbWVudSI6IjAiLCJwZXJtaXNzaW9uIjp7ImlzX215bWVudSI6IjAiLCJpc19saXN0IjoiMSIsImlzX3JlYWQiOiIxIiwiaXNfY3JlYXRlIjoiMSIsImlzX3VwZGF0ZSI6IjEiLCJpc19kZWxldGUiOiIxIiwiaXNfbmV3dGFiIjoiMCJ9LCJwYWdlX3VyaSI6IlwvZGFib3J5XC9lcnBcL2Jhc2ljLXNldHRpbmdzXC9ldGMiLCJwYXJhX25hbWUiOiJcL2Zvcm1cL2Zvcm0tYlwvZXRjIiwidGhlbWVfZGlyIjoiIiwibWFpbl9hcHBfaWQiOjAsImd1ZXN0X2FwcF9pZCI6MCwiY3VzdG9tX3ZhciI6IiJ9"
+        },
+        {
+            "Value": "linked",
+            "Caption": "영업구분 등록",
+            "Parameter": "",
+            "Linked": "/dabory/erp/basic-settings/sgroup?bpa=eyJtZW51X25hbWUiOiJcdWM2MDFcdWM1YzVcdWFkNmNcdWJkODQiLCJtZW51X2NvZGUiOiI3NzIwMDMiLCJkaXNhYmxlX2xfbWVudSI6IjAiLCJlbmFibGVfcl9tZW51IjoiMCIsInBlcm1pc3Npb24iOnsiaXNfbXltZW51IjoiMCIsImlzX2xpc3QiOiIxIiwiaXNfcmVhZCI6IjEiLCJpc19jcmVhdGUiOiIxIiwiaXNfdXBkYXRlIjoiMSIsImlzX2RlbGV0ZSI6IjEiLCJpc19uZXd0YWIiOiIwIn0sInBhZ2VfdXJpIjoiXC9kYWJvcnlcL2VycFwvYmFzaWMtc2V0dGluZ3NcL3Nncm91cCIsInBhcmFfbmFtZSI6IlwvZm9ybVwvZm9ybS1hXC9zZ3JvdXAiLCJ0aGVtZV9kaXIiOiIiLCJtYWluX2FwcF9pZCI6MCwiZ3Vlc3RfYXBwX2lkIjowLCJjdXN0b21fdmFyIjoiIn0="
+        }
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "확정",
+            "Caption": "확정"
+        },
+        {
+            "Value": "취소",
+            "Caption": "취소"
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "body-copy",
+            "Caption": "항목 복사① (재고에서)",
+            "Parameter": "stock/genio-genio"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "항목 삭제",
+            "Parameter": ""
+        },
+        {
+            "Value": "multi-update",
+            "Caption": "항목 수정",
+            "Parameter": ""
+        },
+        {
+            "Value": "linked",
+            "Caption": "품목 등록",
+            "Parameter": "",
+            "Linked": "/dabory/erp/master-data/item?bpa=eyJtZW51X25hbWUiOiJcdWMwYzFcdWQ0ODggXHViNGYxXHViODVkIiwibWVudV9jb2RlIjoiMDIxMDAwIiwiZGlzYWJsZV9sX21lbnUiOiIwIiwiZW5hYmxlX3JfbWVudSI6IjAiLCJwZXJtaXNzaW9uIjp7ImlzX215bWVudSI6IjAiLCJpc19saXN0IjoiMSIsImlzX3JlYWQiOiIxIiwiaXNfY3JlYXRlIjoiMSIsImlzX3VwZGF0ZSI6IjEiLCJpc19kZWxldGUiOiIxIiwiaXNfbmV3dGFiIjoiMCJ9LCJwYWdlX3VyaSI6IlwvZGFib3J5XC9lcnBcL21hc3Rlci1kYXRhXC9pdGVtIiwicGFyYV9uYW1lIjoiXC9mb3JtXC9mb3JtLWFcL2l0ZW0iLCJ0aGVtZV9kaXIiOiIiLCJtYWluX2FwcF9pZCI6MCwiZ3Vlc3RfYXBwX2lkIjowLCJjdXN0b21fdmFyIjoiIn0="
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "항목 추가",
+            "AutoSlipNo": "수불번호*",
+            "GenioDate": "수불일자*",
+            "DealType": "거래구분*",
+            "CompanyName": "거래업체*",
+            "Contact": "업체담당자",
+            "Status": "상황",
+            "VatType": "부가세*",
+            "VatTypeRate": "부가세율",
+            "SgroupName": "영업부서*",
+            "OurContact": "발주담당자",
+            "Column1": "공란1",
+            "Column2": "공란2",
+            "UserName": "사용자명*",
+            "Remarks": "비고",
+            "Genio": "일반 재고 변경 등록",
+            "Moutio": "자재소모내역"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "AutoSlipNo": "left",
+            "GenioDate": "left",
+            "DealType": "left",
+            "CompanyName": "left",
+            "Contact": "left",
+            "Status": "left",
+            "VatType": "left",
+            "VatTypeRate": "left",
+            "SgroupName": "left",
+            "OurContact": "left",
+            "Column1": "left",
+            "Column2": "left",
+            "UserName": "left",
+            "Remarks": "left",
+            "Genio": "left",
+            "Moutio": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "AutoSlipNo": "20",
+            "GenioDate": "20",
+            "DealType": "20",
+            "CompanyName": "20",
+            "Contact": "20",
+            "Status": "20",
+            "VatType": "20",
+            "VatTypeRate": "20",
+            "SgroupName": "20",
+            "OurContact": "20",
+            "Column1": "20",
+            "Column2": "20",
+            "UserName": "20",
+            "Remarks": "0",
+            "Genio": "20",
+            "Moutio": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "AutoSlipNo": "required",
+            "GenioDate": "required",
+            "DealType": "required",
+            "CompanyName": "required",
+            "Contact": "",
+            "Status": "",
+            "VatType": "required",
+            "VatTypeRate": "",
+            "SgroupName": "required",
+            "OurContact": "",
+            "Column1": "",
+            "Column2": "",
+            "UserName": "required",
+            "Remarks": "",
+            "Genio": "",
+            "Moutio": ""
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "",
+            "$Check": "$Check",
+            "ItemCode": "품목코드*",
+            "ItemName": "품명*",
+            "SubName": "서브명#",
+            "CountUnit": "단위#",
+            "GenioQty": "수불수량*",
+            "GenioPrc": "수불단가*",
+            "SupplyAmt": "공급가액*",
+            "VatAmt": "세액*",
+            "SumAmt": "합계금액*",
+            "Ref1": "참고1",
+            "Ref2": "참고2",
+            "GenioMemo": "품목설명(M)"
+        },
+        {
+            "$Radio": "",
+            "$Check": "3",
+            "ItemCode": "8",
+            "ItemName": "30",
+            "SubName": "10",
+            "CountUnit": "5",
+            "GenioQty": "10",
+            "GenioPrc": "10",
+            "SupplyAmt": "10",
+            "VatAmt": "10",
+            "SumAmt": "10",
+            "Ref1": "15",
+            "Ref2": "15",
+            "GenioMemo": "10"
+        },
+        {
+            "$Radio": "",
+            "$Check": "center",
+            "ItemCode": "left",
+            "ItemName": "left",
+            "SubName": "left",
+            "CountUnit": "center",
+            "GenioQty": "decimal('stock_qty')",
+            "GenioPrc": "decimal('stock_prc')",
+            "SupplyAmt": "decimal('stock_amt')",
+            "VatAmt": "decimal('stock_amt')",
+            "SumAmt": "decimal('stock_amt')",
+            "Ref1": "right",
+            "Ref2": "right",
+            "GenioMemo": "right"
+        }
+    ],
+    "FooterVars": [
+        {
+            "StorageName": "창고",
+            "BranchName": "점포명",
+            "QtyTotal": "수량 합계",
+            "SupplyTotal": "공급가액 소계",
+            "VatTotal": "부가세액 소계",
+            "SumTotal": "합계액 소계"
+        }
+    ]
+}

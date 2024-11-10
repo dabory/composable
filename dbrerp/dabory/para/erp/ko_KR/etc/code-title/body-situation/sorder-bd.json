@@ -1,0 +1,60 @@
+[
+    {
+        "Code": "",
+        "Title": "-"
+    },
+    {
+        "Code": "RM",
+        "Title": "반품요청"
+    },
+    {
+        "Code": "RE",
+        "Title": "반품접수"
+    },
+    {
+        "Code": "RP",
+        "Title": "반품회수"
+    },
+
+    {
+        "Code": "RC",
+        "Title": "반품승인"
+    },
+    {
+        "Code": "RO",
+        "Title": "반품완료"
+    },
+    {
+        "Code": "RX",
+        "Title": "반품거부"
+    },
+    {
+        "Code": "EM",
+        "Title": "교환요청"
+    },
+    {
+        "Code": "EE",
+        "Title": "교환접수"
+    },
+
+    {
+        "Code": "EP",
+        "Title": "교환회수"
+    },
+    {
+        "Code": "ES",
+        "Title": "교환발송"
+    },
+    {
+        "Code": "EO",
+        "Title": "교환완료"
+    },
+    {
+        "Code": "ER",
+        "Title": "교환재배송중"
+    },
+    {
+        "Code": "EF",
+        "Title": "교환취소"
+    }
+]

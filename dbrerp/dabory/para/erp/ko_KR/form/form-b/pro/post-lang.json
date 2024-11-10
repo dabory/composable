@@ -1,0 +1,129 @@
+{
+    "General": {
+        "Title": "다국어 게시판",
+        "PickApi": "slip-form-book",
+        "ActApi": "post-act",
+        "BdActApi": "post-lang-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "pro/post-lang"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "multi-delete",
+            "Caption": "다국어 게시판 일괄 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "다국어 게시판 추가",
+            "PostNo": "게시판번호*",
+            "PostTitle": "게시판명*",
+            "PostCode": "게시판코드*"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "PostNo": "left",
+            "PostTitle": "left",
+            "PostCode": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "PostNo": "20",
+            "PostTitle": "20",
+            "PostCode": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "PostNo": "required disabled",
+            "PostTitle": "required disabled",
+            "PostCode": "required disabled"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "LangType": "언어구분",
+            "LangTitle": "글제목",
+            "LangContents": "상세내용-html-더블클릭",
+            "LangPc1": "Pc1",
+            "LangPc2": "",
+            "LangPc3": "",
+            "LangPc4": "",
+            "LangPc5": "",
+            "LangPc6": "",
+            "LangPc7": "",
+            "LangPc8": "",
+            "LangPc9": "",
+            "LangPc10": "",
+            "LangPt1": "Pt1",
+            "LangPt2": "",
+            "Buttons": "버튼"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "LangType": "6",
+            "LangTitle": "6",
+            "LangContents": "8",
+            "LangPc1": "6",
+            "LangPc2": "6",
+            "LangPc3": "6",
+            "LangPc4": "6",
+            "LangPc5": "6",
+            "LangPc6": "6",
+            "LangPc7": "6",
+            "LangPc8": "6",
+            "LangPc9": "6",
+            "LangPc10": "6",
+            "LangPt1": "6",
+            "LangPt2": "6",
+            "Buttons": "6"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "LangType": "left",
+            "LangTitle": "left",
+            "LangContents": "left",
+            "LangPc1": "left",
+            "LangPc2": "left",
+            "LangPc3": "left",
+            "LangPc4": "left",
+            "LangPc5": "left",
+            "LangPc6": "left",
+            "LangPc7": "left",
+            "LangPc8": "left",
+            "LangPc9": "left",
+            "LangPc10": "left",
+            "LangPt1": "left",
+            "LangPt2": "left",
+            "Buttons": "center"
+        }
+    ],
+    "FooterVars": [
+        {
+            "SumTotal": "다국어 게시판 수"
+        }
+    ]
+}

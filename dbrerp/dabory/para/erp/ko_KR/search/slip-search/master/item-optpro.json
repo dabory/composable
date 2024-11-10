@@ -1,0 +1,127 @@
+{
+    "General": {
+        "Title": "품목 조회",
+        "PageApi": "slip-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "master/item_optpro"
+    },
+
+    "//SlipSearchFields": "쿼리를 공통하기 위한 테이블 필드변수들",
+    "SlipSearchFields": {
+        "SlipDateField": "",
+        "SlipNoField": "item_code"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "",
+            "QuerySpeed": "표시속도",
+            "SlipNo": "품목 코드",
+            "CompanyName": "",
+            "ItemCode": "",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "QuerySpeedOptions": [
+        {
+            "Value": "quick",
+            "Caption": "옵션(스타일)품목"
+        },
+        {
+            "Value": "non-style",
+            "Caption": "비옵션품목"
+        },
+        {
+            "Value": "option-cnt",
+            "Caption": "옵션 갯수 포함"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "item_code asc",
+            "Caption": "품목코드 정렬"
+        },
+        {
+            "Value": "item_code desc",
+            "Caption": "품목코드 역순"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "SlipNo": "품목코드",
+            "DealCode": "품명",
+            "Company": "서브명",
+            "SetGroup": "품목구분",
+            "Item": "",
+            "Amt": "매출가격",
+            "Status": "",
+            "Ref": "옵션수"
+        },
+        {
+            "No": "6",
+            "SlipNo": "8",
+            "DealCode": "15",
+            "Company": "15",
+            "SetGroup": "10",
+            "Item": "35",
+            "Amt": "8",
+            "Status": "10",
+            "Ref": "5"
+        },
+        {
+            "No": "center",
+            "SlipNo": "left",
+            "DealCode": "left",
+            "Company": "left",
+            "SetGroup": "left",
+            "Item": "left",
+            "Amt": "decimal('sales_prc')",
+            "Status": "center",
+            "Ref": "center"
+        }
+    ]
+}

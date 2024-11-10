@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-31 14:49+0000\n"
+"PO-Revision-Date: 2021-08-02 04:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: 한국어\n"
+"Language: ko_KR\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.3; wp-4.9.18"
+
+msgid "admin"
+msgstr "관리자"
+
+msgid "Logout"
+msgstr "로그아웃"
+
+msgid "Delete Dabory Cache"
+msgstr "다보리 캐시 삭제"
+
+msgid "file moved"
+msgstr "파일이 이동됨"
+
+msgid "%s file moved to %s"
+msgstr "%s 파일이 %s 로 이동됨"
+
+msgid "Action completed"
+msgstr "동작 완료"
+
+msgid "Action failed"
+msgstr "동작 실패"
+
+msgid "API request failed. Please Check"
+msgstr "API 요청 실패. 요청 내용를 확인해 주세요"
+
+msgid "(*)Required item(s) omitted"
+msgstr "(*)필수 입력 항목이 빠졌습니다"
+
+msgid "Comfirm delete"
+msgstr "삭제 확인"
+
+msgid "Can NOT recover after delete"
+msgstr "삭제시 복구가 불가능합니다"
+
+msgid "Can NOT copy in the status"
+msgstr "복사 가능 상태가 아닙니다"
+
+msgid "Can NOT paste in the status"
+msgstr "붙여넣기 가능 상태가 아닙니다"
+
+msgid "Can NOT delete in the status"
+msgstr "삭제 가능 상태가 아닙니다"
+
+msgid "Can NOT move UP or DOWN in the status"
+msgstr "아래위로 움직일 수 있는 상태가 아닙니다"
+
+msgid "Delete"
+msgstr "삭제"
+
+msgid "Cancel"
+msgstr "취소"
+
+msgid "No data found"
+msgstr "데이터가 없습니다"
+
+msgid "Click the checkbox(es) of line for action"
+msgstr "동작을 위해서 체크박스를 클릭해 주세요"
+
+msgid "Finish editting in the last item line"
+msgstr "마지막 품목 라인의 수정을 완료해 주세요"
+
+msgid "The token does not exist"
+msgstr "토큰이 존재하지 않습니다"
+
+msgid "Last item line is removed"
+msgstr "마지막 품목 라인이 제거 됩니다"
+
+msgid "Please select a customer first"
+msgstr "고객을 먼저 선택해 주세요"
+
+msgid "Please enter a number"
+msgstr "숫자를 입력해 주세요"

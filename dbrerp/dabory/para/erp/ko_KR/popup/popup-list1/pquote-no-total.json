@@ -1,0 +1,262 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "PageApi": "popup-list1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "pquote-no-total",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "pquote_date"
+    },
+
+    "PopupList1Vars": {
+        "PopupFilterName": "mx.id",
+        "PopupWidth": "1000"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "xls-report",
+            "Caption": "엑셀 다운로드"
+        },
+        {
+            "Value": "pdf-report",
+            "Caption": "Show PDF report"
+        },
+        {
+            "Value": "modified-report",
+            "Caption": "Modified Report"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-format",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "날짜",
+            "From": "부터",
+            "To": "까지",
+            "DownloadList": "다운로드 리스트",
+            "ShowOnlyClosed": "종결된 것만 보이기",
+            "Balance": "잔량",
+            "OrderBy": "표시 순서",
+
+            "HeadFirst": "고객명",
+            "HeadSecond": "적립금 잔액",
+            "HeadThird": "고객모바일",
+            "HeadFourth": "",
+
+            "ColumnFirst": "",
+            "ColumnSecond": "",
+            "ColumnThird": "",
+            "ColumnFourth": "",
+
+            "TextFirst": "",
+            "TextSecond": "",
+            "TextThird": "",
+            "TextFourth": "",
+
+            "FootFirst": "판매액합계",
+            "FootSecond": "입금액합계",
+            "FootThird": "잔액",
+            "FootFourth": ""
+        },
+        {
+            "ListButton": "left",
+            "DateRange": "left",
+            "Date": "left",
+            "From": "left",
+            "To": "left",
+            "DownloadList": "left",
+            "ShowOnlyClosed": "left",
+            "Balance": "right",
+            "OrderBy": "left",
+
+            "HeadFirst": "center",
+            "HeadSecond": "decimal('sales_amt')",
+            "HeadThird": "center",
+            "FootFirst": "decimal('sales_amt')",
+            "FootSecond": "decimal('sales_amt')",
+            "FootThird": "decimal('sales_amt')"
+        }
+
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsntPagination": true,
+        "IsExcelColumn": false,
+        "IsDownloadList": false,
+        "IsShowOnlyClosed": false,
+        "IsListFirst" : true,
+        "InitLines" : 10,
+        "HeadHeight": "130",
+        "BodyHeight": "400"
+    },
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "pquote_no asc",
+            "Caption": "매입가 번호 정렬순"
+        },
+        {
+            "Value": "pquote_no desc",
+            "Caption": "매입가 번호 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "No": "번호",
+            "C1": "매입가 번호",
+            "C2": "발행 일자",
+            "C3": "공급업체",
+            "C4": "거래구분",
+            "C5": "대표품목 코드/품명/서브명",
+            "C6": "수량합계",
+            "C7": "전표합계",
+            "C8": "컬럼1",
+            "C9": "컬럼2",
+            "C10": "일자(월)",
+            "C11": "일자(주)",
+            "C12": "품목구분",
+            "C13": "업체구분",
+            "C14": "지불조건",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "3",
+            "No": "6",
+            "C1": "12",
+            "C2": "9",
+            "C3": "15",
+            "C4": "8",
+            "C5": "10",
+            "C6": "15",
+            "C7": "10",
+            "C8": "10",
+            "C9": "10",
+            "C10": "10",
+            "C11": "10",
+            "C12": "10",
+            "C13": "10",
+            "C14": "10",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "YY.MM.DD",
+            "C3": "left",
+            "C4": "left",
+            "C5": "left",
+            "C6": "decimal('purch_amt')",
+            "C7": "decimal('purch_amt')",
+            "C8": "left",
+            "C9": "left",
+            "C10": "left",
+            "C11": "left",
+            "C12": "left",
+            "C13": "left",
+            "C14": "left",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        }
+    ]
+}

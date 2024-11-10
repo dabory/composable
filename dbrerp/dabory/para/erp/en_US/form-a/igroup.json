@@ -1,0 +1,40 @@
+{
+    "General": {
+        "Title": "Item Group",
+        "PickApi": "igroup-pick",
+        "ActApi": "igroup-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "Add New"
+        },
+        {
+            "Value": "",
+            "Caption": ""
+        },
+        {
+            "Value": "del",
+            "Caption": "Delete"
+        },
+        {
+            "Value": "",
+            "Caption": ""
+        },
+        {
+            "Value": "copy",
+            "Caption": "Duplicate"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "Save",
+            "IgroupCode": "Item Group Code",
+            "IgroupName": "Igroup Name",
+            "IsEndLevel": "EndLevel"
+        }
+    ]
+}

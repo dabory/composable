@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /
+User-agent: Googlebot
+User-agent: Yeti
+User-agent: Daum
+Allow: /
+Disallow: /dabory/erp
+Sitemap: http://localhost:8000/sitemap.xml

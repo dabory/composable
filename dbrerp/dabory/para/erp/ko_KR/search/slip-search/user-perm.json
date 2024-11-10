@@ -1,0 +1,90 @@
+{
+    "General": {
+        "Title": "사용자 메뉴 조회",
+        "PageApi": "slip-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "perm/user_perm"
+    },
+
+    "//SlipSearchFields": "쿼리를 공통하기 위한 테이블 필드변수들",
+    "SlipSearchFields": {
+        "SlipDateField": "perm_date",
+        "SlipNoField": "perm_no"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "QuerySpeed": "표시속도",
+            "SlipNo": "권한번호",
+            "CompanyName": "",
+            "ItemCode": "",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "QuerySpeedOptions": [
+        {
+            "Value": "quick",
+            "Caption": "빠른 검색"
+        }
+    ],
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "perm_no desc",
+            "Caption": "권한번호 역순"
+        },
+        {
+            "Value": "perm_no asc",
+            "Caption": "권한번호 정렬"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "SlipNo": "권한번호",
+            "DealCode": "권한명",
+            "Company": "권한 설명",
+            "SetGroup": "권한 코드",
+            "Item": "생성일자",
+            "Amt": "사용않음",
+            "Status": "사용않음",
+            "Ref": "사용않음"
+        },
+        {
+            "No": "6",
+            "SlipNo": "10",
+            "DealCode": "13",
+            "Company": "30",
+            "SetGroup": "10",
+            "Item": "35",
+            "Amt": "0",
+            "Status": "0",
+            "Ref": "0"
+        },
+        {
+            "No": "center",
+            "SlipNo": "center",
+            "DealCode": "center",
+            "Company": "left",
+            "SetGroup": "center",
+            "Item": "yy.mm.dd",
+            "Amt": "center",
+            "Status": "center",
+            "Ref": "center"
+        }
+    ]
+}

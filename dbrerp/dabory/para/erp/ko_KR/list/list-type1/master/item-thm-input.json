@@ -1,0 +1,229 @@
+{
+  "//list-type-1": "simple and plain list by query of table join",
+
+  "General": {
+    "Title": "품목 추가 이미지",
+    "PageApi": "list-type1-page",
+    "ActApi": "item-act"
+  },
+
+  "QueryVars": {
+    "QueryName": "genesis-wallet::master/item-giftcon-input",
+    "FilterName": "",
+    "FilterValue": "",
+    "SimpleFilter": "igroup_code like 'G0%'"
+  },
+  "HeadSelectOptions": [
+    {
+      "Value": "new",
+      "Caption": "추가"
+    },
+    {
+      "Value": "multi-delete",
+      "Caption": "일괄 삭제"
+    }
+  ],
+
+  "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+  "FormVars": [
+    {
+      "ListButton": "조회",
+      "DateRange": "일자범위",
+            "DateNavi": "",
+      "Date": "",
+      "From": "부터",
+      "To": "까지",
+      "FirstRange": "",
+      "SecondRange": "",
+      "ThirdRange": "",
+      "FourthRange": "",
+      "AddTotalLine": "",
+      "SelectPopup": "",
+      "MultiPopup": "",
+      "ChartPopup": "",
+      "DownloadList": "",
+      "ShowOnlyClosed": "",
+      "Balance": "",
+      "OrderBy": "표시 순서",
+      "FilterOption": "조건조회",
+      "SimpleOption": "카테고리 지정"
+    }
+  ],
+
+  "FilterSelectOptions": [
+    {
+      "Value": "",
+      "Caption": "=검색 조건="
+    },
+    {
+      "Value": "mx.menu_code",
+      "Caption": "메뉴코드"
+    }
+  ],
+
+  "SimpleSelectPage": {
+    "QueryVars": {
+      "QueryName": "select-option/igroup-whole",
+      "FilterName": "",
+      "FilterValue": "",
+      "SimpleFilter": "igroup_code like 'G0%'"
+    },
+
+    "PageVars": {
+      "MyFilter": "",
+      "Query": "",
+      "Fields": "",
+      "Asc": "id",
+      "Desc": "",
+      "Limit": 10,
+      "Offset": 0
+    }
+  },
+
+  "SimpleSelectOptions": [],
+
+  "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+  "ListType1RangeVars": [
+    {
+      "FirstRange": "",
+      "SecondRange": "",
+      "ThirdRange": "",
+      "FourthRange": ""
+    },
+    {
+      "FirstRange": "",
+      "SecondRange": "",
+      "ThirdRange": "",
+      "FourthRange": ""
+    },
+    {
+      "FirstRange": "",
+      "SecondRange": "",
+      "ThirdRange": "",
+      "FourthRange": ""
+    }
+  ],
+
+  "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+  "DateRangeOptions": [
+    {
+      "Value": "day",
+      "Caption": "일"
+    },
+    {
+      "Value": "week",
+      "Caption": "주"
+    },
+    {
+      "Value": "month",
+      "Caption": "월"
+    },
+    {
+      "Value": "quarterly",
+      "Caption": "분기"
+    },
+    {
+      "Value": "semiannual",
+      "Caption": "반기"
+    },
+    {
+      "Value": "year",
+      "Caption": "년"
+    },
+    {
+      "Value": "all",
+      "Caption": "전체"
+    }
+  ],
+
+  "SelectPopupOptions": [
+    {
+      "Caption": "상품 입력/수정/삭제",
+      "Component": "theme.popup-form1.form-a.item-giftcon-form",
+      "Parameter": "/popup/popup-form1/form-a/item-giftcon",
+      "ThemeDir": "/erp/genesis_wallet"
+    }
+  ],
+
+  "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+  "OrderByOptions": [
+    {
+      "Value": "mx.item_code asc",
+      "Caption": "상품 코드 순서"
+    },
+    {
+      "Value": "mx.item_code desc",
+      "Caption": "상품 코드 역순"
+    }
+  ],
+
+  "//BalanceOptions": "Show OnlyBalaceRemained or All",
+  "BalanceOptions": [
+    {
+      "Value": "",
+      "Caption": "전체 보기"
+    },
+    {
+      "Value": "c10 > 0",
+      "Caption": "잔량있는 것만"
+    }
+  ],
+
+  "DisplayVars": {
+    "IsSimpleSelectPage": true,
+    "IsListFirst": true,
+    "IsExcelColumn": true,
+    "InitLines": 15,
+    "HeadHeight": "130",
+    "IsC1Popup": "1",
+    "BodyHeight": "570"
+  },
+
+  "ThumbContainerVars": {
+    "ListWidth": 150,
+    "ListHeight": 75
+  },
+
+    "//Theme": "베스트여부(CheckBox):pc1, 토큰가격:pc2, 베스트섬네일:media_id1, 유의사항:pc3, 한정판매:pc4, 배송비:pd1",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "고유ID",
+            "C2": "카테고리",
+            "C3": "상품명",
+            "C4": "베스트여부",
+            "C5": "토큰가격",
+            "C6": "베스트섬네일",
+            "C7": "섬네일",
+            "C8": "유의사항"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "No": "3",
+            "C1": "5",
+            "C2": "5",
+            "C3": "10",
+            "C4": "5",
+            "C5": "6",
+            "C6": "6",
+            "C7": "6",
+            "C8": "6"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "left",
+            "C3": "center",
+            "C4": "check",
+            "C5": "center",
+            "C6": "$_ThumbNail",
+            "C7": "$_ThumbNail",
+            "C8": "left"
+        }
+    ]
+}

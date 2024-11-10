@@ -1,0 +1,109 @@
+{
+    "//bal-item-finished-good": "bal-item has 2 categoires: finished goods and materials",
+
+    "General": {
+        "Title": "상품 초기 재고 등록",
+        "PageApi": "list-form-balance-page",
+        "ActApi": "list-form-balance-mact"
+    },
+
+    "QueryVars": {
+        "QueryName": "item",
+        "FilterName": "is_material",
+        "FilterValue": "0"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "ListButton": "①장기저장소에서 조회",
+            "Month": "마감재고 년월(수불 시작월이 5월이면 4월말 재고로 저장)",
+            "Branch": "",
+            "Storage": "물류 창고",
+            "CodeRange": "품목코드 범위",
+            "OrderBy": "표시 순서"
+        },
+        {
+            "ListButton": "left",
+            "Month": "left",
+            "Branch": "left",
+            "Storage": "left",
+            "CodeRange": "left",
+            "OrderBy": "left"
+        },
+        {
+            "ListButton": "0",
+            "Month": "20",
+            "Branch": "20",
+            "Storage": "20",
+            "CodeRange": "20",
+            "OrderBy": "20"
+        },
+        {
+            "ListButton": "",
+            "Month": "",
+            "Branch": "",
+            "Storage": "",
+            "CodeRange": "",
+            "OrderBy": ""
+        }
+    ],
+
+    "SelectButtonOptions": [
+        {
+            "Value": "multi-save",
+            "Caption": "②장기저장소에 일괄저장"
+        },
+        {
+            "Value": "save-and-appply-balace",
+            "Caption": "③장기저장소와 수불 월말 재고에 동시저장"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "porder_no asc",
+            "Caption": "매입가 번호 정렬순"
+        },
+        {
+            "Value": "porder_no desc",
+            "Caption": "매입가 번호 역순"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "Code": "품목 코드",
+            "Name": "품명",
+            "Name2": "서브명",
+            "Balance": "(마감)월말재고",
+            "Balance2": "불량(마감)월말재고"
+        },
+        {
+            "No": "5",
+            "Code": "8",
+            "Name": "25",
+            "Name2": "10",
+            "Balance": "10",
+            "Balance2": "10"
+        },
+        {
+            "No": "center",
+            "Code": "center",
+            "Name": "left",
+            "Name2": "left",
+            "Balance": "decimal('sales_qty')",
+            "Balance2": "decimal('sales_qty')"
+        }
+    ],
+
+    "FooterVars": [
+        {
+            "BalanceTotal": "현재고 합계",
+            "Balance2Total": "불량재고 합계"
+        }
+    ]
+}

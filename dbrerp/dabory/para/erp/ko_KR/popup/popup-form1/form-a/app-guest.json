@@ -1,0 +1,46 @@
+{
+    "General": {
+        "PickApi": "app-guest-pick",
+        "ActApi": "app-guest-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AppName": "AppName*",
+            "ApiUri": "ApiUri",
+            "AppBase64": "AppBase64",
+            "IsOnUse": "IsOnUse"
+        },
+        {
+            "SaveButton": "left",
+            "AppName": "left",
+            "ApiUri": "left",
+            "AppBase64": "left",
+            "IsOnUse": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AppName": "10",
+            "ApiUri": "100",
+            "AppBase64": "100",
+            "IsOnUse": "100"
+        },
+        {
+            "SaveButton": "",
+            "AppName": "required",
+            "ApiUri": "",
+            "AppBase64": "",
+            "IsOnUse": ""
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "General": {
+        "Title": "업체 구분 입력",
+        "PickApi": "cgroup-pick",
+        "ActApi": "cgroup-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "복사"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "CgroupCode": "구분 코드*",
+            "CgroupName": "구분명*",
+            "CgroupManager": "관리자*"
+        },
+        {
+            "SaveButton": "",
+            "CgroupCode": "left",
+            "CgroupName": "left",
+            "CgroupManager": "left"
+        },
+        {
+            "SaveButton": "0",
+            "CgroupCode": "6",
+            "CgroupName": "20",
+            "CgroupManager": "20"
+        },
+        {
+            "SaveButton": "",
+            "CgroupCode": "required",
+            "CgroupName": "required",
+            "CgroupManager": "required"
+        }
+    ]
+}

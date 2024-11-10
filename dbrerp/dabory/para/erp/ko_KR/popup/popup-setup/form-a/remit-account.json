@@ -1,0 +1,28 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "BankName": "은행명",
+            "AccountNo": "계좌번호",
+            "HolderName": "예금주",
+            "ConvCode": "치환코드"
+        },
+        {
+            "SaveButton": "center",
+            "BankName": "center",
+            "AccountNo": "center",
+            "HolderName": "center",
+            "ConvCode": "center"
+        }
+    ]
+}

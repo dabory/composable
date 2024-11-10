@@ -1,0 +1,36 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "IsMemberSignupBlocked": "IsMemberSignupBlocked",
+            "IsMemberSsoOnly": "IsMemberSsoOnly",
+            "MemberEmail": "회원 개발 이메일",
+            "MemberPasswd": "회원 개발 패스워드",
+            "IsUserSignupBlocked": "IsUserSignupBlocked",
+            "IsUserSsoOnly": "IsUserSsoOnly",
+            "UserEmail": "관리자 개발 이메일",
+            "UserPasswd": "관리자 개발 패스워드"
+        },
+        {
+            "SaveButton": "center",
+            "IsMemberSignupBlocked": "center",
+            "IsMemberSsoOnly": "center",
+            "MemberEmail": "center",
+            "MemberPasswd": "center",
+            "IsUserSignupBlocked": "center",
+            "IsUserSsoOnly": "center",
+            "UserEmail": "center",
+            "UserPasswd": "center"
+        }
+    ]
+}

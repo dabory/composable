@@ -1,0 +1,41 @@
+{
+	"General": {
+		"Title": "Business Branch Search",
+        "PageApi": "setting-search-page"
+	},
+	"SelectOptions": [
+		{
+			"Value": "branch_code",
+			"Caption": "Code"
+		},
+		{
+			"Value": "branch_name",
+			"Caption": "Code"
+		}
+	],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+	"ListVars": [
+		{
+			"No": "No",
+			"Code": "Code",
+			"Name": "Name",
+			"ThirdField": "Manager Name",
+			"IsCheck": "Unused"
+		},
+		{
+			"No": "10",
+			"Code": "20",
+			"Name": "20",
+			"ThirdField": "30",
+			"IsCheck": "10"
+		},
+		{
+			"No": "center",
+			"Code": "center",
+			"Name": "center",
+			"ThirdField": "center",
+			"IsCheck": "center"
+		}
+	]
+}

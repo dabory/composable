@@ -1,0 +1,125 @@
+{
+    "General": {
+        "Title": "충전금 수정 조회",
+        "PageApi": "slip-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "point/credit"
+    },
+
+    "//SlipSearchFields": "쿼리를 공통하기 위한 테이블 필드변수들",
+    "SlipSearchFields": {
+        "SlipDateField": "credit_date",
+        "SlipNoField": "credit_no"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "DateRange": "",
+            "DateNavi": "일자방향(오늘)",
+            "Date": "날짜",
+            "QuerySpeed": "표시속도",
+            "SlipNo": "적립금번호",
+            "CompanyName": "고객명",
+            "ItemCode": "",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "QuerySpeedOptions": [
+        {
+            "Value": "quick",
+            "Caption": "빠르게"
+        }
+    ],
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "credit_no desc",
+            "Caption": "적립금번호 역순"
+        },
+        {
+            "Value": "credit_no asc",
+            "Caption": "발주번호 정렬"
+        },
+        {
+            "Value": "company_name asc",
+            "Caption": "업체명 정렬"
+        },
+        {
+            "Value": "company_name desc",
+            "Caption": "업체명 역순"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "SlipNo": "충전금번호",
+            "DealCode": "거래구분",
+            "Company": "받는고객",
+            "SetGroup": "발생점포",
+            "Item": "주는고객",
+            "Amt": "충전금액",
+            "Status": "거래구분",
+            "Ref": "관련정보"
+        },
+        {
+            "No": "6",
+            "SlipNo": "13",
+            "DealCode": "13",
+            "Company": "13",
+            "SetGroup": "10",
+            "Item": "30",
+            "Amt": "15",
+            "Status": "10",
+            "Ref": "10"
+        },
+        {
+            "No": "center",
+            "SlipNo": "center",
+            "DealCode": "deal_type('deal-type')",
+            "Company": "left",
+            "SetGroup": "left",
+            "Item": "left",
+            "Amt": "decimal('purch_amt')",
+            "Status": "left",
+            "Ref": "left"
+        }
+    ]
+}

@@ -1,0 +1,290 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "매입가 리스트",
+        "PageApi": "list-type1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "pquote-list",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "pquote_date"
+    },
+    "HeadSelectOptions": [
+        {
+            "Value": "clear-all-filter",
+            "Caption": "Clear All Filter"
+        },
+        {
+            "Value": "xls-report",
+            "Caption": "엑셀 다운로드"
+        },
+        {
+            "Value": "pdf-report",
+            "Caption": "Show PDF report"
+        },
+        {
+            "Value": "modified-report",
+            "Caption": "Modified Report"
+        },
+        {
+            "Value": "crystal-report",
+            "Caption": "Crystal Report"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "날짜",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "차트 선택",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+    ],
+
+    "SimpleSelectOptions": [
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "slip_no",
+            "SecondRange": "company_name",
+            "ThirdRange": "item_code",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "slip",
+            "SecondRange": "company",
+            "ThirdRange": "item",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "/search/slip-search/purch/pquote",
+            "SecondRange": "/search/company-search/supplier",
+            "ThirdRange": "/search/item-search/supplier",
+            "FourthRange": ""
+        }
+    ],
+
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "매입가 전표별 합계",
+            "Component": "list-type.list1-form",
+            "Parameter": "/popup/popup-list1/pquote-no-total"
+        }
+    ],
+
+    "MultiPopupOptions": [
+        {
+            "Caption": "매입가 일별/품목 실적(복합)",
+            "Component": "charts.lines",
+            "Parameter": "/chart/chart-line2/pquote-day-item"
+        },
+        {
+            "Caption": "매입가 일별/품목 실적",
+            "Component": "charts.c3",
+            "Parameter": "/chart/chart-type1/pquote-day-item"
+        }
+    ],
+
+    "DisplayVars": {
+        "DateRangeLimit": 10000000,
+        "IsAddTotalLine": false,
+        "IsExcelColumn": true,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsListFirst" : false,
+        "InitLines" : 20,
+        "HeadHeight": "125",
+        "BodyHeight": "500"
+    },
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "pquote_no asc",
+            "Caption": "매입가 번호 정렬순"
+        },
+        {
+            "Value": "pquote_no desc",
+            "Caption": "매입가 번호 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "No": "번호",
+            "C1": "발생 일시",
+            "C2": "요청 URL",
+            "C3": "Front IP",
+            "C4": "Front URL",
+            "C5": "Referer",
+            "C6": "요청 IP",
+            "C7": "",
+            "C8": "",
+            "C9": "",
+            "C10": "",
+            "C11": "",
+            "C12": "",
+            "C13": "",
+            "C14": "",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "3",
+            "C1": "3",
+            "C2": "6",
+            "C3": "2",
+            "C4": "6",
+            "C5": "6",
+            "C6": "2",
+            "C7": "",
+            "C8": "",
+            "C9": "",
+            "C10": "",
+            "C11": "",
+            "C12": "",
+            "C13": "",
+            "C14": "",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "left",
+            "C2": "yy.mm.dd",
+            "C3": "left",
+            "C4": "left",
+            "C5": "left",
+            "C6": "left",
+            "C7": "",
+            "C8": "",
+            "C9": "",
+            "C10": "",
+            "C11": "",
+            "C12": "",
+            "C13": "",
+            "C14": "",
+            "C15": "",
+            "C16": "",
+            "C17": " ",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        }
+    ]
+}

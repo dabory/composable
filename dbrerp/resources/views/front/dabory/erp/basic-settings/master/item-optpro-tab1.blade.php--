@@ -1,0 +1,406 @@
+<div class="tab-pane fade show active" id="item-optpro-tab1">
+    <div class="d-flex justify-content-end">
+{{--        <button class="btn btn-primary mr-1" id="down-btn" onclick="ColorSizeAassign.override_seq_no_up_down('down')"--}}
+{{--            data-clicked="">▼--}}
+{{--        </button>--}}
+{{--        <button class="btn btn-primary mr-1" id="up-btn" onclick="ColorSizeAassign.override_seq_no_up_down('up')"--}}
+{{--            data-clicked="">▲--}}
+{{--        </button>--}}
+        <div class="btn-group">
+            @if ($formB['FormVars']['Hidden']['AddNewBdButton'] == 'hidden')
+                <div class="btn-group">
+                    <button class="btn btn-sm btn-primary color-size-aassign-act" data-parameter="{{ $formB['BodySelectOptions'][0]['ParameterName'] ?? '' }}" data-value="{{ $formB['BodySelectOptions'][0]['Value'] }}">
+                        {{ $formB['BodySelectOptions'][0]['Caption'] }}
+                    </button>
+
+                    @include('front.dabory.erp.partial.select-btn-options', [
+                        'selectBtns' => array_slice($formB['BodySelectOptions'], 1),
+                        'eventClassName' => 'color-size-aassign-act'
+                    ])
+                </div>
+            @else
+                <div class="btn-group">
+                    <button class="btn btn-sm btn-primary color-size-aassign-act" data-value="add">
+                        {{ $formB['FormVars']['Title']['AddNewBdButton'] }}
+                    </button>
+
+                    @include('front.dabory.erp.partial.select-btn-options', [
+                        'selectBtns' => $formB['BodySelectOptions'],
+                        'eventClassName' => 'color-size-aassign-act'
+                    ])
+                </div>
+            @endif
+        </div>
+    </div>
+
+    <div class="table-responsive mt-2" style="height:400px;" id="scroll-area">
+        <table class="table-row color-size-aassign-table">
+            <thead id="color-size-aassign-table-head">
+                @include('front.dabory.erp.partial.make-thead', [
+                    'listVars' => $formB['ListVars'],
+                    'checkboxName' => 'bd-cud-check'
+                ])
+            </thead>
+            <tbody id="color-size-aassign-table-body">
+                <tr v-for="(item, index) in bdPage">
+                    <td class="text-{{ $formB['ListVars']['Align']['$Radio'] }} px-import-0">
+                        <input name="bd-cursor-state" type="radio" value="1" tabindex="-1"
+                               :id="cursorId(index)"
+                               class="text-{{ $formB['ListVars']['Align']['$Radio'] }}"
+                               onclick="Btype.bd_cursor_click(this)">
+                    </td>
+                    <td class="text-{{ $formB['ListVars']['Align']['$Check'] }} px-import-0">
+                        <input name="bd-cud-check" type="checkbox" value="1" tabindex="-1"
+                               v-model="item['Checked']"
+                               class="{{ $formB['ListVars']['Align']['$Check'] }}">
+                    </td>
+                    <td onkeydown="Btype.handleEnterPressedinTabCell(event)"
+                        class="text-{{ $formB['ListVars']['Align']['Size'] }}}" {{ $formB['ListVars']['Hidden']['Size'] }}>
+                        <div class="d-flex">
+                            <select class="text-{{ $formB['ListVars']['Align']['Size'] }} w-100 border-0 bg-white mr-1"
+                                    @change="changeSize(event, index)"
+                                    v-model="item['SizeId']" disabled>
+                                <option value="">==필수 입력==</option>
+                                <option v-for="option in itemSizeOptionNationStd" :value="option['Id']">@{{ option['OptionName'] }}</option>
+                                <option value="0">직접입력</option>
+                            </select>
+                            <input type="text" v-model="item['SelfSizeName']" :hidden="item['SelfSizeNameHidden']" class="w-100 border-0 bg-white" placeholder="옵션명">
+                        </div>
+                    </td>
+                    <td onkeydown="Btype.handleEnterPressedinTabCell(event)"
+                        class="text-{{ $formB['ListVars']['Align']['Color'] }}}" {{ $formB['ListVars']['Hidden']['Color'] }}>
+                        <input type="text" v-model="item['SelfColorName']"
+                               class="text-{{ $formB['ListVars']['Align']['Color'] }} w-100 border-0 bg-white">
+                    </td>
+
+                    <td onkeydown="Btype.handleEnterPressedinTabCell(event)" :hidden="! isOptionPrice"
+                        class="text-{{ $formB['ListVars']['Align']['PurchPrc'] }}}" {{ $formB['ListVars']['Hidden']['PurchPrc'] }}>
+                        <input type="text" class="text-{{ $formB['ListVars']['Align']['PurchPrc'] }} border-0 bg-white"
+                               @change="setFieldData(index, 'PurchPrc')"
+                               :value="format_conver_for( item['PurchPrc'], formB.ListVars['Format'].PurchPrc )" disabled>
+                    </td>
+                    <td onkeydown="Btype.handleEnterPressedinTabCell(event)" :hidden="! isOptionPrice"
+                        class="text-{{ $formB['ListVars']['Align']['SalesPrc'] }}}" {{ $formB['ListVars']['Hidden']['SalesPrc'] }}>
+                        <input type="text" class="text-{{ $formB['ListVars']['Align']['SalesPrc'] }} border-0 bg-white"
+                               @change="setFieldData(index, 'SalesPrc')"
+                               :value="format_conver_for( item['SalesPrc'], formB.ListVars['Format'].SalesPrc )" disabled>
+                    </td>
+                    <td onkeydown="Btype.handleEnterPressedinTabCell(event)"
+                        class="text-{{ $formB['ListVars']['Align']['CurrStkQty'] }}}" {{ $formB['ListVars']['Hidden']['CurrStkQty'] }}>
+                        <input type="text" class="text-{{ $formB['ListVars']['Align']['CurrStkQty'] }} border-0 bg-white"
+                               @change="setFieldData(index, 'CurrStkQty')"
+                               :value="format_conver_for( item['CurrStkQty'], formB.ListVars['Format'].SalesQty )" disabled>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary save-btn" @click="addTdLastTapOut(index)">저장</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-footer justify-content-end col-12 d-flex flex-column flex-md-row align-items-start align-items-stretch mb-2 p-2 border mt-2 rounded">
+        <div class="d-flex flex-column flex-md-row" id="total-frm">
+            <div class="d-flex align-items-stretch flex-column  mb-2 mb-md-0 px-2">
+                <label class="w-100 overflow-hidden text-nowrap m-0 p-0" {{ $formB['FooterVars']['Hidden']['SumTotal'] }}>
+                    {{ $formB['FooterVars']['Title']['SumTotal'] }}
+                </label>
+                <input type="text" class="w-100 w-md-80 rounded" :value="total" disabled>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@push('js')
+    <script>
+        var itemOptproTab1 = new Vue({
+            el: '#item-optpro-tab1',
+
+            data: function () {
+                return {
+                    formB: @json($formB),
+                    bdPage: [],
+                    itemSizeOptionNationStd: [],
+                    itemOptionNationStd: [],
+                    isOptionPrice: false,
+                };
+            },
+
+            computed: {
+                total: function() {
+                    return format_decimal(this.bdPage.length, 0);
+                }
+            },
+
+            mounted() {
+                set_min_width_table('#item-optpro-tab1 .color-size-aassign-table', 870)
+
+                $('.color-size-aassign-act').on('click', (event) => {
+                    switch( $(event.target).data('value') ) {
+                        case 'add': this.actAdd(); break;
+                        case 'multi-delete': this.actMultiDelete(); break;
+                        case 'generate-item-assort': this.actGenerateItemAssort(false); break;
+                        case 'delete-all-item-assort': this.actGenerateItemAssort(true); break;
+                    }
+                });
+
+                const color_size_aassign_table_head = $('#color-size-aassign-table-head')
+                $(color_size_aassign_table_head).find('tr th:eq(4)').prop('hidden', ! this.isOptionPrice)
+                $(color_size_aassign_table_head).find('tr th:eq(5)').prop('hidden', ! this.isOptionPrice)
+            },
+
+            created: async function () {
+                const response = await get_api_data('item-option-page', {
+                    PageVars: {
+                        Limit: 9999999,
+                        Offset: 0
+                    }
+                })
+
+                const page = response.data.Page
+
+                this.itemOptionList = groupBy(page, 'OptionType')
+                this.itemSizeOptionNationStd = this.itemOptionList['size']
+            },
+
+            methods: {
+                actGenerateItemAssort: async function (deleteAll) {
+                    this.emptyArrayDelete()
+
+                    const response = await get_api_data('generate-item-assort', {
+                        ItemCode: $('#item-code-txt').val(),
+                        DeleteAll: deleteAll
+                    })
+
+                    self = this
+                    show_iziToast_msg(response.data, function () {
+                        $('.item-optpro-tab2 a').trigger('click')
+                        if (deleteAll) { self.bdPage.splice(0) }
+                        itemOptproTab2.updateBdUi()
+                    })
+                },
+
+                emptyArrayDelete: function () {
+                    this.bdPage = this.bdPage.filter(item => item['Id'] !== 0)
+                },
+
+                actMultiDelete: function () {
+                    this.emptyArrayDelete()
+
+                    const deletePage = this.bdPage.filter(item => item['Checked']).map(item => {
+                        return { Id: Number(`-${item['Id']}`) }
+                    })
+
+                    if (isEmptyArr(deletePage)) {
+                        return iziToast.error({
+                            title: 'Error',
+                            message: $('#click-the-checkbox-es-of-line-for-action').text(),
+                        });
+                    }
+
+                    const self = this
+
+                    confirm_message_shw_and_delete(async function() {
+                        const response = await get_api_data(self.formB['General']['BdActApi'], {
+                            Page: deletePage
+                        })
+
+                        show_iziToast_msg(response.data, function () {
+                            self.bdPage = self.bdPage.filter(item => !item['Checked'])
+                        })
+                    })
+                },
+
+                productOptionNationStd: function (val) {
+                    this.itemSizeOptionNationStd = this.itemOptionList['size'].filter(opt => opt['NationStd'] === val)
+                },
+
+                changeSize: function (event, index) {
+                    if (event.target.value === '0') {
+                        this.bdPage[index]['SelfSizeNameHidden'] = false
+                        this.bdPage[index]['SelfSizeName'] = ''
+                        this.bdPage[index]['SizeId'] = 0
+                    } else {
+                        this.bdPage[index]['SelfSizeNameHidden'] = true
+                    }
+                },
+
+                cursorId: function (index) {
+                    return `cursor-${index}`
+                },
+
+                actNew: function () {
+                    this.bdPage = []
+                },
+
+                updateBdUi: function (bdPage, isOptionPrice) {
+                    if (bdPage) {
+                        this.bdPage = bdPage ?? []
+                    }
+
+                    this.bdPage = this.bdPage.map(item => {
+                        item['SelfSizeNameHidden'] = item['SizeId'] !== 0
+                        return item
+                    })
+
+                    this.isOptionPrice = isOptionPrice === '1'
+                    // console.log(this.isOptionPrice)
+                    const color_size_aassign_table_head = $('#color-size-aassign-table-head')
+
+                    $(color_size_aassign_table_head).find('tr th:eq(4)').prop('hidden', ! this.isOptionPrice)
+                    $(color_size_aassign_table_head).find('tr th:eq(5)').prop('hidden', ! this.isOptionPrice)
+
+                    this.productOptionNationStd($('#item-form').find('#product-option-nation-std').val())
+                },
+
+                lastItemAddedCheck: function (table_id, start_index = -1) {
+                    const tr = $(`${table_id} tr:last`);
+                    const index = this.bdPage.length
+                    const table = $(table_id).closest('table');
+
+                    if (index > 0 && this.bdPage[index - 1].Id === 0) {
+                        $(tr).children(`td:eq(0)`).find('input').prop('checked', true);
+                        $(tr).children(`td:eq(0)`).find('input').trigger('click');
+                        $(tr).children(`td:eq(${Btype.get_first_required_th_index(table, start_index)})`).find('input').focus();
+
+                        iziToast.error({
+                            title: 'Error',
+                            message: $('#finish-editting-in-the-last-item-line').text(),
+                        });
+                        return true
+                    }
+
+                    return false
+                },
+
+                domRequiredCheck: function (index) {
+                    if (isEmpty(this.bdPage[index].SelfColorName) && this.bdPage[index].SizeId === 0) {
+                        return false
+                    }
+
+                    return !(this.bdPage[index].PurchPrc === '' || this.bdPage[index].SalesPrc === '')
+                },
+
+                optproOverlapCheck: function (index) {
+                    const Id = this.bdPage[index]['Id']
+                    const colorName = this.bdPage[index]['SelfColorName']
+                    const sizeId = this.bdPage[index]['SizeId']
+
+                    const overlap = this.bdPage.filter(item => item['Id'] !== Id)
+                        .filter(item => item['SelfColorName'] === colorName && item['SizeId'] === sizeId)
+
+                    return isEmptyArr(overlap)
+                },
+
+                parameter: function (item, index) {
+                    let selfColorName = item['SelfColorName']
+                    let selfSizeName = item['SelfSizeName']
+
+                    const size = this.itemOptionList['size'].filter(option => option['Id'] === item['SizeId'])[0]
+                    let sizeCode = ''
+
+                    if (size) {
+                        selfSizeName = size['OptionName']
+                        sizeCode = size['OptionCode']
+                    }
+
+                    const selfOptionCode = makeTwoDigit(index) + sizeCode
+
+                    return {
+                        Id: item['Id'],
+                        SeqNo: Number(item['SeqNo']),
+                        ItemId: Number(item['ItemId']),
+                        ColorId: 0,
+                        SizeId: Number(item['SizeId']),
+                        SelfSizeName: selfSizeName,
+                        SelfColorName: selfColorName,
+                        SelfOptionCode: selfOptionCode,
+                        PurchPrc: String(item['PurchPrc']),
+                        SalesPrc: String(item['SalesPrc']),
+                        CurrStkQty: String(item['CurrStkQty']),
+                    }
+                },
+
+                addTdLastTapOut: async function (index) {
+                    if (this.bdPage[index].ItemId !== 0 && this.domRequiredCheck(index)) {
+                        if (! this.optproOverlapCheck(index)) {
+                            return iziToast.error({
+                                title: 'Error', message: 'Color & Size 중복 입력',
+                            });
+                        }
+
+                        if (this.bdPage[index].Last) {
+                            const seqNo = await Btype.get_last_seq_no('item-optpro', $('#item-code-txt').val())
+                            this.bdPage[index].SeqNo = seqNo
+                        }
+
+                        $('.save-btn').prop('disabled', true)
+                        const response = await get_api_data(this.formB['General']['BdActApi'], {
+                            Page: [
+                                this.parameter(this.bdPage[index], index)
+                            ]
+                        })
+
+                        const page = response.data.Page
+                        const self = this
+                        show_iziToast_msg(page, function () {
+                            if (page[0].Id !== 0) {
+                                self.bdPage[index].Id = page[0].Id
+                            }
+                            $('.save-btn').prop('disabled', false)
+                            if (self.bdPage[index].Last) {
+                                self.actAdd()
+                                self.bdPage[index].Last = false
+                            }
+                        })
+                    } else {
+                        iziToast.error({
+                            title: 'Error',
+                            message: @json(_e('(*)Required item(s) omitted')),
+                        });
+                    }
+                },
+
+                actAdd: async function () {
+                    const itemId = Number($('#item-form').find('#Id').val())
+                    const salesPrc = minusComma($('#item-form').find('#sales-prc-txt').val())
+                    const purchPrc = minusComma($('#item-form').find('#purch-prc-txt').val())
+                    if (itemId === 0) {
+                        return iziToast.error({
+                            title: 'Error', message: @json(_e('Action failed')),
+                        });
+                    }
+
+                    if (! this.lastItemAddedCheck('#item-optpro-tab1 #color-size-aassign-table-body')) {
+                        this.bdPage.push({
+                            Id: 0,
+                            ColorId: 0,
+                            SizeId: '',
+                            ItemId: itemId,
+                            PurchPrc: purchPrc,
+                            SalesPrc: salesPrc,
+                            CurrStkQty: 0,
+                            SeqNo: 0,
+                            Checked: false,
+                            Last: true,
+                            SelfSizeNameHidden: true,
+                        })
+
+                        // TODO: 나중에 Vue 코드로 변경
+                        const index = this.bdPage.length - 1
+                        await setTimeout( function() {
+                            $('#item-optpro-tab1').find(`#cursor-${index}`).trigger('click')
+                        }, 100);
+                    }
+                },
+
+                setFieldData: function (index, field) {
+                    this.bdPage[index][field] = event.target.value
+                }
+
+
+            }
+        });
+    </script>
+@endpush

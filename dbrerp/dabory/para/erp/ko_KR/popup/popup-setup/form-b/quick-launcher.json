@@ -1,0 +1,70 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "HeadSelectOptions": [
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "multi-delete",
+            "Caption": "위젯 일괄 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "위젯 추가",
+            "Type": "Type"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "Type": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "20",
+            "Type": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "Type": ""
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "Name": "Name*",
+            "ImageUrl": "ImageUrl",
+            "Class": "Class"
+        },
+        {
+            "$Radio": "1",
+            "$Check": "1",
+            "Name": "3",
+            "ImageUrl": "3",
+            "Class": "3"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "Name": "left",
+            "ImageUrl": "left",
+            "Class": "left"
+        }
+    ],
+    "FooterVars": [
+        {
+            "SumTotal": ""
+        }
+    ]
+}

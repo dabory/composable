@@ -1,0 +1,126 @@
+{
+    "General": {
+        "Title": "미디어 라이브러리 조회",
+        "PageApi": "slip-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "common/media"
+    },
+
+    "//SlipSearchFields": "쿼리를 공통하기 위한 테이블 필드변수들",
+    "SlipSearchFields": {
+        "SlipDateField": "media_date",
+        "SlipNoField": "media_no"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "날짜",
+            "QuerySpeed": "표시속도",
+            "SlipNo": "미디어번호",
+            "CompanyName": "미디어명",
+            "ItemCode": "품목코드",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "오늘"
+        },
+        {
+            "Value": "yesterday",
+            "Caption": "어제"
+        },
+        {
+            "Value": "last-week",
+            "Caption": "전주"
+        },
+        {
+            "Value": "week",
+            "Caption": "금주"
+        },
+        {
+            "Value": "month",
+            "Caption": "당월"
+        },
+        {
+            "Value": "last-month",
+            "Caption": "전월"
+        },
+        {
+            "Value": "year",
+            "Caption": "금년"
+        },
+        {
+            "Value": "last-year",
+            "Caption": "전년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "QuerySpeedOptions": [
+        {
+            "Value": "quick",
+            "Caption": "빠르게"
+        }
+    ],
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "created_on desc",
+            "Caption": "작성일 역순"
+        },
+        {
+            "Value": "created_on asc",
+            "Caption": "작성일 정렬"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "SlipNo": "미디어번호",
+            "DealCode": "미디어구분",
+            "Company": "미디어명",
+            "SetGroup": "담당부서",
+            "Item": "KB",
+            "Amt": "가로*세로",
+            "Status": "링크여부",
+            "Ref": "화일경로"
+        },
+        {
+            "No": "6",
+            "SlipNo": "8",
+            "DealCode": "8",
+            "Company": "8",
+            "SetGroup": "8",
+            "Item": "5",
+            "Amt": "8",
+            "Status": "0",
+            "Ref": "30"
+        },
+        {
+            "No": "center",
+            "SlipNo": "center",
+            "DealCode": "center",
+            "Company": "left",
+            "SetGroup": "center",
+            "Item": "center",
+            "Amt": "center",
+            "Status": "check",
+            "Ref": "left"
+        }
+    ]
+}

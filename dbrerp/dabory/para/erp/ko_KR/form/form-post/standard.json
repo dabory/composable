@@ -1,0 +1,128 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "PickApi": "post-pick",
+        "ActApi": "post-act",
+        "PostCode": ""
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "복사"
+        }
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "0",
+            "Caption": "status('post-token-swap1','0')"
+        },
+        {
+            "Value": "1",
+            "Caption": "status('post-token-swap1','1')"
+        }
+    ],
+
+    "SortOptions": [
+        {
+            "Value": "001",
+            "Caption": "sort('post-type','001')"
+        },
+        {
+            "Value": "002",
+            "Caption": "sort('post-type','002')"
+        },
+        {
+            "Value": "003",
+            "Caption": "sort('post-type','003')"
+        },
+        {
+            "Value": "501",
+            "Caption": "sort('post-type','501')"
+        },
+        {
+            "Value": "502",
+            "Caption": "sort('post-type','502')"
+        }
+    ],
+
+    "DisplayVars": {
+        "Width": "600"
+    },
+
+    "// FormPostVars": "FormPostVars[0]-caption, FormPostVars[1]-size(px), FormPostVars[2]-format, FormPostVars[3]-required, FormPostVars[4]-ui, FormPostVars[5]-type",
+    "FormPostVars": [
+        {
+            "SaveButton": "저장",
+            "Status": "처리상태",
+            "PostTypeId": "구분",
+            "MemberId": "이메일",
+            "Pc1": "지갑주소",
+            "Pd2": "수량",
+            "Pc5": "메모",
+            "CreatedOn": "신청일",
+            "Pc4": "처리일"
+        },
+        {
+            "SaveButton": "center",
+            "Status": "StatusOptions",
+            "PostTypeId": "SortOptions",
+            "MemberId": "left",
+            "Pc1": "center",
+            "Pd2": "center",
+            "Pc5": "center",
+            "CreatedOn": "unixtime",
+            "Pc4": "center"
+        },
+        {
+            "SaveButton": "",
+            "Status": "2",
+            "PostTypeId": "2",
+            "MemberId": "8",
+            "Pc1": "60",
+            "Pd2": "10",
+            "Pc5": "10",
+            "CreatedOn": "4",
+            "Pc4": "10"
+        },
+        {
+            "SaveButton": "",
+            "Status": "required",
+            "PostTypeId": "required disabled",
+            "MemberId": "disabled",
+            "Pc1": "disabled",
+            "Pd2": "",
+            "Pc5": "",
+            "CreatedOn": "disabled",
+            "Pc4": ""
+        },
+        {
+            "SaveButton": "",
+            "Status": "select",
+            "PostTypeId": "select",
+            "MemberId": "text",
+            "Pc1": "text",
+            "Pd2": "text",
+            "Pc5": "text",
+            "CreatedOn": "text",
+            "Pc4": "datetime"
+        },
+        {
+            "SaveButton": "",
+            "Status": "string",
+            "PostTypeId": "number",
+            "MemberId": "number",
+            "Pc1": "string",
+            "Pd2": "string",
+            "Pc5": "string",
+            "CreatedOn": "",
+            "Pc4": "string"
+        }
+    ]
+}

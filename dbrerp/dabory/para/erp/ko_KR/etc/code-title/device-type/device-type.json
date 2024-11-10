@@ -1,0 +1,14 @@
+[
+    {
+        "Code": "desktop",
+        "Title": "데스트탑"
+    },
+    {
+        "Code": "mobile",
+        "Title": "모바일폰"
+    },
+    {
+        "Code": "tablet",
+        "Title": "태블릿PC"
+    }
+]

@@ -1,0 +1,262 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "본인 조회 및 등록",
+        "PageApi": "list-type1-page",
+        "ActApi": "member-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "sul4u::pro/member-seller-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "mx.member_date",
+        "SimpleFilter": ""
+    },
+
+    "HeadSelectOptions": [
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "이전 | (오늘지정) | 이후",
+            "Date": "회원등록일",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "팝업 선택(라디오 버튼)",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "email",
+            "Caption": "아이디(이메일)"
+        },
+        {
+            "Value": "nick_name",
+            "Caption": "이름"
+        },
+        {
+            "Value": "ext.mobile_no",
+            "Caption": "전화번호"
+        },
+        {
+            "Value": "status",
+            "Caption": "상태",
+            "Reverse": "status_rev('member')"
+        }
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "ext.is_seller='0' and ext.seller_request_on <> 0",
+            "Caption": "판매회원 승인대기"
+        },
+        {
+            "Value": "ext.is_seller='1'",
+            "Caption": "승인된 판매회원"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "판매회원상태 승인/취소",
+            "Component": "sul4u::popup.popup-form1.form-a.member-seller-form",
+            "Parameter": "sul4u::/popup/popup-form1/form-a/member-seller"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "등록일자 역순"
+        },
+        {
+            "Value": "mx.created_on asc",
+            "Caption": "등록일자 순서"
+        },
+        {
+            "Value": "mx.email desc",
+            "Caption": "이메일 역순"
+        },
+        {
+            "Value": "mx.email asc",
+            "Caption": "이메일 순서"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst": true,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines": 15,
+        "HeadHeight": "130",
+        "BodyHeight": "570",
+        "InitDateRange" : "all"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "아이디(이메일)",
+            "C2": "닉네임",
+            "C3": "판매회원 코드",
+            "C4": "등급",
+            "C5": "이름",
+            "C6": "전화번호",
+            "C7": "판매회원 승인상태",
+            "C8": "판매회원 요청일시",
+            "C9": "판매회원 승인일시"
+        },
+        {
+            "$Radio": "2",
+            "$Check": "2",
+            "No": "4",
+            "C1": "10",
+            "C2": "10",
+            "C3": "10",
+            "C4": "10",
+            "C5": "10",
+            "C6": "10",
+            "C7": "10",
+            "C8": "10",
+            "C9": "10"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "center",
+            "C2": "center",
+            "C3": "center",
+            "C4": "sort('member')",
+            "C5": "center",
+            "C6": "center",
+            "C7": "check",
+            "C8": "unixtime",
+            "C9": "unixtime"
+        }
+    ]
+}

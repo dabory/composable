@@ -1,0 +1,139 @@
+{
+    "General": {
+        "Title": "품목별 옵션 설정",
+        "PickApi": "slip-form-book",
+        "ActApi": "item-act",
+        "BdActApi": "item-optpro-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "master/item_optpro"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "multi-delete",
+            "Caption": "옵션 일괄 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "옵션 추가",
+            "ItemCode": "스타일No(대표품목코드)*",
+            "ItemName": "품명*",
+            "SubName": "서브명*",
+            "IgroupName": "품목구분",
+            "PurchPrc": "매입가*",
+            "SalesPrc": "매출가*",
+            "MediaId": "메인 이미지",
+            "Remarks": "상세 설명",
+            "TAB1": "옵션 할당",
+            "TAB2": "생성된 옵션 품목",
+            "IsSelfOption": "비표준 옵션 사용",
+            "IsStyle": "옵션품목(저장 필수)",
+            "IsntStkio": "수불처리 않음"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "ItemCode": "left",
+            "ItemName": "left",
+            "SubName": "left",
+            "IgroupName": "left",
+            "PurchPrc": "left",
+            "SalesPrc": "left",
+            "MediaId": "left",
+            "Remarks": "left",
+            "TAB1": "left",
+            "TAB2": "left",
+            "IsSelfOption": "left",
+            "IsStyle": "left",
+            "IsntStkio": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "ItemCode": "20",
+            "ItemName": "20",
+            "SubName": "20",
+            "IgroupName": "20",
+            "PurchPrc": "20",
+            "SalesPrc": "20",
+            "MediaId": "20",
+            "Remarks": "0",
+            "TAB1": "20",
+            "TAB2": "20",
+            "IsSelfOption": "20",
+            "IsStyle": "20",
+            "IsntStkio": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "ItemCode": "required disabled",
+            "ItemName": "required disabled",
+            "SubName": "required disabled",
+            "IgroupName": "disabled",
+            "PurchPrc": "required disabled",
+            "SalesPrc": "required disabled",
+            "MediaId": "disabled",
+            "Remarks": "",
+            "TAB1": "",
+            "TAB2": "",
+            "IsSelfOption": "",
+            "IsStyle": "",
+            "IsntStkio": ""
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Option1(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "Opt1": "옵션1@",
+            "Opt2": "옵션2@",
+            "Opt3": "옵션3@",
+            "Prc": "옵션 추가금액*",
+            "Qty": "옵션별 현재고*",
+            "Status": "사용여부"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "Opt1": "4",
+            "Opt2": "4",
+            "Opt3": "4",
+            "Prc": "6",
+            "Qty": "4",
+            "Status": "3"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "Opt1": "left",
+            "Opt2": "left",
+            "Opt3": "left",
+            "Prc": "decimal('purch_prc')",
+            "Qty": "decimal('sales_qty')",
+            "Status": "center"
+        }
+    ],
+    "FooterVars": [
+        {
+            "SumTotal": "옵션 수"
+        }
+    ]
+}

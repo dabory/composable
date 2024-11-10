@@ -1,0 +1,22 @@
+[
+    {
+        "Code": "",
+        "Title": "구분 입력"
+    },
+    {
+        "Code": "0",
+        "Title": "Waiting"
+    },
+    {
+        "Code": "1",
+        "Title": "Confirmed"
+    },
+    {
+        "Code": "2",
+        "Title": "GaveUp"
+    },
+    {
+        "Code": "9",
+        "Title": "Excepted"
+    }
+]

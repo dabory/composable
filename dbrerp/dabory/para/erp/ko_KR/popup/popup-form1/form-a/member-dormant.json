@@ -1,0 +1,52 @@
+{
+    "General": {
+        "PickApi": "member-dormant-pick",
+        "ActApi": "member-dormant-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "your-account",
+            "Caption": "사용 계정으로 이동"
+        }
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "5",
+            "Caption": "status('member','5')"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "",
+            "Name": "이름*",
+            "Email": "이메일*",
+            "Status": "상태*",
+            "IsMemberApp": "IsMemberApp"
+        },
+        {
+            "SaveButton": "left",
+            "Name": "left",
+            "Email": "left",
+            "Status": "left",
+            "IsMemberApp": "left"
+        },
+        {
+            "SaveButton": "0",
+            "Name": "10",
+            "Email": "10",
+            "Status": "10",
+            "IsMemberApp": "10"
+        },
+        {
+            "SaveButton": "left",
+            "Name": "disabled",
+            "Email": "disabled",
+            "Status": "disabled",
+            "IsMemberApp": "disabled"
+        }
+    ]
+}

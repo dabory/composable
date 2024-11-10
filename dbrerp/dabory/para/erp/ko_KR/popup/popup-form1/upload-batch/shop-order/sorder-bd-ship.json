@@ -1,0 +1,51 @@
+{
+    "General": {
+        "GetApi": "upload-batch-get",
+        "DelApi": "upload-batch-delete",
+        "ActApi": "upload-batch-mact"
+    },
+
+    "SelectButtonOptions": [
+    ],
+
+    "NoticeVars": {
+        "Notice": "(1) 해당폼이 실행될때 마다 업로드 Batch 번호가 생성됩니다.<br>(2) 배송장 Batch의 생성과 삭제는 Upload Batch 번호 단위로만 진행이 가능합니다.<br>(3) '지정된 Upload Batch 삭제'시 Batch 번호에 속한 배송장 Batch는 완전히 삭제됩니다",
+        "Warning": "(1) 개별 배송장의 간단한 정보는 Id 클릭 팝업 페이지수정으로 가능합니다."
+    },
+
+    "FormVars": [
+        {
+            "CurrBatchNo": "현재 Upload Batch",
+            "LastTargetId": "",
+            "ShowList": "Upload된 리스트 보기/삭제 (작업후 30일 이내의 Batch별로 삭제가능)",
+            "CreateMedia": "",
+            "CropImages": "",
+            "ImgExtension": "",
+            "DeleteButton": "지정 Upload Batch 삭제",
+
+            "SaveButton": "배송장 테이블에 반영",
+            "TruncateTable": "관련 테이블 비운 후 추가",
+            "BackupTable": "'item_yy_mm_dd_mm_ss' 테이블로 백업",
+            "BackupDb": "'DB_name_yy_mm_dd_mm_ss' 테이블로 백업"
+        }
+    ],
+    "ConditionVars": {
+        "IsVisible": true,
+        "MediaBody": ""
+    },
+
+    "InsertVars": {
+        "QueryName": "shop-order/sorder-bd-ship",
+        "TableName": "dbr_sorder_bd_ship",
+        "InsertType": "bulk",
+        "//InsertType": "one-by-one",
+        "IsTruncateTable": false,
+        "IsBackupTable": false,
+        "IsBackupDb": false
+    },
+
+    "UploadBatchVars": {
+        "IsCreateMedia": false,
+        "IsCropImages": false
+    }
+}

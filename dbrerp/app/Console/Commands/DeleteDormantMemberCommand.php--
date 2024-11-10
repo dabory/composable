@@ -1,0 +1,125 @@
+<?php
+
+namespace App\Console\Commands;
+
+use App\Services\CallApiService;
+use App\Services\DormantService;
+use Carbon\Carbon;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Hash;
+
+class DeleteDormantMemberCommand extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'dormant:delete-member';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = '휴면테이블 레코드도 삭제하기';
+
+    private $callApiService;
+    private $dormantService;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct(CallApiService $callApiService, DormantService $dormantService)
+    {
+        parent::__construct();
+        $this->callApiService = $callApiService;
+        $this->dormantService = $dormantService;
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $this->dormantService->setMainToken();
+        $dormantDefault = $this->dormantService->getSetup();
+
+        $dt = Carbon::now()->startOfDay();
+        $dt->addMonths($dormantDefault['DormantMonth']);
+
+        $appName = $dormantDefault['GuestApp'];
+
+        $memberDormantPage = $this->callApiService->callAppApi([
+            'url' => 'member-dormant-page',
+            'data' => [
+                'PageVars' => [
+                    'Query' => "created_on >= $dt->timestamp",
+                    'Limit' => 999999
+                ]
+            ],
+        ], $this->dormantService->getGateToken($appName), $appName);
+
+        if ($this->callApiService->verifyApiError($memberDormantPage)) {
+            return 0;
+        }
+
+        foreach ($memberDormantPage['Page'] ?? [] as $memberDormant) {
+            $memberDormantAct = $this->callApiService->callAppApi([
+                'url' => 'member-dormant-act',
+                'data' => [
+                    'Page' => [
+                        [ 'Id' => $memberDormant['Id'] * -1 ]
+                    ]
+                ],
+            ], $this->dormantService->getGateToken($appName), $appName);
+
+//            $memberExtAct = $this->callApiService->callApi([
+//                'url' => 'member-ext-act',
+//                'data' => [
+//                    'Page' => [
+//                        [ 'Id' => $memberDormant['Id'] * -1 ]
+//                    ]
+//                ],
+//                'headers' => [
+//                    'GateToken' => $this->dormantService->getGateToken('main')
+//                ]
+//            ]);
+//
+
+            $member = $this->callApiService->callApi([
+                'url' => 'member-pick',
+                'data' => [
+                    'Page' => [
+                        [ 'Id' => $memberDormant['Id'] ]
+                    ]
+                ],
+                'headers' => [
+                    'GateToken' => $this->dormantService->getGateToken('main')
+                ]
+            ])['Page'][0];
+
+            $memberAct = $this->callApiService->callApi([
+                'url' => 'member-act',
+                'data' => [
+                    'Page' => [
+                        [
+                            'Id' => $memberDormant['Id'],
+                            'Email' => Hash::make($member['Email'] . $member['Id'] . $member['ActivateCode']),
+                            'Status' => '6'
+                        ]
+                    ]
+                ],
+                'headers' => [
+                    'GateToken' => $this->dormantService->getGateToken('main')
+                ]
+            ]);
+        }
+
+        return 0;
+    }
+}

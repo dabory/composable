@@ -1,0 +1,199 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "PageApi": "popup-list1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "sales-ledger-detail",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "PopupList1Vars": {
+        "PopupFilterName": "mx.id",
+        "PopupWidth": "1200"
+    },
+
+    "HeadSelectOptions": [
+
+    ],
+
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-format",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "",
+
+            "HeadFirst": "매입업체명",
+            "HeadSecond": "정식명칭",
+            "HeadThird": "시작일",
+            "HeadFourth": "종료일",
+
+            "ColumnFirst": "",
+            "ColumnSecond": "",
+            "ColumnThird": "",
+            "ColumnFourth": "",
+
+            "TextFirst": "",
+            "TextSecond": "",
+            "TextThird": "",
+            "TextFourth": "",
+
+            "FootFirst": "이월 잔액",
+            "FootSecond": "매입 합계",
+            "FootThird": "출금/출금할인",
+            "FootFourth": "현재 잔액"
+        },
+        {
+            "ListButton": "left",
+            "DateRange": "left",
+            "Date": "left",
+            "From": "left",
+            "To": "left",
+            "DownloadList": "left",
+            "ShowOnlyClosed": "left",
+            "Balance": "right",
+            "OrderBy": "left",
+
+            "HeadFirst": "center",
+            "HeadSecond": "center",
+            "HeadThird": "yy.mm.dd",
+            "HeadFourth": "yy.mm.dd",
+
+            "ColumnFirst": "left",
+            "ColumnSecond": "left",
+            "ColumnThird": "",
+            "ColumnFourth": "",
+
+            "TextFirst": "left",
+            "TextSecond": "left",
+            "TextThird": "left",
+            "TextFourth": "left",
+
+            "FootFirst": "decimal('purch_amt')",
+            "FootSecond": "decimal('purch_amt')",
+            "FootThird": "decimal('purch_amt')",
+            "FootFourth": "decimal('purch_amt')"
+        }
+
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsntPagination": true,
+        "IsExcelColumn": false,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsListFirst" : true,
+        "InitLines" : 15,
+        "HeadHeight": "",
+        "BodyHeight": "500"
+    },
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.id asc",
+            "Caption": "주문 시간 순서"
+        },
+        {
+            "Value": "mx.id desc",
+            "Caption": "주문 시간 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "No": "번호",
+            "C2": "전표번호*순서",
+            "C3": "거래구분",
+            "C4": "품목*서브명",
+            "D1": "수량",
+            "D2": "단가",
+            "D3": "매출+VAT",
+            "D4": "입금액",
+            "D5": "현잔액"
+        },
+        {
+            "$Radio": "3",
+            "No": "2",
+            "C2": "5",
+            "C3": "4",
+            "C4": "20",
+            "D1": "4",
+            "D2": "4",
+            "D3": "4",
+            "D4": "4",
+            "D5": "4"
+        },
+        {
+            "$Radio": "center",
+            "No": "center",
+            "C2": "left",
+            "C3": "deal_type('deal-type')",
+            "C4": "left",
+            "D1": "decimal('purch_qty', 'zn')",
+            "D2": "decimal('purch_prc', 'zn')",
+            "D3": "decimal('purch_amt', 'zn')",
+            "D4": "decimal('purch_amt', 'zn')",
+            "D5": "decimal('purch_amt', 'nz')"
+        }
+    ]
+}

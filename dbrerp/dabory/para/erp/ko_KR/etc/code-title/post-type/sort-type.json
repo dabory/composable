@@ -1,0 +1,38 @@
+[
+    {
+        "Code": "kkcrm",
+        "Title": "킹콩CRM"
+    },
+    {
+        "Code": "shop",
+        "Title": "쇼핑몰"
+    },
+    {
+        "Code": "homepage",
+        "Title": "홈페이지"
+    },
+    {
+        "Code": "erp",
+        "Title": "ERP"
+    },
+    {
+        "Code": "groupware",
+        "Title": "그룹웨어"
+    },
+    {
+        "Code": "optical_pos",
+        "Title": "안경점POS"
+    },
+    {
+        "Code": "optical_pos",
+        "Title": "안경점POS"
+    },
+    {
+        "Code": "dgc_wallet",
+        "Title": "당근코인지갑"
+    },
+    {
+        "Code": "dbr_main",
+        "Title": "다보리메인"
+    }
+]

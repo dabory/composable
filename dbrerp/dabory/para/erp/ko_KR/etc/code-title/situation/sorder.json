@@ -1,0 +1,46 @@
+[
+    {
+        "Code": "",
+        "Title": "-"
+    },
+    {
+        "Code": "CT",
+        "Title": "자동취소"
+    },
+    {
+        "Code": "CS",
+        "Title": "품절취소"
+    },
+    {
+        "Code": "CA",
+        "Title": "관리자취소"
+    },
+    {
+        "Code": "CM",
+        "Title": "고객취소요청"
+    },
+    {
+        "Code": "CC",
+        "Title": "취소승인"
+    },
+    {
+        "Code": "CO",
+        "Title": "취소완료"
+    },
+    {
+        "Code": "RA",
+        "Title": "전체반품"
+    },
+    {
+        "Code": "RJ",
+        "Title": "부분반품"
+    },
+    {
+        "Code": "EA",
+        "Title": "전체교환"
+    },
+    {
+        "Code": "EJ",
+        "Title": "부분교환"
+    }
+]

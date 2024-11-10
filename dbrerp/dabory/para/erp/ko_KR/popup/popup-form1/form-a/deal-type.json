@@ -1,0 +1,82 @@
+{
+    "General": {
+        "PickApi": "deal-type-pick",
+        "ActApi": "deal-type-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "DealCategory": "카테고리*",
+            "SortNo": "정렬순서",
+            "DealCode": "거래코드*",
+            "DealName": "거래구분명*",
+            "SalesStatus": "매출구분",
+            "PurchStatus": "매입구분",
+            "CollectStatus": "수금구분",
+            "StockStatus": "재고구분",
+            "BadStkStatus": "불량재고구분",
+            "CostStkStatus": "원가재고구분",
+            "CreditStatus": "신용구분",
+            "ExDateStatus": "만료일자구분",
+            "IsGenIo": "일반수불"
+        },
+        {
+            "SaveButton": "left",
+            "DealCategory": "left",
+            "SortNo": "left",
+            "DealCode": "left",
+            "DealName": "left",
+            "SalesStatus": "left",
+            "PurchStatus": "left",
+            "CollectStatus": "left",
+            "StockStatus": "left",
+            "BadStkStatus": "left",
+            "CostStkStatus": "left",
+            "CreditStatus": "left",
+            "ExDateStatus": "left",
+            "IsGenIo": "left"
+        },
+        {
+            "SaveButton": "0",
+            "DealCategory": "20",
+            "SortNo": "20",
+            "DealCode": "2",
+            "DealName": "20",
+            "SalesStatus": "20",
+            "PurchStatus": "20",
+            "CollectStatus": "20",
+            "StockStatus": "20",
+            "BadStkStatus": "20",
+            "CostStkStatus": "20",
+            "CreditStatus": "20",
+            "ExDateStatus": "20",
+            "IsGenIo": "0"
+        },
+        {
+            "SaveButton": "",
+            "DealCategory": "required",
+            "SortNo": "",
+            "DealCode": "required",
+            "DealName": "required",
+            "SalesStatus": "",
+            "PurchStatus": "",
+            "CollectStatus": "",
+            "StockStatus": "",
+            "BadStkStatus": "",
+            "CostStkStatus": "",
+            "CreditStatus": "",
+            "ExDateStatus": "",
+            "IsGenIo": ""
+        }
+    ]
+}

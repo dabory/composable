@@ -1,0 +1,28 @@
+{
+    "General": {
+        "Title": "매입가 일자별 매출 실적(복합)",
+        "PageApi": "chart-line2-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "pquote-day-item",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "pquote_date"
+    },
+
+    "FormVars": [
+        {
+            "HeadFirst": "발생전표 합계(장)",
+            "HeadSecond": "품목 수량 합계(개)",
+            "HeadThird": "금액 합계(원)",
+            "HeadFourth": "예상 이익 합계(원)",
+            "BodyX": "일자",
+            "BodyY": "금액",
+            "FootX": "월별",
+            "FootY": "금액 합산",
+            "BodyXaxis" : "%d",
+            "FootXaxis" : "%m.%d"
+        }
+    ]
+}

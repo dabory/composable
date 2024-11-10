@@ -1,0 +1,54 @@
+{
+    "General": {
+        "Title": "지점",
+        "PickApi": "branch-pick",
+        "ActApi": "branch-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "복사"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "BranchCode": "지점 코드*",
+            "BranchName": "지점 명*",
+            "BranchManager": "매니저*",
+            "IsUnused": "미사용"
+        },
+        {
+            "SaveButton": "",
+            "BranchCode": "left",
+            "BranchName": "left",
+            "BranchManager": "left",
+            "IsUnused": "left"
+        },
+        {
+            "SaveButton": "0",
+            "BranchCode": "6",
+            "BranchName": "20",
+            "BranchManager": "20",
+            "IsUnused": "0"
+        },
+        {
+            "SaveButton": "",
+            "BranchCode": "required",
+            "BranchName": "required",
+            "BranchManager": "required",
+            "IsUnused": ""
+        }
+    ]
+}

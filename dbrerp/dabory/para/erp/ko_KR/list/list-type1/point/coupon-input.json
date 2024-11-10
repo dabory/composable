@@ -1,0 +1,281 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "할인쿠폰 리스트",
+        "PageApi": "list-type1-page",
+        "ActApi": "coupon-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "point/coupon-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "품목 일괄 삭제"
+        },
+        {
+            "Value": "clear-all-filter",
+            "Caption": "Clear All Filter"
+        },
+        {
+            "Value": "xls-report",
+            "Caption": "엑셀 다운로드"
+        },
+        {
+            "Value": "pdf-report",
+            "Caption": "Show PDF report"
+        },
+        {
+            "Value": "modified-report",
+            "Caption": "Modified Report"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "일자",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "팝업 선택(라디오 버튼)",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+    ],
+
+    "SimpleSelectOptions": [
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "쿠폰 입력/수정/삭제",
+            "Component": "coupon-credit.coupon-form",
+            "Parameter": "/popup/popup-form1/form-a/coupon"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "issue_date desc",
+            "Caption": "발행일자 역순"
+        },
+        {
+            "Value": "issue_date asc",
+            "Caption": "발행일자 정렬순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "DateRangeLimit": 10000000,
+        "IsAddTotalLine": false,
+        "IsExcelColumn": false,
+        "IsDownloadList": false,
+        "IsShowOnlyClosed": false,
+        "IsListFirst" : true,
+        "InitLines" : 15,
+        "HeadHeight": "140",
+        "BodyHeight": "550"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "쿠폰형태",
+            "C2": "발행구분",
+            "C3": "발행일자",
+            "C4": "쿠폰코드",
+            "C5": "쿠폰명",
+            "C6": "쿠폰설명",
+            "C7": "발행자",
+            "C8": "점포명",
+            "C9": "만료일자",
+            "C10": "쿠폰금액(%)",
+            "C11": "할인율적용",
+            "C12": "",
+            "C13": "",
+            "C14": "",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "No": "5",
+            "C1": "10",
+            "C2": "6",
+            "C3": "6",
+            "C4": "8",
+            "C5": "8",
+            "C6": "8",
+            "C7": "8",
+            "C8": "8",
+            "C9": "8",
+            "C10": "8",
+            "C11": "8",
+            "C12": "",
+            "C13": "",
+            "C14": "",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "center",
+            "C2": "center",
+            "C3": "center",
+            "C4": "center",
+            "C5": "center",
+            "C6": "center",
+            "C7": "center",
+            "C8": "center",
+            "C9": "center",
+            "C10": "decimal('sales_amt')",
+            "C11": "center",
+            "C12": "",
+            "C13": "",
+            "C14": "",
+            "C15": "",
+            "C16": "",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        }
+    ]
+}

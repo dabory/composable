@@ -1,0 +1,23 @@
+[
+    {
+        "Code": "ko",
+        "Title": "한국어"
+    },
+    {
+        "Code": "en",
+        "Title": "영어"
+    },
+    {
+        "Code": "zh",
+        "Title": "중국어"
+
+    },
+    {
+        "Code": "ja",
+        "Title": "일본어"
+    },
+    {
+        "Code": "vi",
+        "Title": "베트남어"
+    }
+]

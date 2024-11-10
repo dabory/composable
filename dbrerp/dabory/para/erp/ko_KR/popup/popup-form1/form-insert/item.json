@@ -1,0 +1,37 @@
+{
+    "//popup-form1-form-p": "Form Insert",
+
+    "General": {
+        "ActApi": "list-type1-insert"
+    },
+
+    "SelectButtonOptions": [
+    ],
+
+    "NoticeVars": {
+        "Notice": "업로드 후 실테이블에 적용하기하면 기존의 사용자메뉴와 <br>사용자권한은 완전히 삭제되고 새롭게 만들어 집니다.",
+        "Warning": "기존의 사용자메뉴와 권한이 모두 삭제/재생성되므로 신중하게 전문적인 경험이 없으면 사용을 권장하지 않습니다."
+    },
+
+    "FormVars": [
+        {
+            "SaveButton": "품목 테이블에 반영",
+            "TruncateTable": "품목 테이블 비운 후 추가",
+            "BackupTable": "item_yy_mm_dd_mm_ss' 테이블로 백업",
+            "BackupDb": "'DB_name_yy_mm_dd_mm_ss' 테이블로 백업"
+        }
+    ],
+
+    "ConditionVars": {
+        "IsVisible": true
+    },
+
+    "InsertVars": {
+        "QueryName": "item",
+        "InsertType": "bulk",
+        "//InsertType": "one-by-one",
+        "IsTruncateTable": true,
+        "IsBackupTable": false,
+        "IsBackupDb": false
+    }
+}

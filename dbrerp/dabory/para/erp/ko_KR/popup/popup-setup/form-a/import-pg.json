@@ -1,0 +1,28 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "MerchantId": "가맹점 식별코드",
+            "PG": "PG",
+            "ClientId": "REST API Key",
+            "ClientSecret": "REST API Secret"
+        },
+        {
+            "SaveButton": "center",
+            "MerchantId": "center",
+            "PG": "center",
+            "ClientId": "center",
+            "ClientSecret": "center"
+        }
+    ]
+}

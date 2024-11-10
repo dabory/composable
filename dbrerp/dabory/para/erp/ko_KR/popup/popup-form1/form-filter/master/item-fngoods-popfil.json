@@ -1,0 +1,61 @@
+{
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "Company": "공급/입점사",
+            "Brand": "브랜드",
+            "Igroup": "품목구분",
+            "ModelNo": "Model No(SKU)",
+            "Tags": "검색 태그",
+            "ItemCode": "상품코드",
+            "ItemName": "상품명",
+            "CargoType": "배송방법",
+            "ShipType": "주문유형",
+            "ItemStatus": "판매상태",
+            "IsntPro": "노출여부"
+        },
+        {
+            "SaveButton": "",
+            "Company": "left",
+            "Brand": "left",
+            "Igroup": "left",
+            "ModelNo": "left",
+            "Tags": "left",
+            "ItemCode": "left",
+            "ItemName": "left",
+            "CargoType": "left",
+            "ShipType": "left",
+            "ItemStatus": "left",
+            "IsntPro": "left"
+        },
+        {
+            "SaveButton": "0",
+            "Company": "6",
+            "Brand": "20",
+            "Igroup": "20",
+            "ModelNo": "20",
+            "Tags": "20",
+            "ItemCode": "20",
+            "ItemName": "20",
+            "CargoType": "20",
+            "ShipType": "20",
+            "ItemStatus": "20",
+            "IsntPro": "20"
+        },
+        {
+            "SaveButton": "",
+            "Company": "",
+            "Brand": "",
+            "Igroup": "",
+            "ModelNo": "",
+            "Tags": "",
+            "ItemCode": "",
+            "ItemName": "",
+            "CargoType": "",
+            "ShipType": "",
+            "ItemStatus": "",
+            "IsntPro": ""
+        }
+    ]
+}

@@ -1,0 +1,176 @@
+@extends('layouts.master')
+@section('title', 'Item')
+@section('content')
+    <div class="content">
+        <div class="row">
+            <div class="col-xl-12">
+                {{-- act button include --}}
+                <div class="mb-1 pt-2 text-right">
+                    <button type="button"
+                        class="btn btn-success btn-open-modal"
+                        data-target="item"
+                        data-clicked="update_data"
+                        data-variable="itemModal">
+                        <i class="icon-folder-open"></i>
+                    </button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-primary btn-top-act save-button" data-value="save" {{ $formA['FormVars']['Hidden']['SaveButton'] }}>{{ $formA['FormVars']['Title']['SaveButton'] }}</button>
+                        @include('front.dabory.erp.partial.select-btn-options', [
+                            'selectBtns' => $formA['SelectButtonOptions'],
+                            'eventClassName' => 'btn-top-act',
+                        ])
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div id="itemBody">
+                            <form id="frm" method="POST" action="/frm-submit-nomal" target="ifrm" autocomplete="off">
+                                @csrf
+                                <div class="form-group">
+                                    <input name="apiUrl" type="hidden" value="{{ $formA['General']['ActApi'] }}">
+                                    <input name="returnUrl" type="hidden" value="{{ $formA['General']['returnUrl'] }}">
+                                    <input type="hidden" id="Id" name="Id" value="0">
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <div class="card card card-primary mb-3 mb-md-0 border-light" style="height: 400px">
+                                      {{-- <div class="card-header p-1 mb-2">  </div> --}}
+                                        <div class="card-body">
+                                          <div class="form-group" {{ $formA['FormVars']['Hidden']['ItemCode'] }}>
+                                              <label class = "m-0 font-weight-bold">{{ $formA['FormVars']['Title']['ItemCode'] }}</label>
+                                              <br>
+                                              <input type="text" id="ItemCode" name="ItemCode"  class="rounded w-100" required>
+                                          </div>
+                                          <div class="form-group" {{ $formA['FormVars']['Hidden']['ItemName'] }}>
+                                              <label class = "m-0 font-weight-bold">{{ $formA['FormVars']['Title']['ItemName'] }}</label>
+                                              <br>
+                                              <input type="text" id="ItemName" name="ItemName"  class="rounded w-100" required>
+                                          </div>
+                                          <div class="form-group" {{ $formA['FormVars']['Hidden']['SubName'] }}>
+                                              <label class = "m-0 font-weight-bold">{{ $formA['FormVars']['Title']['SubName'] }}</label>
+                                              <br>
+                                              <input type="text" id="SubName" name="SubName"  class="rounded w-100" required>
+                                          </div>
+                                          <div class="form-group" {{ $formA['FormVars']['Hidden']['CountUnit'] }}>
+                                              <label class = "m-0 font-weight-bold">{{ $formA['FormVars']['Title']['CountUnit'] }}</label>
+                                              <br>
+                                              <input type="text" id="CountUnit" name="CountUnit"  class="rounded w-100" required>
+                                          </div>
+                                          <div class="form-group" {{ $formA['FormVars']['Hidden']['MainSupplier'] }}>
+                                              <label class = "m-0 font-weight-bold">{{ $formA['FormVars']['Title']['MainSupplier'] }}</label>
+                                              <br>
+                                              <div class="d-flex">
+                                                <input type="text" id="supplier-id-txt" name="SupplierId" class="rounded w-100 radius-r0" autocomplete="off" hidden>
+                                                <input type="text" id="supplier-txt" class="rounded w-100 radius-r0" autocomplete="off"
+                                                onkeydown="company_model_show_cell_enter_key(event, 'BB')" required>
+                                                <button type="button" class="btn-dark rounded btn-open-modal border-0 radius-l0 col-3 window company-modal-btn"
+                                                    data-target="company"
+                                                    data-clicked="get_supplier_id"
+                                                    data-variable="companyModal">
+                                                  <i class="icon-folder-open"></i>
+                                                </button>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <div class="card card card-info mb-3 mb-md-0 border-light" style="height: 400px">
+                                        {{-- <div class="card-header p-1 mb-2">  </div> --}}
+                                          <div class="card-body">
+                                            <div class="form-group" {{ $formA['FormVars']['Hidden']['PurchPrc'] }}>
+                                                <label class = "m-0 font-weight-bold">{{ $formA['FormVars']['Title']['PurchPrc'] }}</label>
+                                                <br>
+                                                <input type="text" id="PurchPrc" name="PurchPrc" class="rounded w-100" required>
+                                            </div>
+                                            <div class="form-group" {{ $formA['FormVars']['Hidden']['SalesPrc'] }}>
+                                                <label class = "m-0 font-weight-bold">{{ $formA['FormVars']['Title']['SalesPrc'] }}</label>
+                                                <br>
+                                                <input type="text" id="SalesPrc" name="SalesPrc"  class="rounded w-100" required>
+                                            </div>
+                                            <div class="form-group" {{ $formA['FormVars']['Hidden']['IsItemEnd'] }}>
+                                                <label class = "m-0 font-weight-bold">{{ $formA['FormVars']['Title']['IsItemEnd'] }}</label>
+                                                <br>
+                                                <input type="checkbox" value="1" name="IsItemEnd" id="IsItemEnd"><label
+                                                    for="IsItemEnd"></label>
+                                                <input type="hidden" name="IsItemEnd" value='0' id="IsItemEnd_hidden">
+                                            </div>
+                                            <div class="form-group" {{ $formA['FormVars']['Hidden']['ItemDesc'] }}>
+                                                <label class = "m-0 font-weight-bold">{{ $formA['FormVars']['Title']['ItemDesc'] }}</label>
+                                                <br>
+                                                <textarea style="height: 88px" class="rounded w-100" name="ItemDesc" id="ItemDesc"></textarea>
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                               </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('modal')
+    @include('front.outline.static.item', ['moealSetFile' => $itemModal])
+    @include('front.outline.static.company', ['moealSetFile' => $companyModal])
+@endsection
+
+@section('js')
+<script src="/js/modals-controller/a-type/BasicSettings/modal-a.js?{{date('YmdHis')}}"></script>
+
+<script>
+    async function update_data(id) {
+        let response = await get_api_data('item-pick', {
+            Page : [
+                {Id: id }
+            ]
+        })
+
+        let item = response.data.Page[0];
+
+        $('#Id').val(item.Id);
+        $('#ItemName').val(item.ItemName);
+        $('#ItemCode').val(item.ItemCode);
+        $('#SubName').val(item.SubName);
+        $('#CountUnit').val(item.CountUnit);
+
+        $('#PurchPrc').val(item.PurchPrc);
+        $('#SalesPrc').val(item.SalesPrc);
+        $('#ItemDesc').val(item.ItemDesc);
+
+        if (item.IsItemEnd == "1")
+            $("input:checkbox[id='IsItemEnd']").prop("checked", true);
+        else
+            $("input:checkbox[id='IsItemEnd']").prop("checked", false);
+
+        await get_supplier_id(item.SupplierId)
+
+        $('#modal-item').modal('hide');
+    }
+
+    function set_company_data_to_textbox(company) {
+        get_supplier_id(company.Id)
+        return $('.save-button')
+    }
+
+    async function get_supplier_id(supplier_id) {
+        let response = await get_api_data('company-pick', {
+            Page : [
+                {Id: supplier_id }
+            ]
+        })
+        let company = response.data.Page[0];
+        $('#supplier-id-txt').val(company.Id);
+        $('#supplier-txt').val(company.CompanyName);
+
+        $('#modal-company').modal('hide');
+    }
+
+    const companyModal = {!! json_encode($companyModal) !!};
+    const itemModal = {!! json_encode($itemModal) !!};
+
+</script>
+@endsection

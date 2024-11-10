@@ -1,0 +1,51 @@
+{
+    "General": {
+        "PickApi": "slip-form-book",
+        "ActApi": "ticket-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "ticket"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "status_update('ticket','임시저장')",
+            "Caption": "임시저장"
+        },
+        {
+            "Value": "status_update('ticket','답변완료')",
+            "Caption": "답변완료"
+        },
+        {
+            "Value": "status_update('ticket','미처리')",
+            "Caption": "미결처리"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AutoSlipNo": "문의번호(자동번호)#",
+            "Subject": "제목",
+            "TicketDate": "접수일시",
+            "Content": "문의내용",
+            "AuthorName": "문의고객 아이디",
+            "MobileNo": "휴대폰 번호",
+            "Email": "이메일",
+            "ReplyContent": "답변내용"
+        },
+        {
+            "SaveButton": "left",
+            "AutoSlipNo": "left",
+            "Subject": "left",
+            "TicketDate": "center",
+            "Content": "left",
+            "AuthorName": "left",
+            "MobileNo": "left",
+            "Email": "left",
+            "ReplyContent": "left"
+        }
+    ]
+}

@@ -1,0 +1,204 @@
+{
+    "General": {
+        "PickApi": "text-template-pick",
+        "ActApi": "text-template-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "text-send-test",
+            "Caption": "테스트송신자로 문자전송",
+            "Parameter": ""
+        },
+        {
+            "Value": "text-send",
+            "Caption": "현재 리스트 문자보내기",
+            "Parameter": ""
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "TextCode": "템플릿코드*",
+            "TextName": "템플리명",
+            "TextTitle": "LMS제목",
+            "Sort": "메시지구분",
+            "TextTab": "본문",
+            "MediaTab": "미디어",
+            "MediaSearchButton": "미디어 찾기"
+        },
+        {
+            "SaveButton": "left",
+            "TextCode": "left",
+            "TextName": "left",
+            "TextTitle": "left",
+            "Sort": "left",
+            "TextTab": "left",
+            "MediaTab": "left",
+            "MediaSearchButton": "left"
+        },
+        {
+            "SaveButton": "0",
+            "TextCode": "20",
+            "TextName": "20",
+            "TextTitle": "20",
+            "Sort": "20",
+            "TextTab": "0",
+            "MediaTab": "0",
+            "MediaSearchButton": "0"
+        },
+        {
+            "SaveButton": "",
+            "TextCode": "required",
+            "TextName": "required",
+            "TextTitle": "",
+            "Sort": "",
+            "TextTab": "",
+            "MediaTab": "",
+            "MediaSearchButton": ""
+        }
+    ],
+
+    "SortSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "0",
+            "Caption": "sort('text-template','0')"
+        },
+        {
+            "Value": "1",
+            "Caption": "sort('text-template','1')"
+        },
+        {
+            "Value": "2",
+            "Caption": "sort('text-template','2')"
+        }
+    ],
+
+    "ReplaceStringVars": [
+        {
+            "Value": "고객명"
+        },
+        {
+            "Value": "생일"
+        },
+        {
+            "Value": "방문일"
+        },
+        {
+            "Value": "납품일"
+        },
+        {
+            "Value": "마일리지"
+        },
+        {
+            "Value": "카드번호"
+        },
+        {
+            "Value": "이메일"
+        },
+        {
+            "Value": "판매사"
+        },
+        {
+            "Value": "안경사"
+        }
+    ],
+
+    "SpecialCharVars": [
+        {
+            "Value": "☆",
+            "Caption": "☆"
+        },
+        {
+            "Value": "★",
+            "Caption": "★"
+        },
+        {
+            "Value": "◎",
+            "Caption": "◎"
+        },
+        {
+            "Value": "◇",
+            "Caption": "◇"
+        },
+        {
+            "Value": "◆",
+            "Caption": "◆"
+        },
+        {
+            "Value": "○",
+            "Caption": "○"
+        },
+        {
+            "Value": "●",
+            "Caption": "●"
+        },
+        {
+            "Value": "□",
+            "Caption": "□"
+        },
+        {
+            "Value": "■",
+            "Caption": "■"
+        },
+        {
+            "Value": "♡",
+            "Caption": "♡"
+        },
+        {
+            "Value": "♥",
+            "Caption": "♥"
+        },
+        {
+            "Value": "※",
+            "Caption": "※"
+        },
+        {
+            "Value": "♤",
+            "Caption": "♤"
+        },
+        {
+            "Value": "♠",
+            "Caption": "♠"
+        },
+        {
+            "Value": "▒",
+            "Caption": "▒"
+        },
+        {
+            "Value": "◈",
+            "Caption": "◈"
+        },
+        {
+            "Value": "㈜",
+            "Caption": "㈜"
+        },
+        {
+            "Value": "℡",
+            "Caption": "℡"
+        },
+        {
+            "Value": "♬",
+            "Caption": "♬"
+        },
+        {
+            "Value": "☞",
+            "Caption": "☞"
+        },
+        {
+            "Value": "☎",
+            "Caption": "☎"
+        }
+    ]
+}

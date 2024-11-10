@@ -1,0 +1,41 @@
+{
+	"General": {
+		"Title": "Storage Search",
+        "PageApi": "setting-search-page"
+	},
+	"SelectOptions": [
+		{
+			"Value": "storage_code",
+			"Caption": "Code"
+		},
+		{
+			"Value": "storage_name",
+			"Caption": "Name"
+		}
+	],
+
+    "//ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+	"ListVars": [
+		{
+			"No": "No",
+			"Code": "Code",
+			"Name": "Name",
+			"ThirdField": "Location",
+			"IsCheck": "Main Stoage"
+		},
+		{
+			"No": "10",
+			"Code": "20",
+			"Name": "20",
+			"ThirdField": "30",
+			"IsCheck": "10"
+		},
+		{
+			"No": "center",
+			"Code": "center",
+			"Name": "center",
+			"ThirdField": "center",
+			"IsCheck": "center"
+		}
+	]
+}

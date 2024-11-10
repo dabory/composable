@@ -1,0 +1,40 @@
+{
+    "General": {
+        "Title": "품목 구분 입력",
+        "PickApi": "cgroup-pick",
+        "ActApi": "cgroup-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "Add New"
+        },
+        {
+            "Value": "",
+            "Caption": ""
+        },
+        {
+            "Value": "del",
+            "Caption": "Delete"
+        },
+        {
+            "Value": "",
+            "Caption": ""
+        },
+        {
+            "Value": "copy",
+            "Caption": "Duplicate"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "Save",
+            "CgroupCode": "Group Code",
+            "CgroupName": "Group Name",
+            "CgroupManager": "Manager"
+        }
+    ]
+}

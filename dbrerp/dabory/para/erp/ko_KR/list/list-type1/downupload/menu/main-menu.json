@@ -1,0 +1,299 @@
+{
+    "General": {
+        "Title": "메인메뉴 불러오기",
+        "PageApi": "list-type1-page",
+        "ActApi": "list-type1-upload"
+    },
+
+    "QueryVars": {
+        "QueryName": "download/menu/main-menu",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "메인메뉴 추가"
+        },
+        {
+            "Value": "xls-report",
+            "Caption": "(1)엑셀 다운로드"
+        },
+        {
+            "Value": "excel-upload",
+            "Caption": "(2)엑셀 업로드"
+        },
+        {
+            "Value": "dummy",
+            "Caption": "(3)적용",
+            "Component": "popup-form1.form-insert",
+            "Parameter": "/popup/popup-form1/form-insert/menu/main-menu"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "",
+            "To": "",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.sort",
+            "Caption": "커스텀메뉴"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.sort='primary'",
+            "Caption": "주메뉴"
+        },
+        {
+            "Value": "mx.sort='top'",
+            "Caption": "탑메뉴"
+        },
+        {
+            "Value": "mx.sort='footer'",
+            "Caption": "푸터메뉴"
+        },
+        {
+            "Value": "mx.sort='sitemap'",
+            "Caption": "사이트맵"
+        },
+        {
+            "Value": "mx.is_skipped='1'",
+            "Caption": "메뉴스킵"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "메인메뉴 입력/수정/삭제",
+            "Component": "popup-form1.form-a.main-menu-form",
+            "Parameter": "/popup/popup-form1/form-a/main-menu"
+        }
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsRawDownload": true,
+        "IsListFirst" : true,
+        "IsAddTotalLine": false,
+        "IsExcelColumn": true,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "120",
+        "BodyHeight": "600",
+        "IsCache": true
+    },
+
+    "OrderByOptions": [
+        {
+            "Value": "mx.sort, mx.menu_code asc",
+            "Caption": "메뉴종류, 메뉴코드 순서"
+        },
+        {
+            "Value": "mx.id asc",
+            "Caption": "ID 순서"
+        },
+        {
+            "Value": "mx.id desc",
+            "Caption": "ID 역순"
+        },
+        {
+            "Value": "mx.menu_code asc",
+            "Caption": "메뉴코드 순서"
+        },
+        {
+            "Value": "mx.menu_code desc",
+            "Caption": "메뉴코드 역순"
+        },
+        {
+            "Value": "mx.menu_name asc",
+            "Caption": "메뉴명 순서"
+        },
+        {
+            "Value": "lang_type asc, menu_code asc",
+            "Caption": "언어, 메뉴코드 정렬"
+        },
+        {
+            "Value": "device_type asc, menu_code asc",
+            "Caption": "기기, 메뉴코드 정렬"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "No": "번호",
+            "C1": "메뉴코드",
+            "C2": "메뉴종류",
+            "C3": "언어코드",
+            "C4": "메뉴명",
+            "C5": "링크구분",
+            "C6": "구분코드",
+            "C7": "페이지 URI",
+            "C8": "Icon",
+            "C9": "메뉴이미지",
+            "C10": "상황",
+            "C11": "사용않음",
+            "C12": "target=_blank 인가",
+            "C13": "PC에서누락",
+            "C14": "Mobile에서누락",
+            "C15": "테블릿에서누락",
+            "C16": "로그인경우만",
+            "C17": "로그아웃경우만",
+            "C18": "커스터마이징 변수"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "6",
+            "C1": "10",
+            "C2": "10",
+            "C3": "8",
+            "C4": "20",
+            "C5": "6",
+            "C6": "10",
+            "C7": "20",
+            "C8": "8",
+            "C9": "15",
+            "C10": "8",
+            "C11": "15",
+            "C12": "20",
+            "C13": "5",
+            "C14": "5",
+            "C15": "5",
+            "C16": "5",
+            "C17": "5",
+            "C18": "5"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "center",
+            "C2": "center",
+            "C3": "center",
+            "C4": "left",
+            "C5": "center",
+            "C6": "center",
+            "C7": "left",
+            "C8": "center",
+            "C9": "left",
+            "C10": "center",
+            "C11": "center",
+            "C12": "center",
+            "C13": "left",
+            "C14": "left",
+            "C15": "left",
+            "C16": "left",
+            "C17": "left",
+            "C18": "left"
+        }
+    ]
+}

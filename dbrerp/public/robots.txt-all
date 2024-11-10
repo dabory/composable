@@ -1,0 +1,10 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://iammgo.com/sitemap.xml

@@ -1,0 +1,66 @@
+{
+    "General": {
+        "PickApi": "domain-pick",
+        "ActApi": "domain-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "Delete",
+            "Parameter": ""
+        }
+    ],
+
+    "SelectOptions": [
+		{
+			"Value": "web",
+			"Caption": "web"
+		},
+        {
+			"Value": "js",
+			"Caption": "js"
+		},
+        {
+			"Value": "native-app",
+			"Caption": "native-app"
+		}
+	],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "Save",
+            "FirstCardTitle": "Domain",
+            "DomainUrl": "도메인주소*",
+            "SolutionCode": "솔루션코드*",
+            "OwnerName": "소유자명*",
+            "DbrhubUrls": "다보리허브 사이트들",
+            "Timezone": "타임존"
+        },
+        {
+            "SaveButton": "left",
+            "DomainUrl": "left",
+            "SolutionCode": "left",
+            "OwnerName": "left",
+            "DbrhubUrls": "left",
+            "Timezone": "left"
+        },
+        {
+            "SaveButton": "0",
+            "DomainUrl": "500",
+            "SolutionCode": "500",
+            "OwnerName": "500",
+            "DbrhubUrls": "500",
+            "Timezone": "100"
+        },
+        {
+            "SaveButton": "",
+            "DomainUrl": "required",
+            "SolutionCode": "required",
+            "OwnerName": "required",
+            "DbrhubUrls": "",
+            "Timezone": ""
+        }
+    ]
+}

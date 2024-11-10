@@ -1,0 +1,50 @@
+{
+    "General": {
+        "PickApi": "post-pick",
+        "ActApi": "post-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "Sort": "문의유형",
+            "PostTitle": "제목",
+            "PostContents": "내용",
+            "WriterName": "작성자 이름",
+            "Contents": "답변내용"
+        },
+        {
+            "SaveButton": "left",
+            "Sort": "left",
+            "PostTitle": "left",
+            "PostContents": "left",
+            "WriterName": "left",
+            "Contents": "left"
+        },
+        {
+            "SaveButton": "0",
+            "Sort": "100",
+            "PostTitle": "100",
+            "PostContents": "100",
+            "WriterName": "100",
+            "Contents": "100"
+        },
+        {
+            "SaveButton": "",
+            "Sort": "",
+            "PostTitle": "",
+            "PostContents": "",
+            "WriterName": "",
+            "Contents": ""
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "General": {
+        "Title": "창고 구분 입력",
+        "PickApi": "storage-pick",
+        "ActApi": "storage-act"
+    },
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "복사"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "StorageCode": "구분 코드*",
+            "StorageName": "구분 명*",
+            "Location": "창고 위치*",
+            "IsMainStorage": "메인 창고",
+            "IsBadStorage": "파손 창고"
+        },
+        {
+            "SaveButton": "",
+            "StorageCode": "left",
+            "StorageName": "left",
+            "Location": "left",
+            "IsMainStorage": "left",
+            "IsBadStorage": "left"
+        },
+        {
+            "SaveButton": "0",
+            "StorageCode": "6",
+            "StorageName": "20",
+            "Location": "20",
+            "IsMainStorage": "0",
+            "IsBadStorage": "0"
+        },
+        {
+            "SaveButton": "",
+            "StorageCode": "required",
+            "StorageName": "required",
+            "Location": "required",
+            "IsMainStorage": "",
+            "IsBadStorage": ""
+        }
+    ]
+}

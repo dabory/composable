@@ -1,0 +1,25 @@
+{
+    "General": {
+        "PickApi": "sorder-pick",
+        "ActApi": "sorder-act"
+    },
+
+    "SelectButtonOptions": [
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장"
+        },
+        {
+            "SaveButton": "left"
+        },
+        {
+            "SaveButton": "0"
+        },
+        {
+            "SaveButton": ""
+        }
+    ]
+}

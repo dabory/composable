@@ -1,0 +1,62 @@
+{
+    "General": {
+        "PickApi": "etc-pick",
+        "ActApi": "etc-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "EtcType": "Etc Type*",
+            "SelectName": "Select Name",
+            "SortNo": "Sort No",
+            "Value": "Value",
+            "Caption": "Caption",
+            "IsUnchangeable": "IsUnchangeable",
+            "IsUndeletable": "IsUndeletable",
+            "EtcMemo": "Etc Memo"
+        },
+        {
+            "SaveButton": "left",
+            "EtcType": "left",
+            "SelectName": "left",
+            "SortNo": "left",
+            "Value": "left",
+            "Caption": "left",
+            "IsUnchangeable": "left",
+            "IsUndeletable": "left",
+            "EtcMemo": "left"
+        },
+        {
+            "SaveButton": "0",
+            "EtcType": "10",
+            "SelectName": "100",
+            "SortNo": "4",
+            "Value": "1000",
+            "Caption": "1000",
+            "IsUnchangeable": "0",
+            "IsUndeletable": "0",
+            "EtcMemo": "0"
+        },
+        {
+            "SaveButton": "",
+            "EtcType": "required",
+            "SelectName": "",
+            "SortNo": "",
+            "Value": "",
+            "Caption": "",
+            "IsUnchangeable": "",
+            "IsUndeletable": "",
+            "EtcMemo": ""
+        }
+    ]
+}

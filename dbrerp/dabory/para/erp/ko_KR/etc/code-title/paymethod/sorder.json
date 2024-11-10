@@ -1,0 +1,30 @@
+[
+    {
+        "Code": "",
+        "Title": "분류 입력"
+    },
+    {
+        "Code": "Cashier",
+        "Title": "캐셔결제"
+    },
+    {
+        "Code": "KakaoPay",
+        "Title": "카카오페이"
+    },
+    {
+        "Code": "Remit",
+        "Title": "무통장입금"
+    },
+    {
+        "Code": "CrCard",
+        "Title": "신용/캐시 카드"
+    },
+    {
+        "Code": "Crypto1",
+        "Title": "MSQXP결제"
+    },
+    {
+        "Code": "Crypto2",
+        "Title": "P2UP결제"
+    }
+]

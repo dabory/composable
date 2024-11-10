@@ -1,0 +1,157 @@
+{
+    "//bal-item-finished-good": "bal-item has 2 categoires: finished goods and materials",
+
+    "General": {
+        "Title": "Purchase Quotaion List",
+        "PageApi": "list-type-1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "balance-item",
+        "FilterName": "is_material",
+        "FilterValue": "0"
+    },
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "DateRange": "DateRange",
+            "FirstRange": "Supplier",
+            "SecondRange": "PQuote No",
+            "ThirdRange": "Item Range",
+            "FourthRange": "",
+            "AddTotalLine": "Add Total Line",
+            "ExcelColumn": "Excel Column",
+            "From": "From",
+            "To": "To"
+        },
+        {
+            "FirstRange": ":/search/company-search/supplier",
+            "SecondRange": ":/slip-search/pquote",
+            "ThirdRange": ":/search/item-search/fn-goods",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Caption": "Month"
+        },
+        {
+            "Caption": "Quarter"
+        },
+        {
+            "Caption": "Semi"
+        },
+        {
+            "Caption": "Annual"
+        },
+        {
+            "Caption": "All"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption(if empty->hidden) ListVars[1]-size(px), ListVars[2]-align->right(number) left(string)",
+    "ListVars": [
+        {
+            "No": "No",
+            "C1": "PQuoteNo",
+            "C2": "PQuoteDate",
+            "C3": "Supplier",
+            "C4": "DealType",
+            "C5": "ItemCode",
+            "C6": "ItemName",
+            "C7": "SubName",
+            "C8": "Qty",
+            "C9": "Price",
+            "C10": "Amount",
+            "C11": "Ref1",
+            "C12": "Ref2",
+            "C13": "PQuoteMonth",
+            "C14": "PQuoteWeek",
+            "C15": "ItemGroup",
+            "C16": "CompanyGroup",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "No": "10",
+            "C1": "10",
+            "C2": "10",
+            "C3": "10",
+            "C4": "10",
+            "C5": "10",
+            "C6": "10",
+            "C7": "10",
+            "C8": "10",
+            "C9": "10",
+            "C10": "10",
+            "C11": "10",
+            "C12": "10",
+            "C13": "10",
+            "C14": "10",
+            "C15": "10",
+            "C16": "10",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        },
+        {
+            "No": "left",
+            "C1": "left",
+            "C2": "left",
+            "C3": "left",
+            "C4": "left",
+            "C5": "left",
+            "C6": "left",
+            "C7": "right",
+            "C8": "right",
+            "C9": "right",
+            "C10": "left",
+            "C11": "left",
+            "C12": "left",
+            "C13": "left",
+            "C14": "left",
+            "C15": "left",
+            "C16": "left",
+            "C17": "",
+            "C18": "",
+            "C19": "",
+            "C20": "",
+            "C21": "",
+            "C22": "",
+            "C23": "",
+            "C24": "",
+            "C25": "",
+            "C26": "",
+            "C27": "",
+            "C28": "",
+            "C29": "",
+            "C30": ""
+        }
+    ]
+}

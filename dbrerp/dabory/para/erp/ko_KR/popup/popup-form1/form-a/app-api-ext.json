@@ -1,0 +1,78 @@
+{
+    "General": {
+        "PickApi": "member-app-pick",
+        "ActApi": "member-app-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AppPermId": "AppPermId",
+            "SsoSubId": "SsoSubId",
+            "SgroupId": "SgroupId",
+            "BranchId": "BranchId",
+            "StorageId": "StorageId",
+            "AgroupId": "AgroupId",
+            "IsExpired": "IsExpired"
+        },
+        {
+            "SaveButton": "left",
+            "AppPermId": "left",
+            "SsoSubId": "left",
+            "SgroupId": "left",
+            "BranchId": "left",
+            "StorageId": "left",
+            "AgroupId": "left",
+            "IsExpired": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AppPermId": "15",
+            "SsoSubId": "15",
+            "SgroupId": "15",
+            "BranchId": "15",
+            "StorageId": "15",
+            "AgroupId": "15",
+            "IsExpired": "15"
+        },
+        {
+            "SaveButton": "",
+            "AppPermId": "",
+            "SsoSubId": "readonly",
+            "SgroupId": "",
+            "BranchId": "",
+            "StorageId": "",
+            "AgroupId": "",
+            "IsExpired": ""
+        }
+    ],
+
+    "SelectStatusOptions": [
+        {
+            "Value": "0",
+            "Caption": "승인전"
+        },
+        {
+            "Value": "1",
+            "Caption": "사용중"
+        },
+        {
+            "Value": "2",
+            "Caption": "중지"
+        },
+        {
+            "Value": "3",
+            "Caption": "취소"
+        }
+    ]
+
+}

@@ -1,0 +1,30 @@
+[
+    {
+        "Code": "",
+        "Title": ""
+    },
+    {
+        "Code": "CC",
+        "Title": "신용카드"
+    },
+    {
+        "Code": "CS",
+        "Title": "현금"
+    },
+    {
+        "Code": "GC",
+        "Title": "쿠폰"
+    },
+    {
+        "Code": "UC",
+        "Title": "적립금"
+    },
+    {
+        "Code": "CK",
+        "Title": "수표"
+    },
+    {
+        "Code": "NT",
+        "Title": "어음"
+    }
+]

@@ -1,0 +1,118 @@
+{
+    "General": {
+        "Title": "게시글별 프롬프트 설정",
+        "PickApi": "prompt-pick",
+        "PageApi": "list-type1-page",
+        "ActApi": "prompt-act",
+        "BdActApi": "prompt-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "master/xai_prompt"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        }
+    ],
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "내용삭제"
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "multi-delete",
+            "Caption": "프롬프트 일괄 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "추가",
+            "CreateMeta": "메타생성",
+            "CreateSchema": "스키마생성",
+            "PromptFeed": "프롬프트 피드*",
+            "TestFeed": "테스트용 자료*",
+            "TestResult": "테스트 결과*"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "CreateMeta": "left",
+            "CreateSchema": "left",
+            "PromptFeed": "left",
+            "TestFeed": "left",
+            "TestResult": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "CreateMeta": "0",
+            "CreateSchema": "0",
+            "PromptFeed": "20",
+            "TestFeed": "20",
+            "TestResult": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "CreateMeta": "",
+            "CreateSchema": "",
+            "PromptFeed": "hidden",
+            "TestFeed": "hidden",
+            "TestResult": "required"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Option1(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Check": "$Check",
+            "PromptNo": "템플릿 번호",
+            "ModelVer": "언어모델 버전",
+            "FuncTitle": "기능타이틀",
+            "FuncVer": "기능버전",
+            "PromptFeed": "프롬프트 피드",
+            "TestFeed": "테스트용 자료",
+            "TestResult": "테스트용 결과",
+            "Status": "상태"
+        },
+        {
+            "$Check": "1",
+            "PromptNo": "2",
+            "ModelVer": "2",
+            "FuncTitle": "2",
+            "FuncVer": "3",
+            "PromptFeed": "6",
+            "TestFeed": "6",
+            "TestResult": "6",
+            "Status": "3"
+        },
+        {
+            "$Check": "center",
+            "PromptNo": "center",
+            "ModelVer": "center",
+            "FuncTitle": "center",
+            "FuncVer": "center",
+            "PromptFeed": "left",
+            "TestFeed": "left",
+            "TestResult": "left",
+            "Status": "left"
+        }
+    ],
+    "FooterVars": [
+        {
+            "SumTotal": "옵션 수"
+        }
+    ]
+}

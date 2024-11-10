@@ -1,0 +1,40 @@
+{
+    "General": {
+        "PickApi": "slip-form-book",
+        "ActApi": "sorder-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "sales/sorder"
+    },
+
+    "HeadSelectOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "",
+            "AutoSlipNo": "주문번호(자동번호)#",
+            "SorderSumTotal": "총계",
+            "SorderDate": "주문일시",
+            "PaymentType": "결제 방법",
+            "AuthorName": "문의고객 아이디",
+            "MobileNo": "휴대폰 번호",
+            "Email": "이메일",
+            "ReplyContent": "답변내용"
+        },
+        {
+            "SaveButton": "left",
+            "AutoSlipNo": "left",
+            "SorderSumTotal": "left",
+            "SorderDate": "center",
+            "PaymentType": "left",
+            "AuthorName": "left",
+            "MobileNo": "left",
+            "Email": "left",
+            "ReplyContent": "left"
+        }
+    ]
+}

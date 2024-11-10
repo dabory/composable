@@ -1,0 +1,41 @@
+{
+    "General": {
+        "Title": "Branch Office",
+        "PickApi": "branch-pick",
+        "ActApi": "branch-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "Add New"
+        },
+        {
+            "Value": "",
+            "Caption": ""
+        },
+        {
+            "Value": "del",
+            "Caption": "Delete"
+        },
+        {
+            "Value": "",
+            "Caption": ""
+        },
+        {
+            "Value": "copy",
+            "Caption": "Duplicate"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "IgroupCode": "Branch Code",
+            "IgroupName": "Branch Name",
+            "BranchManager": "Manager",
+            "IsUnused": "Unused"
+        }
+    ]
+}

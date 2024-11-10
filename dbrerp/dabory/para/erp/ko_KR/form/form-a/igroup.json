@@ -1,0 +1,54 @@
+{
+    "General": {
+        "Title": "품목 구분 입력",
+        "PickApi": "igroup-pick",
+        "ActApi": "igroup-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "복사"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Title, ListVars[1]-Format, ListVars[2]-MaxLength, ListVars[3]-Required",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "IgroupCode": "구분 코드*",
+            "IgroupName": "구분 명*",
+            "IgroupSlug": "구분 슬러그*",
+            "IsEndLevel": "마지막(말단) 레벨 / 경유 레벨"
+        },
+        {
+            "SaveButton": "",
+            "IgroupCode": "left",
+            "IgroupName": "left",
+            "IgroupSlug": "left",
+            "IsEndLevel": ""
+        },
+        {
+            "SaveButton": "0",
+            "IgroupCode": "20",
+            "IgroupName": "20",
+            "IgroupSlug": "20",
+            "IsEndLevel": "0"
+        },
+        {
+            "SaveButton": "",
+            "IgroupCode": "required",
+            "IgroupName": "required",
+            "IgroupSlug": "required",
+            "IsEndLevel": ""
+        }
+    ]
+}

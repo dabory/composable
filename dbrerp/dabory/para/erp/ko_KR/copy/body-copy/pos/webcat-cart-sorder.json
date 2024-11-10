@@ -1,0 +1,121 @@
+{
+    "General": {
+        "Title": "웹카탈로그에서 품목 복사",
+        "PageApi": "body-copy-page",
+        "ActApi": "body-copy-mact"
+    },
+
+    "TargetHdTableFullName": "dbr_sorder",
+
+    "QueryVars": {
+        "QueryName": "pos/webcat-cart-sorder"
+    },
+
+    "LastSeqNoVars": {
+		"TableName": "sorder"
+	},
+
+    "BodyCopyPageVars": {
+		"GroupBy": "dbr_webcat-cart.id",
+		"SlipNoField": ""
+	},
+
+    "//FormVars": "ListVars[0]-Caption,",
+    "FormVars": [
+        {
+            "SlipNoButton": "",
+            "ItemCodeButton": "품목코드",
+            "CompanyNameButton": "",
+            "AutoCreateSlipChecked": "",
+            "ShowOnlyClosedChecked": "",
+            "BalanceOption": "",
+            "DayFromTodayOption": "",
+            "SelectedItems": "선택항목",
+            "SelectedQty": "선택수량"
+        }
+    ],
+
+    "// BalanceOptions": "",
+    "BalanceOptions": [
+        {
+            "Value": "bal_qty > 0",
+            "Caption": "있는 경우만"
+        },
+        {
+            "Value": "bal_qty >= -900000000",
+            "Caption": "없는 경우도 표함"
+        }
+    ],
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "dbt_webcat_cart.created_on desc",
+            "Caption": "일자 역순"
+        },
+        {
+            "Value": "dbt_webcat_cart.created_on asc",
+            "Caption": "일자 정렬순"
+        },
+        {
+            "Value": "item_code asc",
+            "Caption": "품목코드 정렬"
+        },
+        {
+            "Value": "item_code desc",
+            "Caption": "품목코드 역순"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "$Check": "$Check",
+            "No": "번호",
+            "SlipNo": "장바구니 일자/시간",
+            "CompanyName": "공란-안보임",
+            "ItemCode": "품목코드",
+            "ItemName": "품명",
+            "SubName": "서브명",
+            "OrderQty": "매출가격",
+            "BalQty": "매출수량",
+            "Ref": "공란-안보임"
+        },
+        {
+            "$Check": "3",
+            "No": "7",
+            "SlipNo": "19",
+            "CompanyName": "0",
+            "ItemCode": "6",
+            "ItemName": "20",
+            "SubName": "5",
+            "OrderQty": "5",
+            "BalQty": "5",
+            "Ref": "0"
+        },
+        {
+            "$Check": "center",
+            "No": "center",
+            "SlipNo": "center",
+            "CompanyName": "left",
+            "ItemCode": "center",
+            "ItemName": "left",
+            "SubName": "left",
+            "OrderQty": "right",
+            "BalQty": "right",
+            "Ref": "left"
+        }
+    ],
+
+    "//BodyCopyPopupVars": "[0]-filter, [1]-component, [2]-parameter",
+    "BodyCopyPopupVars": [
+        {
+            "ItemCode": "item_code"
+        },
+        {
+            "ItemCode": "item"
+        },
+        {
+            "ItemCode": "/search/item-search/supplier"
+        }
+    ]
+}

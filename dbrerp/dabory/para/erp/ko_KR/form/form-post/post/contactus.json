@@ -1,0 +1,130 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "PickApi": "simple-join-page",
+        "ActApi": "post-act",
+        "QueryName": "post-member-user",
+        "PostCode": "contactus"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "공지 삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "공지 복사"
+        }
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "0",
+            "Caption": "status('ticket','0')"
+        },
+        {
+            "Value": "1",
+            "Caption": "status('ticket','1')"
+        },
+        {
+            "Value": "2",
+            "Caption": "status('ticket','2')"
+        }
+    ],
+
+    "SortOptions": [
+        {
+            "Value": "7",
+            "Caption": "sort('post-type','7')"
+        }
+    ],
+
+    "DisplayVars": {
+        "Width": "1400",
+        "Chunk": "6"
+    },
+
+    "// FormPostVars": "FormPostVars[0]-caption, FormPostVars[1]-size(px), FormPostVars[2]-format, FormPostVars[3]-required, FormPostVars[4]-ui, FormPostVars[5]-type",
+    "FormPostVars": [
+        {
+            "SaveButton": "저장",
+            "PostTitle": "제목",
+            "Pc4": "전화번호",
+            "Pc2": "개설희망지역",
+            "Pc1": "작성자",
+            "PostContents": "내용",
+            "Status": "처리상태",
+            "PostTypeId": "구분",
+            "OfficialDate": "공식일자",
+            "OfficialTime": "공식시간",
+            "MediaId": "FeaturedImage"
+        },
+        {
+            "SaveButton": "center",
+            "PostTitle": "center",
+            "Pc4": "center",
+            "Pc2": "center",
+            "Pc1": "center",
+            "PostContents": "center",
+            "Status": "StatusOptions",
+            "PostTypeId": "SortOptions",
+            "OfficialDate": "YYYY-MM-DD",
+            "OfficialTime": "center",
+            "MediaId": "center"
+        },
+        {
+            "SaveButton": "",
+            "PostTitle": "1000",
+            "Pc4": "1000",
+            "Pc2": "1000",
+            "Pc1": "1000",
+            "PostContents": "",
+            "Status": "2",
+            "PostTypeId": "2",
+            "OfficialDate": "1000",
+            "OfficialTime": "1000",
+            "MediaId": "1000"
+        },
+        {
+            "SaveButton": "",
+            "PostTitle": "required disabled",
+            "Pc4": "disabled",
+            "Pc2": "disabled",
+            "Pc1": "disabled",
+            "PostContents": "readonly",
+            "Status": "required",
+            "PostTypeId": "required",
+            "OfficialDate": "",
+            "OfficialTime": "",
+            "MediaId": ""
+        },
+        {
+            "SaveButton": "",
+            "PostTitle": "text",
+            "Pc4": "text",
+            "Pc2": "text",
+            "Pc1": "text",
+            "PostContents": "textarea",
+            "Status": "select",
+            "PostTypeId": "select",
+            "OfficialDate": "date",
+            "OfficialTime": "time",
+            "MediaId": "media"
+        },
+        {
+            "SaveButton": "",
+            "PostTitle": "string",
+            "Pc4": "string",
+            "Pc2": "string",
+            "Pc1": "string",
+            "PostContents": "string",
+            "Status": "string",
+            "PostTypeId": "number",
+            "OfficialDate": "YYYYMMDD",
+            "OfficialTime": "string",
+            "MediaId": "number"
+        }
+    ]
+}

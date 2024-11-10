@@ -1,0 +1,43 @@
+{
+    "General": {
+        "Title": "매입가 일자별 매출 실적",
+        "PageApi": "chart-type1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "pquote-day-item",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "pquote_date"
+    },
+
+    "ChartStyleOptions": [
+        {
+            "Value": "spline",
+            "Caption": "라인차트"
+        },
+        {
+            "Value": "bar",
+            "Caption": "막대차트"
+        },
+        {
+            "Value": "pie",
+            "Caption": "파이차트"
+        },
+        {
+            "Value": "scatter",
+            "Caption": "분포차트"
+        }
+    ],
+
+    "// FormVars": "AxisXForamt: YYYY/MM/DD, MM/DD, DD, AxisYForamt: 가격 콤마표시",
+    "FormVars": [
+        {
+            "AxisXLabel": "일자",
+            "AxisYLabel": "금액",
+            "AxisXForamt" : "DD",
+            "AxisYForamt" : ","
+        }
+    ]
+}
+

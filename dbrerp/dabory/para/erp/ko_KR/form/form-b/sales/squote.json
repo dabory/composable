@@ -1,0 +1,226 @@
+{
+    "General": {
+        "Title": "견적서 입력",
+        "PickApi": "slip-form-book",
+        "ActApi": "squote-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "sales/squote"
+    },
+
+    "PrintVars": {
+        "QueryName": "federated/crystal/sales/squote",
+        "ReportPath": "standard/sales/squote.rpt",
+        "ExportFmt": "PDF",
+        "ServerPrinter": "",
+        "CustomCode": "squote"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "save-and-new",
+            "Caption": "저장후 추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "copy-to-another",
+            "Caption": "복사",
+            "Parameter": "sales/squote-squote"
+        },
+        {
+            "Value": "delete",
+            "Caption": "삭제",
+            "Parameter": ""
+        },
+        {
+            "Value": "rpt-print",
+            "Caption": "인쇄",
+            "Parameter": ""
+        },
+        {
+            "Value": "rpt-custom",
+            "Caption": "커스텀 인쇄",
+            "Parameter": ""
+        },
+        {
+            "Value": "linked",
+            "Caption": "고객업체 등록",
+            "Parameter": "",
+            "Linked": "/dabory/erp/master-data/company?bpa=eyJtZW51X25hbWUiOiJcdWFjNzBcdWI3OThcdWNjOTggXHVhZDAwXHViOWFjIiwibWVudV9jb2RlIjoiMDMxMDAwIiwiZGlzYWJsZV9sX21lbnUiOiIwIiwiZW5hYmxlX3JfbWVudSI6IjAiLCJwZXJtaXNzaW9uIjp7ImlzX215bWVudSI6IjAiLCJpc19saXN0IjoiMSIsImlzX3JlYWQiOiIxIiwiaXNfY3JlYXRlIjoiMSIsImlzX3VwZGF0ZSI6IjEiLCJpc19kZWxldGUiOiIxIiwiaXNfbmV3dGFiIjoiMCJ9LCJwYWdlX3VyaSI6IlwvZGFib3J5XC9lcnBcL21hc3Rlci1kYXRhXC9jb21wYW55IiwicGFyYV9uYW1lIjoiXC9mb3JtXC9mb3JtLWFcL2NvbXBhbnkiLCJ0aGVtZV9kaXIiOiIiLCJtYWluX2FwcF9pZCI6MCwiZ3Vlc3RfYXBwX2lkIjowLCJjdXN0b21fdmFyIjoiIn0="
+        },
+        {
+            "Value": "linked",
+            "Caption": "상용구 등록",
+            "Parameter": "",
+            "Linked": "https://newerp.daboryhost.com/dabory/erp/basic-settings/etc?bpa=eyJtZW51X25hbWUiOiJcdWMwYzFcdWM2YTlcdWFkNmMgXHViNGYxXHViODVkIiwibWVudV9jb2RlIjoiNzcyMDA4IiwiZGlzYWJsZV9sX21lbnUiOiIwIiwiZW5hYmxlX3JfbWVudSI6IjAiLCJwZXJtaXNzaW9uIjp7ImlzX215bWVudSI6IjAiLCJpc19saXN0IjoiMSIsImlzX3JlYWQiOiIxIiwiaXNfY3JlYXRlIjoiMSIsImlzX3VwZGF0ZSI6IjEiLCJpc19kZWxldGUiOiIxIiwiaXNfbmV3dGFiIjoiMCJ9LCJwYWdlX3VyaSI6IlwvZGFib3J5XC9lcnBcL2Jhc2ljLXNldHRpbmdzXC9ldGMiLCJwYXJhX25hbWUiOiJcL2Zvcm1cL2Zvcm0tYlwvZXRjIiwidGhlbWVfZGlyIjoiIiwibWFpbl9hcHBfaWQiOjAsImd1ZXN0X2FwcF9pZCI6MCwiY3VzdG9tX3ZhciI6IiJ9"
+        },
+        {
+            "Value": "linked",
+            "Caption": "영업구분 등록",
+            "Parameter": "",
+            "Linked": "/dabory/erp/basic-settings/sgroup?bpa=eyJtZW51X25hbWUiOiJcdWM2MDFcdWM1YzVcdWFkNmNcdWJkODQiLCJtZW51X2NvZGUiOiI3NzIwMDMiLCJkaXNhYmxlX2xfbWVudSI6IjAiLCJlbmFibGVfcl9tZW51IjoiMCIsInBlcm1pc3Npb24iOnsiaXNfbXltZW51IjoiMCIsImlzX2xpc3QiOiIxIiwiaXNfcmVhZCI6IjEiLCJpc19jcmVhdGUiOiIxIiwiaXNfdXBkYXRlIjoiMSIsImlzX2RlbGV0ZSI6IjEiLCJpc19uZXd0YWIiOiIwIn0sInBhZ2VfdXJpIjoiXC9kYWJvcnlcL2VycFwvYmFzaWMtc2V0dGluZ3NcL3Nncm91cCIsInBhcmFfbmFtZSI6IlwvZm9ybVwvZm9ybS1hXC9zZ3JvdXAiLCJ0aGVtZV9kaXIiOiIiLCJtYWluX2FwcF9pZCI6MCwiZ3Vlc3RfYXBwX2lkIjowLCJjdXN0b21fdmFyIjoiIn0="
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "body-copy",
+            "Caption": "항목 복사① (견적서에서)",
+            "Parameter": "sales/squote-squote"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "항목 삭제",
+            "Parameter": ""
+        },
+        {
+            "Value": "multi-update",
+            "Caption": "항목 수정",
+            "Parameter": ""
+        },
+        {
+            "Value": "linked",
+            "Caption": "품목 등록",
+            "Parameter": "",
+            "Linked": "/dabory/erp/master-data/item?bpa=eyJtZW51X25hbWUiOiJcdWMwYzFcdWQ0ODggXHViNGYxXHViODVkIiwibWVudV9jb2RlIjoiMDIxMDAwIiwiZGlzYWJsZV9sX21lbnUiOiIwIiwiZW5hYmxlX3JfbWVudSI6IjAiLCJwZXJtaXNzaW9uIjp7ImlzX215bWVudSI6IjAiLCJpc19saXN0IjoiMSIsImlzX3JlYWQiOiIxIiwiaXNfY3JlYXRlIjoiMSIsImlzX3VwZGF0ZSI6IjEiLCJpc19kZWxldGUiOiIxIiwiaXNfbmV3dGFiIjoiMCJ9LCJwYWdlX3VyaSI6IlwvZGFib3J5XC9lcnBcL21hc3Rlci1kYXRhXC9pdGVtIiwicGFyYV9uYW1lIjoiXC9mb3JtXC9mb3JtLWFcL2l0ZW0iLCJ0aGVtZV9kaXIiOiIiLCJtYWluX2FwcF9pZCI6MCwiZ3Vlc3RfYXBwX2lkIjowLCJjdXN0b21fdmFyIjoiIn0="
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "항목 추가",
+            "AutoSlipNo": "견적서 번호*",
+            "Date": "일자*",
+            "Supplier": "고객업체*",
+            "Input1": "견적제목",
+            "DealType": "거래구분*",
+            "VatType": "부가세*",
+            "VatTypeRate": "부가세율",
+            "VaildPeriod": "유효기간",
+            "Delivery": "납품기한",
+            "PayTerms": "지불조건",
+            "Column1": "공란1",
+            "Column2": "공란2",
+            "Remarks": "비고",
+            "Status": "상황"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "AutoSlipNo": "left",
+            "Date": "left",
+            "Supplier": "left",
+            "Input1": "left",
+            "DealType": "left",
+            "VatType": "left",
+            "VatTypeRate": "left",
+            "VaildPeriod": "left",
+            "Delivery": "left",
+            "PayTerms": "left",
+            "Column1": "left",
+            "Column2": "left",
+            "Remarks": "left",
+            "Status": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "AutoSlipNo": "20",
+            "Date": "20",
+            "Supplier": "20",
+            "Input1": "128",
+            "DealType": "20",
+            "VatType": "20",
+            "VatTypeRate": "20",
+            "VaildPeriod": "20",
+            "Delivery": "20",
+            "PayTerms": "20",
+            "Column1": "20",
+            "Column2": "20",
+            "Remarks": "20",
+            "Status": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "AutoSlipNo": "required",
+            "Date": "required",
+            "Supplier": "required",
+            "Input1": "",
+            "DealType": "required",
+            "VatType": "required",
+            "VaildPeriod": "",
+            "VatTypeRate": "",
+            "Delivery": "",
+            "PayTerms": "",
+            "Column1": "",
+            "Column2": "",
+            "Remarks": "",
+            "Status": ""
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "",
+            "$Check": "$Check",
+            "ItemCode": "품목코드*",
+            "ItemName": "품명*",
+            "SubName": "서브명#",
+            "CountUnit": "단위#",
+            "SquoteQty": "수량*",
+            "SquotePrc": "단가*",
+            "SupplyAmt": "공급가액*",
+            "VatAmt": "세액*",
+            "SumAmt": "합계금액*",
+            "SalesPrc": "판매가#",
+            "SquoteMemo": "품목설명(M)"
+        },
+        {
+            "$Radio": "",
+            "$Check": "3",
+            "ItemCode": "5",
+            "ItemName": "20",
+            "SubName": "10",
+            "CountUnit": "5",
+            "SquoteQty": "5",
+            "SquotePrc": "5",
+            "SupplyAmt": "5",
+            "VatAmt": "5",
+            "SumAmt": "5",
+            "SalesPrc": "5",
+            "SquoteMemo": "10"
+        },
+        {
+            "$Radio": "",
+            "$Check": "center",
+            "ItemCode": "left",
+            "ItemName": "left",
+            "SubName": "left",
+            "CountUnit": "center",
+            "SquoteQty": "decimal('sales_qty')",
+            "SquotePrc": "decimal('sales_prc')",
+            "SupplyAmt": "decimal('sales_amt')",
+            "VatAmt": "decimal('sales_amt')",
+            "SumAmt": "decimal('sales_amt')",
+            "SalesPrc": "decimal('sales_prc')",
+            "SquoteMemo": "right"
+        }
+    ],
+    "FooterVars": [
+        {
+            "QtyTotal": "수량 소계",
+            "SupplyTotal": "공급가액 소계",
+            "VatTotal": "부가세액 소계",
+            "SumTotal": "합계액 소계"
+        }
+    ]
+}

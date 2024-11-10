@@ -1,0 +1,199 @@
+{
+    "General": {
+        "Title": "그룹(본사) 설정",
+        "PageApi": "list-type1-page",
+        "ActApi": "setup-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "setup-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+    "HeadSelectOptions": [
+        {
+            "Value": "clear-all-filter",
+            "Caption": "Clear All Filter"
+        },
+        {
+            "Value": "use",
+            "Caption": "사용"
+        },
+        {
+            "Value": "stop",
+            "Caption": "해제"
+        },
+        {
+            "Value": "default-use",
+            "Caption": "디폴트 설정"
+        },
+        {
+            "Value": "default-stop",
+            "Caption": "디폴트 해체"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "OrderBy": "표시 순서",
+            "FilterOption": "조회선택",
+            "SimpleOption": "설정분류"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "======대분류======"
+        },
+        {
+            "Value": "mx.setup_type='common'",
+            "Caption": "공통"
+        },
+        {
+            "Value": "mx.setup_type='msg-template'",
+            "Caption": "메시지 템플릿(메일/문자)"
+        },
+        {
+            "Value": "mx.setup_type='erp'",
+            "Caption": "ERP/백오피스"
+        },
+        {
+            "Value": "mx.setup_type='shop'",
+            "Caption": "쇼핑몰"
+        },
+        {
+            "Value": "mx.setup_type='member'",
+            "Caption": "회원/사용자"
+        },
+        {
+            "Value": "mx.setup_type='pro'",
+            "Caption": "홈페이지/프론트오피스"
+        },
+        {
+            "Value": "",
+            "Caption": "======상세분류======"
+        },
+        {
+            "Value": "mx.setup_code='slip-common'",
+            "Caption": "공통-전표입력"
+        },
+        {
+            "Value": "mx.setup_code='media-body'",
+            "Caption": "공통-미디어라이브러리"
+        },
+        {
+            "Value": "mx.setup_code='shipping-charge'",
+            "Caption": "쇼핑몰-배송비"
+        },
+        {
+            "Value": "mx.setup_code='courier'",
+            "Caption": "쇼핑몰-택배회사"
+        },
+        {
+            "Value": "mx.setup_code='remit-account'",
+            "Caption": "쇼핑몰-무통장입금계좌"
+        },
+        {
+            "Value": "mx.setup_code='shop-address'",
+            "Caption": "쇼핑몰-관련주소"
+        },
+        {
+            "Value": "mx.setup_code='sso-client'",
+            "Caption": "회원-SSO 클라이언트"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.setup_name",
+            "Caption": "설정이름"
+        },
+        {
+            "Value": "mx.setup_code",
+            "Caption": "설정코드"
+        },
+        {
+            "Value": "mx.brand_code",
+            "Caption": "브랜드코드"
+        },
+        {
+            "Value": "mx.parameter",
+            "Caption": "파라메터"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "setup_code asc, seq_no asc",
+            "Caption": "설정코드 순서,"
+        },
+        {
+            "Value": "setup_code desc,  seq_no asc",
+            "Caption": "설정 코드 역순"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst": true,
+        "IsExcelColumn": true,
+        "IsC1Popup": "2",
+        "InitLines": 20,
+        "HeadHeight": "130",
+        "BodyHeight": "570"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "설정이름",
+            "C2": "설정코드",
+            "C3": "순서",
+            "C4": "브랜드코드",
+            "C5": "컴포넌트",
+            "C6": "파라메터",
+            "C7": "사용",
+            "C8": "기본적용",
+            "C9": "설정 Json"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "No": "4",
+            "C1": "15",
+            "C2": "10",
+            "C3": "5",
+            "C4": "10",
+            "C5": "25",
+            "C6": "25",
+            "C7": "8",
+            "C8": "8",
+            "C9": "3"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "left",
+            "C3": "center",
+            "C4": "left",
+            "C5": "left",
+            "C6": "left",
+            "C7": "check",
+            "C8": "check",
+            "C9": "remove_tag"
+        }
+    ]
+}

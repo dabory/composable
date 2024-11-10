@@ -1,0 +1,194 @@
+{
+    "General": {
+        "Title": "사용자메뉴 불러오기",
+        "PageApi": "list-type1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "download/post/sorder-custom",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "",
+        "SimpleFilter": ""
+    },
+
+    "HeadSelectOptions": [
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "",
+            "To": "",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "다운로드 리스트",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+    ],
+
+    "SimpleSelectOptions": [
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "SelectPopupOptions": [
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsAddTotalLine": false,
+        "IsExcelColumn": true,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "160",
+        "BodyHeight": "570"
+    },
+
+    "OrderByOptions": [
+    ],
+
+    "BalanceOptions": [
+    ],
+
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "C1": "C1:주문번호",
+            "C2": "C2:주문일자",
+            "C3": "C3:주문자",
+            "C4": "C4:주문자 전화번호",
+            "C5": "C5:주문자 휴대폰",
+            "C6": "C6:수취인",
+            "C7": "C7:수취인 휴대폰",
+            "C8": "C8:수취인 메모",
+            "C9": "C9:확정택배사 코드",
+            "C10": "C10:오더처리용 송장번호",
+            "C11": "C11:수취인 주소",
+            "C12": "C12:수취인 우편번호",
+            "C13": "C13:품목정보",
+            "C14": "C14:주문수량",
+            "C15": "C15:품목합계",
+            "C16": "C16:합계금액",
+            "C17": "C17:충전금 사용액",
+            "C18": "C18:적립금 발생액",
+            "C19": "C19:적립금 사용금액",
+            "C20": "C20:주문상태",
+            "C21": "C21:할인금액",
+            "C22": "C22:결제일시",
+            "C23": "C23:배송비",
+            "C24": "C24:결제방식",
+            "C25": "C25:쿠폰결제액",
+            "C26": "C26:화물구분",
+            "C27": "C27:주문총액"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "6",
+            "C1": "6",
+            "C2": "6",
+            "C3": "15",
+            "C4": "20",
+            "C5": "20",
+            "C6": "15",
+            "C7": "6",
+            "C8": "6",
+            "C9": "10",
+            "C10": "10",
+            "C11": "10",
+            "C12": "10",
+            "C13": "10",
+            "C14": "15",
+            "C15": "10",
+            "C16": "15",
+            "C17": "10",
+            "C18": "10",
+            "C19": "10",
+            "C20": "10",
+            "C21": "15",
+            "C22": "10",
+            "C23": "10",
+            "C24": "10",
+            "C25": "10",
+            "C26": "15",
+            "C27": "15"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "center",
+            "C2": "center",
+            "C3": "left",
+            "C4": "left",
+            "C5": "left",
+            "C6": "left",
+            "C7": "center",
+            "C8": "center",
+            "C9": "left",
+            "C10": "left",
+            "C11": "left",
+            "C12": "left",
+            "C13": "left",
+            "C14": "left",
+            "C15": "left",
+            "C16": "left",
+            "C17": "left",
+            "C18": "left",
+            "C19": "left",
+            "C20": "left",
+            "C21": "left",
+            "C22": "left",
+            "C23": "left",
+            "C24": "left",
+            "C25": "left",
+            "C26": "left",
+            "C27": "left"
+        }
+    ]
+}

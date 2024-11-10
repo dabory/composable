@@ -1,0 +1,127 @@
+{
+    "General": {
+        "Title": "품목 분류(쇼핑몰 노출용) 입력",
+        "PickApi": "slip-form-book",
+        "ActApi": "item-taxo-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "shop/item-taxo"
+    },
+
+    "SlipNoOptions": [
+        {
+            "Value": "new",
+            "Caption": "new"
+        },
+        {
+            "Value": "best",
+            "Caption": "best"
+        },
+        {
+            "Value": "recommended",
+            "Caption": "recommended"
+        },
+        {
+            "Value": "event",
+            "Caption": "event"
+        }
+    ],
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "delete",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "multi-delete",
+            "Caption": "품목 일괄 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "위젯 추가",
+            "AutoSlipNo": "품목분류번호(예약)*",
+            "DirectInput": "품목분류번호 직접입력*",
+            "Date": "일자*",
+            "TaxoName": "품목분류 이름",
+            "MediaSize": "디자이너 참조용 미디어크기",
+            "Remarks": "비고"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "AutoSlipNo": "left",
+            "DirectInput": "left",
+            "Date": "left",
+            "TaxoName": "left",
+            "MediaSize": "left",
+            "Remarks": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "AutoSlipNo": "500",
+            "DirectInput": "500",
+            "Date": "500",
+            "TaxoName": "500",
+            "MediaSize": "128",
+            "Remarks": "500"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "AutoSlipNo": "required",
+            "DirectInput": "",
+            "Date": "required",
+            "TaxoName": "",
+            "MediaSize": "",
+            "Remarks": ""
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "ItemCode": "품목코드*",
+            "ItemName": "품명*",
+            "IsSkipped": "표시 누락",
+            "SaveButton": "버튼"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "ItemCode": "5",
+            "ItemName": "20",
+            "IsSkipped": "5",
+            "SaveButton": "5"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "ItemCode": "left",
+            "ItemName": "left",
+            "IsSkipped": "center",
+            "SaveButton": "center"
+        }
+    ],
+    "FooterVars": [
+        {
+            "SumTotal": "품목분류 소계"
+        }
+    ]
+}

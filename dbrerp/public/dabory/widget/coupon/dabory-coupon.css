@@ -1,0 +1,147 @@
+.dabory-coupon-popup {
+    /*display: none;*/
+    position: absolute !important;
+    /*z-index: 9999 !important;*/
+    border: black solid 1px;
+}
+
+.dabory-coupon-box {
+    position: relative !important;
+    background-color: #fff !important;
+}
+
+.dabory-coupon-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    padding: 15px 15px !important;
+}
+
+.dabory-coupon-col {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    padding: 10px !important;
+}
+
+.dabory-coupon-message ul {
+    list-style: outside none none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.dabory-coupon-message ul li {
+    padding: 13px 0 !important;
+    border-top: 1px solid #ebebeb !important;
+    align-items: center !important;
+    display: flex !important;
+}
+
+.dabory-coupon-form h3 {
+    font-size: 21px !important;
+    text-transform: capitalize !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    margin-bottom: 25px !important;
+    color: #CC0000 !important;
+}
+
+.dabory-coupon-form .in { text-indent: 20px; }
+
+.dabory-coupon-form p {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    margin-bottom: 5px !important;
+}
+
+.dabory-coupon-form .form-div {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    margin-bottom: 20px !important;
+}
+
+.dabory-coupon-form label {
+    line-height: 18px !important;
+    font-weight: 500 !important;
+    margin-bottom: 10px !important;
+    display: inline-block !important;
+}
+
+.dabory-coupon-form input[type=checkbox] + label {
+    margin-bottom: 0 !important;
+    margin-left: 2px !important;
+}
+
+.dabory-coupon-form input[type='text'], .dabory-coupon-form select {
+    border: 1px solid #ebebeb !important;
+    height: 45px !important;
+    background: #ffffff !important;
+    width: 100% !important;
+    padding: 0 10px !important;
+    color: #757575 !important;
+}
+
+.dabory-coupon-form input:disabled, .dabory-coupon-form select:disabled {
+    background-color: rgb(248, 249, 249) !important;
+}
+
+.dabory-coupon-form textarea {
+    height: 170px !important;
+    border: 1px solid #ebebeb !important;
+    background: #ffffff !important;
+    resize: none !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+    padding: 10px !important;
+    color: #222222 !important;
+}
+
+.dabory-coupon-form button {
+    font-weight: 400 !important;
+    height: 42px !important;
+    line-height: 42px !important;
+    padding: 0 30px !important;
+    border: none !important;
+    background: #222222 !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    -webkit-transition: 0.3s !important;
+    transition: 0.3s !important;
+    border-radius: 4px !important;
+}
+
+.dabory-coupon-form .close-btn {
+    background-color: #CC0000 !important;
+}
+
+.dabory-coupon-form .send-btn {
+    width: 100% !important;
+    position: relative;
+}
+
+.dabory-coupon-form .send-btn:disabled {
+    background-color: #4a5568 !important;
+}
+
+/* already defined in bootstrap4 */
+.text-xs-center {
+    text-align: center;
+}
+
+.g-recaptcha {
+    display: inline-block;
+}
+
+@media (max-width: 1199.98px) {
+    .dabory-coupon-popup {
+        width: 450px !important;
+        left: 100px !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .dabory-coupon-popup {
+        width: 350px !important;
+        left: 0 !important;
+    }
+}
+

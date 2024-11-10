@@ -1,0 +1,80 @@
+{
+    "General": {
+        "PickApi": "widget-taxo-bd-pick",
+        "ActApi": "widget-taxo-bd-act"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "",
+            "Caption": ""
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "multi-delete",
+            "Caption": "서브 위젯 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "서브위젯 추가",
+            "DiscountItem": "매출할인 품목코드"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "DiscountItem": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "20",
+            "DiscountItem": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "DiscountItem": ""
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "FileUrl": "미디어 ID",
+            "LinkUrl": "링크",
+            "LayerDesc": "설명",
+            "IsSkipped": "표시 누락",
+            "SaveButton": "버튼"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "FileUrl": "5",
+            "LinkUrl": "9",
+            "LayerDesc": "5",
+            "IsSkipped": "5",
+            "SaveButton": "5"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "FileUrl": "center",
+            "LinkUrl": "left",
+            "LayerDesc": "left",
+            "IsSkipped": "center",
+            "SaveButton": "center"
+        }
+    ],
+    "FooterVars": [
+        {
+            "SumTotal": ""
+        }
+    ]
+}

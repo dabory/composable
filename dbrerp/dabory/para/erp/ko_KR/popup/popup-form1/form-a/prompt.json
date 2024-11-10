@@ -1,0 +1,72 @@
+{
+    "General": {
+        "PickApi": "prompt-pick",
+        "ActApi": "prompt-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "PromptNo": "템플릿 번호",
+            "ModelVer": "언어모델 버전",
+            "FuncTitle": "기능타이틀",
+            "FuncVer": "기능버전",
+            "PromptFeed": "프롬프트 피드",
+            "TestFeed": "테스트용 자료",
+            "TestResult": "테스트용 결과",
+            "Status": "상태"
+        },
+        {
+            "SaveButton": "",
+            "PromptNo": "",
+            "ModelVer": "",
+            "FuncTitle": "",
+            "FuncVer": "",
+            "PromptFeed": "",
+            "TestFeed": "",
+            "TestResult": "",
+            "Status": ""
+        },
+        {
+            "SaveButton": "0",
+            "PromptNo": "",
+            "ModelVer": "",
+            "FuncTitle": "",
+            "FuncVer": "",
+            "PromptFeed": "",
+            "TestFeed": "",
+            "TestResult": "",
+            "Status": ""
+        },
+        {
+            "SaveButton": "required",
+            "PromptNo": "required",
+            "ModelVer": "required",
+            "FuncTitle": "required",
+            "FuncVer": "required",
+            "PromptFeed": "required",
+            "TestFeed": "required",
+            "TestResult": "required",
+            "Status": "required"
+        }
+    ],
+    "StatusOptions": [
+        {
+            "Value": "0",
+            "Caption": "확정"
+        },
+        {
+            "Value": "1",
+            "Caption": "취소"
+        }
+    ]
+}

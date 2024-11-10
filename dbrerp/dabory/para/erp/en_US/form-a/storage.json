@@ -1,0 +1,41 @@
+{
+    "General": {
+        "Title": "Storage",
+        "PickApi": "storage-pick",
+        "ActApi": "storage-act"
+    },
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "Add New"
+        },
+        {
+            "Value": "",
+            "Caption": ""
+        },
+        {
+            "Value": "del",
+            "Caption": "Delete"
+        },
+        {
+            "Value": "",
+            "Caption": ""
+        },
+        {
+            "Value": "copy",
+            "Caption": "Duplicate"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption",
+    "FormVars": [
+        {
+            "SaveButton": "Save",
+            "StorageCode": "Storage Code",
+            "StorageName": "Storage Name",
+            "Location": "Location",
+            "IsMainStorage": "Main Storage",
+            "IsBadStorage": "Bad Storage"
+        }
+    ]
+}

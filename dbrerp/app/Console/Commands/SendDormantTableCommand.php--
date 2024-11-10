@@ -1,0 +1,210 @@
+<?php
+
+namespace App\Console\Commands;
+
+use App\Services\CallApiService;
+use App\Services\DormantService;
+use Carbon\Carbon;
+use Carbon\CarbonImmutable;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Hash;
+
+class SendDormantTableCommand extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'dormant:send-table';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = '휴면테이블로 보내기';
+
+    private $callApiService;
+    private $dormantService;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct(CallApiService $callApiService, DormantService $dormantService)
+    {
+        parent::__construct();
+        $this->callApiService = $callApiService;
+        $this->dormantService = $dormantService;
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $this->dormantService->setMainToken();
+        $dormantDefault = $this->dormantService->getSetup();
+
+        $dt = Carbon::now()->endOfDay();
+        $dt->subMonths($dormantDefault['ActiveMonth']);
+        $startOfDay = $dt->startOfDay()->timestamp;
+        $endOfDay = $dt->endOfDay()->timestamp;
+
+        $memberPage = $this->callApiService->callApi([
+            'url' => 'member-page',
+            'data' => [
+                'PageVars' => [
+                    'Query' => "(last_login_on between $startOfDay and $endOfDay) and status != 5",
+                    'Asc' => 'last_login_on',
+                    'Limit' => 999999
+                ]
+            ],
+            'headers' => [
+                'GateToken' => $this->dormantService->getGateToken('main')
+            ]
+        ]);
+
+//        dd($memberPage);
+//        $a = collect($memberPage['Page'])->map(function ($member) {
+//            return [$member['Email'], Carbon::createFromTimestamp($member['LastLoginOn'])->format('Y-m-d')];
+//        });
+
+        foreach ($memberPage['Page'] ?? [] as $member) {
+            if (! $this->goToDormantAccount($member['Id'], $dormantDefault['GuestApp'])) {
+                $now = CarbonImmutable::now()->toDateTimeLocalString();
+                file_put_contents(storage_path('logs/sample.log'), $now . PHP_EOL, FILE_APPEND);
+            }
+        }
+
+        return 0;
+    }
+
+    public function goToDormantAccount($id, $appName)
+    {
+        $memberDormantPick = $this->callApiService->callAppApi([
+            'url' => 'member-dormant-pick',
+            'data' => [
+                'Page' => [
+                    [ 'Id' => (int)$id ]
+                ]
+            ],
+        ], $this->dormantService->getGateToken($appName), $appName);
+
+//        이미 휴면 상태이면 false 반환
+        if (! $this->callApiService->verifyApiError($memberDormantPick)) {
+            return false;
+        }
+
+        $memberPick = $this->callApiService->callApi([
+            'url' => 'member-pick',
+            'data' => [
+                'Page' => [
+                    [ 'Id' => (int)$id ]
+                ]
+            ],
+            'headers' => [
+                'GateToken' => $this->dormantService->getGateToken('main')
+            ]
+        ]);
+
+        $member = $memberPick['Page'][0];
+        $member['Status'] = '5';
+        $member['SgroupIdRecom'] = $member['SgroupId'];
+        unset($member['SgroupId']);
+
+        $memberExtPick = $this->callApiService->callApi([
+            'url' => 'member-ext-pick',
+            'data' => [
+                'Page' => [
+                    [ 'Id' => (int)$id ]
+                ]
+            ],
+            'headers' => [
+                'GateToken' => $this->dormantService->getGateToken('main')
+            ]
+        ]);
+
+        $page = array_merge($member, $memberExtPick['Page'][0]);
+        $page['CreatedOn'] = Carbon::now()->timestamp;
+        unset($page['UpdatedOn']);
+
+
+        $memberDormantAct = $this->callApiService->callAppApi([
+            'url' => 'member-dormant-act',
+            'data' => [
+                'Page' => [ $page ]
+            ],
+        ], $this->dormantService->getGateToken($appName), $appName);
+
+        if ($this->callApiService->verifyApiError($memberDormantAct)) {
+            return false;
+        }
+
+        $this->initMemberExtDb((int)$member['Id']);
+        $this->initMemberDb($member);
+    }
+
+    function initMemberExtDb($member_id)
+    {
+        $memberExtAct = $this->callApiService->callApi([
+            'url' => 'member-ext-act',
+            'data' => [
+                'Page' => [
+                    [ 'Id' => (int)$member_id, 'MobileNo' => '' ]
+                ]
+            ],
+            'headers' => [
+                'GateToken' => $this->dormantService->getGateToken('main')
+            ]
+        ]);
+    }
+
+    function initMemberDb($member)
+    {
+        $memberStructure = [
+            'LastSeenOn' => 'INT', 'LastLoginOn' => 'INT', 'MemberDate' => 'STRING', 'Email' => 'UNIQUE',
+            'LoginId' => 'STRING', 'SsoBrand' => 'STRING', 'SsoSub' => 'STRING',
+            'NickName' => 'STRING', 'FirstName' => 'STRING', 'SurName' => 'STRING', 'IsActivated' => 'CHAR', 'IsGuest' => 'CHAR',
+            'ProfileImg' => 'STRING', 'ProfileWeb' => 'STRING', 'ProfileText' => 'STRING', 'CreatedIp' => 'STRING', 'Sort' => 'CHAR', 'BuyerId' => 'INT',
+            'SgroupId' => 'INT', 'SgroupCode' => 'STRING', 'LastloginIp' => 'STRING', 'IsWithdrawn' => 'CHAR', 'SsoSubId' => 'INT',
+            'IsMemberApp' => 'CHAR'
+        ];
+
+        $memInitPage = ['Id' => (int)$member['Id'], 'Status' => '5'];
+        foreach ($memberStructure as $key => $value) {
+            switch ($value) {
+                case 'UNIQUE':
+                    $memInitPage[$key] = base64_encode($member['Email']);
+                    break;
+                case 'STRING':
+                    $memInitPage[$key] = '';
+                    break;
+                case 'CHAR':
+                    $memInitPage[$key] = '0';
+                    break;
+                case 'INT':
+                    $memInitPage[$key] = 0;
+                    break;
+            }
+        }
+
+        $memberAct = $this->callApiService->callApi([
+            'url' => 'member-act',
+            'data' => [
+                'Page' => [ $memInitPage ]
+            ],
+            'headers' => [
+                'GateToken' => $this->dormantService->getGateToken('main')
+            ]
+        ]);
+
+        if ($this->callApiService->verifyApiError($memberAct)) {
+            return false;
+        }
+    }
+}

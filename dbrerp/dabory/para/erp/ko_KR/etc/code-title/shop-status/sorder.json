@@ -1,0 +1,82 @@
+[
+    {
+        "Code": "",
+        "Title": "상태값 없음"
+    },
+    {
+        "Code": "ship-pre-ship",
+        "Title": "배송준비"
+    },
+    {
+        "Code": "ship-in-trans",
+        "Title": "배송중"
+    },
+    {
+        "Code": "ship-finish",
+        "Title": "배송완료"
+    },
+    {
+        "Code": "order-complete",
+        "Title": "구매확정"
+    },
+    {
+        "Code": "cancel-sold-out",
+        "Title": "품절취소"
+    },
+    {
+        "Code": "cancel-admin",
+        "Title": "관리자취소"
+    },
+    {
+        "Code": "cancel-member-req",
+        "Title": "고객취소요청"
+    },
+    {
+        "Code": "cancel-confirm",
+        "Title": "취소승인"
+    },
+    {
+        "Code": "cancel-complete",
+        "Title": "취소완료"
+    },
+    {
+        "Code": "return-request",
+        "Title": "반품요청"
+    },
+    {
+        "Code": "return-receive",
+        "Title": "반품접수"
+    },
+    {
+        "Code": "return-pickup",
+        "Title": "반품회수"
+    },
+    {
+        "Code": "return-comfirm",
+        "Title": "반품승인"
+    },
+    {
+        "Code": "return-complete",
+        "Title": "반품완료"
+    },
+    {
+        "Code": "exchange-request",
+        "Title": "교환요청"
+    },
+    {
+        "Code": "exchange-receive",
+        "Title": "교환접수"
+    },
+    {
+        "Code": "exchange-pickup",
+        "Title": "교환회수"
+    },
+    {
+        "Code": "exchange-ship",
+        "Title": "교환발송"
+    },
+    {
+        "Code": "exchange-complete",
+        "Title": "교환완료"
+    }
+]

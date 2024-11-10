@@ -1,0 +1,129 @@
+{
+    "General": {
+        "PickApi": "member-pick",
+        "ActApi": "member-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "0",
+            "Caption": "status('member','0')"
+        },
+        {
+            "Value": "1",
+            "Caption": "status('member','1')"
+        },
+        {
+            "Value": "2",
+            "Caption": "status('member','2')"
+        },
+        {
+            "Value": "3",
+            "Caption": "status('member','3')"
+        },
+        {
+            "Value": "4",
+            "Caption": "status('member','4')"
+        },
+        {
+            "Value": "5",
+            "Caption": "status('member','5')"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "Name": "이름*",
+            "Email": "이메일*",
+            "MobileNo": "휴대폰번호*",
+            "Status": "상태*",
+            "IsMemberApp": "IsMemberApp",
+
+            "CompanyName": "상호",
+            "TaxNo": "사업자번호",
+            "President": "대표자명",
+            "TelNo": "전화번호",
+            "BizType": "업태",
+            "DealItem": "종목",
+            "ZipCode": "주소",
+            "Addr1": "현주소",
+            "Addr2": "상세주소",
+            "CertImg": "사업자등록증 사진",
+            "Van": "사용중인 카드 단말기(VAN)",
+            "VanId": "VAN 아이디",
+            "VanPw": "VAN 비밀번호"
+        },
+        {
+            "SaveButton": "left",
+            "Name": "left",
+            "Email": "left",
+            "MobileNo": "left",
+            "Status": "left",
+            "IsMemberApp": "left",
+
+            "CompanyName": "left",
+            "TaxNo": "left",
+            "President": "left",
+            "TelNo": "left",
+            "BizType": "left",
+            "DealItem": "left",
+            "ZipCode": "left",
+            "Addr1": "left",
+            "Addr2": "left",
+            "CertImg": "left",
+            "Van": "left",
+            "VanId": "left",
+            "VanPw": "left"
+        },
+        {
+            "SaveButton": "0",
+            "Name": "100",
+            "Email": "100",
+            "MobileNo": "100",
+            "Status": "100",
+            "IsMemberApp": "10",
+
+            "CompanyName": "100",
+            "TaxNo": "100",
+            "President": "100",
+            "TelNo": "100",
+            "BizType": "100",
+            "DealItem": "100",
+            "ZipCode": "100",
+            "Addr1": "100",
+            "Addr2": "100",
+            "CertImg": "100",
+            "Van": "100",
+            "VanId": "100",
+            "VanPw": "100"
+        },
+        {
+            "SaveButton": "left",
+            "Name": "",
+            "Email": "readonly",
+            "MobileNo": "readonly",
+            "Status": "",
+            "IsMemberApp": "",
+
+            "CompanyName": "",
+            "TaxNo": "",
+            "President": "",
+            "TelNo": "",
+            "BizType": "",
+            "DealItem": "",
+            "ZipCode": "",
+            "Addr1": "",
+            "Addr2": "",
+            "CertImg": "",
+            "Van": "",
+            "VanId": "",
+            "VanPw": ""
+        }
+    ]
+}

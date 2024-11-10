@@ -1,0 +1,68 @@
+{
+    "//bal-item-finished-good": "bal-item has 2 categoires: finished goods and materials",
+
+    "General": {
+        "Title": "Supplier Balance Amount",
+        "PageApi": "list-form-balance-page",
+        "ActApi": "list-form-balance-mact"
+    },
+
+    "QueryVars": {
+        "QueryName": "supplier",
+        "FilterName": "",
+        "FilterValue": ""
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "Bulk Save",
+            "Month": "Payable Balance Amount Year/Month",
+            "Storage": "",
+            "CodeRange": ""
+        }
+    ],
+
+    "SelectButtonOptions": [
+        {
+            "Value": "get-new-list",
+            "Caption": "Get New List"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "//ListVars": "",
+    "ListVars": [
+        {
+            "No": "No",
+            "Code": "",
+            "Name": "Buyer Name",
+            "SecondName": "",
+            "Balance": "",
+            "Balance2": "Payable Balance Amount"
+        },
+        {
+            "No": "10",
+            "Code": "10",
+            "Name": "10",
+            "Name2": "10",
+            "Balance": "10",
+            "Balance2": "10"
+        },
+        {
+            "No": "center",
+            "Code": "left",
+            "Name": "left",
+            "Name2": "left",
+            "Balance": "right",
+            "Balance2": "right"
+        }
+    ],
+
+    "FooterVars": [
+        {
+            "BalanceTotal": "",
+            "Balance2Total": "Balance Total"
+        }
+    ]
+}

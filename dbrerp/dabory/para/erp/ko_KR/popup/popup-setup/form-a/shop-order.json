@@ -1,0 +1,34 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "IsCheckoutConf": "결제페이지 청약의사 재확인",
+            "ConfirmTitle": "의사질문 내용",
+            "IsAutoDeliConf": "자동배송완료 사용",
+            "AutoDeliDate": "자동배송완료 일수",
+            "IsAutoPurchConf": "자동구매 확정",
+            "AutoPurchDate": "자동구매 확정 일수",
+            "IsRefundConf": "결제페이지 청약의사 재확인"
+        },
+        {
+            "SaveButton": "center",
+            "IsCheckoutConf": "center",
+            "ConfirmTitle": "center",
+            "IsAutoDeliConf": "center",
+            "AutoDeliDate": "center",
+            "IsAutoPurchConf": "center",
+            "AutoPurchDate": "center",
+            "IsRefundConf": "center"
+        }
+    ]
+}

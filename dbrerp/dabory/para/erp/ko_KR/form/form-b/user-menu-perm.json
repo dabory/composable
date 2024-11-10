@@ -1,0 +1,180 @@
+{
+    "General": {
+        "Title": "사용자 메뉴 권한",
+        "PickApi": "slip-form-book",
+        "ActApi": "user-perm-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "perm/user_perm"
+    },
+
+    "SlipNoOptions": [
+        {
+            "Value": "super-user",
+            "Caption": "super-user"
+        },
+        {
+            "Value": "normal-user",
+            "Caption": "normal-user"
+        }
+    ],
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "delete",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "multi-update",
+            "Caption": "체크/언체크 적용",
+            "Parameter": ""
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "일부 항목 제거",
+            "Parameter": ""
+        },
+        {
+            "Value": "all-checked",
+            "Caption": "권한 전체 체크",
+            "Parameter": ""
+        },
+        {
+            "Value": "all-unchecked",
+            "Caption": "권한 전체 언체크",
+            "Parameter": ""
+        },
+        {
+            "Value": "all-create",
+            "Caption": "항목 전체 생성",
+            "Parameter": ""
+        },
+        {
+            "Value": "all-delete",
+            "Caption": "항목 전체 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "",
+            "AutoSlipNo": "권한번호(자동채번)*",
+            "SortType": "분류메뉴",
+            "DirectInput": "직접입력*",
+            "Date": "생성일자*",
+            "PermissionId": "권한ID",
+            "CreatedDate": "생성일자",
+            "UpdateDate": "수정일자",
+            "PermissionName": "권한이름",
+            "Description": "권한설명"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "AutoSlipNo": "left",
+            "SortType": "left",
+            "DirectInput": "left",
+            "Date": "left",
+            "PermissionId": "left",
+            "CreatedDate": "left",
+            "UpdateDate": "left",
+            "PermissionName": "left",
+            "Description": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "AutoSlipNo": "20",
+            "SortType": "20",
+            "DirectInput": "20",
+            "Date": "20",
+            "PermissionId": "20",
+            "CreatedDate": "20",
+            "UpdateDate": "20",
+            "PermissionName": "20",
+            "Description": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "AutoSlipNo": "required",
+            "SortType": "",
+            "DirectInput": "",
+            "Date": "required",
+            "PermissionId": "disabled",
+            "CreatedDate": "disabled",
+            "UpdateDate": "disabled",
+            "PermissionName": "",
+            "Description": ""
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "MenuCode": "메뉴코드",
+            "SortType": "분류유형",
+            "MenuName": "메뉴명",
+            "IsSkipped": "Skipped",
+            "IsUse": "Use",
+            "IsMymenu": "Mymenu",
+            "IsList": "List",
+            "IsRead": "Read",
+            "IsCreate": "Create",
+            "IsUpdate": "Update",
+            "IsDelete": "Delete",
+            "IsNewtab": "Newtab"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "MenuCode": "8",
+            "SortType": "8",
+            "MenuName": "15",
+            "IsSkipped": "5",
+            "IsUse": "5",
+            "IsMymenu": "5",
+            "IsList": "5",
+            "IsRead": "5",
+            "IsCreate": "5",
+            "IsUpdate": "5",
+            "IsDelete": "5",
+            "IsNewtab": "5"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "MenuCode": "left",
+            "SortType": "left",
+            "MenuName": "left",
+            "IsSkipped": "center",
+            "IsUse": "center",
+            "IsMymenu": "center",
+            "IsList": "center",
+            "IsRead": "center",
+            "IsCreate": "center",
+            "IsUpdate": "center",
+            "IsDelete": "center",
+            "IsNewtab": "center"
+        }
+    ],
+    "FooterVars": [
+        {
+            "SumTotal": "전체 메뉴 수"
+        }
+    ]
+}

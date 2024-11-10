@@ -1,0 +1,21 @@
+
+.content {
+    padding: .5rem;
+	font-size:13px;
+}
+
+.right-extend {
+    background: #fff;
+}
+
+.right-extend li:hover {
+    background: #f0f2f5;
+}
+
+.nav-item .nav-item i {
+    display: initial;
+}
+
+.nav-group-sub .nav-group-sub .nav-link {
+    padding-left: 4.75rem!important;
+}

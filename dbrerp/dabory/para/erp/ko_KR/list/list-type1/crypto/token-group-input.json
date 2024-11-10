@@ -1,0 +1,249 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "스왑지갑(회사 지갑 계정)",
+        "PageApi": "list-type1-page",
+        "ActApi": "token-group-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "/crypto/token-group-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "PrintVars": {
+        "QueryName": "purch/porder",
+        "ReportPath": "aaa",
+        "CustomCode": "bbbccc"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "status_update('member','회원 차단')",
+            "Caption": "회원 차단"
+        },
+        {
+            "Value": "status_update('member','승인 취소')",
+            "Caption": "차단 해제"
+        },
+        {
+            "Value": "status_update('member','승인 완료')",
+            "Caption": "회원 승인"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "팝업 선택(라디오 버튼)",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "email",
+            "Caption": "아이디(이메일)"
+        },
+        {
+            "Value": "nick_name",
+            "Caption": "이름"
+        },
+        {
+            "Value": "is_appmember",
+            "Caption": "앱회원"
+        },
+        {
+            "Value": "status",
+            "Caption": "상태",
+            "Reverse": "status_rev('member')"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "토큰 그룹 관리",
+            "Component": "theme.popup-form1.form-a.token-group-form",
+            "Parameter": "/popup/popup-form1/form-a/token-group",
+            "ThemeDir": "/erp/genesis_wallet"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "등록일자 역순"
+        },
+        {
+            "Value": "mx.created_on asc",
+            "Caption": "등록일자 순서"
+        },
+        {
+            "Value": "mx.email desc",
+            "Caption": "이메일 역순"
+        },
+        {
+            "Value": "mx.email asc",
+            "Caption": "이메일 순서"
+        }
+
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsExcelColumn" : true,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "80",
+        "BodyHeight": "570"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "토큰심볼",
+            "C2": "메인넷",
+            "C3": "스왑 지갑 주소",
+            "C4": "스왑용지갑",
+            "C5": "스왑중지",
+            "C6": "소숫점적용",
+            "C7": "GasFee유효수",
+            "C8": "소숫점유효수",
+            "C9": "코인(메인넷)",
+            "C10": "현재환율(KR)"
+        },
+        {
+            "$Radio": "2",
+            "$Check": "2",
+            "No": "3",
+            "C1": "5",
+            "C2": "3",
+            "C3": "15",
+            "C4": "6",
+            "C5": "6",
+            "C6": "6",
+            "C7": "6",
+            "C8": "6",
+            "C9": "6",
+            "C10": "6"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "center",
+            "C2": "center",
+            "C3": "center",
+            "C4": "check",
+            "C5": "check",
+            "C6": "center",
+            "C7": "center",
+            "C8": "center",
+            "C9": "check",
+            "C10": "right"
+        }
+    ]
+}

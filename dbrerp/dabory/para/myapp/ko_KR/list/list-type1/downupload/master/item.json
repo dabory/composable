@@ -1,0 +1,286 @@
+{
+    "General": {
+        "Title": "품목 일괄 업로드",
+        "PageApi": "list-type1-page",
+        "ActApi": "list-type1-upload"
+    },
+
+    "QueryVars": {
+        "QueryName": "download/master/item",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "xls-report",
+            "Caption": "(1)엑셀 다운로드"
+        },
+        {
+            "Value": "excel-upload",
+            "Caption": "(2)엑셀 업로드"
+        },
+        {
+            "Value": "dummy",
+            "Caption": "(3)품목 Batch Upload 처리",
+            "Component": "popup-form1.upload-batch",
+            "Parameter": "/popup/popup-form1/upload-batch/master/item"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "",
+            "From": "",
+            "To": "",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "다운로드 리스트",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.igroup_code",
+            "Caption": "분류코드"
+        },
+        {
+            "Value": "mx.igroup_name",
+            "Caption": "분류명"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.is_skipped='1'",
+            "Caption": "메뉴스킵"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsRawDownload" : true,
+        "IsAddTotalLine": false,
+        "IsExcelColumn": true,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "160",
+        "BodyHeight": "570"
+    },
+
+    "OrderByOptions": [
+        {
+            "Value": "mx.menu_code asc",
+            "Caption": "메뉴코드 순서"
+        },
+        {
+            "Value": "mx.menu_code desc",
+            "Caption": "메뉴코드 역순"
+        },
+        {
+            "Value": "mx.menu_lang0 asc",
+            "Caption": "메뉴명 순서"
+        },
+        {
+            "Value": "mx.menu_lang0 desc",
+            "Caption": "메뉴명 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "No": "번호",
+            "C1": "ID",
+            "C2": "품목코드",
+            "C3": "품명",
+            "C4": "서브명",
+            "C5": "품목구분코드",
+            "C6": "매입처코드",
+            "C7": "단위",
+            "C8": "추가이미지갯수",
+            "C9": "스타일(옵션대표)",
+            "C10": "비표준옵션",
+            "C11": "온라인게시않음",
+            "C12": "수불처리않음",
+            "C13": "충전금상품",
+            "C14": "상품/자재(ERP)",
+            "C15": "최종자재(ERP)",
+            "C16": "상황",
+
+            "D1": "매입가",
+            "D2": "매출가",
+            "D3": "할인가",
+            "D4": "제공충전금",
+            "D5": "적립율",
+            "D6": "적립금액",
+
+            "T1": "품목상세",
+            "T2": "품목메모(ERP)"
+
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "No": "6",
+            "C1": "15",
+            "C2": "15",
+            "C3": "15",
+            "C4": "15",
+            "C5": "15",
+            "C6": "15",
+            "C7": "15",
+            "C8": "15",
+            "C9": "15",
+            "C10": "15",
+            "C11": "15",
+            "C12": "15",
+            "C13": "15",
+            "C14": "15",
+            "C15": "15",
+            "C16": "15",
+
+            "D1": "15",
+            "D2": "15",
+            "D3": "15",
+            "D4": "15",
+            "D5": "15",
+            "D6": "15",
+
+            "T1": "15",
+            "T2": "15"
+
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "center",
+            "C2": "center",
+            "C3": "left",
+            "C4": "center",
+            "C5": "center",
+            "C6": "center",
+            "C7": "center",
+            "C8": "center",
+            "C9": "center",
+            "C10": "center",
+            "C11": "center",
+            "C12": "center",
+            "C13": "center",
+            "C14": "center",
+            "C15": "center",
+
+            "D1": "center",
+            "D2": "center",
+            "D3": "center",
+            "D4": "center",
+            "D5": "center",
+            "D6": "center",
+
+            "T1": "remove_tag",
+            "T2": "center"
+        }
+    ]
+}

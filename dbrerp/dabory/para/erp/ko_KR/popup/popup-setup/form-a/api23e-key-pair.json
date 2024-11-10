@@ -1,0 +1,28 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "Api23KeyPair": "Api23KeyPair",
+            "Api23eKeyPair": "Api23eKeyPair",
+            "GenerateKey": "새 키페어 생성",
+            "EncryptKey": "키페어 암호화"
+        },
+        {
+            "SaveButton": "center",
+            "Api23KeyPair": "center",
+            "Api23eKeyPair": "center",
+            "GenerateKey": "center",
+            "EncryptKey": "center"
+        }
+    ]
+}

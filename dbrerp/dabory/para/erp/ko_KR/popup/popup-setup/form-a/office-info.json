@@ -1,0 +1,54 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "OfcCode": "OfcCode",
+            "OfcPlace": "OfcPlace",
+            "OfcName": "OfcName",
+            "OfcTaxNo": "OfcTaxNo",
+            "OfcEmail": "OfcEmail",
+            "OfcTelNo": "OfcTelNo",
+            "OfcFaxNo": "OfcFaxNo",
+            "OfcDomainUrl": "OfcDomainUrl",
+            "OfcMobile": "OfcMobile",
+            "OfcZipCode": "OfcZipCode",
+            "OfcPresident": "OfcPresident",
+            "OfcAddr1": "OfcAddr1",
+            "OfcAddr2": "OfcAddr2",
+            "OfcXCoordinate": "OfcXCoordinate",
+            "OfcYCoordinate": "OfcYCoordinate",
+            "OfcBizType": "OfcBizType",
+            "OfcDealItem": "OfcDealItem"
+        },
+        {
+            "SaveButton": "center",
+            "OfcCode": "center",
+            "OfcPlace": "center",
+            "OfcName": "center",
+            "OfcTaxNo": "center",
+            "OfcEmail": "center",
+            "OfcTelNo": "center",
+            "OfcFaxNo": "center",
+            "OfcDomainUrl": "center",
+            "OfcMobile": "center",
+            "OfcZipCode": "center",
+            "OfcPresident": "center",
+            "OfcAddress1": "center",
+            "OfcAddress2": "center",
+            "OfcXCoordinate": "center",
+            "OfcYCoordinate": "center",
+            "OfcBizType": "center",
+            "OfcDealItem": "center"
+        }
+    ]
+}

@@ -1,0 +1,116 @@
+<?php
+
+namespace App\Services\DaborySearch;
+
+use App\Exceptions\ApiException;
+use Exception;
+use Unirest\Request;
+
+class SearchService
+{
+    const BASE_URL = 'http://175.126.146.155:8080';
+
+    public function __construct()
+    {
+    }
+
+    public function textHubSearch($dbrhubUrl, $offset, $limit, $query = '', $sort = '')
+    {
+        $data = [
+            'DbrhubUrl' => $dbrhubUrl,
+            'Query' => $query,
+            'Offset' => $offset,
+            'Limit' => $limit,
+        ];
+
+        return $this->callTextSearch($data, $sort);
+    }
+
+    public function textSearch($originUrl, $offset, $limit, $query = '', $sort = '')
+    {
+        $data = [
+            'OriginUrl' => $originUrl,
+            'Query' => $query,
+            'Offset' => $offset,
+            'Limit' => $limit,
+        ];
+
+        return $this->callTextSearch($data, $sort);
+    }
+
+    public function callTextSearch($request, $sort = '')
+    {
+        if ($sort) {
+            $sortExplode = explode(' ', $sort);
+            switch ($sortExplode[1]) {
+                case 'Asc':
+                    $request = array_merge($request, [ 'Asc' => $sortExplode[0] ]);
+                    break;
+                case 'Desc':
+                    $request = array_merge($request, [ 'Desc' => $sortExplode[0] ]);
+                    break;
+            }
+        } else {
+            $request = array_merge($request, [ 'Asc' => 'ItemName' ]);
+        }
+//        dd($request);
+
+
+        try {
+            $response = Request::get(self::BASE_URL . '/text-search',
+                [ 'Accept' => 'application/json', 'Content-Type' => 'application/json', ],
+
+                $request
+            );
+        } catch (Exception $e) {
+            throw new ApiException($e->getMessage(), 503);
+        }
+
+        if ($response->code === 200) {
+            $data = json_encode($response->body ?? []);
+            return json_decode($data, true);
+        } else {
+            return [ 'apiStatus' => $response->code, 'body' => $response->body->msg ?? _e('Action failed') ];
+        }
+    }
+
+    public function autocomplete($originUrl, $query)
+    {
+        $request = [
+            'OriginUrl' => $originUrl,
+            'Query' => $query,
+        ];
+
+        return $this->callAutocomplete($request);
+    }
+
+    public function autocompleteHub($dbrhubUrl, $query)
+    {
+        $request = [
+            'DbrhubUrl' => $dbrhubUrl,
+            'Query' => $query,
+        ];
+
+        return $this->callAutocomplete($request);
+    }
+
+    public function callAutocomplete($request)
+    {
+        try {
+            $response = Request::get(self::BASE_URL . '/autocomplete',
+                [ 'Accept' => 'application/json', 'Content-Type' => 'application/json', ],
+
+                $request
+            );
+        } catch (Exception $e) {
+            throw new ApiException($e->getMessage(), 503);
+        }
+
+        if ($response->code === 200) {
+            $data = json_encode($response->body ?? []);
+            return json_decode($data, true);
+        } else {
+            return [ 'apiStatus' => $response->code, 'body' => $response->body->msg ?? _e('Action failed') ];
+        }
+    }
+}

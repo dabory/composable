@@ -1,0 +1,50 @@
+{
+    "General": {
+        "PickApi": "app-api-pick",
+        "ActApi": "app-api-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "ApiCode": "API 코드*",
+            "ApiUri": "API URI",
+            "QueryName": "쿼리명",
+            "ApiDesc": "설명",
+            "IsDeprecated": "IsDeprecated"
+        },
+        {
+            "SaveButton": "left",
+            "ApiCode": "left",
+            "ApiUri": "left",
+            "QueryName": "left",
+            "ApiDesc": "left",
+            "IsDeprecated": "left"
+        },
+        {
+            "SaveButton": "0",
+            "ApiCode": "10",
+            "ApiUri": "100",
+            "QueryName": "100",
+            "ApiDesc": "1000",
+            "IsDeprecated": "0"
+        },
+        {
+            "SaveButton": "",
+            "ApiCode": "required",
+            "ApiUri": "",
+            "QueryName": "",
+            "ApiDesc": "",
+            "IsDeprecated": ""
+        }
+    ]
+}

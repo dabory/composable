@@ -1,0 +1,257 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "입점 리스트사",
+        "PageApi": "list-type1-page",
+        "ActApi": "list-type1-upload"
+    },
+
+    "QueryVars": {
+        "QueryName": "pro/member-company-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "PrintVars": {
+        "QueryName": "federated/crystal/master/item-fngoods-input",
+        "ReportPath": "standard/master/item-fngoods-input.rpt",
+        "ExportFmt": "PDF",
+        "ServerPrinter": "",
+        "CustomCode": "item-fngoods-input"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "clear-all-filter",
+            "Caption": "초기화"
+        },
+        {
+            "Value": "barcode-print",
+            "Caption": "바코드 인쇄"
+        },
+        {
+            "Value": "rpt-print",
+            "Caption": "빠른 표준 보고서"
+        },
+        {
+            "Value": "rpt-custom",
+            "Caption": "커스텀 보고서"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "email",
+            "Caption": "아이디(이메일)"
+        },
+        {
+            "Value": "nick_name",
+            "Caption": "이름"
+        },
+        {
+            "Value": "cmp.tax_no",
+            "Caption": "사업자번호"
+        },
+        {
+            "Value": "status",
+            "Caption": "상태",
+            "Reverse": "status_rev('member')"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.expose_type='0'",
+            "Caption": "온라인 게시"
+        },
+        {
+            "Value": "mx.expose_type='1'",
+            "Caption": "온라인 누락"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "입점사 입력폼",
+            "Component": "popup-form1.form-a.member-company-form",
+            "Parameter": "/popup/popup-form1/form-a/member-company"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "등록일자 역순"
+        },
+        {
+            "Value": "mx.created_on asc",
+            "Caption": "등록일자 순서"
+        },
+        {
+            "Value": "mx.email desc",
+            "Caption": "이메일 역순"
+        },
+        {
+            "Value": "mx.email asc",
+            "Caption": "이메일 순서"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "ThumbContainerVars": {
+        "ListWidth": 50,
+        "ListHeight": 50
+    },
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsExcelColumn" : false,
+        "IsSplitColumn" : true,
+        "InitLines" : 10,
+        "IsC1Popup": "1",
+        "HeadHeight": "130",
+        "BodyHeight": "600"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "이메일 | 모바일",
+            "C2": "회사명 | 담당자 ",
+            "C3": "상호 | 사업번호",
+            "C4": "등급 | 상태"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "No": "2",
+            "C1": "6",
+            "C2": "10",
+            "C3": "10",
+            "C4": "8",
+            "C5": "6",
+            "C6": "6",
+            "C7": "6",
+            "C8": "8",
+            "C9": "8"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "center|^center",
+            "C2": "center|^center",
+            "C3": "left",
+            "C4": "decimal('sales_prc')|^decimal('purch_prc')",
+            "C5": "decimal('sales_prc')",
+            "C6": "decimal('purch_prc')",
+            "C7": "center|^center",
+            "C8": "center",
+            "C9": "check"
+        }
+    ]
+}

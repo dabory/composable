@@ -1,0 +1,102 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Iframe": "/app/kibana#/dashboard/5abce2c0-2d3c-11ee-abf5-498f427d0ccd?embed=true&_g=(refreshInterval:(pause:!t,value:0),time:(from:'$from',to:'$to'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(title:'%EA%B3%A0%EA%B0%9D%EB%B6%84%EC%84%9D%20-%20%EC%B4%9D%20%EC%9D%B8%EC%9B%90%EC%88%98'),gridData:(h:21,i:b50590e6-e21f-433f-89b9-cfbf79519d5e,w:17,x:0,y:0),id:bbda7940-326f-11ee-a7f9-9145e80c46eb,panelIndex:b50590e6-e21f-433f-89b9-cfbf79519d5e,title:'%EA%B3%A0%EA%B0%9D%EB%B6%84%EC%84%9D%20-%20%EC%B4%9D%20%EC%9D%B8%EC%9B%90%EC%88%98',type:visualization,version:'7.6.1'),(embeddableConfig:(title:'%EA%B3%A0%EA%B0%9D%EB%B6%84%EC%84%9D%20-%20%EC%97%B0%EB%A0%B9%EB%8C%80%20%2F%20%EC%84%B1%EB%B9%84%EC%9C%A8'),gridData:(h:21,i:'3876c327-eb8a-4829-aa66-b8f0b0e4f3a7',w:31,x:17,y:0),id:'37e01bf0-30fc-11ee-a1a7-31fc4d8586da',panelIndex:'3876c327-eb8a-4829-aa66-b8f0b0e4f3a7',title:'%EA%B3%A0%EA%B0%9D%EB%B6%84%EC%84%9D%20-%20%EC%97%B0%EB%A0%B9%EB%8C%80%20%2F%20%EC%84%B1%EB%B9%84%EC%9C%A8',type:visualization,version:'7.6.1')),query:(language:kuery,query:'$query'),timeRestore:!f,title:'%5BDashboard%5D%EA%B3%A0%EA%B0%9D%EB%B6%84%EC%84%9D%20-%20%EC%9D%BC%2F%EC%A3%BC%2F%EC%9B%94%2F%EB%85%84%20%EB%B3%84%20-%20%EC%97%B0%EB%A0%B9%EB%8C%80%20%2F%20%EC%84%B1%EB%B9%84%EC%9C%A8',viewMode:view)"
+    },
+
+    "QueryMapper": {
+        "FirstRange": "SorderNo",
+        "SecondRange": "CgroupName",
+        "ThirdRange": "ItemCode",
+        "FourthRange": "CompanyName",
+        "FilterOptions": "",
+        "SimpleOptions": ""
+    },
+
+
+    "PopupList1Vars": {
+        "PopupFilterName": "mx.id",
+        "PopupWidth": "1420",
+        "PopupHeight": "660"
+    },
+
+    "HeadSelectOptions": [
+
+    ],
+
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-format",
+    "FormVars": [
+        {
+            "HeadFirst": "매입업체명",
+            "HeadSecond": "정식명칭",
+            "HeadThird": "시작일",
+            "HeadFourth": "종료일",
+
+            "ColumnFirst": "",
+            "ColumnSecond": "",
+            "ColumnThird": "",
+            "ColumnFourth": "",
+
+            "TextFirst": "",
+            "TextSecond": "",
+            "TextThird": "",
+            "TextFourth": "",
+
+            "FootFirst": "이월 잔액",
+            "FootSecond": "매입 합계",
+            "FootThird": "출금/출금할인",
+            "FootFourth": "현재 잔액"
+        },
+        {
+            "HeadFirst": "center",
+            "HeadSecond": "center",
+            "HeadThird": "yy.mm.dd",
+            "HeadFourth": "yy.mm.dd",
+
+            "ColumnFirst": "left",
+            "ColumnSecond": "left",
+            "ColumnThird": "",
+            "ColumnFourth": "",
+
+            "TextFirst": "left",
+            "TextSecond": "left",
+            "TextThird": "left",
+            "TextFourth": "left",
+
+            "FootFirst": "decimal('purch_amt')",
+            "FootSecond": "decimal('purch_amt')",
+            "FootThird": "decimal('purch_amt')",
+            "FootFourth": "decimal('purch_amt')"
+        }
+
+    ],
+
+    "DateRangeOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsntPagination": true,
+        "IsExcelColumn": false,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsListFirst" : false,
+        "InitLines" : 15,
+        "HeadHeight": "",
+        "BodyHeight": "500"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": ""
+        },
+        {
+            "$Radio": "3"
+        },
+        {
+            "$Radio": "center"
+        }
+    ]
+}

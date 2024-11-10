@@ -1,0 +1,193 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use Exception;
+use App\Services\CallApiService;
+use App\Http\Controllers\Api\ApiController;
+
+class DaborySSOController
+{
+    /**
+     * @var CallApiService
+     */
+    private $callApiService;
+    private $oauth2Info;
+    private $target;
+
+    public function __construct(CallApiService $callApiService)
+    {
+        $this->callApiService = $callApiService;
+    }
+
+    private function generate_string($strength = 32)
+    {
+        $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $input_length = strlen($permitted_chars);
+        $random_string = '';
+        for ($i = 0; $i < $strength; $i++) {
+            $random_character = $permitted_chars[mt_rand(0, $input_length - 1)];
+            $random_string .= $random_character;
+        }
+
+        return $random_string;
+    }
+
+    public function redirectToProvider()
+    {
+        $this->oauth2Info = request('oauth2Info');
+        $this->oauth2Info['ClientId'] = config('app.api.erp.ClientId');
+        $this->oauth2Info['ClientSecret'] = config('app.api.erp.ClientSecret');
+        $this->target = request('target');
+        $host =  request()->getSchemeAndHttpHost();
+        $callback_uri = $host . "/dabory/ssologin/callback?target={$this->target}";
+
+        session()->put('oauth2Info', $this->oauth2Info);
+        session()->put('target', $this->target);
+
+        $state = $this->generate_string();
+        $url = $this->oauth2Info['AuthorizeUri']  . '?client_id=' . $this->oauth2Info['ClientId'] . '&redirect_uri=' . $callback_uri . '&response_type=code&scope=all&state=' . $state;
+
+        return redirect()->away($url);
+    }
+
+
+    function getAccessToken($authorization_code)
+    {
+        $host =  request()->getSchemeAndHttpHost();
+        $callback_uri = $host . "/dabory/ssologin/callback?target={$this->target}";
+        $authorization = base64_encode("{$this->oauth2Info['ClientId']}:{$this->oauth2Info['ClientSecret']}");
+        $header = array("Authorization: Basic {$authorization}", "Content-Type: application/x-www-form-urlencoded");
+        $content = "grant_type=authorization_code&code=$authorization_code&redirect_uri={$callback_uri}";
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $this->oauth2Info['TokenUri'],
+            CURLOPT_HTTPHEADER => $header,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $content
+        ));
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+        if ($response === false) {
+            echo "Failed";
+            echo curl_error($curl);
+            echo "Failed";
+        }
+
+        return json_decode($response)->access_token;
+    }
+
+    //	we can now use the access_token as much as we want to access protected resources
+    function getResource($access_token)
+    {
+        $header = array("Authorization: Bearer {$access_token}");
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $this->oauth2Info['UserInfoUri'],
+            CURLOPT_HTTPHEADER => $header,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_RETURNTRANSFER => true
+        ));
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+        return json_decode($response, true);
+    }
+
+
+    /**
+     * Handles redirecting off to the login provider
+     *
+     * @return array ['token' => array $token, 'profile' => \Hybridauth\User\Profile]
+     */
+    public function handleProviderCallback()
+    {
+        $code = filter_input(INPUT_GET, 'code');
+        $token = $this->getAccessToken($code);
+        $profile = $this->getResource($token);
+
+        return [
+            'token' => $token,
+            'profile' => $profile
+        ];
+    }
+
+    public function login()
+    {
+        $this->oauth2Info = session('oauth2Info');
+        $this->oauth2Info['ClientId'] = config('app.api.erp.ClientId');
+        $this->oauth2Info['ClientSecret'] = config('app.api.erp.ClientSecret');
+        $this->target = session('target');
+        session()->forget('oauth2Info');
+        session()->forget('target');
+
+        $loginRoute = request('target') == 'member' ? 'pro.auth.member-sso-login' : 'user-login';
+        if (request('target') !== $this->target) {
+            return redirect()->route($loginRoute);
+        }
+
+        try {
+            $providerResponse = $this->handleProviderCallback();
+            $userDetails = $providerResponse['profile'];
+            if (!is_array($providerResponse))
+                return redirect()->route($loginRoute);
+        } catch (Exception $e) {
+            return redirect()->route($loginRoute)->with(['mgs' => $e->getMessage()]);
+        }
+
+        if (request('target') == 'member') {
+            $this->memberLogin($userDetails);
+            return redirect()->to($this->oauth2Info['AfterMemberLoginUri']);
+        } else {
+            $this->usersLogin($userDetails);
+            return redirect()->to($this->oauth2Info['AfterUsersLoginUri']);
+        }
+        // dd($this->oauth2Info);
+    }
+
+    public function memberLogin($userDetails)
+    {
+        $response = (new ApiController($this->callApiService))->callApi('member-sso-login', [
+            'Email' => $userDetails['user_id'],
+            'SsoBrand' => 'dabory',
+            'SsoSub' => $userDetails['sso_sub'],
+        ]);
+
+        if (isset($response['apiStatus'])) {
+            return redirect()->route('pro.auth.member-sso-login')->with(['mgs' => $response['body']]);
+        }
+
+        session()->put('member', array_merge($response, ['is_member' => true, 'Ip' => request()->ip()]));
+    }
+
+    public function usersLogin($userDetails)
+    {
+        $response = (new ApiController($this->callApiService))->callApi('user-sso-login', [
+            'Email' => $userDetails['user_id'],
+            'SsoBrand' => 'dabory',
+            'SsoSub' => $userDetails['sso_sub'],
+        ]);
+
+        // dd($response);
+        if (isset($response['apiStatus'])) {
+            return redirect()->route('user-login')->with(['mgs' => $response['body']]);
+        }
+
+        session()->put('user', array_merge($response, ['is_member' => true, 'Ip' => request()->ip()]));
+        // dd(session('user'));
+    }
+
+    public function logout(): \Illuminate\Http\RedirectResponse
+    {
+        session()->forget('user');
+        session()->forget('member');
+        session()->forget('GateToken');
+
+        return redirect()->route('pro.auth.member-login');
+    }
+}

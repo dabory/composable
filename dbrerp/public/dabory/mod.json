@@ -1,0 +1,34 @@
+{
+    "require" : {
+        "js": [
+            "/dabory/widget/banner-popup/dabory-banner-popup.js",
+            "/dabory/widget/contact-us/dabory-contact-us.js",
+            "/dabory/widget/quick/dabory-quick.js",
+            "/dabory/widget/coupon/dabory-coupon.js",
+            "/dabory/widget/review/dabory-review.js",
+            "/dabory/dabory.data-linker.js",
+            "/dabory/common/get-selector.js",
+            "/dabory/common/table/dabory-table.js",
+            "/dabory/common/type1/dabory-type1.js",
+            "/dabory/common/date.js"
+        ],
+        "css": [
+            "/dabory/widget/banner-popup/dabory-banner-popup.css",
+            "/dabory/widget/contact-us/dabory-contact-us.css",
+            "/dabory/widget/quick/dabory-quick.css",
+            "/dabory/widget/coupon/dabory-coupon.css",
+            "/dabory/widget/review/dabory-review.css",
+            "/dabory/common/table/dabory-table.css",
+            "/dabory/common/type1/dabory-type1.css",
+            "/dabory/css/widget.css"
+        ]
+    },
+
+    "vendor" : [
+        "/dabory/vendor/swiper/swiper-bundle.js",
+        "/dabory/vendor/jquery-ui.js",
+        "/dabory/vendor/iziToast/iziToast.js",
+        "/dabory/vendor/jquery.cookie.js",
+        "/dabory/vendor/moment/moment.min.js"
+    ]
+}

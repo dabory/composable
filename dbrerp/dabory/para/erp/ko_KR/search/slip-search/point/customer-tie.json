@@ -1,0 +1,133 @@
+{
+    "General": {
+        "Title": "고객 연결 조회",
+        "PageApi": "slip-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "point/customer_tie"
+    },
+
+    "//SlipSearchFields": "쿼리를 공통하기 위한 테이블 필드변수들",
+    "SlipSearchFields": {
+        "SlipDateField": "tie_date",
+        "SlipNoField": "customer_tie_no"
+    },
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "DateRange": "",
+            "DateNavi": "일자방향(오늘)",
+            "Date": "날짜",
+            "QuerySpeed": "표시속도",
+            "SlipNo": "연결번호",
+            "CompanyName": "고객명",
+            "ItemCode": "",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "QuerySpeedOptions": [
+        {
+            "Value": "normal",
+            "Caption": "일반"
+        },
+        {
+            "Value": "quick",
+            "Caption": "빠르게"
+        },
+        {
+            "Value": "detailed",
+            "Caption": "상세하게"
+        }
+    ],
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "customer_tie_no desc",
+            "Caption": "적립금번호 역순"
+        },
+        {
+            "Value": "customer_tie_no asc",
+            "Caption": "적립금번호 정렬"
+        },
+        {
+            "Value": "company_name asc",
+            "Caption": "업체명 정렬"
+        },
+        {
+            "Value": "company_name desc",
+            "Caption": "업체명 역순"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "SlipNo": "연결번호",
+            "DealCode": "거래구분",
+            "Company": "연결명",
+            "SetGroup": "발생점포",
+            "Item": "대표고객",
+            "Amt": "적립금합산",
+            "Status": "상황",
+            "Ref": "종결"
+        },
+        {
+            "No": "6",
+            "SlipNo": "13",
+            "DealCode": "13",
+            "Company": "13",
+            "SetGroup": "10",
+            "Item": "20",
+            "Amt": "15",
+            "Status": "10",
+            "Ref": "10"
+        },
+        {
+            "No": "center",
+            "SlipNo": "center",
+            "DealCode": "deal_type('deal-type')",
+            "Company": "left",
+            "SetGroup": "left",
+            "Item": "left",
+            "Amt": "decimal('purch_amt')",
+            "Status": "left",
+            "Ref": "left"
+        }
+    ]
+}

@@ -1,0 +1,178 @@
+{
+    "General": {
+        "Title": "일정",
+        "PageApi": "list-type1-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "groupware/basic/todo-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "todo_date"
+    },
+    "HeadSelectOptions": [
+    ],
+
+    "BodySelectOptions": [
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "",
+            "AddNewBdButton": "일정 등록",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "주문번호",
+            "SecondRange": "업체구분",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.dbupdate_no",
+            "Caption": "업데이트 번호"
+        },
+        {
+            "Value": "mx.related_tables",
+            "Caption": "관련테이블"
+        },
+        {
+            "Value": "mx.sql_command",
+            "Caption": "SQL 명령어"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "slip_no",
+            "SecondRange": "cgroup_code"
+        },
+        {
+            "FirstRange": "slip",
+            "SecondRange": "setting"
+        },
+        {
+            "FirstRange": "/search/slip-search/sales/sorder",
+            "SecondRange": "/search/setting-search/cgroup"
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+    ],
+
+    "DateNaviOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "일정 입력/수정/삭제",
+            "Component": "popup-form1.form-a.cal.todo-form",
+            "Parameter": "/popup/popup-form1/form-a/cal/todo"
+        }
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "ChartPopupOptions": [
+    ],
+
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "todo_date asc",
+            "Caption": "일정 시간 순서"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : false,
+        "IsExcelColumn" : false,
+        "IsAddTotalLine": false,
+        "IsDownloadList" : true,
+        "IsKibana" :true,
+        "IsHideBody" :false,
+        "InitLines" : 10,
+        "InitDateRange" : "year",
+        "IsC1Popup": "1",
+        "HeadHeight": "128",
+        "BodyHeight": "700"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "",
+            "C1": "Status",
+            "C2": "Sort"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "",
+            "C1": "20",
+            "C2": "20"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "C1": "status('todo')",
+            "C2": "sort('todo')"
+        }
+    ]
+}

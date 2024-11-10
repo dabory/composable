@@ -1,0 +1,42 @@
+{
+	"General": {
+		"Title": "품목 구분 찾기(local)",
+        "PickApi": "igroup-pick",
+        "ActApi": "igroup-act"
+	},
+	"SelectOptions": [
+		{
+			"Value": "igroup_code",
+			"Caption": "구분 코드"
+		},
+		{
+			"Value": "igroup_name",
+			"Caption": "구분명"
+		}
+	],
+
+	"//ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+	"ListVars": [
+		{
+			"No": "번호",
+			"Code": "구분 코드",
+			"Name": "구분명",
+			"ThirdField": "적용없슴",
+			"IsCheck": "사용여부"
+		},
+		{
+			"No": "10",
+			"Code": "20",
+			"Name": "20",
+			"ThirdField": "30",
+			"IsCheck": "10"
+		},
+		{
+			"No": "center",
+			"Code": "center",
+			"Name": "left",
+			"ThirdField": "right",
+			"IsCheck": "center"
+		}
+	]
+}

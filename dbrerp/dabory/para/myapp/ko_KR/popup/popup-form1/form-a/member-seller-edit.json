@@ -1,0 +1,41 @@
+{
+    "General": {
+        "PickApi": "member-pick",
+        "ActApi": "member-ext-act"
+    },
+
+    "SelectButtonOptions": [
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "수정",
+            "Name": "판매회원 닉네임*",
+            "Email": "이메일*",
+            "MobileNo": "휴대폰번호*",
+            "CertCode": "인증번호* (휴대폰 인증 이후 정보를 수정할 수 있습니다.)"
+        },
+        {
+            "SaveButton": "left",
+            "Name": "left",
+            "Email": "left",
+            "MobileNo": "left",
+            "CertCode": "left"
+        },
+        {
+            "SaveButton": "0",
+            "Name": "100",
+            "Email": "100",
+            "MobileNo": "100",
+            "CertCode": "100"
+        },
+        {
+            "SaveButton": "left",
+            "Name": "",
+            "Email": "",
+            "MobileNo": "",
+            "CertCode": ""
+        }
+    ]
+}

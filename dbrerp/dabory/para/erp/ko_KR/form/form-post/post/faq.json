@@ -1,0 +1,108 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "PickApi": "simple-join-page",
+        "ActApi": "post-act",
+        "QueryName": "post-member-user",
+        "PostCode": "faq"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "자주묻는 질문 삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "자주묻는 질문 복사"
+        }
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "0",
+            "Caption": "status('post-qna','0')"
+        },
+        {
+            "Value": "1",
+            "Caption": "status('post-qna','1')"
+        }
+    ],
+
+    "SortOptions": [
+        {
+            "Value": "9",
+            "Caption": "sort('post-type','9')"
+        }
+    ],
+
+    "DisplayVars": {
+        "Width": "1400",
+        "Chunk": "3"
+    },
+
+    "// FormPostVars": "FormPostVars[0]-caption, FormPostVars[1]-size(px), FormPostVars[2]-format, FormPostVars[3]-required, FormPostVars[4]-ui, FormPostVars[5]-type",
+    "FormPostVars": [
+        {
+            "SaveButton": "저장",
+            "PostTitle": "제목",
+            "PostContents": "내용",
+            "Status": "처리상태",
+            "PostTypeId": "구분",
+            "OfficialDate": "공식일자",
+            "OfficialTime": "공식시간",
+            "MediaId": "FeaturedImage"
+        },
+        {
+            "SaveButton": "center",
+            "PostTitle": "center",
+            "PostContents": "center",
+            "Status": "StatusOptions",
+            "PostTypeId": "SortOptions",
+            "OfficialDate": "YYYY-MM-DD",
+            "OfficialTime": "center",
+            "MediaId": "center"
+        },
+        {
+            "SaveButton": "",
+            "PostTitle": "100",
+            "PostContents": "",
+            "Status": "2",
+            "PostTypeId": "2",
+            "OfficialDate": "100",
+            "OfficialTime": "100",
+            "MediaId": "100"
+        },
+        {
+            "SaveButton": "",
+            "PostTitle": "required",
+            "PostContents": "",
+            "Status": "required",
+            "PostTypeId": "required",
+            "OfficialDate": "",
+            "OfficialTime": "",
+            "MediaId": ""
+        },
+        {
+            "SaveButton": "",
+            "PostTitle": "text",
+            "PostContents": "editor",
+            "Status": "select",
+            "PostTypeId": "select",
+            "OfficialDate": "date",
+            "OfficialTime": "time",
+            "MediaId": "media"
+        },
+        {
+            "SaveButton": "",
+            "PostTitle": "string",
+            "PostContents": "editor",
+            "Status": "string",
+            "PostTypeId": "number",
+            "OfficialDate": "YYYYMMDD",
+            "OfficialTime": "string",
+            "MediaId": "number"
+        }
+    ]
+}

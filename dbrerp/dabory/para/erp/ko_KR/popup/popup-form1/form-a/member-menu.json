@@ -1,0 +1,90 @@
+{
+    "General": {
+        "PickApi": "member-menu-pick",
+        "ActApi": "member-menu-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "MenuCode": "메뉴코드*",
+            "MenuLang0": "메뉴명",
+            "PageUri": "페이지 URI",
+            "ParaName": "파라메터",
+            "Icon": "지정아이콘",
+            "ManualUri": "매뉴얼 링크 URL",
+            "SortType": "소트메뉴 타입",
+            "ThemeDir": "테마폴더",
+            "GuestAppId": "",
+            "MainAppId": "",
+            "DisableLMenu": "좌측메뉴 비활성화",
+            "EnableRMenu": "우측메뉴 활성화",
+            "IsSkipped": "메뉴표시 누락",
+            "CustomVar": "커스터마이징 변수",
+            "TabbedMenuHash" : "탭메뉴해쉬"
+        },
+        {
+            "SaveButton": "left",
+            "MenuCode": "left",
+            "MenuLang0": "left",
+            "PageUri": "left",
+            "ParaName": "left",
+            "Icon": "left",
+            "ManualUri": "left",
+            "SortType": "left",
+            "ThemeDir": "left",
+            "GuestAppId": "left",
+            "MainAppId": "left",
+            "DisableLMenu": "left",
+            "EnableRMenu": "left",
+            "IsSkipped": "left",
+            "CustomVar": "left",
+            "TabbedMenuHash" : "left"
+        },
+        {
+            "SaveButton": "0",
+            "MenuCode": "10",
+            "MenuLang0": "100",
+            "PageUri": "100",
+            "ParaName": "100",
+            "Icon": "69",
+            "ManualUri": "191",
+            "SortType": "191",
+            "ThemeDir": "100",
+            "GuestAppId": "100",
+            "MainAppId": "100",
+            "DisableLMenu": "0",
+            "EnableRMenu": "0",
+            "IsSkipped": "0",
+            "CustomVar": "500",
+            "TabbedMenuHash": "500"
+        },
+        {
+            "SaveButton": "",
+            "MenuCode": "required",
+            "MenuLang0": "",
+            "PageUri": "",
+            "ParaName": "",
+            "Icon": "",
+            "ManualUri": "",
+            "SortType": "",
+            "ThemeDir": "",
+            "GuestAppId": "",
+            "MainAppId": "",
+            "DisableLMenu": "",
+            "EnableRMenu": "",
+            "IsSkipped": "",
+            "CustomVar": "",
+            "TabbedMenuHash": ""
+        }
+    ]
+}

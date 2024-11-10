@@ -1,0 +1,251 @@
+{
+    "General": {
+        "Title": "품목 SEO 리스트",
+        "PageApi": "list-type1-page",
+        "ActApi": "seo-meta-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "seo-meta/item-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "관리자 추가"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "관리자 삭제"
+        },
+        {
+            "Value": "dummy",
+            "Caption": "           "
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "로그 보기"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "팝업 선택(라디오 버튼)",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "item_code",
+            "Caption": "품목코드"
+        },
+        {
+            "Value": "item_slug",
+            "Caption": "슬러그"
+        },
+        {
+            "Value": "item_name",
+            "Caption": "품명"
+        },
+        {
+            "Value": "sub_name",
+            "Caption": "서브명"
+        },
+        {
+            "Value": "igroup_name",
+            "Caption": "품목구분명"
+        }
+
+    ],
+
+    "SimpleSelectOptions": [
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "상품 SEO 관리",
+            "Component": "popup-form1.form-b.seo-meta-form",
+            "Parameter": "/popup/popup-form1/form-b/seo-meta/item"
+        }
+    ],
+
+    "MultiPopupOptions": [
+        {
+            "Caption": "일반관리자 로그",
+            "Component": "charts.lines",
+            "Parameter": "/chart/chart-line2/pquote-day-item"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "등록일자 순서"
+        },
+        {
+            "Value": "mx.created_on asc",
+            "Caption": "등록일자 역순"
+        },
+        {
+            "Value": "item_code asc",
+            "Caption": "품목코드 순서"
+        },
+        {
+            "Value": "item_code desc",
+            "Caption": "품목코드 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsExcelColumn" : true,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "80",
+        "BodyHeight": "690"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "품목코드",
+            "C2": "품명",
+            "C3": "서브명",
+            "C4": "단위",
+            "C5": "표준매출가",
+            "C6": "품목구분명",
+            "C7": "슬러그",
+            "C8": "SEO메타",
+            "C9": "DUID",
+            "C10": "수불않음"
+        },
+        {
+            "$Radio": "2",
+            "$Check": "2",
+            "No": "4",
+            "C1": "10",
+            "C2": "15",
+            "C3": "15",
+            "C4": "6",
+            "C5": "6",
+            "C6": "10",
+            "C7": "10",
+            "C8": "12",
+            "C9": "17",
+            "C10": "6"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "left",
+            "C3": "left",
+            "C4": "center",
+            "C5": "decimal('sales_prc')",
+            "C6": "left",
+            "C7": "left",
+            "C8": "left",
+            "C9": "center",
+            "C10": "check"
+        }
+    ]
+}

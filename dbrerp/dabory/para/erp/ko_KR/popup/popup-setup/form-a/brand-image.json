@@ -1,0 +1,47 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+    "SelectButtonOptions": [
+        {
+            "Value": "view-source",
+            "Caption": "웹페이스 소스코드 보기 URL 복사",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "LogoImageSmall": "작은로고이미지",
+            "LogoImageMedium": "중간로고이미지",
+            "LogoImageBig": "큰로고이미지",
+            "OgImageBig": "OG이미지",
+            "PaviconImage": "파비콘이미지",
+            "ComingSoonImage": "준비중 이미지",
+            "LogoImageSmallPath": "[ resources/assets/brand-images/logo-small.jpg ]",
+            "LogoImageMediumPath": "[ resources/assets/brand-images/logo-medium.jpg ]",
+            "LogoImageBigPath": "[ resources/assets/brand-images/logo-big.jpg ]",
+            "OgImageBigPath": "[ resources/assets/brand-images/og.jpg ]",
+            "PaviconImagePath": "[ resources/assets/brand-images/pavicon.jpg ]",
+            "ComingSoonImagePath": "[ resources/assets/brand-images/coming-soon.jpg ]"
+        },
+        {
+            "SaveButton": "center",
+            "LogoImageSmall": "center",
+            "LogoImageMedium": "center",
+            "LogoImageBig": "center",
+            "OgImageBig": "center",
+            "PaviconImage": "center",
+            "ComingSoonImage": "center",
+            "LogoImageSmallPath": "center",
+            "LogoImageMediumPath": "center",
+            "LogoImageBigPath": "center",
+            "OgImageBigPath": "center",
+            "PaviconImagePath": "center",
+            "ComingSoonImagePath": "center"
+        }
+    ]
+}

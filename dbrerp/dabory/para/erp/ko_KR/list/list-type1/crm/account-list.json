@@ -1,0 +1,217 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "고객검색과 문자송신",
+        "PageApi": "list-type1-page",
+        "ActApi": "list-type1-upload"
+    },
+
+    "QueryVars": {
+        "QueryName": "",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "dummy",
+            "Caption": "상세 고객 조회",
+            "Component": "list-type.form-select",
+            "Parameter": "/popup/popup-form1/form-select/crm/account"
+        },
+        {
+            "Value": "text-send-by-template",
+            "Caption": "문자 템플릿으로 문자보내기",
+            "Component": "list-type.search-type1",
+            "Parameter": "/search/search-type1/text-template-search"
+        },
+        {
+            "Value": "excel-upload",
+            "Caption": "엑셀화일 임시 업로드"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "",
+            "SimpleOption": ""
+        }
+    ],
+
+    "FilterSelectOptions": [
+    ],
+
+    "SimpleSelectOptions": [
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "엑셀데이터 추가",
+            "Component": "basic-settings.deal-type-form",
+            "Parameter": "/popup/popup-form1/form-a/deal-type"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "id asc",
+            "Caption": "거래구분 코드 정렬순"
+        },
+        {
+            "Value": "id desc",
+            "Caption": "거래구분 코드 역순"
+        }
+    ],
+
+    "MultiPopupOptions": [
+
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsExcelColumn" : false,
+        "IsListFirst" : false,
+        "InitLines" : 15,
+        "HeadHeight": "0",
+        "BodyHeight": "570"
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "_mobile_no",
+            "C2": "고객계정명",
+            "C3": "양력생일",
+            "C4": "방문일자",
+            "C5": "배송일자",
+            "C6": "적립금",
+            "C7": "이메일",
+            "C8": "판매사명",
+            "C9": "안경사",
+            "C10": "_qr_code",
+            "C11": "_image_url"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "2",
+            "No": "5",
+            "C1": "8",
+            "C2": "8",
+            "C3": "8",
+            "C4": "8",
+            "C5": "8",
+            "C6": "8",
+            "C7": "8",
+            "C8": "8",
+            "C9": "8",
+            "C10": "12",
+            "C11": "18"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "",
+            "No": "center",
+            "C1": "center",
+            "C2": "center",
+            "C3": "center",
+            "C4": "center",
+            "C5": "center",
+            "C6": "center",
+            "C7": "center",
+            "C8": "center",
+            "C9": "center",
+            "C10": "center",
+            "C11": "center"
+        }
+    ]
+}

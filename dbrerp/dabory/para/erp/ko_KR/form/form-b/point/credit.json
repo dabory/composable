@@ -1,0 +1,110 @@
+{
+    "General": {
+        "Title": "충전금 수정",
+        "PickApi": "slip-form-book",
+        "ActApi": "credit-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "point/credit"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "delete",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AutoSlipNo": "충전번호(자동채번)*",
+            "Date": "충전일자*",
+            "ManualAmt": "충전금액*",
+            "ToCustomer": "받는 고객*",
+            "FormCustomer": "주는 고객",
+            "IsTransfer": "전송처리",
+            "DealType": "거래구분*",
+            "UserName": "입력사용자*",
+            "Remarks": "비고"
+        },
+        {
+            "SaveButton": "",
+            "AutoSlipNo": "left",
+            "Date": "left",
+            "ManualAmt": "decimal('acc_amt')",
+            "ToCustomer": "left",
+            "FormCustomer": "left",
+            "IsTransfer": "left",
+            "DealType": "left",
+            "UserName": "left",
+            "Remarks": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AutoSlipNo": "20",
+            "Date": "20",
+            "ManualAmt": "10",
+            "ToCustomer": "20",
+            "FormCustomer": "20",
+            "IsTransfer": "0",
+            "DealType": "20",
+            "UserName": "20",
+            "Remarks": "0"
+        },
+        {
+            "SaveButton": "",
+            "AutoSlipNo": "required",
+            "Date": "required",
+            "ManualAmt": "required",
+            "ToCustomer": "required",
+            "FormCustomer": "",
+            "IsTransfer": "",
+            "DealType": "required",
+            "UserName": "",
+            "Remarks": ""
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "CompanyNo": "고객번호",
+            "CompanyName": "고객명#",
+            "DealName": "거래구분",
+            "CreditAmt": "충전금액#",
+            "AddMsg": "참고"
+        },
+        {
+            "$Radio": "3",
+            "CompanyNo": "5",
+            "CompanyName": "10",
+            "DealName": "10",
+            "CreditAmt": "10",
+            "AddMsg": "10"
+        },
+        {
+
+            "$Radio": "center",
+            "CompanyNo": "center",
+            "CompanyName": "left#",
+            "DealName": "center",
+            "CreditAmt": "decimal('sales_amt')",
+            "AddMsg": "left"
+        }
+    ],
+    "FooterVars": [
+        {
+            "BranchName": "점포명",
+            "SumTotal": "충전금액 소계"
+        }
+    ]
+}

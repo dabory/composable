@@ -1,0 +1,29 @@
+{
+    "General": {
+        "Title": "프로세스 모니터링",
+        "PickApi": "-pick",
+        "ActApi": "-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "https://kibana-seoul-a.daboryhost.com:5601/app/kibana#/dashboard/35d930f0-13c7-11ee-a283-e1f69ada928d?embed=true&_g=(refreshInterval:(pause:!t,value:0),time:(from:now-15y,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(),gridData:(h:15,i:f288acbc-a14e-4e02-a023-f4afbc3fb844,w:24,x:0,y:0),id:'21a05780-13c7-11ee-a283-e1f69ada928d',panelIndex:f288acbc-a14e-4e02-a023-f4afbc3fb844,type:visualization,version:'7.6.1'),(embeddableConfig:(),gridData:(h:15,i:cd622fe6-7445-418e-904f-6a6af2f230c5,w:24,x:24,y:0),id:'7ba32360-13c8-11ee-a283-e1f69ada928d',panelIndex:cd622fe6-7445-418e-904f-6a6af2f230c5,type:visualization,version:'7.6.1')),query:(language:kuery,query:''),timeRestore:!f,title:TEST,viewMode:edit)",
+            "Caption": "CPU / Network"
+        },
+        {
+            "Value": "//175.126.146.153:3000/d/WsJtbV1nk/traffic?var-user=root|qmaill&kiosk=tv",
+            "Caption": "Traffix Rx / Tx"
+        },
+        {
+            "Value": "//175.126.146.153:3000/d/SS56J41nk/mem?kiosk=tv",
+            "Caption": "Memory / Disk"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-Caption",
+    "FormVars": [
+        {
+            "RenewButton" : "새로고침"
+        }
+    ]
+}

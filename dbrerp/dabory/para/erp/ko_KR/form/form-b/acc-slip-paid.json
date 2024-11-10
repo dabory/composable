@@ -1,0 +1,130 @@
+{
+    "General": {
+        "Title": "회계전표 입력",
+        "PickApi": "slip-form-book",
+        "ActApi": "acc-slip-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "accounting/acc_slip"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "save-and-new",
+            "Caption": "저장 후 추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "body-copy",
+            "Caption": "수주에서 입금전표로 복사",
+            "Parameter": "sales/sorder-acc-slip"
+        },
+        {
+            "Value": "body-copy",
+            "Caption": "발주에서 출금전표로 복사",
+            "Parameter": "purch/porder-acc-slip"
+        },
+        {
+            "Value": "delete",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "StatusOptions": [
+        {
+            "Value": "0",
+            "Caption": "상태"
+        },
+        {
+            "Value": "1",
+            "Caption": "종결"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AutoSlipNo": "입출금전표 번호(자동채번)*",
+            "AccDate": "회계일자*",
+            "SorderNo": "연관수주번호",
+            "PorderNo": "연관발주번호",
+            "Company": "업체",
+            "DealType": "거래구분*",
+            "BillType": "지불방법",
+            "SlipAmt": "금액*",
+            "BillColumn1": "지불방법상세",
+            "OccurDate": "발생일자*",
+            "SgroupName": "영업부서",
+            "Remarks": "비고",
+            "CardCheckNo": "카드승인/수표번호",
+            "Status": "상황*",
+            "IsApproved": "전표승인",
+            "IsFixed": "수정불가"
+        },
+        {
+            "SaveButton": "",
+            "AutoSlipNo": "",
+            "AccDate": "left",
+            "SorderNo": "left",
+            "PorderNo": "left",
+            "Company": "left",
+            "DealType": "left",
+            "BillType": "left",
+            "SlipAmt": "decimal('purch_prc')",
+            "BillColumn1": "left",
+            "OccurDate": "left",
+            "SgroupName": "left",
+            "Remarks": "left",
+            "CardCheckNo": "left",
+            "Status": "left",
+            "IsApproved": "left",
+            "IsFixed": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AutoSlipNo": "20",
+            "AccDate": "20",
+            "SorderNo": "20",
+            "PorderNo": "20",
+            "Company": "20",
+            "DealType": "20",
+            "BillType": "20",
+            "SlipAmt": "10",
+            "BillColumn1": "20",
+            "OccurDate": "20",
+            "SgroupName": "20",
+            "Remarks": "0",
+            "CardCheckNo": "20",
+            "Status": "20",
+            "IsApproved": "0",
+            "IsFixed": "0"
+        },
+        {
+            "SaveButton": "",
+            "AutoSlipNo": "Required",
+            "AccDate": "Required",
+            "SorderNo": "",
+            "PorderNo": "",
+            "Company": "disabled",
+            "DealType": "Required",
+            "BillType": "",
+            "SlipAmt": "Required",
+            "BillColumn1": "",
+            "OccurDate": "Required",
+            "SgroupName": "",
+            "Remarks": "",
+            "CardCheckNo": "",
+            "Status": "Required",
+            "IsApproved": "",
+            "IsFixed": ""
+        }
+    ]
+}

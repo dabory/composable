@@ -1,0 +1,86 @@
+{
+    "General": {
+        "Title": "AI 프롬프트 등록",
+        "PickApi": "prompt-pick",
+        "ActApi": "prompt-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        },
+        {
+            "Value": "copy",
+            "Caption": "복사"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Title, ListVars[1]-Format, ListVars[2]-MaxLength, ListVars[3]-Required",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "TestButton": "TEST",
+            "TAB1": "기본",
+            "TAB2": "피드",
+            "TAB3": "결과",
+            "TAB4": "TAB4",
+            "PromptNo": "템플릿 번호*",
+            "ModelVer": "언어모델 버전*",
+            "FuncTitle": "기능타이틀*",
+            "FuncVer": "기능버전*",
+            "PromptFeed": "프롬프트 피드*",
+            "TestFeed": "테스트용 자료*",
+            "TestResult": "테스트 결과*"
+        },
+        {
+            "SaveButton": "",
+            "TestButton": "TEST",
+            "TAB1": "",
+            "TAB2": "",
+            "TAB3": "",
+            "TAB4": "",
+            "PromptNo": "left",
+            "ModelVer": "left",
+            "FuncTitle": "left",
+            "FuncVer": "left",
+            "PromptFeed": "left",
+            "TestFeed": "left",
+            "TestResult": "left"
+        },
+        {
+            "SaveButton": "0",
+            "TestButton": "TEST",
+            "TAB1": "",
+            "TAB2": "",
+            "TAB3": "",
+            "TAB4": "",
+            "PromptNo": "20",
+            "ModelVer": "20",
+            "FuncTitle": "20",
+            "FuncVer": "20",
+            "PromptFeed": "20",
+            "TestFeed": "20",
+            "TestResult": "20"
+        },
+        {
+            "SaveButton": "",
+            "TestButton": "TEST",
+            "TAB1": "",
+            "TAB2": "",
+            "TAB3": "",
+            "TAB4": "",
+            "PromptNo": "required",
+            "ModelVer": "required",
+            "FuncTitle": "required",
+            "FuncVer": "required",
+            "PromptFeed": "required",
+            "TestFeed": "required",
+            "TestResult": "required"
+        }
+    ]
+}

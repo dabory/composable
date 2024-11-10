@@ -1,0 +1,134 @@
+{
+    "General": {
+        "Title": "회원 앱 API 권한",
+        "PickApi": "slip-form-book",
+        "ActApi": "app-perm-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "perm/app_perm"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가",
+            "Parameter": ""
+        },
+        {
+            "Value": "delete",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "BodySelectOptions": [
+        {
+            "Value": "multi-update",
+            "Caption": "체크/언체크 적용",
+            "Parameter": ""
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "일부 항목 제거",
+            "Parameter": ""
+        },
+        {
+            "Value": "all-checked",
+            "Caption": "권한 전체 체크",
+            "Parameter": ""
+        },
+        {
+            "Value": "all-unchecked",
+            "Caption": "권한 전체 언체크",
+            "Parameter": ""
+        },
+        {
+            "Value": "all-create",
+            "Caption": "항목 전체 생성",
+            "Parameter": ""
+        },
+        {
+            "Value": "all-delete",
+            "Caption": "항목 전체 삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "AddNewBdButton": "",
+            "AutoSlipNo": "Perm No(자동채번)*",
+            "Date": "Perm Date*",
+            "PermissionId": "Permission Id",
+            "CreatedDate": "Created Date",
+            "UpdateDate": "Update Date",
+            "PermissionName": "PermissionName",
+            "Description": "Description"
+        },
+        {
+            "SaveButton": "left",
+            "AddNewBdButton": "left",
+            "AutoSlipNo": "left",
+            "Date": "left",
+            "PermissionId": "left",
+            "CreatedDate": "left",
+            "UpdateDate": "left",
+            "PermissionName": "left",
+            "Description": "left"
+        },
+        {
+            "SaveButton": "0",
+            "AddNewBdButton": "0",
+            "AutoSlipNo": "20",
+            "Date": "20",
+            "PermissionId": "20",
+            "CreatedDate": "20",
+            "UpdateDate": "20",
+            "PermissionName": "20",
+            "Description": "20"
+        },
+        {
+            "SaveButton": "",
+            "AddNewBdButton": "",
+            "AutoSlipNo": "required",
+            "Date": "required",
+            "PermissionId": "disabled",
+            "CreatedDate": "disabled",
+            "UpdateDate": "disabled",
+            "PermissionName": "",
+            "Description": ""
+        }
+    ],
+    "// ListVars": "ListVars[0]-Caption, ListVars[1]-Size(%), ListVars[2]-align",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "ApiCode": "API 코드",
+            "ApiUri": "API URI",
+            "IsUse": "Use"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "ApiCode": "8",
+            "ApiUri": "15",
+            "IsUse": "5"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "ApiCode": "left",
+            "ApiUri": "left",
+            "IsUse": "center"
+        }
+    ],
+    "FooterVars": [
+        {
+            "SumTotal": "전체 앱 수"
+        }
+    ]
+}

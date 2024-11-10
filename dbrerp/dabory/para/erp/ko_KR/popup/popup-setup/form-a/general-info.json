@@ -1,0 +1,67 @@
+{
+    "General": {
+        "PickApi": "setup-pick",
+        "ActApi": "setup-act"
+    },
+
+    "SelectButtonOptions": [
+
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[1]-hidden",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+
+            "ErpParaCustomTheme": "ErpParaCustomTheme",
+            "ErpThemes": "ErpThemes",
+            "ProTheme": "ProTheme",
+            "LocaleSequence": "LocaleSequence",
+            "AppName": "AppName",
+            "AppEnv": "AppEnv",
+            "AppDebug": "AppDebug",
+            "AppUrl": "AppUrl",
+
+            "MailMailer": "MailMailer",
+            "MailHost": "MailHost",
+            "MailPort": "MailPort",
+            "MailUserName": "MailUserName",
+            "MailPassword": "MailPassword",
+            "MailEncryption": "MailEncryption",
+            "MailFromAddress": "MailFromAddress",
+
+            "CdnType": "CdnType",
+            "MediaUrl": "MediaUrl",
+            "FaviconPath": "FaviconPath",
+            "TagLine": "TagLine",
+            "AppMobileNo": "AppMobileNo",
+            "IsSkipUpdate": "IsSkipUpdate",
+            "IsOnMemberSignup": "IsOnMemberSignup"
+        },
+        {
+            "SaveButton": "left",
+            "ErpParaCustomTheme": "left",
+            "ErpThemes": "left",
+            "ProTheme": "left",
+            "LocaleSequence": "left",
+            "AppName": "left",
+            "AppEnv": "left",
+            "AppDebug": "left",
+            "AppUrl": "left",
+            "MailMailer": "left",
+            "MailHost": "left",
+            "MailPort": "left",
+            "MailUserName": "left",
+            "MailPassword": "left",
+            "MailEncryption": "left",
+            "MailFromAddress": "left",
+            "CdnType": "left",
+            "MediaUrl": "left",
+            "FaviconPath": "left",
+            "TagLine": "left",
+            "AppMobileNo": "left",
+            "IsSkipUpdate": "left",
+            "IsOnMemberSignup": "left"
+        }
+    ]
+}

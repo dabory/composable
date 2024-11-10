@@ -1,0 +1,35 @@
+{
+    "General": {
+        "PickApi": "notice-pick",
+        "ActApi": "notice-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제"
+        },
+        {
+            "Value": "status_update('notice','임시저장')",
+            "Caption": "임시저장"
+        },
+        {
+            "Value": "status_update('notice','정상')",
+            "Caption": "정상"
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "Subject": "제목*",
+            "NoticeDesc": "내용"
+        },
+        {
+            "SaveButton": "left",
+            "Subject": "left",
+            "NoticeDesc": "left"
+        }
+    ]
+}

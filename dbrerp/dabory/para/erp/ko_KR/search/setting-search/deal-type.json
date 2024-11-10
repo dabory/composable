@@ -1,0 +1,61 @@
+{
+    "General": {
+        "Title": "거래구분 조회",
+        "PageApi": "setting-search-page"
+    },
+
+    "QueryVars": {
+        "QueryName": "deal-type"
+    },
+
+    "FilterSelectOptions": [
+        {
+            "Value": "deal_category",
+            "Caption": "거래구분 카테고리"
+        },
+        {
+            "Value": "deal_name",
+            "Caption": "거래구분 명"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.expose_type='0'",
+            "Caption": "온라인 게시"
+        },
+        {
+            "Value": "mx.expose_type='1'",
+            "Caption": "온라인 누락"
+        }
+    ],
+
+    "// ListVars": "ListVars[0]-caption, ListVars[2]-size(%), ListVars[3]-align",
+    "ListVars": [
+        {
+            "No": "번호",
+            "Code": "거래구분코드",
+            "Name": "카테고리/거래구분명",
+            "ThirdField": "매출/매입/재고/파손재고",
+            "IsCheck": ""
+        },
+        {
+            "No": "10",
+            "Code": "20",
+            "Name": "20",
+            "ThirdField": "50",
+            "IsCheck": ""
+        },
+        {
+            "No": "center",
+            "Code": "center",
+            "Name": "center",
+            "ThirdField": "center",
+            "IsCheck": ""
+        }
+    ]
+}

@@ -1,0 +1,256 @@
+{
+    "//list-type-1": "simple and plain list by query of table join",
+
+    "General": {
+        "Title": "배너/팝업 관리",
+        "PageApi": "list-type1-page",
+        "ActApi": "post-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "post/banner-input",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": "",
+        "SimpleFilter": "pt.post_code = 'banner'"
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "배너/팝업 등록"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "배너/팝업 일괄 삭제"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "일자범위",
+            "DateNavi": "",
+            "Date": "날짜",
+            "From": "부터",
+            "To": "까지",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "팝업 선택(라디오 버튼)",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mm.email",
+            "Caption": "이메일"
+        },
+        {
+            "Value": "mx.pc1",
+            "Caption": "지갑주소"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.status='C'",
+            "Caption": "status('post-miner','C')"
+        },
+        {
+            "Value": "mx.status='P'",
+            "Caption": "status('post-miner','P')"
+        },
+        {
+            "Value": "mx.status='N'",
+            "Caption": "status('post-miner','N')"
+        },
+        {
+            "Value": "mx.status='E'",
+            "Caption": "status('post-miner','E')"
+        },
+        {
+            "Value": "mx.status='B'",
+            "Caption": "status('post-miner','B')"
+        }
+    ],
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "배너/팝업 관리",
+            "Component": "form-post.standard",
+            "Parameter": "/form/form-post/post/banner"
+        }
+    ],
+
+    "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
+    "OrderByOptions": [
+        {
+            "Value": "mx.created_on desc",
+            "Caption": "문의일자 역순"
+        },
+        {
+            "Value": "mx.created_on asc",
+            "Caption": "문의일자 순서"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "DisplayVars": {
+        "IsListFirst": true,
+        "IsExcelColumn": true,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines": 15,
+        "HeadHeight": "140",
+        "BodyHeight": "570"
+    },
+
+    "ThumbContainerVars": {
+        "ListWidth": 100,
+        "ListHeight": 100
+    },
+
+    "// ListVars": "ListVars[0]-caption, ListVars[1]-size(px), ListVars[2]-align->right(number) left(left)",
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "제목",
+            "C2": "작성일시",
+            "C3": "작성자",
+            "C4": "p1링크형식",
+            "C5": "pt1링크URI",
+            "C6": "p3노출순위",
+            "C7": "p4X위치(px)",
+            "C8": "p5Y위치(px)",
+            "C9": "p6시작일자",
+            "C10": "p7종료일자",
+            "C11": "media썸네일",
+            "C12": "상태",
+            "C13": "장치구분"
+        },
+        {
+            "$Radio": "2",
+            "$Check": "2",
+            "No": "4",
+            "C1": "15",
+            "C2": "10",
+            "C3": "5",
+            "C4": "5",
+            "C5": "15",
+            "C6": "6",
+            "C7": "6",
+            "C8": "8",
+            "C9": "8",
+            "C10": "8",
+            "C11": "12",
+            "C12": "5",
+            "C13": "5"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "left",
+            "C2": "unixtime",
+            "C3": "center",
+            "C4": "center",
+            "C5": "left",
+            "C6": "center",
+            "C7": "center",
+            "C8": "center",
+            "C9": "center",
+            "C10": "center",
+            "C11": "$_ThumbNail",
+            "C12": "status('post-banner')",
+            "C13": "center"
+        }
+    ]
+}
+
+

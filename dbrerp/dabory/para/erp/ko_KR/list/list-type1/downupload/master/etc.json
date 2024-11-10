@@ -1,0 +1,264 @@
+{
+    "General": {
+        "Title": "상용구 가져오기",
+        "PageApi": "list-type1-page",
+        "ActApi": "etc-act"
+    },
+
+    "QueryVars": {
+        "QueryName": "download/master/etc",
+        "FilterName": "",
+        "FilterValue": "",
+        "FilterDate": ""
+    },
+
+    "HeadSelectOptions": [
+        {
+            "Value": "new",
+            "Caption": "추가"
+        },
+        {
+            "Value": "multi-delete",
+            "Caption": "레코드 일괄 삭제"
+        },
+        {
+            "Value": "xls-report",
+            "Caption": "(1)엑셀 다운로드"
+        },
+        {
+            "Value": "excel-upload",
+            "Caption": "(2)엑셀 업로드"
+        },
+        {
+            "Value": "dummy",
+            "Caption": "(3)적용",
+            "Component": "popup-form1.form-insert",
+            "Parameter": "/popup/popup-form1/form-insert/master/etc"
+        }
+    ],
+
+    "//FormVars": "FormVars[0]-caption, FormVars[1]-searchPopup",
+    "FormVars": [
+        {
+            "ListButton": "조회",
+            "DateRange": "",
+            "DateNavi": "",
+            "Date": "",
+            "From": "",
+            "To": "",
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": "",
+            "AddTotalLine": "",
+            "SelectPopup": "",
+            "MultiPopup": "",
+            "ChartPopup": "",
+            "DownloadList": "",
+            "ShowOnlyClosed": "",
+            "Balance": "",
+            "OrderBy": "표시 순서",
+            "FilterOption": "검색 조건",
+            "SimpleOption": "상태별 검색"
+        }
+    ],
+
+    "FilterSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "=검색 조건="
+        },
+        {
+            "Value": "mx.caption",
+            "Caption": "캡션명"
+        },
+        {
+            "Value": "mx.etc_type",
+            "Caption": "상용구 구분"
+        },
+        {
+            "Value": "mx.select_name",
+            "Caption": "선택명"
+        }
+    ],
+
+    "SimpleSelectOptions": [
+        {
+            "Value": "",
+            "Caption": "전체"
+        },
+        {
+            "Value": "mx.etc_type='domestic' and mx.select_name='valid_period'",
+            "Caption": "국내거래-유효기간"
+        },
+        {
+            "Value": "mx.etc_type='domestic' and mx.select_name='valid_period'",
+            "Caption": "국내거래-유효기간"
+        },
+        {
+            "Value": "mx.etc_type='domestic' and mx.select_name='pay_terms'",
+            "Caption": "국내거래-지불조건"
+        },
+        {
+            "Value": "mx.etc_type='domestic' and mx.select_name='delivery'",
+            "Caption": "국내거래-납품기한"
+        },
+        {
+            "Value": "mx.etc_type='domestic' and mx.select_name='column1'",
+            "Caption": "국내거래-공란1"
+        },
+        {
+            "Value": "mx.etc_type='domestic' and mx.select_name='column2'",
+            "Caption": "국내거래-공란2"
+        },
+        {
+            "Value": "mx.etc_type='domestic' and mx.select_name='brand'",
+            "Caption": "브랜드"
+        }
+    ],
+
+    "//ListType1RangeVars": "[0]-filter, [1]-component, [2]-parameter",
+    "ListType1RangeVars": [
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        },
+        {
+            "FirstRange": "",
+            "SecondRange": "",
+            "ThirdRange": "",
+            "FourthRange": ""
+        }
+    ],
+
+
+    "// DateRangeOptions": "월:현재월의 1~30, 분기: 현재분기의 첫째월 1일 ~ 마지막월의 말일, 반기/년 동일한 컨셉,전체:1990~3000",
+    "DateRangeOptions": [
+        {
+            "Value": "day",
+            "Caption": "일"
+        },
+        {
+            "Value": "week",
+            "Caption": "주"
+        },
+        {
+            "Value": "month",
+            "Caption": "월"
+        },
+        {
+            "Value": "quarterly",
+            "Caption": "분기"
+        },
+        {
+            "Value": "semiannual",
+            "Caption": "반기"
+        },
+        {
+            "Value": "year",
+            "Caption": "년"
+        },
+        {
+            "Value": "all",
+            "Caption": "전체"
+        }
+    ],
+
+    "SelectPopupOptions": [
+        {
+            "Caption": "상용구 입력/수정/삭제",
+            "Component": "popup-form1.form-a.master.etc-form",
+            "Parameter": "/popup/popup-form1/form-a/master/etc"
+        }
+    ],
+
+    "MultiPopupOptions": [
+    ],
+
+    "DisplayVars": {
+        "IsListFirst" : true,
+        "IsRawDownload" : true,
+        "IsAddTotalLine": false,
+        "IsExcelColumn": true,
+        "IsDownloadList": true,
+        "IsShowOnlyClosed": false,
+        "IsSelectPopupHidden": true,
+        "IsC1Popup": "1",
+        "InitLines" : 15,
+        "HeadHeight": "160",
+        "BodyHeight": "570"
+    },
+
+    "OrderByOptions": [
+        {
+            "Value": "mx.etc_type asc, mx.select_name asc, mx.caption asc",
+            "Caption": "구분+선택명+캡션명 사전순"
+        },
+        {
+            "Value": "mx.etc_type desc, mx.select_name desc, mx.caption desc",
+            "Caption": "구분+선택명+캡션명 역순"
+        }
+    ],
+
+    "//BalanceOptions": "Show OnlyBalaceRemained or All",
+    "BalanceOptions": [
+        {
+            "Value": "",
+            "Caption": "전체 보기"
+        },
+        {
+            "Value": "c10 > 0",
+            "Caption": "잔량있는 것만"
+        }
+    ],
+
+    "ListVars": [
+        {
+            "$Radio": "$Radio",
+            "$Check": "$Check",
+            "No": "번호",
+            "C1": "구분",
+            "C2": "선택명",
+            "C3": "정렬",
+            "C4": "저장값",
+            "C5": "캡션명",
+            "C6": "인기/특성",
+            "C7": "수정불가",
+            "C8": "삭제불가"
+        },
+        {
+            "$Radio": "3",
+            "$Check": "3",
+            "No": "7",
+            "C1": "7",
+            "C2": "7",
+            "C3": "5",
+            "C4": "20",
+            "C5": "20",
+            "C6": "7",
+            "C7": "7",
+            "C8": "7"
+        },
+        {
+            "$Radio": "center",
+            "$Check": "center",
+            "No": "center",
+            "C1": "center",
+            "C2": "center",
+            "C3": "center",
+            "C4": "left",
+            "C5": "left",
+            "C6": "center",
+            "C7": "center",
+            "C8": "center"
+        }
+    ]
+}
