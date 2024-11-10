@@ -1,6 +1,7 @@
-# Welcome to DABORY COMPOSABLE Framework
 
-Welcome to the official GitHub repository for the **Dabory Composable (DC) Frontend**, specifically designed for **Laravel Version 7** and compatible with **PHP 7.3 to 8.0**. This repository provides the frontend codebase for DC, a comprehensive and flexible development framework that seamlessly integrates essential business functionalities such as CMS, e-commerce, CRM, ERP, and more.
+# 다보리 컴포저블 오픈소스 프레임워크의 정의 
+1.	e-Commerce 와 컨텐츠 관리 및 커뮤니티, 매출/매입 재고수불 관리등의 ERP의 구성 및 CRM 이 결합된 형태로 PHP-프론트엔드, Golang-백엔드로 개발되었지만 일률적인 구조가 아닌 어떤 형태의 어떤 언어나 기술로도 통합된 Full 커스터마이징이 가능한 SEO 와 ASEO (AI Search Enging Optimization)이 기반의 통합 웹/앱 솔루션 패키지 오픈소스 소프트웨어 입니다.
+
 
 # AI 시대의 Composable Framework: Dabory Composable의 새로운 패러다임
 AI 혁명의 시대가 도래하면서 소프트웨어 개발 방식과 구현 기술은 이전과 비교할 수 없을 정도로 비약적인 발전을 이루고 있습니다. AI의 발전은 단순히 데이터를 처리하는 것을 넘어, 초보 프로그래머조차 고급 기능을 쉽게 구현할 수 있는 환경을 제공합니다. 이러한 변화는 소프트웨어 개발의 문턱을 낮추고 개발자들이 창의적이고 혁신적인 아이디어를 실현할 수 있는 무대를 마련했습니다.
@@ -58,20 +59,10 @@ AI 혁명의 시대가 도래하면서 소프트웨어 개발 방식이나 구�
 
 
 
-# Functionality Overview of Dabory Composable (DC)
-As the first open-source web solution package for HomePage (CMS), e-Commerce, ERP, CRM, and WebPOS, DC offers a diverse range of solutions tailored to various industries and business needs. Here’s how DC empowers developers to build their web solutions as they envision:
+# 다보리 컴포저블 (DC)의 기능 개요 (DC)
+홈페이지 (CMS), 전자상거래, ERP, CRM, WebPOS를 위한 최초의 오픈소스 웹 솔루션 패키지인 DC는 다양한 산업 및 비즈니스 요구에 맞춘 다양한 솔루션을 제공합니다. DC는 개발자가 자신이 구상하는 웹 솔루션을 구축할 수 있도록 다음과 같은 방법으로 지원합니다:
 
-### Key Features
 
-- **Modular Architecture**: DC is built on a modular architecture, allowing for easy expansion, customization, and maintenance. Developers can integrate or remove features based on specific project requirements without affecting the overall system integrity.
-
-- **Multi-Language Support**: While this repository focuses on the PHP and Laravel aspects of DC, the framework is designed to support multiple programming languages for backend and frontend development, including Golang, Java, Python, and Node.js.
-
-- **Security and Stability**: DC incorporates enterprise-level security features such as user authentication, role-based access control, and compliance with ISMS-P standards. The platform is engineered for stability and performance, ensuring that your applications are both secure and reliable.
-
-- **Enterprise-Grade Features**: DC includes out-of-the-box support for complex business functionalities like content management (CMS), customer relationship management (CRM), enterprise resource planning (ERP), and online commerce solutions.
-
-- **Customizable Frontend**: The frontend code in this repository leverages the power of Laravel’s Blade templating engine, making it easy to customize user interfaces and design elements. Developers can quickly implement their own themes, layouts, and components to meet specific design requirements.
 
 ## Getting Started
 
