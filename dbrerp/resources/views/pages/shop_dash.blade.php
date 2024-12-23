@@ -3,6 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
+
     <!-- Global stylesheets -->
     <link href="{{ csset('/css/dashboard/components.min.css') }}" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
@@ -21,6 +22,9 @@
     <script src="{{ csset('/js/dashboard/pies.js') }}"></script>
     <script src="{{ csset('/js/dashboard/bullets.js') }}"></script>
 
+
+    <script type="text/javascript" src="{{ csset('/js/components/FlipClock/compiled/flipclock.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ csset('/js/components/FlipClock/compiled/flipclock.css') }}" />
     <style>
         .content {
             padding: 0;
@@ -31,7 +35,7 @@
         }
     </style>
 
-    <div class="content dbr_standard1_dash">
+    <div class="content dbr_standard1_dash" style="background-color: #f5f5f5;">
         <div class="row">
             <div class="col-xl-8">
                 <!-- 색깔 카드 -->
@@ -43,7 +47,7 @@
                                 <div class="d-flex">
                                     <h3 class="font-weight-semibold mb-0">{{ number_format($listType1Book['Book'][0]['Page'][0]['C1'] ?: 0) }} 원</h3>
                                     <span class="badge bg-teal-800 badge-pill align-self-center ml-auto">신규주문</span> </div>
-                                <div> 배송완료 {{ $listType1Book['Book'][0]['Page'][0]['C2'] }}
+                                 <div> 배송완료 {{ $listType1Book['Book'][0]['Page'][0]['C2'] }}
                                     <div class="font-size-sm opacity-75">{{ $listType1Book['Book'][0]['Page'][0]['C3'] }} 건</div>
                                 </div>
                             </div>
@@ -165,6 +169,43 @@
 
                     <!-- 처리지연내역 -->
                     <div class="delay col-lg-6">
+                        <div class="toast-header mb-1" style="border-radius: .25rem; background-color: #586fab;">
+
+                            <span class="font-weight-semibold mr-auto">데이터 갱신</span>
+                            <div id="countdown" class="mr-2"></div>
+                            <a class="list-icons-item" data-action="reload"></a>
+                            <i class="icon-spinner2 spinner text-muted top-0" style="display: none;"></i>
+                        </div>
+                        <style>
+                            .flip-clock-wrapper .flip-clock-label {
+                                display: none; /* "Minutes"와 "Seconds" 글씨 숨기기 */
+                            }
+
+                            .flip-clock-wrapper {
+                                width: unset !important;
+                            }
+                            /* 크기 조절 */
+                            .flip-clock-wrapper {
+                                zoom: 0.4; /* 전체 크기를 50%로 줄임 */
+                            }
+
+                            /* 숫자 크기를 조정하려면 아래 코드로 개별 설정 가능 */
+                            .flip-clock-wrapper ul li a div div.inn {
+                                font-size: 40px; /* 숫자 크기를 줄입니다 (필요에 따라 조정) */
+                            }
+                        </style>
+                        <script>
+                            var countdown = $('#countdown').FlipClock(10, { // 600초 = 10분
+                                clockFace: 'MinuteCounter',      // 분과 초로 표시
+                                countdown: true,                 // 카운트다운 활성화
+                                autoStart: true,                 // 자동 시작 설정
+                                callbacks: {
+                                    stop: function() {
+                                        $('.list-icons-item').trigger('click')
+                                    }
+                                }
+                            });
+                        </script>
                         <div class="card">
                             <div class="card-header header-elements-inline">
                                 <h6 class="card-title">

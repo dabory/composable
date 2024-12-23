@@ -6,6 +6,7 @@
             "/dabory/widget/quick/dabory-quick.js",
             "/dabory/widget/coupon/dabory-coupon.js",
             "/dabory/widget/review/dabory-review.js",
+            "/dabory/widget/signup/dabory-signup.js",
             "/dabory/dabory.data-linker.js",
             "/dabory/common/get-selector.js",
             "/dabory/common/table/dabory-table.js",
@@ -18,6 +19,7 @@
             "/dabory/widget/quick/dabory-quick.css",
             "/dabory/widget/coupon/dabory-coupon.css",
             "/dabory/widget/review/dabory-review.css",
+            "/dabory/widget/signup/dabory-signup.css",
             "/dabory/common/table/dabory-table.css",
             "/dabory/common/type1/dabory-type1.css",
             "/dabory/css/widget.css"

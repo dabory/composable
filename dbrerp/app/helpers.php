@@ -1,6 +1,5 @@
 <?php
 
-use App\Exceptions\ApiException;
 use App\Services\CallApiService;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
@@ -169,6 +168,18 @@ function setupPasswdPolicy($brandCode)
             'BrandCode' => $brandCode,
         ]
     ]);
+}
+
+function makePasswdRules2($passwdPolicy)
+{
+    $passwdRules = [
+        'required', 'min:'.$passwdPolicy['MinLength'],
+    ];
+
+    if ($passwdPolicy['IsUpperMixed']) { $passwdRules[] = 'regex:/[A-Z]/'; }
+    if ($passwdPolicy['IsSpecialMixed']) { $passwdRules[] = 'regex:/[@$!%*#?&]/'; }
+
+    return $passwdRules;
 }
 
 function makePasswdRules($passwdPolicy)

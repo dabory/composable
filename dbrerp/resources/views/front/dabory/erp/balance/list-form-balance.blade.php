@@ -240,6 +240,7 @@
                 // $('#pace-progress-panel').attr('hidden', false)
                 $.when(get_api_data(BalanceForm.formB['General']['PageApi'], BalanceForm.get_parameter(limit, offset))).done(function(response) {
                     let d = response.data
+                    console.log(d);
                     if ( d.Page ) {
                         make_pagination('BalanceForm.balance', d.PageVars.QueryCnt, page);
                         let no = get_table_no(d.PageVars.QueryCnt, page, limit);

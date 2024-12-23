@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Services\CallApiService;
+use Illuminate\Http\Request;
 use Exception;
 
 class Api23GateTokenService
@@ -62,5 +63,17 @@ class Api23GateTokenService
         }
 
         return $headers;
+    }
+
+    public function callApi23Js($gateToken, $url, $data, $encodeStatus = true)
+    {
+        $request = new \Illuminate\Http\Request([
+            'url' => $url,
+            'data' => $data,
+            'encode_status' => $encodeStatus,
+            'headers' => $this->buildHeader($gateToken),
+        ]);
+
+        return ['error' => false, 'data' => $this->callApiService->getData($request)];
     }
 }

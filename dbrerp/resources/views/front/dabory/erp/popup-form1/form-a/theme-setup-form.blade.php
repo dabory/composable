@@ -75,10 +75,10 @@
                     </div>
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-2">
-                            <input type="checkbox" value="1" class="text-center mr-1" id="is-use-on-check"> <label class="mb-0" for="disable-l-menu-check">{{ $formA['FormVars']['Title']['IsOnUse'] }}</label>
+                            <input type="checkbox" value="1" class="text-center mr-1" id="is-on-use-check"> <label class="mb-0" for="is-on-use-check">{{ $formA['FormVars']['Title']['IsOnUse'] }}</label>
                         </div>
                         <div class="d-flex align-items-center">
-                            <input type="checkbox" value="1" class="text-center mr-1" id="is-default-check"> <label class="mb-0" for="is-skipped-check">{{ $formA['FormVars']['Title']['IsDefault'] }}</label>
+                            <input type="checkbox" value="1" class="text-center mr-1" id="is-default-check"> <label class="mb-0" for="is-default-check">{{ $formA['FormVars']['Title']['IsDefault'] }}</label>
                         </div>
                     </div>
                 </div>

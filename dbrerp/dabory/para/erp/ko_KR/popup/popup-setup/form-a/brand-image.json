@@ -15,16 +15,16 @@
     "FormVars": [
         {
             "SaveButton": "저장",
-            "LogoImageSmall": "작은로고이미지",
-            "LogoImageMedium": "중간로고이미지",
-            "LogoImageBig": "큰로고이미지",
-            "OgImageBig": "OG이미지",
-            "PaviconImage": "파비콘이미지",
-            "ComingSoonImage": "준비중 이미지",
+            "LogoImageSmall": "Logo-Small Image(Top/Left of index Page )",
+            "LogoImageMedium": "Logo-Middle Image (Left or Rigt Side of Intro Page)",
+            "LogoImageBig": "Logo-Big Image (Featured of Intro Blog",
+            "OgImageBig": "OG Image (Recom:1200x630px Min:600x315px)",
+            "PaviconImage": "Pavicon Image (Recom:32x32px Min:16x16px)",
+            "ComingSoonImage": "Coming Soon Image (Recom:300x300px Min:250x250px)",
             "LogoImageSmallPath": "[ resources/assets/brand-images/logo-small.jpg ]",
             "LogoImageMediumPath": "[ resources/assets/brand-images/logo-medium.jpg ]",
             "LogoImageBigPath": "[ resources/assets/brand-images/logo-big.jpg ]",
-            "OgImageBigPath": "[ resources/assets/brand-images/og.jpg ]",
+            "OgImageBigPath": "[ resources/assets/brand-images/og.jpg ] ",
             "PaviconImagePath": "[ resources/assets/brand-images/pavicon.jpg ]",
             "ComingSoonImagePath": "[ resources/assets/brand-images/coming-soon.jpg ]"
         },

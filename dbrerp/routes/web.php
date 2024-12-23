@@ -11,6 +11,7 @@ use App\Http\Controllers\EnvSettingController;
 use App\Imports\Type1Import;
 use App\Services\CallApiService;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth\UserEditController;
 
 use App\Models\Parameter\FormA;
 use App\Models\Parameter\FormB;
@@ -33,6 +34,7 @@ use App\Http\Controllers\CountryCodeController;
 use App\Http\Controllers\Api\OpenAIController;
 use Spatie\Sitemap\SitemapGenerator;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Log;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,84 +64,87 @@ Route::middleware(['check.logout'])->group(function () {
     Route::post('/db-update', [DBUpdateController::class, 'store'])->name('db-update.store');
 });
 
-Route::middleware(['check.login'])->group(function () {
-    Route::get('/dabory/erp', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/user-logout', [LoginController::class, 'logout'])->name('user-logout');
+Route::middleware(['check.underConstruction'])->group(function () {
+    Route::middleware(['check.login'])->group(function () {
+        Route::get('/dabory/erp', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/user-logout', [LoginController::class, 'logout'])->name('user-logout');
 
-    Route::get('/tabbed-menu-hash/{hash}', function ($hash) {
-        $menuList = Utils::getMainMenu('all');
-        $menuPages = Utils::bpaEncoding($menuList['Page'])->toArray();
-        $menu = collect($menuPages)->filter(function ($menu) use ($hash) {
-            return $menu['TabbedMenuHash'] === $hash;
-        })->first();
-        $url = $menu['PageUri'] . '?bpa=' . $menu['bpa'] . '&id=' . request('id');
-        return redirect()->to($url);
+        Route::get('/tabbed-menu-hash/{hash}', function ($hash) {
+            $menuList = Utils::getMainMenu('all');
+            $menuPages = Utils::bpaEncoding($menuList['Page'])->toArray();
+            $menu = collect($menuPages)->filter(function ($menu) use ($hash) {
+                return $menu['TabbedMenuHash'] === $hash;
+            })->first();
+            $url = $menu['PageUri'] . '?bpa=' . $menu['bpa'] . '&id=' . request('id');
+            return redirect()->to($url);
+        });
+        Route::post('/user-edit-verify', [UserEditController::class, 'store'])->name('user-edit.store');
+        Route::post('/cert/mail', [\App\Http\Controllers\CertController::class, 'mail']);
+        Route::post('/cert/mobile', [\App\Http\Controllers\CertController::class, 'mobile']);
+        Route::post('/superuser-email-change', function () {
+            $mailCert = session()->get('mailCert');
+            $smsCertCurrent = session()->get('smsCert.current');
+            $smsCertNew = session()->get('smsCert.new');
+
+            if (request('Type') === 0 && request('EmailVerifyNumber', '??????') != $mailCert['number']) {
+                return response()->json(['error' => true, 'message' => '메일 인증번호 오류']);
+            }
+
+            if (request('Type') === 1 && request('MobileVerifyNumber', '??????') != $smsCertCurrent['number']) {
+                return response()->json(['error' => true, 'message' => '현재 모바일폰에서 확인한 인증번호 오류']);
+            }
+
+            if (request('Type') === 2 && request('NewMobileVerifyNumber', '??????') != $smsCertNew['number']) {
+                return response()->json(['error' => true, 'message' => '변경 관리자 모바일폰에서 확인한 인증번호 오류']);
+            }
+
+            return response()->json(['error' => false, 'message' => 'Success']);
+        });
+
+        Route::get('/user-query-turbo/{table}', function ($table) {
+            $response = app(CallApiService::class)->callApi([
+                'url' => 'query-turbo',
+                'data' => [
+                    'TableName' => $table,
+                    'QueryVars' => [
+                        'MyFilter' => '',
+                        'QueryName' => '',
+                        'FilterName' => '',
+                        'FilterValue' => '',
+                        'SimpleFilter' => 'mx.id between 1 and 10000',
+                        'SubSimpleFilter' => '',
+                        'IsntPagination' => true,
+                        'TestMode' => '',
+                    ]
+                ],
+            ]);
+
+            if (app(CallApiService::class)->verifyApiError($response)) {
+                return response([
+                    'body' => 'Api Server Error',
+                    'apiStatus' => 500
+                ], 200);
+            }
+
+            notify()->success(_e('Action completed'), 'Success', 'bottomRight');
+            return redirect()->back();
+        })->name('user.query.turbo');
+
+        // Route::post('/ajax/get-data', [ApiController::class, 'getData']);
+        Route::get('/country-code', [CountryCodeController::class, 'store']);
+
+        Route::get('/change-sort-menu/{sort_menu_id}', function ($sortMenuId) {
+            $sortMenuPage = Utils::getSortMenu()['Page'] ?? [];
+            $filterSortMenu = collect($sortMenuPage)->filter(function ($sortMenu) use($sortMenuId) {
+                return $sortMenu['Id'] === (int)$sortMenuId;
+            })->first();
+            session()->put('user.SortMenu', $filterSortMenu);
+
+            return redirect()->to($filterSortMenu['C4']);
+        })->name('change-sort-menu');
     });
-
-    Route::post('/cert/mail', [\App\Http\Controllers\CertController::class, 'mail']);
-    Route::post('/cert/mobile', [\App\Http\Controllers\CertController::class, 'mobile']);
-    Route::post('/superuser-email-change', function () {
-        $mailCert = session()->get('mailCert');
-        $smsCertCurrent = session()->get('smsCert.current');
-        $smsCertNew = session()->get('smsCert.new');
-
-        if (request('Type') === 0 && request('EmailVerifyNumber', '??????') != $mailCert['number']) {
-            return response()->json(['error' => true, 'message' => '메일 인증번호 오류']);
-        }
-
-        if (request('Type') === 1 && request('MobileVerifyNumber', '??????') != $smsCertCurrent['number']) {
-            return response()->json(['error' => true, 'message' => '현재 모바일폰에서 확인한 인증번호 오류']);
-        }
-
-        if (request('Type') === 2 && request('NewMobileVerifyNumber', '??????') != $smsCertNew['number']) {
-            return response()->json(['error' => true, 'message' => '변경 관리자 모바일폰에서 확인한 인증번호 오류']);
-        }
-
-        return response()->json(['error' => false, 'message' => 'Success']);
-    });
-
-    Route::get('/user-query-turbo/{table}', function ($table) {
-        $response = app(CallApiService::class)->callApi([
-            'url' => 'query-turbo',
-            'data' => [
-                'TableName' => $table,
-                'QueryVars' => [
-                    'MyFilter' => '',
-                    'QueryName' => '',
-                    'FilterName' => '',
-                    'FilterValue' => '',
-                    'SimpleFilter' => 'mx.id between 1 and 10000',
-                    'SubSimpleFilter' => '',
-                    'IsntPagination' => true,
-                    'TestMode' => '',
-                ]
-            ],
-        ]);
-
-        if (app(CallApiService::class)->verifyApiError($response)) {
-            return response([
-                'body' => 'Api Server Error',
-                'apiStatus' => 500
-            ], 200);
-        }
-
-        notify()->success(_e('Action completed'), 'Success', 'bottomRight');
-        return redirect()->back();
-    })->name('user.query.turbo');
-
-    // Route::post('/ajax/get-data', [ApiController::class, 'getData']);
-    Route::get('/country-code', [CountryCodeController::class, 'store']);
-
-    Route::get('/change-sort-menu/{sort_menu_id}', function ($sortMenuId) {
-        $sortMenuPage = Utils::getSortMenu()['Page'] ?? [];
-        $filterSortMenu = collect($sortMenuPage)->filter(function ($sortMenu) use($sortMenuId) {
-            return $sortMenu['Id'] === (int)$sortMenuId;
-        })->first();
-        session()->put('user.SortMenu', $filterSortMenu);
-
-        return redirect()->to($filterSortMenu['C4']);
-    })->name('change-sort-menu');
 });
+
 
 // admin, pro 공용
 // Route::get('/dabory/ssologin/callback', [DaborySSOController::class, 'login'])->middleware('check.gate.token')->name('dabory.ssologin.login');
@@ -205,7 +210,6 @@ Route::get('/user-clear-cache', function () {
 
     Storage::deleteDirectory('dabory-footage/members');
     ProApiCacheFacade::deleteCachedDirectory();
-
     app(\App\Services\CacheService::class)->putMainMenu();
     app(\App\Services\CacheService::class)->putEtcBrand();
     app(\App\Services\CacheService::class)->putSetup();
@@ -216,8 +220,25 @@ Route::get('/user-clear-cache', function () {
     return redirect()->back();
 })->name('user.clear.cache');
 
+Route::get('/user-clear-session-sort-menu', function () {
+    session()->forget('user.SortMenu');
+    return redirect()->route('user-logout');
+})->name('user.clear.session.sort.menu');
+
+
 Route::post('/clear-menu-cache', function () {
     Storage::deleteDirectory('dabory-footage/users/' . session('user')['UserId'] . '/user-menu');
+});
+
+Route::post('/clear-dash-cache', function () {
+    $fullFileUrl = request('path');
+    $deleted = Storage::delete($fullFileUrl);
+
+    if ($deleted && !Storage::exists($fullFileUrl)) {
+        return response()->json(['error' => false, 'message' => 'success'], 200);
+    } else {
+        return response()->json(['error' => true, 'message' => 'error'], 200);
+    }
 });
 
 Route::get('/506', function () {
@@ -255,8 +276,22 @@ Route::get('/captcha-validation', [CaptchaServiceController::class, 'capthcaForm
 Route::get('/reload-captcha', [CaptchaServiceController::class, 'reloadCaptcha']);
 
 
-Route::get('/test', function () {
-    return view('eyetest-more');
+Route::get('/test-ui', function () {
+    $formA = new App\Models\Parameter\FormA(request('bpa'), '/popup/popup-form1/form-a/pro/company-tier');
+    return view('front.dabory.erp.popup-form1.form-a.pro.company-tier-form', $formA->getData());
+});
+
+Route::get('/test-ui2', function () {
+    $formA = new App\Models\Parameter\FormA(request('bpa'), '/popup/popup-setup/form-a/text-template');
+    return view('front.dabory.erp.popup-setup.form-a.text-template-form', $formA->getData());
+});
+
+Route::get('/sms-popup', function () {
+    return view('components.popup.sms-popup');
+});
+
+Route::get('/kakao-templates-popup', function () {
+    return view('components.popup.kakao-templates-popup');
 });
 
 Route::get('/eyetest-more-ui', function () {
@@ -381,31 +416,6 @@ Route::middleware('check.gate.token')->group(function () {
 
         return $rootFileNames;
     });
-
-    // Route::get('/under-construction', function () {
-    //     $underConstrunctionPath = env('UNDER_CONSTRUCTION_PATH');
-    //     if(empty($underConstrunctionPath)){
-    //         $viewPath = 'under-construction';
-    //     }else{
-    //         $pathSegments = explode('::', $underConstrunctionPath);
-    //         if(count($pathSegments) < 2){
-    //             dd('2보다작음');
-    //         }else{
-    //             $theme = $pathSegments[0];
-    //             $path = $pathSegments[1];
-    //             $viewPath = str_replace('/', '.', $path);
-    //             $viewDirectory = daboryPath('themes/' . $theme . '/pro/resources/views');
-
-    //             // 뷰 경로 설정
-    //             View::addNamespace($theme, $viewDirectory);
-    //             $viewPath = "{$theme}::{$viewPath}";
-    //         }
-
-    //     }
-
-    //     return view($viewPath);
-    // });
-
 
     Route::post('/brand-image-file-list', function (Request $request) {
         $filePath = daboryPath("themes/" . env('DBR_THEME') . "/pro/resources/assets/brand-images");
@@ -553,9 +563,9 @@ Route::middleware('check.gate.token')->group(function () {
         if (!$request->hasFile('file')) {
             return response('error', 500);
         }
-        // $type = $request->input('type');
         $media = json_decode(request('media'), true);
         $file = $request->file('file');
+        $isNotWebp = $request->input('isNotWebP') === '1';
 
         // if (isset($type) && !empty($type)) {
         //     $path = $media['path'] ?? 'default/path'; // 기본 경로 설정
@@ -563,15 +573,19 @@ Route::middleware('check.gate.token')->group(function () {
         //     // return $filePath;
         //     return response($filePath, 201);
         // }
-         $file->storeAs($media['path'], $media['name'], ['disk' => getDisk()]);
+        $file->storeAs($media['path'], $media['name'], ['disk' => getDisk()]);
 
         $bdPage = [];
         if ($media['type'] == 'image') {
             $fileExtension = Str::lower($file->extension());
-            if ($fileExtension === 'gif' || $fileExtension === 'webp' || $fileExtension === 'svg') {
-                $bdPage = app(App\Services\MediaLibraryService::class)->makeGifBd($file, $media);
-            } else {
-                $bdPage = app(App\Services\MediaLibraryService::class)->makeImageBd($file, $media);
+            if($isNotWebp){
+                $bdPage = app(App\Services\MediaLibraryService::class)->makeOriginalImageBd($file, $media);
+            }else{
+                if ($fileExtension === 'gif' || $fileExtension === 'webp' || $fileExtension === 'svg') {
+                    $bdPage = app(App\Services\MediaLibraryService::class)->makeGifBd($file, $media);
+                } else {
+                    $bdPage = app(App\Services\MediaLibraryService::class)->makeImageBd($file, $media);
+                }
             }
         }
 

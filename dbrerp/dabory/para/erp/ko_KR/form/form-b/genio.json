@@ -74,17 +74,12 @@
     "BodySelectOptions": [
         {
             "Value": "body-copy",
-            "Caption": "항목 복사① (재고에서)",
+            "Caption": "재고에서 재고로 단순복사",
             "Parameter": "stock/genio-genio"
         },
         {
             "Value": "multi-delete",
-            "Caption": "항목 삭제",
-            "Parameter": ""
-        },
-        {
-            "Value": "multi-update",
-            "Caption": "항목 수정",
+            "Caption": "품목 일괄 삭제",
             "Parameter": ""
         },
         {

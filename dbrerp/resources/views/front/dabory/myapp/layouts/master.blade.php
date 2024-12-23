@@ -7,8 +7,8 @@
     @stack('meta')
 
     <title>@yield('title', env('APP_NAME'))</title>
-
-    <link rel="icon" href="{{ msset(env('FAVICON_PATH')) }}">
+    @php $basePath = '/themes/'  .env('DBR_THEME') . '/pro/resources'; @endphp
+    <link rel="icon" href="{{ csset($basePath . '/assets/brand-images/pavicon.jpg') }}">
 
     @include('front.dabory.myapp.partial.site.meta')
     <link href="{{ csset('/myapp/css/common.css') }}" rel="stylesheet" type="text/css">

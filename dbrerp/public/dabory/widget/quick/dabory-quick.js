@@ -12,12 +12,13 @@
         $.fn.dataLinker.api23Js('setup-get', {
             "SetupCode": "quick-launcher"
         }, function (response) {
-            if (response) {
-                self.append(html.call(self, response))
-
-                loadModule.call(self)
-                loadWidget.call(self)
+            if (response['apiStatus']) {
+                return iziToast.error({ title: 'Error', message: response['body'] });
             }
+            self.append(html.call(self, response))
+
+            loadModule.call(self)
+            loadWidget.call(self)
         })
     }
 
@@ -27,6 +28,7 @@
                 <div id="dabory-banner"></div>
                 <div id="dabory-contact-us"></div>
                 <div id="dabory-coupon"></div>
+                <div id="dabory-signup"></div>
                 <div id="dabory-review"></div>
             </div>`
         )
@@ -39,6 +41,10 @@
             left: 170,
         })
         $(this).find('#dabory-coupon').coupon({
+            top: 40,
+            left: 375,
+        })
+        $(this).find('#dabory-signup').signup({
             top: 40,
             left: 375,
         })

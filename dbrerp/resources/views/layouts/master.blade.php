@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @stack('meta')
-
+    @php $basePath = '/themes/'  .env('DBR_THEME') . '/pro/resources'; @endphp
     <title>@yield('title', env('APP_NAME'))</title>
     <meta property="og:image" content="https://newerp.daboryhost.com/public/images/ogm_img.jpg" />
 
-    <link rel="icon" href="{{ msset(env('FAVICON_PATH')) }}">
+    <link rel="icon" href="{{ csset($basePath . '/assets/brand-images/pavicon.jpg') }}">
 
     @include('partial.site.meta')
     <link href="{{ csset('/css/common.css', '220901') }}" rel="stylesheet" type="text/css">

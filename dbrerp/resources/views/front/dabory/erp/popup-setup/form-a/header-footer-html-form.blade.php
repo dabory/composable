@@ -30,6 +30,13 @@
                         </div>
                         <div class="card-body">
                             <div class="d-flex flex-column mb-3">
+                                <label class="m-0">{{ $formA['FormVars']['Title']['Notice'] }}</label>
+                                <span style="color: red;">
+                                    {{--<meta property="og:image" content="/themes/composable/pro/resources/assets/brand-images/og.jpg"/>--}}
+                                    &lt;meta property=&quot;og:image&quot; content=&quot;/themes/composable/pro/resources/assets/brand-images/og.jpg&quot;/&gt;
+                                </span>
+                            </div>
+                            <div class="d-flex flex-column mb-3">
                                 <label class="m-0">{{ $formA['FormVars']['Title']['Header'] }}</label>
                                 <textarea id="header-textarea"></textarea>
                             </div>
@@ -90,6 +97,7 @@
                     Header: $(form).find('#header-textarea').val(),
                     Body: $(form).find('#body-textarea').val(),
                     Footer: $(form).find('#footer-textarea').val(),
+                    Notice: $(form).find('#notice-textarea').val(),
                 }
                 let id = Number($(form).find('#Id').val())
                 let parameter = {
@@ -112,7 +120,7 @@
             }
 
             PopupSetupFormAHeaderFooterHtmlForm.show_popup_callback = async function (id, setup, brand_code) {
-                $('#modal-select-popup.popup-setup-form-a-header-footer-html-form .modal-dialog').css('maxWidth', '600px');
+                $('#modal-select-popup.popup-setup-form-a-header-footer-html-form .modal-dialog').css('maxWidth', '1000px');
                 PopupSetupFormAHeaderFooterHtmlForm.btn_act_new()
                 $('#header-footer-html-form').find('#Id').val(id)
                 PopupSetupFormAHeaderFooterHtmlForm.brand_code = brand_code
@@ -127,6 +135,7 @@
                 $(form).find('#header-textarea').val(setup['Header'])
                 $(form).find('#body-textarea').val(setup['Body'])
                 $(form).find('#footer-textarea').val(setup['Footer'])
+                $(form).find('#notice-textarea').val(setup['Notice'])
             }
 
         }( window.PopupSetupFormAHeaderFooterHtmlForm = window.PopupSetupFormAHeaderFooterHtmlForm || {}, jQuery ));

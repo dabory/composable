@@ -329,11 +329,8 @@
                 ParameterType: parameter_type,
             })
 
-            console.log(setup);
-
             // response = await get_para_data(setup['ParameterType'], setup['ParameterDir'], getParameterByName('bpa'))
             response = await get_para_data(setup['ParameterType'], setup['ParameterDir'], getParameterByName('bpa'), theme_dir)
-            console.log(response);
             setup['Parameter'] = response['data']['data']
 
             get_blades_html('front.outline.static.select-popup', setup, async function (html) {
@@ -345,8 +342,8 @@
                     $('#modal-select-popup .modal-body thead th').addClass('bg-original-purple')
                 }
 
-                await eval(capitalize(camelCase(setup['ModalClassName']))).show_popup_callback(id, setup_json, brand_code);
                 $(`#modal-select-popup.${setup['ModalClassName']}`).find('#myModalLabel').text(setup['Caption'])
+                await eval(capitalize(camelCase(setup['ModalClassName']))).show_popup_callback(id, setup_json, brand_code);
                 $(`#modal-select-popup.${setup['ModalClassName']}`).modal('show')
             }, 'popupOption');
         }

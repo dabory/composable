@@ -402,7 +402,7 @@
             } else {
                 iziToast.error({
                     title: 'Error',
-                    message: $('#api-request-failed-please-check').text(),
+                    message: response.data.body ?? $('#api-request-failed-please-check').text(),
                 });
             }
         });
@@ -548,6 +548,8 @@
 
         confirm_message_shw_and_delete(function() {
             Btype.call_bd_act_api(data, function () {
+                // FIXME response 이부분 때문에 에러 떠서 주석처리 했어요
+                // console.log('response : ', response);
                 table_head_check_box_reset(table_id)
                 // 기존배열에서 삭제 할 ID로 필터함.
                 eval(namespace).bd_page = eval(namespace).bd_page
@@ -622,9 +624,9 @@
         $('#BranchName').val(branch['BranchName'])
     };
 
-    Btype.fetch_slip_form_book = async function (slip_no, namespace = 'window', callback = undefined) {
+    Btype.fetch_slip_form_book = async function (slip_no, strong_type, namespace = 'window', callback = undefined) {
         let response = await call_slip_form_book(eval(namespace).formB['General']['PickApi'],
-            eval(namespace).formB['QueryVars']['QueryName'], slip_no, menuCode);
+            eval(namespace).formB['QueryVars']['QueryName'], slip_no, menuCode, strong_type);
 
         if (isEmpty(callback)) {
             eval(namespace).update_hd_ui(response);
@@ -852,24 +854,51 @@
         show_recrystallize_server(formB['PrintVars'], 'formB', `mx.id = ${id}`)
     }
 
+    Btype.checkModalOpen = function(element) {
+        const $this = $(element);
+        const auto_slip_no = $('#auto-slip-no-txt').val();
+
+        // 전표번호가 비어 있을 경우
+        if (!auto_slip_no) {
+            iziToast.warning({
+                title: "warning",
+                message: "저장>추가 버튼을 클릭하여 새 전표번호로 시작하세요."
+            });
+            return false;
+        }
+        // disabled인 경우
+        if ($this.hasClass('disabled')) {
+            let msg = "저장된 해당정보는 변경할 수 없으며 전표 삭제만 가능합니다.";
+            if ($this.hasClass('disabled-if-saved')) { // 항목추가인 경우
+                msg = "연관 전표번호가 있을경우 연관복사로만 추가가 가능합니다.";
+            }
+            iziToast.warning({
+                title: "warning",
+                message: msg
+            });
+            return false;
+        }
+        return true;
+    }
+
+
     Btype.set_disable_modal_btn = function(namespace) {
         $("[class*='-modal-btn']:not(.item-modal-btn)").each(function() {
             const input = $(this).siblings('input');
             if (!input) return;
-
             const inputVal = $(input).val();
             const addNewBtn = $('.disabled-if-saved');
 
-            if (inputVal) { // input에 값이 있을 때
+            if (inputVal) {
                 $(this).addClass('disabled');
                 $(input).prop('readonly', true);
 
                 if (input.attr('id').includes('-no-txt')) { // 연관 전표번호일 경우
                     addNewBtn.addClass('disabled');
-                    eval(namespace).disabledClass(1);   // 연관복사 abled
+                    eval(namespace).disabled_class(1);   // 연관복사 abled
                 }
             } else {
-                eval(namespace).disabledClass(0);   // 연관복사 disabled
+                eval(namespace).disabled_class(0);   // 연관복사 disabled
             }
         });
     }

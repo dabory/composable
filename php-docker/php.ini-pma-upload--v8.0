@@ -1,0 +1,19 @@
+[PHP]
+file_uploads = On
+memory_limit = 640M
+upload_max_filesize = 1280M
+post_max_size = 1280M
+max_execution_time = 3000
+max_file_uploads = 1280M
+max_input_time=600
+extension=dstk.so
+
+[xdebug]
+zend_extension=xdebug.so
+xdebug.mode=debug
+xdebug.start_with_request=yes
+xdebug.start_upon_error=yes
+xdebug.client_host=host.docker.internal
+xdebug.discover_client_host=true
+xdebug.client_port=9009
+xdebug.log_level=0

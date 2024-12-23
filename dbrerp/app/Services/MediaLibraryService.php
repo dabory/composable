@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use App\Services\CallApiService;
 use Intervention\Image\ImageManagerStatic;
+use Illuminate\Support\Facades\Log;
 
 
 class MediaLibraryService
@@ -200,6 +201,55 @@ class MediaLibraryService
                 'BdHeight' => $bdHeight,
             ]);
         }
+
+        return $bdPage;
+    }
+
+    // 원본파일 그대로 업로드
+    public function makeOriginalImageBd($file, $media) {
+        $fullName = $media['name'];
+        $extension = $file->extension();
+        $onlyName = explode('.' . $extension, $fullName)[0];
+
+        $filePath = "{$onlyName}.{$extension}";
+        $formPath = "{$media['path']}Original_{$filePath}";
+        $toFilePath = "{$media['path']}{$filePath}";
+
+        $fileSize = 0;
+        $bdWidth = 0;
+        $bdHeight = 0;
+
+        // 이미지 메타
+        $realPath = $file->getRealPath();
+        $fileContents = file_get_contents($realPath);
+        list($bdWidth, $bdHeight) = getimagesize($realPath);
+        $fileSize = round(filesize($realPath) / 1024);
+
+        // 이미지 메타
+        // $img = Image::make($file);
+        // $fileSize = round($img->filesize() / 1024);
+        // $bdWidth = $img->width();  // 가로 크기
+        // $bdHeight = $img->height();  // 세로 크기
+
+        $bdPage = [];
+
+        // Storage::disk(getDisk())->put($formPath, $fileContents);  //로컬
+        // Storage::disk(getDisk())->put($formPath, $img->__toString(), ['visibility' => 'public']); //s3
+        Storage::disk(getDisk())->put($formPath, $fileContents, ['visibility' => 'public']); //s3
+
+        if (Storage::disk(getDisk())->exists($toFilePath)) {
+            Storage::disk(getDisk())->delete($toFilePath);
+        }
+        Storage::disk(getDisk())->move($formPath, $toFilePath);
+
+        array_push($bdPage, [
+            'ImageType' => 'original',
+            'BdFileUrl' => $toFilePath,
+            'BdFileSize' => $fileSize,
+            'BdWidth' => $bdWidth,
+            'BdHeight' => $bdHeight,
+        ]);
+        Log::info('bdPage : ', ['bdPage' => $bdPage]);
 
         return $bdPage;
     }

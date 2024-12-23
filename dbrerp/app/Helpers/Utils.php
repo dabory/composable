@@ -76,8 +76,9 @@ class Utils
         return false;
     }
 
-    public static function getSlipFormInitCache($queryName)
+    public static function getSlipFormInitCache($queryName, $strongType=false)
     {
+        // dd($strongType);
         $fullFileUrl = "dabory-footage/basic/slip-form-init/{$queryName}.json";
 
         if (Storage::disk()->exists($fullFileUrl)) {
@@ -88,10 +89,12 @@ class Utils
             'url' => 'slip-form-init',
             'data' => [
                 'QueryVars' => [
-                    'QueryName' => $queryName
+                    'QueryName' => $queryName,
                 ]
             ],
+            'strong_type' => $strongType
         ]);
+
 
         Storage::put($fullFileUrl, json_encode($response));
 

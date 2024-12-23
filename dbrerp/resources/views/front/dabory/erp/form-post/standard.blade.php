@@ -105,6 +105,7 @@
                                                maxlength="{{ $formPost['FormPostVars']['MaxLength'][$key] }}"
                                             {{ $formPost['FormPostVars']['Required'][$key] }}>
                                         <button class="text-white rounded border-0 radius-l0 col-3 bg-green-600 border-green-600" onclick="FormPostStandard.show_media_modal()">찾기</button>
+                                        <button class="text-white rounded border-0 radius-l0 col-1 bg-orange-600 border-green-600" onclick="FormPostStandard.delete_file()">x</button>
                                     </div>
                                     <div class="form-post-title">
                                         <div class="form-post-img-div">
@@ -173,7 +174,6 @@
                     },
 
                     save: function () {
-                        console.log(this.attachedFiles)
                         if (this.attachedFiles.length <= 0 || this.attachedFiles[0] === null) {
                             return Atype.btn_act_save('#standard-form #frm', function () {
                                 $('#modal-select-popup.show').trigger('list.requery');
@@ -367,6 +367,14 @@
                     await FormPostStandard.fetch_standard(Number(id));
                 }
 
+                FormPostStandard.delete_callback = async function () {
+                    $('#MediaId-file-path').val('');
+                    $('#MediaId-img').attr('src', '');
+                    $('#MediaId-img').prop('hidden', true)
+                    $('#MediaId').val(1);
+                    AttachedFiles.save();
+                }
+
                 FormPostStandard.fetch_standard = async function (id) {
                     let response = await get_api_data(FormPostStandard.formA['General']['PickApi'], {
                         QueryVars: {
@@ -386,6 +394,7 @@
                     if (isEmpty(response.data) || response.data.apiStatus) return;
                     let post = response.data.Page[0];
                     if (post['MediaId']) {
+                        $('#MediaId-file-path').data('media-id', post['MediaId']);
                         const response = await get_api_data('media-pick', {
                             Page: [ { Id: Number(post['MediaId']) } ]
                         })
@@ -413,6 +422,71 @@
                             $('#standard-form').find(`#${key}`).val(value)
                         }
                     }
+                }
+
+                FormPostStandard.delete_file = async function () {
+                    const mediaId = $('#MediaId-file-path').data('media-id');
+                    const fileName = $('#MediaId-file-path').val();
+
+                    if ($('#MediaId-file-path').val() === '' || $('#MediaId-file-path').val().includes('NOIMAGE1')) {
+                        iziToast.error({
+                            title: 'Error',
+                            message: '파일이 존재하지 않습니다.',
+                        });
+                        return;
+                    }
+
+                    let response = await get_api_data('media-pick', {
+                        Page: [ { Id: mediaId } ]
+                    })
+                    const hd_page = response.data.Page[0];
+                    if(hd_page && hd_page.Id === mediaId){
+                        hd_page.Id = Number(`-${mediaId}`)
+                    }
+
+                    // console.log('hd_page : ', hd_page);
+
+                    FormPostStandard.call_act_api({
+                        HdPage: [ hd_page ]
+                    }
+                    , function(hd_page) {
+                        $.ajax({
+                            url: "/file-delete",
+                            type: 'POST',
+                            data: {
+                                _token: $('meta[name="csrf-token"]').attr('content'),
+                                file_path_list: JSON.stringify([fileName])
+                            },
+                            success: function(response) {
+                                console.log('file-delete : ', response);
+                            },
+                            error: function(error) {
+                                console.log(error.responseJSON)
+                                iziToast.error({
+                                    title: 'Error', message: '삭제실패',
+                                });
+                            }
+                        });
+                    });
+                }
+
+                FormPostStandard.call_act_api = function (data, callback) {
+                    $.when(get_api_data('media-bact', data))
+                    .done(function(response) {
+                        let d = response.data
+                        if (d.HdPage) {
+                            FormPostStandard.delete_callback();
+                            iziToast.success({
+                                title: 'Success', message: '삭제완료',
+                            });
+                        } else {
+                            let message = response.data.body ?? $('#api-request-failed-please-check').text();
+                            iziToast.error({
+                                title: 'Error',
+                                message: message,
+                            });
+                        }
+                    });
                 }
 
             }( window.FormPostStandard = window.FormPostStandard || {}, jQuery ));

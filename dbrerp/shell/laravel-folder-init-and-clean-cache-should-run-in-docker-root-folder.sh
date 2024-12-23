@@ -18,8 +18,8 @@ rm -rf public_html/storage/logs/*
 
 chmod -R 775 public_html/storage/
 #chmod 664 public_html/storage/*.key
-cd public_html 
+cd public_html
 php artisan view:clear
-php artisan config:cache                      
+php artisan config:cache
 
 echo "run [chown -R user:apache . ] if it still has problem !"

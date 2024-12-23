@@ -6,8 +6,8 @@
 
     "SelectButtonOptions": [
         {
-            "Value": "del",
-            "Caption": "삭제",
+            "Value": "show-popup",
+            "Caption": "사용 가능한 변수",
             "Parameter": ""
         }
     ],
@@ -18,8 +18,9 @@
             "SaveButton": "저장",
             "TextCode": "템플릿코드*",
             "TextName": "템플릿명*",
+            "TextDesc": "템플릿설명",
             "TextTitle": "LMS제목",
-            "Sort": "메시지 구분",
+            "Sort": "메시지구분",
             "TextTab": "본문",
             "MediaTab": "미디어",
             "MediaSearchButton": "미디어 찾기"
@@ -28,6 +29,7 @@
             "SaveButton": "left",
             "TextCode": "left",
             "TextName": "left",
+            "TextDesc": "left",
             "TextTitle": "left",
             "Sort": "left",
             "TextTab": "left",
@@ -38,6 +40,7 @@
             "SaveButton": "0",
             "TextCode": "20",
             "TextName": "20",
+            "TextDesc": "500",
             "TextTitle": "20",
             "Sort": "20",
             "TextTab": "0",
@@ -48,6 +51,7 @@
             "SaveButton": "",
             "TextCode": "required",
             "TextName": "required",
+            "TextDesc": "",
             "TextTitle": "",
             "Sort": "",
             "TextTab": "",
@@ -63,27 +67,194 @@
         },
         {
             "Value": "0",
-            "Caption": "sort('text-template','0')"
+            "Caption": "SMS"
         },
         {
             "Value": "1",
-            "Caption": "sort('text-template','1')"
+            "Caption": "LMS"
         },
         {
             "Value": "2",
-            "Caption": "sort('text-template','2')"
+            "Caption": "MMS"
         }
     ],
 
     "ReplaceStringVars": [
         {
-            "Value": "업체명"
+            "Value": "NAME",
+            "Caption": "회원 이름"
         },
         {
-            "Value": "인증번호"
+            "Value": "USERID",
+            "Caption": "회원 아이디"
         },
         {
-            "Value": "이메일"
+            "Value": "USER_EMAIL",
+            "Caption": "회원 이메일"
+        },
+        {
+            "Value": "PRODUCT",
+            "Caption": "상품명"
+        },
+        {
+            "Value": "BOARD_NAME",
+            "Caption": "게시판 이름"
+        },
+        {
+            "Value": "SUBJECT",
+            "Caption": "글 제목"
+        },
+        {
+            "Value": "DATE",
+            "Caption": "날짜"
+        },
+        {
+            "Value": "ORDERID",
+            "Caption": "주문번호"
+        },
+        {
+            "Value": "PRICE",
+            "Caption": "주문금액"
+        },
+        {
+            "Value": "REFUND",
+            "Caption": "환불금액"
+        },
+        {
+            "Value": "BANK",
+            "Caption": "입금은행"
+        },
+        {
+            "Value": "ACCOUNT",
+            "Caption": "입금 계좌번호"
+        },
+        {
+            "Value": "DEPOSITOR",
+            "Caption": "예금주"
+        },
+        {
+            "Value": "AUTOCANCELDATE",
+            "Caption": "입금만료일"
+        },
+        {
+            "Value": "쇼핑몰이름",
+            "Caption": "쇼핑몰명"
+        },
+        {
+            "Value": "DELICOM",
+            "Caption": "택배사 이름"
+        },
+        {
+            "Value": "DELINUM",
+            "Caption": "송장번호"
+        },
+        {
+            "Value": "PID",
+            "Caption": "상품코드(자동)"
+        },
+        {
+            "Value": "COUPON_NAME",
+            "Caption": "쿠폰 이름"
+        },
+        {
+            "Value": "PW",
+            "Caption": "임시 비밀번호"
+        },
+        {
+            "Value": "VERIFY",
+            "Caption": "본인확인 인증번호"
+        },
+        {
+            "Value": "OLD_GRADE",
+            "Caption": "변경 전 회원등급"
+        },
+        {
+            "Value": "CURRENT_GRADE",
+            "Caption": "변경 후 회원등급"
+        },
+        {
+            "Value": "GRADE_CHANGE",
+            "Caption": "회원등급 변경일자"
+        },
+        {
+            "Value": "NOW_PNT",
+            "Caption": "현재 적립금"
+        },
+        {
+            "Value": "DEL_PNT",
+            "Caption": "소멸예정 적립금"
+        },
+        {
+            "Value": "REJECT_TEL",
+            "Caption": "무료수신거부 전화번호"
+        },
+        {
+            "Value": "ACCOUNT_HOLDER",
+            "Caption": "입금자명"
+        },
+        {
+            "Value": "TO_PNT",
+            "Caption": "소멸 후 남는 적립금"
+        },
+        {
+            "Value": "ORDERCS_TYPE",
+            "Caption": "주문 CS 유형"
+        },
+        {
+            "Value": "ADD_PNT",
+            "Caption": "지급 적립금"
+        },
+        {
+            "Value": "RDORDERID",
+            "Caption": "정기배송 신청 번호"
+        },
+        {
+            "Value": "DORMANT_DATE",
+            "Caption": "휴면회원 전환일"
+        },
+        {
+            "Value": "PURCHASECONFIRM_URL",
+            "Caption": "구매 확정 전용 페이지"
+        },
+        {
+            "Value": "ORDER_URL",
+            "Caption": "비회원 주문조회 페이지"
+        },
+        {
+            "Value": "FAILMSG",
+            "Caption": "실패 사유 안내문구"
+        },
+        {
+            "Value": "GUIDMSG",
+            "Caption": "실패 사유 가이드 안내문구"
+        },
+        {
+            "Value": "DAYSAGO",
+            "Caption": "만료 전 안내일 표시"
+        },
+        {
+            "Value": "MALL_URL",
+            "Caption": "상점대표 도메인"
+        },
+        {
+            "Value": "BIZ_TEL",
+            "Caption": "대표 전화번호"
+        },
+        {
+            "Value": "MALL_TEL",
+            "Caption": "상담/주문 전화번호"
+        },
+        {
+            "Value": "ID_TYPE",
+            "Caption": "계정 형태"
+        },
+        {
+            "Value": "REACTIVATE_DATE",
+            "Caption": "일반 계정 전환 예정일"
+        },
+        {
+            "Value": "IE_DATE",
+            "Caption": "휴면회원 대상자 추출일"
         }
     ],
 

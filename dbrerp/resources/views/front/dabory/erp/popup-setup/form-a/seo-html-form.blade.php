@@ -29,7 +29,10 @@
                         <div class="card-header p-0 mb-2">
                         </div>
                         <div class="card-body">
-
+                            <div class="d-flex flex-column mb-3">
+                                <label class="m-0">{{ $formA['FormVars']['Title']['PageHtml'] }}</label>
+                                <textarea id="page-html-textarea"></textarea>
+                            </div>
                             <div class="d-flex flex-column mb-3 common-seo-html">
                                 <label class="m-0">site-verification HTML & robots.txt (.xml, .txt .html ONLY)</label>
                                 <input type="file" id="upload-file" class="cursor-pointer rounded w-100 form-control-uniform-custom" style="text-indent: 0;"

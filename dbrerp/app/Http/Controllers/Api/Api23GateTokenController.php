@@ -46,13 +46,13 @@ class Api23GateTokenController extends Controller
             return response()->json($result['message'], 401);
         }
 
-        $request = new \Illuminate\Http\Request([
-            'data' => $request->getContent(),
-            'encode_status' => true,
-            'headers' => $this->buildHeader($result['data']),
-        ]);
+        $result = $this->api23GateTokenService->callApi23Js(
+            $result['data'],
+            $request->header('Url'),
+            $request->getContent()
+        );
 
-        return $this->callApiService->getData($request);
+        return $result['data'];
     }
 
     public function api23App(Request $request)

@@ -409,7 +409,7 @@
     <script>
         $(document).ready(function() {
             $('.porder-modal-btn, .company-modal-btn, .disabled-if-saved').on('click', function() {
-                if(!checkModalOpen(this)){
+                if(!Btype.checkModalOpen(this)){
                     return false;
                 }
             });
@@ -569,7 +569,6 @@
 
         // 발주번호 찾기 -> 발주번호 입력
         function get_porder_no(slip_no){
-            console.log('get_porder_no');
             const auto_slip_no = $('#auto-slip-no-txt').val();
             if(auto_slip_no === '' || auto_slip_no === null){
                 iziToast.warning({
@@ -789,7 +788,7 @@
             $('#purch-table-body').html('');
 
             isSaveHead = false;
-            disabledClass(1)
+            disabled_class(1)
 
             // footer 합계 초기화
             $('#QtyTotal').val('')
@@ -929,7 +928,7 @@
                         message: @json(_e('(*)Required item(s) omitted')),
                     });
                 }
-                scrollToTop();
+                scroll_to_top();
             // });
         }
 
@@ -1329,10 +1328,10 @@
             $('#supplier-txt').val(hd_page.CompanyName)
             $('#supplier-txt').data('id', hd_page.SupplierId)
             $('#supplier-txt').data('contact', hd_page.SupplierContact)
+            $('#supplier-contact-txt').val(hd_page.SupplierContact)
 
             // 저장된 데이터 불러올 경우 고객업체 비활성화
-            $('#supplier-contact-txt').val(hd_page.SupplierContact)
-            disabledBtn(hd_page);
+            disabled_btn(hd_page);
 
             // let html = `<option value="${hd_page.VatRateId}" data-vatrate="${hd_page.VatRate}" data-viewvatrate="${hd_page.VatRate * 100}">${hd_page.VatName}</option>`
             // $('#vat-type-select').html(html);
@@ -1374,55 +1373,26 @@
             // });
         }
 
-        function scrollToTop() {
+        function scroll_to_top() {
             var scrollArea = document.getElementById("scroll-area");
             scrollArea.scrollTop = 0;
         }
 
-        function disabledClass(type) {
+        function disabled_class(type) {
             const bodySelectOptions = $('.dropdown-item.purch-bd-act').filter(function() {
                 return $(this).data('value') === 'body-copy';
             });
-
             bodySelectOptions.toggleClass('disabled', type === 0);
         }
 
-        function disabledBtn(hd_page) {
+        function disabled_btn(hd_page) {
             const isPorderSaved = hd_page.PorderNo !== "";
             const isCompanySaved = hd_page.CompanyName !== "";
-            $('.disabled-if-saved, .porder-modal-btn').toggleClass('disabled', isPorderSaved);
-            $('#porder-no-txt').prop('readonly', isPorderSaved);
-            disabledClass(isPorderSaved ? 1 : 0); // 0:disabled 1:able
-
             $('#supplier-txt').prop('readonly', isCompanySaved);
+            $('#porder-no-txt').prop('readonly', isCompanySaved);
+            $('.disabled-if-saved, .porder-modal-btn').toggleClass('disabled', isPorderSaved);
             $('.company-modal-btn').toggleClass('disabled', isCompanySaved);
-        }
-
-        function checkModalOpen(element) {
-            const $this = $(element);
-            const auto_slip_no = $('#auto-slip-no-txt').val();
-
-            // 전표번호가 비어 있을 경우
-            if (!auto_slip_no) {
-                iziToast.warning({
-                    title: "warning",
-                    message: "저장>추가 버튼을 클릭하여 새 전표번호로 시작하세요."
-                });
-                return false;
-            }
-            // disabled인 경우
-            if ($this.hasClass('disabled')) {
-                let msg = "저장된 해당정보는 변경할 수 없으며 전표 삭제만 가능합니다.";
-                if ($this.hasClass('disabled-if-saved')) { // 항목추가인 경우
-                    msg = "연관 전표번호가 있을경우 연관복사로만 추가가 가능합니다.";
-                }
-                iziToast.warning({
-                    title: "warning",
-                    message: msg
-                });
-                return false;
-            }
-            return true;
+            disabled_class(isPorderSaved ? 1 : 0); // 0:disabled 1:able
         }
 
         const purchModal = {!! json_encode($purchModal) !!};

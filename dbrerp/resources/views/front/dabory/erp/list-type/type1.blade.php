@@ -994,7 +994,7 @@
 
             $.when(get_api_data(type1['General']['PageApi'], get_type1_parameter(limit, offset), MainAppName)).done(function(response) {
                 let d = response.data
-                console.log(d)
+                console.log(response)
 
                 if (type1['QueryVars']['TestMode'] === 'query') {
                     iziToast.info({  title: 'Info', message: d['body'] });

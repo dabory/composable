@@ -1,0 +1,62 @@
+{
+    "General": {
+        "PickApi": "company-tier-pick",
+        "ActApi": "company-tier-act"
+    },
+
+    "SelectButtonOptions": [
+        {
+            "Value": "del",
+            "Caption": "삭제",
+            "Parameter": ""
+        }
+    ],
+
+    "//FormVars": "ListVars[0]-Caption, ListVars[0]-format",
+    "FormVars": [
+        {
+            "SaveButton": "저장",
+            "TierName": "회원등급명*",
+            "SeqNo": "우선순위*",
+            "TotpayAmt": "구매금액 조건*",
+            "IsFreeDelivery": "배송비 혜택",
+            "BenefitType": "구매 시 할인/적립 혜택",
+            "OrderDcType": "상품별 할인과 중복시 설정",
+            "DcSetup": "구매금액 할인 설정*",
+            "RewardSetup": "적립금 지급 설정*"
+        },
+        {
+            "SaveButton": "left",
+            "TierName": "left",
+            "SeqNo": "left",
+            "TotpayAmt": "left",
+            "IsFreeDelivery": "left",
+            "BenefitType": "left",
+            "OrderDcType": "left",
+            "DcSetup": "left",
+            "RewardSetup": "left"
+        },
+        {
+            "SaveButton": "0",
+            "TierName": "10",
+            "SeqNo": "10",
+            "TotpayAmt": "100",
+            "IsFreeDelivery": "100",
+            "BenefitType": "100",
+            "OrderDcType": "100",
+            "DcSetup": "100",
+            "RewardSetup": "100"
+        },
+        {
+            "SaveButton": "",
+            "TierName": "required",
+            "SeqNo": "required",
+            "TotpayAmt": "",
+            "IsFreeDelivery": "",
+            "BenefitType": "",
+            "OrderDcType": "",
+            "DcSetup": "",
+            "RewardSetup": ""
+        }
+    ]
+}

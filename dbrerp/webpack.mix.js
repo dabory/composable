@@ -37,7 +37,7 @@ mix.browserSync({
         './app/**/*', `./dabory/themes/${process.env.DBR_THEME}/pro/app/**/*`,
         './routes/**/*', `./dabory/themes/${process.env.DBR_THEME}/pro/routes/**/*`,
         './dabory/para/**/*', `./dabory/themes/${process.env.DBR_THEME}/erp/para/**/*`,
-        './public/js/**/*', './public/dabory/**/*',
+        './public/js/**/*', './public/css/**/*', './public/dabory/**/*',
     ],
     // watchOptions: {
     //     usePolling: true

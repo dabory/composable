@@ -16,7 +16,7 @@
 <div class="main">
     <div class="error">503</div>
     <img src="{{ asset('/images/error/503.png') }}" />
-    <h2>API Server Connection Fail</h2>
+    <h2>{{ $message ?? 'API Server Connection Fail' }}</h2>
     <h6>API 서버 연결이 완료되지 않았습니다</h6>
     <a href="/" class="button">Home Page</a>
     <a href="/member-login" class="button">Member Login</a>

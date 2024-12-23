@@ -14,6 +14,9 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         '/social/user-apple/callback',
         '/social/member-apple/callback',
-        '/checkout'
+        '/checkout',
+        '/member-signup',
+        '/kspay-wh-rcv',
+        '/kspay-wh-result'
     ];
 }

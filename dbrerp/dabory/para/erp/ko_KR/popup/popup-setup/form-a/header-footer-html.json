@@ -12,13 +12,15 @@
             "SaveButton": "저장",
             "Header": "Header",
             "Body": "Body",
-            "Footer": "Footer"
+            "Footer": "Footer",
+            "Notice": "Notice"
         },
         {
             "SaveButton": "center",
             "Header": "center",
             "Body": "center",
-            "Footer": "center"
+            "Footer": "center",
+            "Notice": "center"
         }
     ]
 }

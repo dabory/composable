@@ -21,3 +21,4 @@
 <!-- /global stylesheets -->
 
 <script src="{{ csset('/js/plugins/vue/vue@2.6.11.js') }}"></script>
+

@@ -452,6 +452,43 @@ pre code {
 /*간격*/
 .pd_outer {padding: 0.625rem 1.25rem;}
 
+.Kakao-btnLabel {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 25px;
+    font-size: 12px;
+    line-height: 18px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: -1px;
+    background-color: #e2e5ea;
+    transition: .2s ease-out;
+}
+
+.Kakao-icoColorDot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    vertical-align: middle;
+    background-color: #a8abb0;
+}
+
+.Kakao-icoColorDot.blue {
+    background-color: #3964e5
+}
+
+.Kakao-icoColorDot.green {
+    background-color: #259225
+}
+
+.Kakao-icoColorDot.yellow {
+    background-color: #ffb020
+}
+
+.Kakao-icoColorDot.red {
+    background-color: #dc3535
+}
 
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
 	width: 100%;
@@ -2394,6 +2431,15 @@ font-size:.875rem;
 	line-height: 1.5715;
 border-radius:.25rem;
 	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.certi-btn {
+    height: 28px !important;
+    line-height: 1 !important;
+    width: 140px !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    font-size: 12px !important;
 }
 @media (prefers-reduced-motion:reduce) {
 .btn {
@@ -31058,18 +31104,18 @@ input[type="input"] {
 .mms .txt_byte:after {content : "\f012   \f1eb   \f242"; font-family: "Font Awesome 5 Free";  font-weight: 900; margin-top:-2px; color:#000; font-size:14px; }
 .mms .input_box {padding:0 15px; box-sizing:border-box; }
 .mms .input_box select {width:100%; margin-bottom:10px; background:#f6f6f6 !important; border:none; color:#000; border-radius:8px; text-indent: 3px !important;}
-.mms .input_box input {width:100%; margin-bottom:10px; padding:15px 10px; background:#f6f6f6 !important; border:none; color:#000; border-radius:8px; text-indent: 3px !important;}
+.mms .input_box input[type="text"] {width:100%; margin-bottom:10px; padding:15px 10px; background:#f6f6f6 !important; border:none; color:#000; border-radius:8px; text-indent: 3px !important;}
 .mms .input_box select::placeholder,
 .mms .input_box input::placeholder {color:#000;}
 .mms .input_box textarea {border:none;}
 
-.mms .mid_btn {display:flex; flex-flow: row wrap; margin:0; margin-top:10px; padding:0; background:#329bd2; border-top-left-radius:10px; border-top-right-radius:10px; overflow:hidden;}
-.mms .mid_btn button {display:flex; justify-content:center; align-items:center;  width:33.33%; height:30px; background:#329bd2 !important; border-bottom:1px solid #dededd !important;  border-left:1px solid #dededd !important; color:#fff;}
+.mms .mid_btn {display:flex; flex-flow: row wrap; margin:0; margin-top:10px; padding:0; border-top-left-radius:10px; border-top-right-radius:10px; overflow:hidden;}
+.mms .mid_btn button {display:flex; justify-content:center; align-items:center;  width:20%; height:30px; background:#329bd2 !important; border-bottom:1px solid #dededd !important;  border-left:1px solid #dededd !important; color:#fff}
 .mms .mid_btn button:first-child,
 .mms .mid_btn button:nth-of-type(3n+1) {border-left:none;}
 .mms .mid_btn button:hover {background:#57b7e9 !important;}
 
-.mms .charater {display:flex; flex-flow:row wrap; justify-content:space-between; margin:0; padding:5px 15px 5px 12px; box-sizing:border-box; background:#f6f6f6; border-bottom:1px solid #ddd;}
+.mms .charater {display:flex; flex-flow:row wrap; justify-content:center; margin:0; padding:5px 0 5px 0; box-sizing:border-box; background:#f6f6f6; border-bottom:1px solid #ddd;}
 .mms .charater button {display:flex; justify-content:center; align-items:center; width:33px; height:33px; margin-bottom:3px; background:#fff !important; border:1px solid #dededd !important; border-radius:5px; color:#000;}
 .mms .charater button:hover {background: #2588bd !important;  color: #fff !important;}
 
@@ -31087,6 +31133,113 @@ input[type="input"] {
 .mms .btn-group button:first-of-type { border-right: 1px solid #dededd !important; }
 .mms .btn-group button:last-of-type { border-left: 1px solid #dededd !important; }
 .mms .btn-group button:hover {background:#57b7e9 !important;}
+
+.css-sypgmg.table-low .MuiTableCell-body {
+    border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.css-1o1jcq0 {
+    margin: 0px;
+    font-weight: normal;
+    line-height: 20px;
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: rgb(97, 97, 97);
+}
+
+.css-1u6a08m {
+    color: inherit;
+    display: table-row;
+    vertical-align: middle;
+    outline: 0px;
+}
+
+.css-1xnox0e {
+    display: table-row-group;
+}
+
+.css-1u6a08m {
+    color: inherit;
+    display: table-row;
+    vertical-align: middle;
+    outline: 0px;
+}
+
+.css-1gf9air {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    display: table-cell;
+    vertical-align: inherit;
+    text-align: left;
+    border: none;
+    box-sizing: border-box;
+    color: rgb(97, 97, 97);
+    padding: 10px !important;
+}
+
+.css-1y30grd {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px;
+}
+
+.css-sypgmg {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0px;
+    table-layout: auto;
+    height: 40px;
+}
+
+.css-19ef0js {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    font-size: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.KakaoTemplateTable_Status {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: initial;
+    padding: 0px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+.css-sypgmg.table-low .MuiTableCell-head {
+    background-color: rgb(242, 242, 242) !important;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    border-right: 1px solid rgb(235, 235, 235);
+    padding: 10px !important;
+}
+
+.css-q6opgp {
+    font-family: inherit;
+    display: table-cell;
+    vertical-align: inherit;
+    text-align: left;
+    border: none;
+    box-sizing: border-box;
+    min-width: auto;
+    color: rgb(28, 28, 28);
+    font-weight: 500;
+    line-height: 100%;
+    font-size: 14px;
+    letter-spacing: 0px;
+    max-width: 100%;
+    padding: 10px !important;
+}
 
 /*상세처방*/
 .prescript_detail ul, .prescript_detail li, .prescript_detail dl, .prescript_detail dt, .prescript_detail dd {margin:0; padding:0;list-style:none;}

@@ -71,17 +71,12 @@
     "BodySelectOptions": [
         {
             "Value": "body-copy",
-            "Caption": "항목 복사① (견적서에서)",
+            "Caption": "견적서에서 견적서로 단순복사",
             "Parameter": "sales/squote-squote"
         },
         {
             "Value": "multi-delete",
-            "Caption": "항목 삭제",
-            "Parameter": ""
-        },
-        {
-            "Value": "multi-update",
-            "Caption": "항목 수정",
+            "Caption": "품목 일괄 삭제",
             "Parameter": ""
         },
         {

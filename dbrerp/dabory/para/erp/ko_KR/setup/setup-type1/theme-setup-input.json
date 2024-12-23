@@ -1,6 +1,6 @@
 {
     "General": {
-        "Title": "그룹(본사) 설정2",
+        "Title": "테마 통합 설정",
         "PageApi": "list-type1-page",
         "ActApi": "theme-setup-act"
     },

@@ -48,10 +48,10 @@
                                     <div class="form-group d-flex flex-column mb-2">
                                         <label class="m-0 overflow-hidden text-nowrap">{{ $formB['FormVars']['Title']['AutoSlipNo'] }}</label>
                                         <div class="col-12 d-flex p-0">
-                                            <button id="auto-slip-no-btn" class="btn-dark border-white rounded overflow-hidden col-3 text-center text-white text-nowrap radius-r0"
-                                                onclick="get_last_slip_no(this)">
-                                                <span class="icon-cogs"></span>
-                                            </button>
+                                            {{--<button id="auto-slip-no-btn" class="btn-dark border-white rounded overflow-hidden col-3 text-center text-white text-nowrap radius-r0"--}}
+                                            {{--onclick="get_last_slip_no(this)">--}}
+                                            {{--<span class="icon-cogs"></span>--}}
+                                            {{--</button>--}}
                                             <input type="text" id="auto-slip-no-txt" class="rounded w-100 radius-l0" autocomplete="off" disabled
                                                    maxlength="{{ $formB['FormVars']['MaxLength']['AutoSlipNo'] }}"
                                                 {{ $formB['FormVars']['Required']['AutoSlipNo'] }}>
@@ -268,19 +268,10 @@
         }
 
         function btn_act_new() {
-            bd_page = [];
-
-            input_box_reset_for('#frm')
-            input_box_reset_for('#total-frm')
-
-            $('.customer-tie-act.save-button').prop('disabled', false)
-
-            Btype.set_slip_no_btn_abled()
-            $('#tie-date').val(date_to_sting(new Date()))
-
-            // table body 초기화
-            table_head_check_box_reset('#customer-tie-table-head')
-            $('#customer-tie-table-body').html('');
+            data_init()
+            // if (formB['SlipCommonSetup']['IsNewRecAutoSlipNo']) {
+                get_last_slip_no()
+            // }
         }
 
         // start body act btn
@@ -587,7 +578,24 @@
             return $(tr).find('.ref1-txt')
         }
 
+        function data_init() {
+            bd_page = [];
+
+            input_box_reset_for('#frm')
+            input_box_reset_for('#total-frm')
+
+            $('.customer-tie-act.save-button').prop('disabled', false)
+
+            Btype.set_slip_no_btn_abled()
+            $('#tie-date').val(date_to_sting(new Date()))
+
+            // table body 초기화
+            table_head_check_box_reset('#customer-tie-table-head')
+            $('#customer-tie-table-body').html('');
+        }
+
         async function get_last_slip_no($this) {
+            console.log('get_last_slip_no');
             Btype.set_slip_no_btn_disabled()
             let response = await Btype.get_last_slip_no(formB['QueryVars']['QueryName']);
             $('#auto-slip-no-txt').val(moment(new Date()).format('YYMMDD') + '-' + response.data.LastSlipNo)
@@ -622,6 +630,13 @@
             }
 
             $('#modal-slip').modal('hide');
+        }
+
+        function disabled_class(type) {
+            const bodySelectOptions = $('.dropdown-item.purch-bd-act').filter(function() {
+                return $(this).data('value') === 'body-copy';
+            });
+            bodySelectOptions.toggleClass('disabled', type === 0);
         }
 
         const customerTieModal = {!! json_encode($customerTieModal) !!};

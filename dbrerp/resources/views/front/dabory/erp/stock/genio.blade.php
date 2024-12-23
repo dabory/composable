@@ -260,7 +260,7 @@
     <script>
         $(document).ready(function() {
             $('.company-modal-btn').on('click', function() {
-                if(!checkModalOpen(this)){
+                if(!Btype.checkModalOpen(this)){
                     return false;
                 }
             });
@@ -499,7 +499,7 @@
 
             let hd_page = response.data.HdPage[0]
             let bd_page = response.data.BdPage ?? []
-            console.log('hd_page : ', hd_page);
+            console.log(hd_page);
             $('#Id').val(hd_page.Id)
             $('#auto-slip-no-txt').val(hd_page.GenioNo)
             $('#genio-date').val(moment(to_date(hd_page.GenioDate)).format('YYYY-MM-DD'))
@@ -511,12 +511,8 @@
             $('#status-select').val(hd_page.Status)
 
             // 저장된 데이터 불러올 경우 고객업체 비활성화
-            // $('#supplier-txt').prop('readonly',  hd_page.CompanyName != "")
-            // $('.company-modal-btn').prop('disabled',  hd_page.CompanyName != "")
-            // $('.disabled-if-saved').prop('disabled',  true)
-            // showFlashPopup('.company-modal-btn');
-            // showFlashPopup('.disabled-if-saved');
-            disabledmenu(hd_page);
+            $('#supplier-txt').prop('readonly',  hd_page.CompanyName != "")
+            disabled_menu(hd_page);
 
             $('#vat-type-select').val(hd_page.VatRateId)
             set_vat_type_rate('#vat-type-select', false);
@@ -535,45 +531,10 @@
             $('#modal-slip').modal('hide');
         }
 
-        function showFlashPopup(dom_val) {
-            if($(dom_val).prop('disabled')){
-                $(dom_val).on('mouseover', function() {
-                    showNotice();
-                });
-            }
-        }
-
-        function disabledmenu(hd_page) {
+        function disabled_menu(hd_page) {
             const isCompanySaved = hd_page.CompanyName !== "";
             $('#supplier-txt').prop('readonly',  isCompanySaved)
             $('.company-modal-btn').toggleClass('disabled', isCompanySaved);
-        }
-
-        function checkModalOpen(element) {
-            const $this = $(element);
-            const auto_slip_no = $('#auto-slip-no-txt').val();
-
-            // 전표번호가 비어 있을 경우
-            if (!auto_slip_no) {
-                iziToast.warning({
-                    title: "warning",
-                    message: "저장>추가 버튼을 클릭하여 새 전표번호로 시작하세요."
-                });
-                return false;
-            }
-            // disabled인 경우
-            if ($this.hasClass('disabled')) {
-                let msg = "저장된 해당정보는 변경할 수 없으며 전표 삭제만 가능합니다.";
-                if ($this.hasClass('disabled-if-saved')) { // 항목추가인 경우
-                    msg = "연관 전표번호가 있을경우 연관복사로만 추가가 가능합니다.";
-                }
-                iziToast.warning({
-                    title: "warning",
-                    message: msg
-                });
-                return false;
-            }
-            return true;
         }
 
         const genioModal = {!! json_encode($genioModal) !!};

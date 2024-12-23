@@ -20,7 +20,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', env('APP_NAME'))</title>
-    <link rel="icon" href="{{ msset(env('FAVICON_PATH')) }}">
+    @php $basePath = '/themes/'  .env('DBR_THEME') . '/pro/resources'; @endphp
+    <link rel="icon" href="{{ csset($basePath . '/assets/brand-images/pavicon.jpg') }}">
 
     @php $basePath = '/themes/pro/' . env('DBR_THEME') . '/resources'; @endphp
 

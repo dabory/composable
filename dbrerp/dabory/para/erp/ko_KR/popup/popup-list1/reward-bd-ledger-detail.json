@@ -186,8 +186,8 @@
         {
             "$Radio": "center",
             "No": "center",
-            "C1": "yy.mm.dd",
-            "C2": "deal_type('deal-type')",
+            "C1": "YY.MM.DD",
+            "C2": "center",
             "C3": "left",
             "D1": "decimal('sales_qty', 'zn')",
             "D2": "decimal('sales_prc', 'zn')",

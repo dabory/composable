@@ -9,7 +9,7 @@
 
 
     <script src="{{ csset('/js/dashboard/echarts.min.js') }}"></script>
-     <script src="{{ csset('/js/dashboard/dashboard.js') }}"></script>
+    {{-- <script src="/js/dashboard/dashboard.js"></script> --}}
     <script src="{{ csset('/js/dashboard/streamgraph.js') }}"></script>
     <script src="{{ csset('/js/dashboard/sparklines.js') }}"></script>
     <script src="{{ csset('/js/dashboard/lines.js') }}"></script>

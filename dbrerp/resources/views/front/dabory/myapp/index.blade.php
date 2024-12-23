@@ -41,7 +41,7 @@
                         <div class="new_order card bg-teal-400">
                             <div class="card-body">
                                 <div class="d-flex">
-                                    <h3 class="font-weight-semibold mb-0">3,450,000 원</h3>
+                                    <h3 class="font-weight-semibold mb-0">dd3,450,000 원</h3>
                                     <span class="badge bg-teal-800 badge-pill align-self-center ml-auto">신규주문</span> </div>
                                 <div> 배송완료 80%
                                     <div class="font-size-sm opacity-75">489 건</div>

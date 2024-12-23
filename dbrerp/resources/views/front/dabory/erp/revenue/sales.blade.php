@@ -384,7 +384,7 @@
     <script>
         $(document).ready(function() {
             $('.sorder-modal-btn, .company-modal-btn, .disabled-if-saved').on('click', function() {
-                if(!checkModalOpen(this)){
+                if(!Btype.checkModalOpen(this)){
                     return false;
                 }
             });
@@ -746,7 +746,7 @@
             table_head_check_box_reset('#sales-table-head')
             $('#sales-table-body').html('');
             isSaveHead = false;
-            disabledClass(1)
+            disabled_class(1)
             // footer 합계 초기화
             $('#QtyTotal').val('')
             $('#SupplyTotal').val('')
@@ -883,7 +883,7 @@
                     });
                 }
             // });
-            scrollToTop();
+            scroll_to_top();
         }
 
         function body_act_success_callback($this, tr) {
@@ -1278,7 +1278,7 @@
 
             // 저장된 데이터 불러올 경우 고객업체 비활성화
             $('#supplier-contact-txt').val(hd_page.BuyerContact)
-            disabledBtn(hd_page);
+            disabled_btn(hd_page);
 
             // let html = `<option value="${hd_page.VatRateId}" data-vatrate="${hd_page.VatRate}" data-viewvatrate="${hd_page.VatRate * 100}">${hd_page.VatName}</option>`
             // $('#vat-type-select').html(html);
@@ -1316,56 +1316,26 @@
             // });
         }
 
-        function scrollToTop() {
+        function scroll_to_top() {
             var scrollArea = document.getElementById("scroll-area");
             scrollArea.scrollTop = 0;
         }
 
-        function disabledClass(type) {
+        function disabled_class(type) {
             const bodySelectOptions = $('.dropdown-item.sales-bd-act').filter(function() {
                 return $(this).data('value') === 'body-copy';
             });
-
             bodySelectOptions.toggleClass('disabled', type === 0);
         }
 
-        function disabledBtn(hd_page) {
+        function disabled_btn(hd_page) {
             const isSorderSaved = hd_page.SorderNo !== "";
             const isCompanySaved = hd_page.CompanyName !== "";
-
-            $('.disabled-if-saved, .sorder-modal-btn').toggleClass('disabled', isSorderSaved);
-            $('#sorder-no-txt').prop('readonly', isSorderSaved);
-            disabledClass(isSorderSaved ? 1 : 0); // 0:disabled 1:able
-
             $('#supplier-txt').prop('readonly', isCompanySaved);
+            $('#sorder-no-txt').prop('readonly', isSorderSaved);
+            $('.disabled-if-saved, .sorder-modal-btn').toggleClass('disabled', isSorderSaved);
             $('.company-modal-btn').toggleClass('disabled', isCompanySaved);
-        }
-
-        function checkModalOpen(element) {
-            const $this = $(element);
-            const auto_slip_no = $('#auto-slip-no-txt').val();
-
-            // 전표번호가 비어 있을 경우
-            if (!auto_slip_no) {
-                iziToast.warning({
-                    title: "warning",
-                    message: "저장>추가 버튼을 클릭하여 새 전표번호로 시작하세요."
-                });
-                return false;
-            }
-            // disabled인 경우
-            if ($this.hasClass('disabled')) {
-                let msg = "저장된 해당정보는 변경할 수 없으며 전표 삭제만 가능합니다.";
-                if ($this.hasClass('disabled-if-saved')) { // 항목추가인 경우
-                    msg = "연관 전표번호가 있을경우 연관복사로만 추가가 가능합니다.";
-                }
-                iziToast.warning({
-                    title: "warning",
-                    message: msg
-                });
-                return false;
-            }
-            return true;
+            disabled_class(isSorderSaved ? 1 : 0); // 0:disabled 1:able
         }
 
         const salesModal = {!! json_encode($salesModal) !!};

@@ -314,6 +314,14 @@
                 $('#list1-form').find('#list1-end-date').val(date_range.end_date)
                 $('#list1-form').find('#Id').val(id)
 
+                // 첫 번째 탭을 active로 설정
+                $('ul.nav-tabs li a').removeClass('active');
+
+                // 첫 번째 탭의 내용을 보이게 설정
+                $('ul.nav-tabs li:first-child a').addClass('active');
+                $('.tab-pane').removeClass('show active'); // 기존에 활성화된 탭 초기화
+                $('#basic').addClass('show active');
+
                 if (sum_filter) {
                     ListTypeList1Form.sum_filter = sum_filter
                 }

@@ -124,7 +124,6 @@ async function copy_to_another() {
         $('#modal-copy-to-another.show').find(`input[name=${class_name}-CopyItemCheckRadio]:checked`).val() ==='true')
 
     fetch_copy_to_another(moealSetFile.General.ActApi, copy_data, function (response) {
-        console.log("copy_data", copy_data)
         let d = response.data
         if (d.Hd) {
             iziToast.success({
@@ -132,7 +131,7 @@ async function copy_to_another() {
                 message: $('#action-completed').text(),
             });
 
-            Btype.fetch_slip_form_book(target_slip_no_txt);
+            Btype.fetch_slip_form_book(target_slip_no_txt, false);
             $('#modal-copy-to-another.show').modal('hide')
         } else {
             let message = d.body ?? $('#api-request-failed-please-check').text();

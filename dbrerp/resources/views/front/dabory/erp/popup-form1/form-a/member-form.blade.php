@@ -30,17 +30,37 @@
                         <div class="form-group d-flex flex-column mb-2">
                             <label class="m-0">{{ $formA['FormVars']['Title']['Name'] }}</label>
                             <input type="text" id="name-txt" class="rounded w-100" autocomplete="off" maxlength="{{ $formA['FormVars']['MaxLength']['Name'] }}"
-                                {{ $formA['FormVars']['Required']['Name'] }}>
+                                {{ $formA['FormVars']['Required']['Name'] }} readonly>
                         </div>
                         <div class="form-group d-flex flex-column mb-2">
                             <label class="m-0">{{ $formA['FormVars']['Title']['Email'] }}</label>
                             <input type="text" id="email-txt" class="rounded w-100" autocomplete="off" maxlength="{{ $formA['FormVars']['MaxLength']['Email'] }}"
                                 {{ $formA['FormVars']['Required']['Email'] }}>
                         </div>
-                        <div class="form-group d-flex flex-column mb-2">
+                        {{--<div class="form-group d-flex flex-column mb-2">
                             <label class="m-0">{{ $formA['FormVars']['Title']['MobileNo'] }}</label>
                             <input type="text" id="mobile-no-txt" class="rounded w-100" autocomplete="off" maxlength="{{ $formA['FormVars']['MaxLength']['MobileNo'] }}"
                                 {{ $formA['FormVars']['Required']['MobileNo'] }}>
+                        </div>--}}
+                        <div class="form-group d-flex flex-column mb-2">
+                            <label class="m-0">{{ $formA['FormVars']['Title']['MobileNo'] }}</label>
+                            <div class="d-flex align-items-center">
+                                <input type="text" id="mobile-no-txt" class="rounded w-100" autocomplete="off" maxlength="{{ $formA['FormVars']['MaxLength']['MobileNo'] }}"
+                                {{ $formA['FormVars']['Required']['MobileNo'] }} placeholder="인증번호를 입력해주세요.">
+                                <span class="btn_wrap js_btn_wrapper mt-0">
+                                    <button type="button" id="cert-send-btn" class="btn text-white btn-sm btn-dark certi-btn" onclick="PopupForm1FormAMemberForm.send_verify_code(this)">인증번호발송</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group d-flex flex-column mb-2">
+                            <label class="m-0">{{ $formA['FormVars']['Title']['CertCode'] }}</label>
+                            <div class="d-flex align-items-center">
+                                <input type="text" id="cert-number-txt" class="rounded w-100" autocomplete="off" maxlength="{{ $formA['FormVars']['MaxLength']['CertCode'] }}"
+                                {{ $formA['FormVars']['Required']['CertCode'] }} placeholder="인증번호를 입력해주세요.">
+                                <span class="btn_wrap js_btn_wrapper mt-0">
+                                    <button type="button" id="cert-verify-btn" class="btn btn-sm btn-dark text-white certi-btn" onclick="PopupForm1FormAMemberForm.check_verify_code()">확인</button>
+                                </span>
+                            </div>
                         </div>
                         <div class="form-group d-flex flex-column mb-2">
                             <label class="m-0">{{ $formA['FormVars']['Title']['Status'] }}</label>
@@ -271,12 +291,56 @@
                 PopupForm1FormAMemberForm.set_member_ui(response, member_ext)
             }
 
+            PopupForm1FormAMemberForm.send_verify_code = async function ($this) {
+                const response = await call_local_api('{{ route("user-signup-verify.send") }}', {mobile_no: $('#mobile-no-txt').val()})
+                const error_msg = response.data.original.body
+
+                if (error_msg['message'] === 'success') {
+                    $($this).prop('disabled', true)
+                    iziToast.success({ title: 'Success', message: '인증번호 발송되었습니다' })
+                } else {
+                    iziToast.error({ title: 'Error', message: error_msg['message'] })
+                }
+            }
+
+            PopupForm1FormAMemberForm.check_verify_code = async function () {
+                    const cert_number = $('#cert-number-txt').val()
+                    if(cert_number === ''){
+                        iziToast.warning({ title: 'Warning', message: "인증번호를 입력해주세요."});
+                        return false;
+                    }
+                    try {
+                        const response = await call_local_api('/user-edit-verify',
+                            { cert_number: $('#cert-number-txt').val() }
+                        );
+
+                        if (response.data.success) {
+                            iziToast.success({ title: 'Success', message: response.data.message })
+                            $('#name-txt').prop('readonly', false)
+                            $('#email-txt').prop('readonly', false)
+                            $('#mobile-no-txt').prop('readonly', false)
+                            $('#cert-verify-btn').prop('disabled', true)
+                        } else {
+                            iziToast.error({ title: 'Fail', message: response.data.message })
+                        }
+                    } catch (error) {
+                        // console.error(error);
+                        iziToast.error({ title: 'Fail', message: error })
+                    }
+                }
+
             PopupForm1FormAMemberForm.set_member_ui = function (response, member_ext) {
                 if (isEmpty(response.data) || response.data.apiStatus) return;
                 const member = response.data.Page[0]
                 // console.log(member)
 
                 const member_form = $('#member-form')
+
+                $(member_form).find('#name-txt').prop('readonly', true)
+                $(member_form).find('#email-txt').prop('readonly', true)
+                $(member_form).find('#mobile-no-txt').prop('readonly', true)
+                $(member_form).find('#cert-send-btn').prop('disabled', false)
+                $(member_form).find('#cert-verify-btn').prop('disabled', false)
                 $(member_form).find('#Id').val(member.Id)
                 $(member_form).find('#sso-sub-id').val(member.SsoSubId)
                 $(member_form).find('#name-txt').val(member.NickName)

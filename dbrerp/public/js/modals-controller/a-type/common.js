@@ -2,7 +2,7 @@
     let parameter_callback;
 
     // Private Method
-    function call_act_api(data, argObj, callback, namespace = 'window') {
+    function call_act_api(data, argObj, callback, namespace = 'window', show_iziToast = true) {
         $('.save-button').prop('disabled', true);
 
         $.when(window.get_api_data(eval(namespace).formA['General']['ActApi'], {
@@ -16,10 +16,12 @@
                     window.set_as_response_id(d.Page[0].Id, argObj)
                 }
                 callback()
-                iziToast.success({
-                    title: 'Success',
-                    message: $('#action-completed').text(),
-                });
+                if (show_iziToast) {
+                    iziToast.success({
+                        title: 'Success',
+                        message: $('#action-completed').text(),
+                    });
+                }
             } else {
                 let message = response.data.body ?? $('#api-request-failed-please-check').text();
                 iziToast.error({
@@ -86,7 +88,7 @@
         window.input_box_reset_for(argObj)
     };
 
-    Atype.btn_act_save = function (argObj, callback = undefined, namespace = 'window') {
+    Atype.btn_act_save = function (argObj, callback = undefined, namespace = 'window', show_iziToast = true) {
         if (window.dom_required_check(`${argObj} input`) || window.dom_required_check(`${argObj} select`)) {
             iziToast.warning({
                 title: 'Warning',
@@ -105,7 +107,7 @@
 
         call_act_api(parameter_callback(), argObj, function() {
             if (! isEmpty(callback)) { callback(); }
-        }, namespace);
+        }, namespace, show_iziToast);
     };
 
     Atype.btn_act_del = function (argObj, callback = undefined, namespace = 'window') {

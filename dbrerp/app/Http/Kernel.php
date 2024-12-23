@@ -73,5 +73,6 @@ class Kernel extends HttpKernel
         'app.token.manager' => \App\Http\Middleware\AppTokenManager::class,
         'check.device.scale' => \App\Http\Middleware\CheckDeviceScale::class,
         'header.data' => \App\Http\Middleware\Shop\HeaderData::class,
+        'check.underConstruction' => \App\Http\Middleware\CheckUnderConstruction::class,
     ];
 }

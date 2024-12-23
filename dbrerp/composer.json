@@ -83,7 +83,7 @@
         },
         "merge-plugin": {
             "include": [
-                "dabory/themes/erponly/composer.json"
+                "dabory/themes/kbgolf/composer.json"
             ],
             "recurse": true,
             "replace": false,

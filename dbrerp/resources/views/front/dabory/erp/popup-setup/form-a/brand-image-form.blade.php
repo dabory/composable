@@ -206,6 +206,7 @@
 
             PopupSetupFormABrandImageForm.file_upload = function ($this) {
                 const data_type = $($this).data('type')
+                let file_name;
                 switch( data_type ) {
                     case 'small': file_name = 'logo-small.jpg'; break;
                     case 'medium': file_name = 'logo-medium.jpg'; break;
@@ -215,64 +216,80 @@
                     case 'coming': file_name = 'coming-soon.jpg'; break;
                 }
 
-                if (! PopupSetupFormABrandImageForm.check_file(file_name)) {
-                    $('#brand-image-form').find(`[id="upload-file-${data_type}"]`).val('')
-                    return iziToast.error({
-                        title: 'Error', message: `${file_name} 파일이 존재합니다. 수정하려면 해당 파일을 삭제해주세요`,
-                    });
+                if (!PopupSetupFormABrandImageForm.check_file(file_name)) {
+                    const del_type = "auto"
+                    PopupSetupFormABrandImageForm.delete_file(file_name, del_type)
+                        .then(function() {
+                            uploadFile(data_type, file_name);
+                        })
+                        .catch(function(error) {
+                            console.error('파일 삭제 실패:', error);
+                        });
+                } else {
+                    uploadFile(data_type, file_name);
                 }
-                const form = new FormData()
-                form.append('_token', $('meta[name="csrf-token"]').attr('content'))
-                form.append('file', $('#brand-image-form').find(`[id="upload-file-${data_type}"]`)[0].files[0])
-                form.append('fileName', file_name)
+
+            }
+
+            function uploadFile(data_type, file_name) {
+                console.log('uploadFile_file_name : ', file_name);
+                const form = new FormData();
+                form.append('_token', $('meta[name="csrf-token"]').attr('content'));
+                form.append('file', $('#brand-image-form').find(`[id="upload-file-${data_type}"]`)[0].files[0]);
+                form.append('fileName', file_name);
 
                 $.ajax({
                     url: "/brand-image-file-upload",
-                    type:'POST',
+                    type: 'POST',
                     data: form,
                     processData: false,
                     contentType: false,
                     success: function(response) {
                         console.log(response);
-                        PopupSetupFormABrandImageForm.file_list()
-                        iziToast.success({
-                            title: 'Success', message: $('#action-completed').text(),
-                        });
-                        $('#modal-select-popup.show').modal('hide');
-                    },
-                });
-            }
-
-            PopupSetupFormABrandImageForm.delete_file = function (fileName){
-                const safeFileName = fileName.replace(/\./g, '-').replace(/\//g, '-');
-                if (!confirm(`${fileName} 삭제하시겠습니까?`)) {
-                        return;
-                }
-
-                $.ajax({
-                    url: "/brand-image-file-delete",
-                    type: 'POST',
-                    data: {
-                        _token: $('meta[name="csrf-token"]').attr('content'),
-                        file_path_list: JSON.stringify([fileName])
-                    },
-                    success: function(response) {
-                        $(`#file-row${safeFileName}`).remove();
-                        uploadedFiles = uploadedFiles.filter(file => file !== safeFileName);
                         PopupSetupFormABrandImageForm.file_list();
-                        // console.log('uploadedFiles : ', uploadedFiles);
                         iziToast.success({
-                            title: 'Success', message: '삭제완료.',
+                            title: 'Success',
+                            message: $('#action-completed').text(),
                         });
+                        // $('#modal-select-popup.show').modal('hide');
                     },
-                    error: function(error) {
-                        console.log(error.responseJSON)
-                        iziToast.error({
-                            title: 'Error', message: '삭제실패.',
-                        });
-                    }
                 });
             }
+
+            PopupSetupFormABrandImageForm.delete_file = function (fileName, type) {
+                const safeFileName = fileName.replace(/\./g, '-').replace(/\//g, '-');
+                return new Promise((resolve, reject) => {
+                    if(type !== 'auto'){
+                        if (!confirm(`${fileName} 삭제하시겠습니까?`)) {
+                            return;
+                        }
+                    }
+                    $.ajax({
+                        url: "/brand-image-file-delete",
+                        type: 'POST',
+                        data: {
+                            _token: $('meta[name="csrf-token"]').attr('content'),
+                            file_path_list: JSON.stringify([fileName])
+                        },
+                        success: function(response) {
+                            $(`#file-row${safeFileName}`).remove();
+                            uploadedFiles = uploadedFiles.filter(file => file !== safeFileName);
+                            PopupSetupFormABrandImageForm.file_list();
+                            iziToast.success({
+                                title: 'Success', message: '삭제완료.',
+                            });
+                            resolve(response); // 파일 삭제 성공 후 resolve
+                        },
+                        error: function(error) {
+                            console.log(error.responseJSON)
+                            iziToast.error({
+                                title: 'Error', message: '삭제실패.',
+                            });
+                            reject('파일 삭제 실패'); // 실패 시 reject
+                        }
+                    });
+                });
+            };
 
             PopupSetupFormABrandImageForm.btn_act_save = function () {
                 Atype.set_parameter_callback(PopupSetupFormABrandImageForm.parameter);
@@ -311,7 +328,7 @@
             }
 
             PopupSetupFormABrandImageForm.show_popup_callback = async function (id, setup, brand_code) {
-                $('#modal-select-popup.popup-setup-form-a-brand-image-form .modal-dialog').css('maxWidth', '600px');
+                $('#modal-select-popup.popup-setup-form-a-brand-image-form .modal-dialog').css('maxWidth', '1000px');
                 PopupSetupFormABrandImageForm.btn_act_new()
                 $('#brand-image-form').find('#Id').val(id)
                 PopupSetupFormABrandImageForm.brand_code = brand_code

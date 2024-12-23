@@ -120,7 +120,7 @@
 |       |       `-- en.json
 |       |-- coupon
 |       |   |-- dabory-coupon.css
-|       |   |-- dabory-coupon.js
+|       |   |-- dabory-signup.js
 |       |   `-- lang
 |       |       `-- en.json
 |       |-- quick
@@ -3566,7 +3566,7 @@
 |-- sitemap.xml
 |-- themes
 |   |-- erp
-|   |   `-- optical_pos
+|   |   `-- opticalpos
 |   |       |-- app
 |   |       |   |-- Http
 |   |       |   |   `-- Controllers

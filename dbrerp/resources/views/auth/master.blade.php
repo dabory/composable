@@ -6,9 +6,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', env('APP_NAME'))</title>
+    @php $basePath = '/themes/'  .env('DBR_THEME') . '/pro/resources'; @endphp
     <meta property="og:image" content="https://newerp.daboryhost.com/public/images/ogm_img.jpg" />
 
-    <link rel="icon" href="{{ msset(env('FAVICON_PATH')) }}">
+    <!--<link rel="icon" href="{{ csset($basePath . '/assets/brand-images/pavicon.jpg') }}">-->
+	<link rel="icon" href="{{ config('app.theme_path') }}/pro/resources/assets/brand-images/logo-small.jpg">
 
     <link href="{{ csset('/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     @include('partial.site.meta')

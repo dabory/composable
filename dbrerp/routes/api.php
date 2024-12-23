@@ -40,6 +40,10 @@ Route::post('/api23-cronjobs', [App\Http\Controllers\Api\Api23GateTokenControlle
 Route::post('/api23-js', [App\Http\Controllers\Api\Api23GateTokenController::class, 'api23Js']);
 Route::post('/api23-app', [App\Http\Controllers\Api\Api23GateTokenController::class, 'api23App']);
 
+Route::post('/auth/send-emailConfirm', [App\Http\Controllers\Api\Auth\VerifyController::class, 'sendEmailConfirm']);
+Route::post('/auth/send-smsConfirm', [App\Http\Controllers\Api\Auth\VerifyController::class, 'sendSmsConfirm']);
+Route::post('/auth/signup', [App\Http\Controllers\Api\Auth\SignupController::class, 'store']);
+
 Route::post('/item-url-scrap', [App\Http\Controllers\Api\Scrap\ItemUrlScrapController::class, 'store']);
 
 Route::post('/gate-token-get-test', [App\Http\Controllers\Api\GateTokenController::class, 'test']);

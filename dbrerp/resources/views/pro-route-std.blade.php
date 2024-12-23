@@ -55,10 +55,11 @@
                 <div class="panel-body">
                     <ul>
                         <li>[기본]</li>
-                        <li><a href="/" target="_self">홈</a></li>
+                        <li><a href="/" target="_self">Home</a> : 홈 </li>
                         <li><a href="/user-login" target="_self">/user-login</a> : 관리자 로그인 </li>
                         <li><a href="/member-login" target="_self">/member-login</a> : 회원 로그인 </li>
                         <li><a href="/user-clear-cache" target="_self">/user-clear-cache</a> : 캐시 삭제 </li>
+                        <li><a href="/user-clear-session-sort-menu" target="_self">/user-clear-session-sort-menu</a> : 세션 삭제 </li>
                         <br>
                         <li>[회원-로그인]</li>
                         <li><a href="/member-login" target="_blank">/member-login</a> : 로그인 </li>
@@ -98,6 +99,7 @@
                     <ul>
                         <li>[유형상품(Item)]</li>
                         <li><a target="_blank" href="/item-gallery/all">/item-gallery/all</a> : 상품리스트 </li>
+                        <li><a target="_blank" href="/item-taxo-gallery">/item-taxo-gallery</a> : 상품분류형 리스트 </li>
                         <li><a target="_blank" href="/item-details/0">/item-details/0</a> : 상품 상세 </li>
                         <li><a target="_blank" href="/checkout">/checkout</a> : 결제 </li>
                         <br>

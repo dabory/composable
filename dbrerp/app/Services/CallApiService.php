@@ -42,9 +42,13 @@ class CallApiService
 //                return '';
 //            }
 
+            $meessage = $e->getMessage();
+            if (isset($request['strong_type'])) {
+                $meessage = $request['strong_type'] . ' Strong Type API ' . $meessage;
+            }
             return $this->errorResponse([
                 'apiStatus' => 503,
-                'body' => $e->getMessage()
+                'body' => $meessage
             ], $isAjax);
         }
 

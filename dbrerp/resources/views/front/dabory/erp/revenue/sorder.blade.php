@@ -30,7 +30,7 @@
                         Loading...
                 </button>
                 <div class="btn-group" hidden>
-                    <button type="button" class="btn btn-sm btn-primary sorder-act save-button" data-value="save" {{ $formB['FormVars']['Hidden']['SaveButton'] }}>
+                    <button type="button" class="btn-dark btn-sm btn-primary sorder-act save-button" data-value="save" {{ $formB['FormVars']['Hidden']['SaveButton'] }}>
                         {{ $formB['FormVars']['Title']['SaveButton'] }}
                     </button>
                     @include('front.dabory.erp.partial.select-btn-options', [
@@ -329,7 +329,7 @@
     <script>
         $(document).ready(function() {
             $('.company-modal-btn').on('click', function() {
-                if(!checkModalOpen(this)){
+                if(!Btype.checkModalOpen(this)){
                     return false;
                 }
             });
@@ -543,7 +543,7 @@
                         message: @json(_e('(*)Required item(s) omitted')),
                     });
                 }
-                scrollToTop();
+                scroll_to_top();
             // });
         }
 
@@ -625,7 +625,7 @@
         function data_init() {
             bd_page = [];
             $(`#frm`).find(`input[name="Id"]`).val(0)
-            $('.save-button').prop('disabled', false)
+            $('.save-button').removeClass('disabled')
 
             $('#auto-slip-no-txt').val('')
             Btype.set_slip_no_btn_abled()
@@ -651,7 +651,6 @@
             $('#remarks-preview').html('')
 
             $('#buyer-txt').prop('readonly', false);
-
             $('#is-closed-check').prop('checked', false)
             // select_box_first_selected('#is-closed-select')
             $('.company-modal-btn').removeClass('disabled');
@@ -1210,6 +1209,7 @@
                 ThumbArr = response.data.HdPage[0]['FirstThumb']
             }
 
+            // $('.save-button').addClass('disabled')
             $('#Id').val(hd_page.Id)
             $('#auto-slip-no-txt').val(hd_page.SorderNo)
             $('#sorder-date').val(moment(to_date(hd_page.SorderDate)).format('YYYY-MM-DD'))
@@ -1220,7 +1220,7 @@
             // 저장된 데이터 불러올 경우 고객업체 비활성화
             $('#buyer-contact-txt').val(hd_page.BuyerContact)
             $('#seller-id-txt').val(hd_page.SellerId)
-            disabledmenu(hd_page);
+            disabled_menu(hd_page);
 
             $('#deal-type-select').val(hd_page.DealTypeId)
             $('#vat-type-select').val(hd_page.VatRateId)
@@ -1249,42 +1249,15 @@
             $('#modal-slip').modal('hide');
         }
 
-        function scrollToTop() {
+        function scroll_to_top() {
             var scrollArea = document.getElementById("scroll-area");
             scrollArea.scrollTop = 0;
         }
 
-        function disabledmenu(hd_page) {
+        function disabled_menu(hd_page) {
             const isCompanySaved = hd_page.CompanyName !== "";
             $('#buyer-txt').prop('readonly',  isCompanySaved)
             $('.company-modal-btn').toggleClass('disabled', isCompanySaved);
-        }
-
-        function checkModalOpen(element) {
-            const $this = $(element);
-            const auto_slip_no = $('#auto-slip-no-txt').val();
-
-            // 전표번호가 비어 있을 경우
-            if (!auto_slip_no) {
-                iziToast.warning({
-                    title: "warning",
-                    message: "저장>추가 버튼을 클릭하여 새 전표번호로 시작하세요."
-                });
-                return false;
-            }
-            // disabled인 경우
-            if ($this.hasClass('disabled')) {
-                let msg = "저장된 해당정보는 변경할 수 없으며 전표 삭제만 가능합니다.";
-                if ($this.hasClass('disabled-if-saved')) { // 항목추가인 경우
-                    msg = "연관 전표번호가 있을경우 연관복사로만 추가가 가능합니다.";
-                }
-                iziToast.warning({
-                    title: "warning",
-                    message: msg
-                });
-                return false;
-            }
-            return true;
         }
 
         const sorderModal = {!! json_encode($sorderModal) !!};

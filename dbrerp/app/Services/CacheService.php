@@ -145,7 +145,7 @@ class CacheService
             foreach ($data['Page'] as $themeSetup) {
                 $themeSetupCode = $themeSetup['SetupCode'];
                 $brandCode = $themeSetup['BrandCode'] ? '-'.$themeSetup['BrandCode'] : $themeSetup['BrandCode'];
-                $fullFileUrl = "dabory-footage/basic/thtme-setup/$themeSetupCode$brandCode.json";
+                $fullFileUrl = "dabory-footage/basic/theme-setup/$themeSetupCode$brandCode.json";
                 Storage::put($fullFileUrl, json_encode($themeSetup));
             }
         }
@@ -164,6 +164,18 @@ class CacheService
     {
         $brandCode = $brandCode ? '-'.$brandCode : $brandCode;
         $fullFileUrl = "dabory-footage/basic/setup/$setupCode$brandCode.json";
+        if (Storage::disk()->exists($fullFileUrl)) {
+            $setup = json_decode(Storage::get($fullFileUrl), true);
+            return json_decode($setup['SetupJson'], true);
+        }
+
+        return null;
+    }
+
+    public function getThemeSetup($setupCode, $brandCode = null)
+    {
+        $brandCode = $brandCode ? '-'.$brandCode : $brandCode;
+        $fullFileUrl = "dabory-footage/basic/theme-setup/$setupCode$brandCode.json";
         if (Storage::disk()->exists($fullFileUrl)) {
             $setup = json_decode(Storage::get($fullFileUrl), true);
             return json_decode($setup['SetupJson'], true);

@@ -28,7 +28,7 @@
                     </div>
                 </li>
             @empty
-                <li class="pricing_box1 full_width">
+                <li class="pricing_box1 full_width no_data">
                     데이터가 존재하지 않습니다
                 </li>
             @endforelse

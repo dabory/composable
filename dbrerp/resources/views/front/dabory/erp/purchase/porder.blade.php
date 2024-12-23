@@ -32,7 +32,7 @@
                         Loading...
                 </button>
                 <div class="btn-group" hidden>
-                    <button type="button" class="btn btn-sm btn-primary porder-act save-button" data-value="save" {{ $formB['FormVars']['Hidden']['SaveButton'] }}>
+                    <button type="button" class="btn-dark btn-sm btn-primary porder-act save-button" data-value="save" {{ $formB['FormVars']['Hidden']['SaveButton'] }}>
                         {{ $formB['FormVars']['Title']['SaveButton'] }}
                     </button>
                     @include('front.dabory.erp.partial.select-btn-options', [
@@ -351,7 +351,7 @@
     <script>
         $(document).ready(function() {
             $('.company-modal-btn').on('click', function() {
-                if(!checkModalOpen(this)){
+                if(!Btype.checkModalOpen(this)){
                     return false;
                 }
             });
@@ -396,7 +396,11 @@
             $('.porder-act').on('click', function () {
                 // console.log($(this).data('value'))
                 switch( $(this).data('value') ) {
-                    case 'save': Btype.btn_act_save('#porder-form #frm'); break;
+                    case 'save':
+                        if(!Btype.checkModalOpen(this)){
+                            return false;
+                        }
+                        Btype.btn_act_save('#porder-form #frm'); break;
                     case 'new': btn_act_new(); break;
                     case 'save-and-new': Btype.btn_act_save_and_new('#porder-form #frm'); break;
                     case 'copy-to-another': btn_act_copy_to_another(str_replace_hyphen($(this).data('parameter'), '/')); break;
@@ -567,7 +571,7 @@
                         message: @json(_e('(*)Required item(s) omitted')),
                     });
                 }
-                scrollToTop();
+                scroll_to_top();
             // });
         }
 
@@ -620,7 +624,7 @@
         function data_init() {
             bd_page = [];
             $(`#frm`).find(`input[name="Id"]`).val(0)
-            $('.save-button').prop('disabled', false)
+            $('.save-button').removeClass('disabled')
 
             $('#auto-slip-no-txt').val('')
             Btype.set_slip_no_btn_abled()
@@ -1184,17 +1188,17 @@
             if(response.data.HdPage[0]['FirstThumb'] !== ""){
                 ThumbArr = response.data.HdPage[0]['FirstThumb']
             }
-
+            // $('.save-button').addClass('disabled')
             $('#Id').val(hd_page.Id)
             $('#auto-slip-no-txt').val(hd_page.PorderNo)
             $('#porder-date').val(moment(to_date(hd_page.PorderDate)).format('YYYY-MM-DD'))
             $('#supplier-txt').val(hd_page.CompanyName)
             $('#supplier-txt').data('id', hd_page.SupplierId)
             $('#supplier-txt').data('contact', hd_page.SupplierContact)
+
             // 저장된 데이터 불러올 경우 고객업체 비활성화
             $('#supplier-contact-txt').val(hd_page.SupplierContact)
-
-            disabledmenu(hd_page);
+            disabled_menu(hd_page);
 
             $('#deal-type-select').val(hd_page.DealTypeId)
             $('#vat-type-select').val(hd_page.VatRateId)
@@ -1226,42 +1230,15 @@
             $('#modal-slip').modal('hide')
         }
 
-        function scrollToTop() {
+        function scroll_to_top() {
             var scrollArea = document.getElementById("scroll-area");
             scrollArea.scrollTop = 0;
         }
 
-        function disabledmenu(hd_page) {
+        function disabled_menu(hd_page) {
             const isCompanySaved = hd_page.CompanyName !== "";
             $('#supplier-txt').prop('readonly',  isCompanySaved)
             $('.company-modal-btn').toggleClass('disabled', isCompanySaved);
-        }
-
-        function checkModalOpen(element) {
-            const $this = $(element);
-            const auto_slip_no = $('#auto-slip-no-txt').val();
-
-            // 전표번호가 비어 있을 경우
-            if (!auto_slip_no) {
-                iziToast.warning({
-                    title: "warning",
-                    message: "저장>추가 버튼을 클릭하여 새 전표번호로 시작하세요."
-                });
-                return false;
-            }
-            // disabled인 경우
-            if ($this.hasClass('disabled')) {
-                let msg = "저장된 해당정보는 변경할 수 없으며 전표 삭제만 가능합니다.";
-                if ($this.hasClass('disabled-if-saved')) { // 항목추가인 경우
-                    msg = "연관 전표번호가 있을경우 연관복사로만 추가가 가능합니다.";
-                }
-                iziToast.warning({
-                    title: "warning",
-                    message: msg
-                });
-                return false;
-            }
-            return true;
         }
 
         const porderModal = {!! json_encode($porderModal) !!};

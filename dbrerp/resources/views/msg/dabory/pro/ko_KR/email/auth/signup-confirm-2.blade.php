@@ -30,13 +30,13 @@
                         <p style="margin:0; padding:0;">
                             {{$data['C3']}}에 가입하신 것을 환영합니다.<br>
                             먼저 계정을 확인 해야합니다.<br>
-                            아래 버튼을 누르세요.
+                            아래 인증번호를 입력하세요.
                         </p>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <a href="{{$data['C11']}}" style="display:inline-block; width:220px; margin-top:40px; margin-bottom:60px; padding:15px; background-color:#0f0f3c; border-radius:50px; border:none; font-size:18px; font-family:'Roboto', 'Noto Sans KR', sans-serif; color: #ffffff; text-decoration: none; font-weight:700; text-align:center;" target="_blank">계정 확인</a>
+                        <p style="color: #ff0000; font-size: 20px;">{{$data['C11']}}</p>
                     </td>
                 </tr>
                 <tr>

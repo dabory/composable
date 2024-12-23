@@ -19,7 +19,7 @@
                         Loading...
                 </button>
                 <div class="btn-group" hidden>
-                    <button type="button" class="btn btn-sm btn-primary credit-act save-button" data-value="save" {{ $formB['FormVars']['Hidden']['SaveButton'] }}>
+                    <button type="button" class="btn-dark btn-sm btn-primary credit-act save-button" data-value="save" {{ $formB['FormVars']['Hidden']['SaveButton'] }}>
                         {{ $formB['FormVars']['Title']['SaveButton'] }}
                     </button>
                     @include('front.dabory.erp.partial.select-btn-options', [
@@ -42,10 +42,10 @@
                                     <div class="form-group d-flex flex-column mb-2">
                                         <label class="m-0 overflow-hidden text-nowrap">{{ $formB['FormVars']['Title']['AutoSlipNo'] }}</label>
                                         <div class="col-12 d-flex p-0">
-                                            <button id="auto-slip-no-btn" class="btn-dark border-white rounded overflow-hidden col-3 text-center text-white text-nowrap radius-r0"
-                                                onclick="get_last_slip_no(this)">
-                                                <span class="icon-cogs"></span>
-                                            </button>
+                                        {{-- <button id="auto-slip-no-btn" class="btn-dark border-white rounded overflow-hidden col-3 text-center text-white text-nowrap radius-r0"--}}
+                                        {{-- onclick="get_last_slip_no(this)">--}}
+                                        {{--  <span class="icon-cogs"></span>--}}
+                                        {{--    </button>--}}
                                             <input type="text" id="auto-slip-no-txt" class="rounded w-100 radius-l0" autocomplete="off" disabled
                                                    maxlength="{{ $formB['FormVars']['MaxLength']['AutoSlipNo'] }}"
                                                 {{ $formB['FormVars']['Required']['AutoSlipNo'] }}>
@@ -204,6 +204,13 @@
 @section('js')
 <script src="{{ csset('/js/modals-controller/b-type/common.js') }}"></script>
     <script>
+        $(document).ready(function() {
+            $('.to-customer-modal-btn, .form-customer-modal-btn').on('click', function() {
+                if(!Btype.checkModalOpen(this)){
+                    return false;
+                }
+            });
+        });
         window.onload = async function () {
             make_dynamic_table_css('.credit-table', make_dynamic_table_px(formB['ListVars']['Size']))
 
@@ -227,7 +234,11 @@
             $('.credit-act').on('click', function () {
                 // console.log($(this).data('value'))
                 switch( $(this).data('value') ) {
-                    case 'save': btn_act_save('#credit-form #frm'); break;
+                    case 'save':
+                        if(!Btype.checkModalOpen(this)){
+                            return false;
+                        }
+                        btn_act_save('#credit-form #frm'); break;
                     case 'new': btn_act_new(); break;
                     case 'save-and-new': btn_act_save_and_new('#credit-form #frm'); break;
                     case 'delete': btn_act_del('#credit-form #frm'); break;
@@ -368,9 +379,9 @@
 
             $('#to-customer-txt').prop('readonly', false);
             $('#form-customer-txt').prop('readonly', false);
-            $('.to-customer-modal-btn').prop('disabled', false);
-            $('.form-customer-modal-btn').prop('disabled', false);
-            $('.credit-act.save-button').prop('disabled', false)
+            $('.to-customer-modal-btn').removeClass('disabled');
+            $('.form-customer-modal-btn').removeClass('disabled');
+            $('.credit-act.save-button').removeClass('disabled')
 
             Btype.set_slip_no_btn_abled()
             $('#credit-date').val(date_to_sting(new Date()))
@@ -533,6 +544,7 @@
                 }
             });
 
+            $('.save-button').addClass('disabled');
             $('#Id').val(hd_page.Id)
             $('#auto-slip-no-txt').val(hd_page.CreditNo)
             $('#credit-date').val(moment(to_date(hd_page.CreditDate)).format('YYYY-MM-DD'))
@@ -546,11 +558,11 @@
             $('#to-customer-txt').data('id', hd_page.ToBuyerId)
             $('#form-customer-txt').val(hd_page.FromCompanyName)
             $('#form-customer-txt').data('id', hd_page.FromBuyerId)
+
             // 저장된 데이터 불러올 경우 고객업체 비활성화
             $('#to-customer-txt').prop('readonly',  hd_page.ToCompanyName != "")
             $('#form-customer-txt').prop('readonly',  hd_page.FromCompanyName != "")
-            $('.to-customer-modal-btn').prop('disabled',  hd_page.ToCompanyName != "")
-            $('.form-customer-modal-btn').prop('disabled',  hd_page.FromCompanyName != "")
+            disabled_menu(hd_page);
 
             $('#remarks-txt-area').val(remove_tag(hd_page.Remarks))
             $('#remarks-preview').html(hd_page.Remarks)
@@ -567,6 +579,13 @@
             }
 
             $('#modal-slip').modal('hide');
+        }
+
+        function disabled_menu(hd_page) {
+            const isToCustomerSaved = hd_page.ToCompanyName != ""
+            const isFromCustomerSaved = hd_page.FromCompanyName != ""
+            $('.to-customer-modal-btn').addClass('disabled',  isToCustomerSaved)
+            $('.form-customer-modal-btn').addClass('disabled',  isFromCustomerSaved)
         }
 
         const customerModal = {!! json_encode($customerModal) !!};

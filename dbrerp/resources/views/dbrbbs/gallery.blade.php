@@ -6,7 +6,7 @@
                     @if ($postType['C5'] === 'gallery')
                         <a class="blog-img" href="{{ route('dbrbbs.details', [$postCode, $post['C10']]) }}">
                             {{--                                        <div class="mask"><i class="fa-solid fa-caret-right"></i></div>--}}
-                            <img :width="this.galleryWidth" :height="this.galleryHeight" src="{{ msset($post['C1']) }}" alt="blog">
+                            <img :width="this.galleryWidth" :height="this.galleryHeight" src="{{ msset($post['C1']) }}" alt="blog" onerror="this.src=coming_soon_img">
                         </a>
                     @else
                         <a class="video-img" href="{{ route('dbrbbs.details', [$postCode, $post['C10']]) }}">
@@ -29,7 +29,7 @@
                         <a href="{{ route('dbrbbs.details', [$postCode, $post['C10']]) }}">{{ $post['Title'] }}</a>
                     </h4>
                     @if ($postType['C5'] === 'gallery')
-                        <p class="blog-desc">
+                        <p class="blog-desc ellipsis_multi">
                             {{ $post['C7'] }}
                         </p>
                     @else
@@ -49,7 +49,7 @@
             </div>
         </div>
     @empty
-        <div class="pricing_box1 full_width">
+        <div class="pricing_box1 full_width no_data">
             데이터가 존재하지 않습니다
         </div>
     @endforelse

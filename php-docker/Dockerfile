@@ -1,0 +1,54 @@
+FROM php:7.3-apache
+
+RUN echo "Acquire::Check-Valid-Until \"false\";\nAcquire::Check-Date \"false\";" | cat > /etc/apt/apt.conf.d/10no--check-valid-until
+RUN apt-get update && apt-get upgrade -y
+#RUN docker-php-ext-install mysqli pdo pdo_mysql
+#RUN docker-php-ext-enable mysqli
+#RUN apt-get -y --no-install-recommends install g++ zlib1g-dev
+#RUN pecl install grpc
+#RUN docker-php-ext-enable grpc
+
+# Install Xdebug
+#RUN pecl install -f xdebug
+
+RUN docker-php-ext-install gettext
+RUN apt-get install -y locales locales-all
+
+RUN apt-get install -y libfreetype6-dev \
+        cron \
+        supervisor \
+        graphviz \
+        vim \
+        libjpeg62-turbo-dev \
+        libpng-dev \
+        zlib1g-dev \
+        libzip-dev \
+    && docker-php-ext-install -j$(nproc) iconv \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install zip
+
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN apt-get install -y libmagickwand-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN printf "\n" | pecl install imagick
+RUN docker-php-ext-enable imagick
+
+COPY /lib /usr/local/lib/php/extensions/no-debug-non-zts-20180731
+
+# Copy laravel-cron file to the cron.d directory
+COPY ./cron.d/laravel-cron /etc/cron.d/laravel-cron
+# Give execution rights on the cron job
+RUN chmod 0644 /etc/cron.d/laravel-cron
+# Apply cron job
+RUN crontab /etc/cron.d/laravel-cron
+# Create the log file to be able to run tail
+RUN touch /var/log/cron.log
+# Enable apache modules
+RUN a2enmod rewrite
+
+RUN docker-php-ext-install bcmath
+
+CMD cron && /usr/sbin/apache2ctl -D FOREGROUND
+

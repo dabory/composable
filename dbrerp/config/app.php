@@ -188,6 +188,10 @@ return [
         Jenssegers\Agent\AgentServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         App\Providers\CompanyVendorServiceProvider::class,
+        App\Providers\NotificationServiceProvider::class,
+
+        // 알림톡 전용 이벤트 서비스 프로바이더 등록
+        App\Providers\NotificationEventServiceProvider::class,
     ],
 
     /*
@@ -229,7 +233,7 @@ return [
         'Password' => Illuminate\Support\Facades\Password::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
-        // 'Redis' => Illuminate\Support\Facades\Redis::class,
+         'Redis' => Illuminate\Support\Facades\Redis::class,
         'Request' => Illuminate\Support\Facades\Request::class,
         'Response' => Illuminate\Support\Facades\Response::class,
         'Route' => Illuminate\Support\Facades\Route::class,

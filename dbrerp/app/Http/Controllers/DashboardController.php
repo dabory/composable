@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Services\CallApiService;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -48,171 +49,18 @@ class DashboardController extends Controller
                         'WorkingDays' => 7,
                     ]
                 ]);
-//                $howManyWorkingDays['StartDate'] = '20240721';
-//                $howManyWorkingDays['EndDate'] = '20240728';
 
-                $noticeFilter = request('notice_filter', 'all');
-                $reviewFilter = request('review_filter', 'all');
-                $inquiryFilter = request('inquiry_filter', 'all');
-
-                $noticeSimpleFilter = '';
-                if ($noticeFilter !== 'all') {
-                    $noticeSimpleFilter = "mx.status = '$noticeFilter'";
+                $fullFileUrl = "dabory-footage/dash/shop-dash.json";
+                if (Storage::exists($fullFileUrl)) {
+                    $listType1Book = json_decode(Storage::get($fullFileUrl), true);
+                } else {
+                    $listType1Book = $this->getShopDashData($howManyWorkingDays);
+                    if ($this->callApiService->verifyApiError($listType1Book)) {
+                        return redirect()->to('/user-logout');
+                    }
+                    Storage::put($fullFileUrl, json_encode($listType1Book));
                 }
 
-                $inquirySimpleFilter = '';
-                if ($inquiryFilter !== 'all') {
-                    $inquirySimpleFilter = "mx.status = '$inquiryFilter'";
-                }
-
-                $reviewSimpleFilter = '';
-                if ($reviewFilter === 'up') {
-                    $reviewSimpleFilter = 'mx.rating_score >= 4';
-                } else if ($reviewFilter === 'down') {
-                    $reviewSimpleFilter = 'mx.rating_score < 4';
-                }
-
-                $listType1Book = $this->callApiService->callApi([
-                    'url' => 'list-type1-book',
-                    'data' => [
-                        'Book' => [
-                            [
-                                'QueryVars' => [
-                                    'QueryName' => 'dashboard/generic_dash/1-left-top',
-                                    'SimpleFilter' => '',
-                                ],
-                                'ListType1Vars' => [
-                                    'OrderBy' => 'mx.created_on desc'
-                                ],
-                            ],
-                            [
-                                'QueryVars' => [
-                                    'QueryName' => 'dashboard/generic_dash/2-left-top',
-                                    'SimpleFilter' => '',
-                                ],
-                                'ListType1Vars' => [
-                                    'IsDownloadList' => true,
-                                    'OrderBy' => 'mx.created_on desc'
-                                ],
-                                'PageVars' => [
-                                    'Limit' => 1,
-                                ]
-                            ],
-                            [
-                                'QueryVars' => [
-                                    'QueryName' => 'dashboard/generic_dash/3-left-top',
-                                    'SimpleFilter' => '',
-                                ],
-                                'ListType1Vars' => [
-                                    'OrderBy' => 'mx.created_on desc'
-                                ],
-                            ],
-                            [
-                                'QueryVars' => [
-                                    'QueryName' => 'dashboard/generic_dash/order-new',
-                                    'SimpleFilter' => '',
-                                ],
-                                'ListType1Vars' => [
-                                    'OrderBy' => 'mx.created_on desc'
-                                ],
-                            ],
-                            [
-                                'QueryVars' => [
-                                    'QueryName' => 'dashboard/generic_dash/order-delayed',
-                                    'SimpleFilter' => '',
-                                ],
-                                'ListType1Vars' => [
-                                    'IsDownloadList' => true,
-                                    'OrderBy' => 'mx.created_on desc'
-                                ],
-                                'PageVars' => [
-                                    'Limit' => 1,
-                                ]
-                            ],
-                            [
-                                'QueryVars' => [
-                                    'QueryName' => 'dashboard/generic_dash/order-cancelled',
-                                    'SimpleFilter' => '',
-                                ],
-                            ],
-                            [
-                                'QueryVars' => [
-                                    'QueryName' => 'dashboard/generic_dash/post-item-inquiry',
-                                    'SimpleFilter' => $inquirySimpleFilter,
-//                                    'TestMode' => 'query'
-                                ],
-                                'ListType1Vars' => [
-                                    'OrderBy' => 'mx.created_on desc'
-                                ],
-                                'PageVars' => [
-                                    'Limit' => 6,
-                                ]
-                            ],
-                            [
-                                'QueryVars' => [
-                                    'QueryName' => 'dashboard/generic_dash/item-count',
-                                    'SimpleFilter' => '',
-                                ],
-                            ],
-                            [
-                                'QueryVars' => [
-                                    'QueryName' => 'dashboard/generic_dash/post-notice',
-                                    'SimpleFilter' => $noticeSimpleFilter,
-                                ],
-                                'ListType1Vars' => [
-                                    'OrderBy' => 'mx.created_on desc'
-                                ],
-                                'PageVars' => [
-                                    'Limit' => 4,
-                                ]
-                            ],
-                            [
-                                'QueryVars' => [
-                                    'QueryName' => 'dashboard/generic_dash/post-item-review',
-                                    'SimpleFilter' => $reviewSimpleFilter,
-                                ],
-                                'ListType1Vars' => [
-                                    'OrderBy' => 'mx.created_on desc'
-                                ],
-                                'PageVars' => [
-                                    'Limit' => 4,
-                                ]
-                            ],
-                            [
-                                'QueryVars' => [
-                                    'QueryName' => 'dashboard/generic_dash/sales-statistics',
-                                    'SimpleFilter' => '',
-                                ],
-                                'ListType1Vars' => [
-                                    'FilterDate' => 'sorder_date',
-                                    'StartDate' => $howManyWorkingDays['StartDate'],
-                                    'EndDate' => $howManyWorkingDays['EndDate'],
-                                ],
-                            ],
-                            [
-                                'QueryVars' => [
-                                    'QueryName' => 'dashboard/generic_dash/sales-statistics-graph',
-                                    'SimpleFilter' => '',
-                                ],
-                                'ListType1Vars' => [
-                                    'IsDownloadList' => true,
-                                    'FilterDate' => 'sorder_date',
-                                    'StartDate' => $howManyWorkingDays['StartDate'],
-                                    'EndDate' => $howManyWorkingDays['EndDate'],
-                                ],
-                                'PageVars' => [
-                                    'Limit' => 100,
-                                ]
-                            ],
-                        ]
-                    ]
-                ]);
-
-//                dump($listType1Book);
-
-                if ($this->callApiService->verifyApiError($listType1Book)) {
-                    return redirect()->to('/user-logout');
-                }
 
                 $salesStatisticsGraph = collect($listType1Book['Book'][11]['Page'])->map(function ($data) {
                     return [
@@ -262,4 +110,172 @@ class DashboardController extends Controller
 
         return redirect()->route("themes.$component[0].dashboard");
     }
+
+    private function getShopDashData($howManyWorkingDays)
+    {
+//                $howManyWorkingDays['StartDate'] = '20240721';
+//                $howManyWorkingDays['EndDate'] = '20240728';
+
+        $noticeFilter = request('notice_filter', 'all');
+        $reviewFilter = request('review_filter', 'all');
+        $inquiryFilter = request('inquiry_filter', 'all');
+
+        $noticeSimpleFilter = '';
+        if ($noticeFilter !== 'all') {
+            $noticeSimpleFilter = "mx.status = '$noticeFilter'";
+        }
+
+        $inquirySimpleFilter = '';
+        if ($inquiryFilter !== 'all') {
+            $inquirySimpleFilter = "mx.status = '$inquiryFilter'";
+        }
+
+        $reviewSimpleFilter = '';
+        if ($reviewFilter === 'up') {
+            $reviewSimpleFilter = 'mx.rating_score >= 4';
+        } else if ($reviewFilter === 'down') {
+            $reviewSimpleFilter = 'mx.rating_score < 4';
+        }
+
+        $listType1Book = $this->callApiService->callApi([
+            'url' => 'list-type1-book',
+            'data' => [
+                'Book' => [
+                    [
+                        'QueryVars' => [
+                            'QueryName' => 'dashboard/generic_dash/1-left-top',
+                            'SimpleFilter' => '',
+                        ],
+                        'ListType1Vars' => [
+                            'OrderBy' => 'mx.created_on desc'
+                        ],
+                    ],
+                    [
+                        'QueryVars' => [
+                            'QueryName' => 'dashboard/generic_dash/2-left-top',
+                            'SimpleFilter' => '',
+                        ],
+                        'ListType1Vars' => [
+                            'IsDownloadList' => true,
+                            'OrderBy' => 'mx.created_on desc'
+                        ],
+                        'PageVars' => [
+                            'Limit' => 1,
+                        ]
+                    ],
+                    [
+                        'QueryVars' => [
+                            'QueryName' => 'dashboard/generic_dash/3-left-top',
+                            'SimpleFilter' => '',
+                        ],
+                        'ListType1Vars' => [
+                            'OrderBy' => 'mx.created_on desc'
+                        ],
+                    ],
+                    [
+                        'QueryVars' => [
+                            'QueryName' => 'dashboard/generic_dash/order-new',
+                            'SimpleFilter' => '',
+                        ],
+                        'ListType1Vars' => [
+                            'OrderBy' => 'mx.created_on desc'
+                        ],
+                    ],
+                    [
+                        'QueryVars' => [
+                            'QueryName' => 'dashboard/generic_dash/order-delayed',
+                            'SimpleFilter' => '',
+                        ],
+                        'ListType1Vars' => [
+                            'IsDownloadList' => true,
+                            'OrderBy' => 'mx.created_on desc'
+                        ],
+                        'PageVars' => [
+                            'Limit' => 1,
+                        ]
+                    ],
+                    [
+                        'QueryVars' => [
+                            'QueryName' => 'dashboard/generic_dash/order-cancelled',
+                            'SimpleFilter' => '',
+                        ],
+                    ],
+                    [
+                        'QueryVars' => [
+                            'QueryName' => 'dashboard/generic_dash/post-item-inquiry',
+                            'SimpleFilter' => $inquirySimpleFilter,
+//                                    'TestMode' => 'query'
+                        ],
+                        'ListType1Vars' => [
+                            'OrderBy' => 'mx.created_on desc'
+                        ],
+                        'PageVars' => [
+                            'Limit' => 6,
+                        ]
+                    ],
+                    [
+                        'QueryVars' => [
+                            'QueryName' => 'dashboard/generic_dash/item-count',
+                            'SimpleFilter' => '',
+                        ],
+                    ],
+                    [
+                        'QueryVars' => [
+                            'QueryName' => 'dashboard/generic_dash/post-notice',
+                            'SimpleFilter' => $noticeSimpleFilter,
+                        ],
+                        'ListType1Vars' => [
+                            'OrderBy' => 'mx.created_on desc'
+                        ],
+                        'PageVars' => [
+                            'Limit' => 4,
+                        ]
+                    ],
+                    [
+                        'QueryVars' => [
+                            'QueryName' => 'dashboard/generic_dash/post-item-review',
+                            'SimpleFilter' => $reviewSimpleFilter,
+                        ],
+                        'ListType1Vars' => [
+                            'OrderBy' => 'mx.created_on desc'
+                        ],
+                        'PageVars' => [
+                            'Limit' => 4,
+                        ]
+                    ],
+                    [
+                        'QueryVars' => [
+                            'QueryName' => 'dashboard/generic_dash/sales-statistics',
+                            'SimpleFilter' => '',
+                        ],
+                        'ListType1Vars' => [
+                            'FilterDate' => 'sorder_date',
+                            'StartDate' => $howManyWorkingDays['StartDate'],
+                            'EndDate' => $howManyWorkingDays['EndDate'],
+                        ],
+                    ],
+                    [
+                        'QueryVars' => [
+                            'QueryName' => 'dashboard/generic_dash/sales-statistics-graph',
+                            'SimpleFilter' => '',
+                        ],
+                        'ListType1Vars' => [
+                            'IsDownloadList' => true,
+                            'FilterDate' => 'sorder_date',
+                            'StartDate' => $howManyWorkingDays['StartDate'],
+                            'EndDate' => $howManyWorkingDays['EndDate'],
+                        ],
+                        'PageVars' => [
+                            'Limit' => 100,
+                        ]
+                    ],
+                ]
+            ]
+        ]);
+
+//                dump($listType1Book);
+
+        return $listType1Book;
+    }
 }
+

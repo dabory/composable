@@ -68,9 +68,24 @@ Route::middleware(['check.gate.token', 'app.token.manager'])->group(function () 
                 } else {
                     $sortMenu = $sortMenuPage[0];
                 }
+
+                if($sortMenu === ''){
+                    session()->flash('error', '설정된 MEMBER 메뉴가 없습니다. 관리자에게 문의하세요.');
+                    return redirect()->back();
+                }
+
+                $component = explode('::', $sortMenu['C7']);
+                if (count($component) === 1) {
+                    if($component[0] !== 'generic_dash'){
+                        $view = 'pages.' . $sortMenu['C7'];
+                    }else{
+                        $view = 'front.dabory.myapp.index';
+                    }
+
+                }
                 session()->put('member.SortMenu', $sortMenu);
                 // dd(session('member'));
-                return view('front.dabory.myapp.index');
+                return view($view);
             })->name('index');
         });
     });

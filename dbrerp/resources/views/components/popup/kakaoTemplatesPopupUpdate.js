@@ -1,0 +1,2 @@
+
+    var textAreaValue = $(this).val();

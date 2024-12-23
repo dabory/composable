@@ -191,7 +191,7 @@ async function get_para_data(para_type, path_to_para,
     });
 }
 
-async function call_slip_form_book(url, query_name, filter_value, menuCode) {
+async function call_slip_form_book(url, query_name, filter_value, menuCode, strong_type = false) {
     let response = await get_api_data(url,
     {
         QueryVars: {
@@ -199,7 +199,6 @@ async function call_slip_form_book(url, query_name, filter_value, menuCode) {
             FilterValue: filter_value
         }
     }, null, menuCode);
-
     return response
 }
 

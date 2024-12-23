@@ -41,7 +41,7 @@
                     </div>
                 </li>
             @empty
-                <div class="pricing_box1 full_width">
+                <div class="pricing_box1 full_width no_data">
                     데이터가 존재하지 않습니다
                 </div>
             @endforelse

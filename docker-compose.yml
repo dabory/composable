@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  apache:
+    build:
+      context: ./php-docker
+    # entrypoint: /bin/sh -c "chown -v nobody:nogroup /var/www/sqlite-db && chmod -v 777 /var/www/sqlite-db"
+    container_name: dcdemo
+    # hostname: apache
+    # user: root
+    # privileged: true
+    ports:
+      - "8000:80" # normal php port for trafic and functionality
+    volumes:
+      #  - ./php-docker:/usr/local/etc/php
+      - ./dbrerp:/var/www/html:cached
+      # - ./config-database-localhost.php:/var/www/html/config/database.php:cached
+      - ./php-docker/php.ini-pma-upload:/usr/local/etc/php/php.ini
+      - ./php-docker/cert:/usr/local/lib/php/cert
+      # - sqlite-db-vol:/var/www/sqlite-db:cached
+      #  - ./public_html:/var/www/html
+    #  depends_on:
+    #    - db
+    restart: always
+    environment:
+      - TZ=Asia/Seoul
+    networks:
+      - docker-network
+
+
+volumes:
+  weberp-db-vol: {}
+
+networks:
+  docker-network:
+    driver: bridge
+    

@@ -283,7 +283,7 @@
     <script>
         $(document).ready(function() {
             $('.company-modal-btn').on('click', function() {
-                if(!checkModalOpen(this)){
+                if(!Btype.checkModalOpen(this)){
                     return false;
                 }
             });
@@ -858,7 +858,7 @@
                         message: @json(_e('(*)Required item(s) omitted')),
                     });
                 }
-                scrollToTop();
+                scroll_to_top();
             // });
 
         }
@@ -1027,7 +1027,7 @@
             // $('.disabled-if-saved').prop('disabled',  true)
             // showFlashPopup('.company-modal-btn');
             // showFlashPopup('.disabled-if-saved');
-            disabledmenu(hd_page);
+            disabled_menu(hd_page);
 
             $('#input1-txt').val(hd_page.Input1)
             $('#deal-type-select').val(hd_page.DealTypeId)
@@ -1056,50 +1056,16 @@
             $('#modal-slip').modal('hide');
         }
 
-        function scrollToTop() {
+        function scroll_to_top() {
             var scrollArea = document.getElementById("scroll-area");
             scrollArea.scrollTop = 0;
         }
 
-        function showFlashPopup(dom_val) {
-            if($(dom_val).prop('disabled')){
-                $(dom_val).on('mouseover', function() {
-                    showNotice();
-                });
-            }
-        }
-        function disabledmenu(hd_page) {
+        function disabled_menu(hd_page) {
             const isCompanySaved = hd_page.CompanyName !== "";
             $('#supplier-txt').prop('readonly',  isCompanySaved)
             $('#buyer-txt').prop('readonly',  isCompanySaved)
             $('.company-modal-btn').toggleClass('disabled', isCompanySaved);
-        }
-
-        function checkModalOpen(element) {
-            const $this = $(element);
-            const auto_slip_no = $('#auto-slip-no-txt').val();
-
-            // 전표번호가 비어 있을 경우
-            if (!auto_slip_no) {
-                iziToast.warning({
-                    title: "warning",
-                    message: "저장>추가 버튼을 클릭하여 새 전표번호로 시작하세요."
-                });
-                return false;
-            }
-            // disabled인 경우
-            if ($this.hasClass('disabled')) {
-                let msg = "저장된 해당정보는 변경할 수 없으며 전표 삭제만 가능합니다.";
-                if ($this.hasClass('disabled-if-saved')) { // 항목추가인 경우
-                    msg = "연관 전표번호가 있을경우 연관복사로만 추가가 가능합니다.";
-                }
-                iziToast.warning({
-                    title: "warning",
-                    message: msg
-                });
-                return false;
-            }
-            return true;
         }
 
         const squoteModal = {!! json_encode($squoteModal) !!};

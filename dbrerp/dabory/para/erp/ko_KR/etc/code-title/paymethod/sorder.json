@@ -26,5 +26,13 @@
     {
         "Code": "Crypto2",
         "Title": "P2UP결제"
+    },
+    {
+        "Code": "PgTransfer",
+        "Title": "계좌이체"
+    },
+    {
+        "Code": "MobilePay",
+        "Title": "휴대폰"
     }
 ]

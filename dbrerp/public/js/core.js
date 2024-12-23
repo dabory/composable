@@ -343,15 +343,46 @@ const App = function () {
         buttonElement.on('click', function(e) {
             e.preventDefault();
 
+            $('.icon-spinner2.spinner').show()
+            $(this).hide()
             // Create overlay with spinner
             $(this).parents(overlayContainer).append($('<div class="' + overlayClass + '"><i class="' + spinnerClass + '"></i></div>'));
 
+            const $this =  this
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: "POST",
+                url: '/clear-dash-cache',
+                data: {
+                    "path": 'dabory-footage/dash/shop-dash.json',
+                },
+                success: function(response) {
+                    setTimeout(function() {
+                        if (response['error']) {
+                            $('.' + overlayClass).addClass(overlayAnimationClass).on('animationend animationcancel', function() {
+                                $(this).remove();
+                            });
+                            $('.icon-spinner2.spinner').hide()
+                            $($this).show()
+                        } else {
+                            location.reload()
+
+                        }
+                    }, 500);
+
+                }
+            });
+
             // Remove overlay after 2.5s, for demo only
-            setTimeout(function() {
-                $('.' + overlayClass).addClass(overlayAnimationClass).on('animationend animationcancel', function() {
-                    $(this).remove();
-                });
-            }, 2500);
+            // setTimeout(function() {
+            //     $('.' + overlayClass).addClass(overlayAnimationClass).on('animationend animationcancel', function() {
+            //         $(this).remove();
+            //     });
+            // }, 2500);
         });
     };
 

@@ -22,7 +22,7 @@
         },
         {
             "Value": "copy-to-another",
-            "Caption": "발주에서 매입으로 복사",
+            "Caption": "발주에서 매입으로 단순복사",
             "Parameter": "purch/porder-purch"
         },
         {

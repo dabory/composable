@@ -108,7 +108,7 @@
             "Caption": "ERP"
         },
         {
-            "Value": "mx.sort_type='optical_pos'",
+            "Value": "mx.sort_type='opticalpos'",
             "Caption": "안경점POS"
         },
         {

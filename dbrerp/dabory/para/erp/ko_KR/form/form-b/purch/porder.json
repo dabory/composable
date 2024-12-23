@@ -30,17 +30,17 @@
         },
         {
             "Value": "copy-to-another",
-            "Caption": "발주에서 발주로 복사(-)",
+            "Caption": "발주에서 발주로 단순복사",
             "Parameter": "purch/porder-porder"
         },
         {
             "Value": "copy-to-another",
-            "Caption": "매입 가격표에서 발주로 복사",
+            "Caption": "매입가격표에서 발주로 단순복사",
             "Parameter": "purch/pquote-porder"
         },
         {
             "Value": "copy-to-another",
-            "Caption": "수주에서 발주로 복사(-)",
+            "Caption": "수주에서 발주로 단순복사",
             "Parameter": "sales/sorder-porder"
         },
         {
@@ -74,27 +74,22 @@
     "BodySelectOptions": [
         {
             "Value": "body-copy",
-            "Caption": "발주에서 발주로 품목 복사(-)",
+            "Caption": "발주에서 발주로 품목 단순복사",
             "Parameter": "purch/porder-porder"
         },
         {
             "Value": "body-copy",
-            "Caption": "매입 가격표에서 발주로 품목 복사",
+            "Caption": "매입가격표에서 발주로 품목 단순복사",
             "Parameter": "purch/pquote-porder"
         },
         {
             "Value": "body-copy",
-            "Caption": "수주에서 발주로 품목 복사(-)",
+            "Caption": "수주에서 발주로 품목 단순복사",
             "Parameter": "sales/sorder-porder"
         },
         {
             "Value": "multi-delete",
             "Caption": "품목 일괄 삭제",
-            "Parameter": ""
-        },
-        {
-            "Value": "multi-update",
-            "Caption": "품목 일괄 수정",
             "Parameter": ""
         }
     ],

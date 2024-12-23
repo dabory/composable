@@ -45,6 +45,7 @@
             "Name": "이름*",
             "Email": "이메일*",
             "MobileNo": "휴대폰번호*",
+            "CertCode": "인증번호* (휴대폰 인증 이후 정보를 수정할 수 있습니다.)",
             "Status": "상태*",
             "IsMemberApp": "IsMemberApp"
         },
@@ -53,6 +54,7 @@
             "Name": "left",
             "Email": "left",
             "MobileNo": "left",
+            "CertCode": "left",
             "Status": "left",
             "IsMemberApp": "left"
         },
@@ -61,6 +63,7 @@
             "Name": "100",
             "Email": "100",
             "MobileNo": "100",
+            "CertCode": "100",
             "Status": "100",
             "IsMemberApp": "10"
         },
@@ -69,6 +72,7 @@
             "Name": "",
             "Email": "readonly",
             "MobileNo": "readonly",
+            "CertCode": "",
             "Status": "",
             "IsMemberApp": ""
         }

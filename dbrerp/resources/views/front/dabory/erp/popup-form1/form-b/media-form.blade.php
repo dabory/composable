@@ -62,12 +62,22 @@
                                     {{ $formB['FormVars']['Required']['AutoSlipNo'] }}>
                             </div>
                         </div>
+
                         <div class="form-group d-flex flex-column mb-2">
-                            <label class="m-0">{{ $formB['FormVars']['Title']['FileSelect'] }}</label>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <label class="m-0">{{ $formB['FormVars']['Title']['FileSelect'] }}</label>
+                                {{--<div class="d-flex align-items-center">
+                                    <input type="checkbox" value="1" class="text-center mr-1" id="is-not-webp">
+                                    <label class="mb-0" for="is-not-webp">
+                                        {{ $formB['FormVars']['Title']['IsNotWebP'] }}
+                                    </label>
+                                </div>--}}
+                            </div>
                             <input type="file" id="upload-file" class="cursor-pointer rounded w-100 form-control-uniform-custom" style="text-indent: 0;"
-                            onchange="PopupForm1FormBMediaForm.file_upload(this)"
-                                   maxlength="{{ $formB['FormVars']['MaxLength']['FileSelect'] }}"
-                                {{ $formB['FormVars']['Required']['FileSelect'] }}>
+                                        onchange="PopupForm1FormBMediaForm.file_upload(this)"
+                                        maxlength="{{ $formB['FormVars']['MaxLength']['FileSelect'] }}"
+                                        {{ $formB['FormVars']['Required']['FileSelect'] }}>
+
                         </div>
                         <div class="form-group d-none flex-column mb-2">
                             <label class="m-0">{{ $formB['FormVars']['Title']['MediaClass'] }}</label>
@@ -163,6 +173,13 @@
                     {{ $formB['FormVars']['Title']['BranchName'] }}
                 </label>
                 <input type="text" class="w-100 w-md-80 rounded text-left" id="BranchName" disabled>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <input type="checkbox" value="0" class="text-center mr-1" id="is-not-webp" onchange="PopupForm1FormBMediaForm.updateCheckbox(this)">
+                    <label class="mb-0" for="is-not-webp" style="color:red">{{ $formB['FormVars']['Title']['IsNotWebP'] }}</label>
+                </div>
             </div>
         </div>
     </div>
@@ -501,25 +518,38 @@
                 }
 
                 const media = PopupForm1FormBMediaForm.get_media_data($('#media-form').find('#file-url-txt').val());
-                // console.log(media)
-
                 const id = Number($('#media-form').find('#Id').val())
                 const upload_file = $('#media-form').find('#upload-file')[0].files[0]
 
                 // 화열 선택을 했을 때 파일존재 여부 체크
                 if (! isEmpty(upload_file)) {
                     $('.media-btn-group button').prop('disabled', true);
-                    const response = await axios.post('/file-exists', {file_path: media['path'] + media['name']});
+                    // const response = await axios.post('/file-exists', {file_path: media['path'] + media['name']});
+                    const filePath = media['path'] + media['name'];
+                    const response = await PopupForm1FormBMediaForm.fileExists(filePath);
+
                     $('.media-btn-group button').prop('disabled', false);
-                    if (response.data) {
+                    if (response === 1) {
                         const split_media_name = media['name'].split('.')
-                        const change_file_name = media['path'] + split_media_name[0] + '-change.' + split_media_name[1]
+                        // const change_file_name = media['path'] + split_media_name[0] + '-change.' + split_media_name[1]
+                        let version = 1;
+                        let change_file_name = media['path'] + split_media_name[0] + '-v' + version + '.' + split_media_name[1]
 
-                        $('#media-form').find('#file-url-txt').focus()
+                        while (await PopupForm1FormBMediaForm.fileExists(change_file_name)) {
+                            version++;
+                            change_file_name = media['path'] + split_media_name[0] + '-v' + version + '.' + split_media_name[1]
+                        }
+                        // $('#media-form').find('#file-url-txt').focus()
+                        $('#media-form').find('#file-url-txt').val(change_file_name).focus();
 
-                        iziToast.error({
-                            title: 'Error',
-                            message: `화일주소에 화일이 존재합니다. 저장을 원하시면 화일주소 입력창에서 ${media['name']} 이름을 직접 변경해주세요. Ex: ${change_file_name}`,
+                        // iziToast.error({
+                        //     title: 'Error',
+                        //     message: `화일주소에 화일이 존재합니다. 저장을 원하시면 화일주소 입력창에서 ${media['name']} 이름을 직접 변경해주세요. Ex: ${change_file_name}`,
+                        // });
+                        // return;
+                        iziToast.info({
+                            title: 'info',
+                            message: `화일주소에 화일이 존재합니다. 저장을 원하시면 다시한번 미디어 업로드 후 붙여넣기를 눌러주세요.`,
                         });
                         return;
                     }
@@ -573,7 +603,6 @@
                         $('.media-btn-group button').prop('disabled', false);
                     }
                 }
-
                 PopupForm1FormBMediaForm.call_act_api({
                     HdPage: [ PopupForm1FormBMediaForm.get_parameter() ]
                 }, function(Hd_page) {
@@ -582,6 +611,17 @@
                     if (isEmpty(upload_file)) {
                         $('#modal-select-popup.popup-form1-form-b-media-form').modal('hide');
                         return
+                    }else{
+                        var file = $('#media-form').find('#upload-file')[0].files[0];
+                        var maxSize = 35 * 1024 * 1024;
+
+                        if (file.size > maxSize) {
+                            iziToast.error({
+                                title: 'Error',
+                                message: `35MB까지 업로드 가능합니다. ${file.size}`
+                            });
+                            return;
+                        }
                     }
 
                     $('#pace-progress-panel').attr('hidden', false)
@@ -593,6 +633,7 @@
                     let form = new FormData();
                     form.append('_token', $('meta[name="csrf-token"]').attr('content'))
                     form.append('file', $('#media-form').find('#upload-file')[0].files[0])
+                    form.append('isNotWebP', $('#media-form').find('#is-not-webp').val())
                     form.append('media', JSON.stringify(media));
                     $.ajax({
                         url: "/file-upload",
@@ -602,15 +643,23 @@
                         contentType: false,
                         success: function(data) {
                             if (! isEmptyArr(data)) {
+                                console.log(data);
                                 PopupForm1FormBMediaForm.call_bd_act_api(data, paste)
                             } else {
                                 PopupForm1FormBMediaForm.callback_success()
-
                                 PopupForm1FormBMediaForm.btn_act_new()
                                 $('#modal-select-popup.show').trigger('list.requery')
                                 $('#modal-select-popup.popup-form1-form-b-media-form').modal('hide')
                             }
-			},
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            console.error("AJAX 요청 실패:", textStatus, errorThrown);
+                            console.error("응답 내용:", jqXHR.responseText);
+                            iziToast.error({
+                                title: 'Error',
+                                message: '파일 업로드 중 오류가 발생했습니다: ' + errorThrown,
+                            });
+                        }
                     });
                 });
             }
@@ -639,7 +688,7 @@
 
                     PopupForm1FormBMediaForm.btn_act_new()
 
-                    // 미디어 찾기에서 업로드 할 때 바로 이미지 붙여 넣기
+                    // 미디어 찾기에서 업로드 할 때 바로 이미지 붙여 넣기 test
                     if (paste && $('#modal-media').hasClass('show')) {
                         PopupForm1FormBMediaForm.paste_image_directly(parameter['HdPage'][0])
                     }
@@ -779,7 +828,19 @@
                 $(media_form).find('#is-closed-check').prop('checked', hd_page.IsClosed == '1')
             }
 
+            PopupForm1FormBMediaForm.updateCheckbox = function(checkbox) {
+                checkbox.value = checkbox.checked ? '1' : '0';
+            }
 
+            PopupForm1FormBMediaForm.fileExists = async (filePath) => {
+                try {
+                    const response = await axios.post('/file-exists', { file_path: filePath });
+                    return response.data;
+                } catch (error) {
+                    console.error("파일 존재 여부 확인 오류:", error);
+                    return false;
+                }
+            };
         }( window.PopupForm1FormBMediaForm = window.PopupForm1FormBMediaForm || {}, jQuery ));
     </script>
 @endonce

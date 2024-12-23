@@ -5,7 +5,7 @@
         "PickApi": "simple-join-page",
         "ActApi": "post-act",
         "QueryName": "post-member-user",
-        "PostCode": "ticket"
+        "PostCode": "1to1"
     },
 
     "SelectButtonOptions": [
@@ -83,7 +83,7 @@
         {
             "SaveButton": "",
             "Status": "required",
-            "PostTypeId": "required disabled",
+            "PostTypeId": "",
             "Pc1": "required disabled",
             "Pc2": "required disabled",
             "PostTitle": "required disabled",

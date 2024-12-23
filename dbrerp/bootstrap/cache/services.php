@@ -59,6 +59,8 @@
     55 => 'Jenssegers\\Agent\\AgentServiceProvider',
     56 => 'Mews\\Captcha\\CaptchaServiceProvider',
     57 => 'App\\Providers\\CompanyVendorServiceProvider',
+    58 => 'App\\Providers\\NotificationServiceProvider',
+    59 => 'App\\Providers\\NotificationEventServiceProvider',
   ),
   'eager' => 
   array (
@@ -103,6 +105,8 @@
     38 => 'Jenssegers\\Agent\\AgentServiceProvider',
     39 => 'Mews\\Captcha\\CaptchaServiceProvider',
     40 => 'App\\Providers\\CompanyVendorServiceProvider',
+    41 => 'App\\Providers\\NotificationServiceProvider',
+    42 => 'App\\Providers\\NotificationEventServiceProvider',
   ),
   'deferred' => 
   array (

@@ -133,11 +133,23 @@
     "// OrderByOptions": "OrderBy Options//첫번째 Value가 Default",
     "OrderByOptions": [
         {
-            "Value": "setup_code asc, seq_no asc",
-            "Caption": "설정코드 순서,"
+            "Value": "id asc",
+            "Caption": "설정 입력 순서1"
         },
         {
-            "Value": "setup_code desc,  seq_no asc",
+            "Value": "setup_code asc",
+            "Caption": "설정코드 순서2"
+        },
+        {
+            "Value": "setup_name asc",
+            "Caption": "설정이름 순서3"
+        },
+        {
+            "Value": "setup_code desc",
+            "Caption": "설정 코드 역순"
+        },
+        {
+            "Value": "setup_name desc",
             "Caption": "설정 코드 역순"
         }
     ],
@@ -174,11 +186,11 @@
             "C1": "15",
             "C2": "10",
             "C3": "5",
-            "C4": "10",
-            "C5": "25",
-            "C6": "25",
-            "C7": "8",
-            "C8": "8",
+            "C4": "20",
+            "C5": "20",
+            "C6": "20",
+            "C7": "5",
+            "C8": "5",
             "C9": "3"
         },
         {
