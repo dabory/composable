@@ -90,7 +90,7 @@ It is sample code for PHP and Node.js developers to review, Not for complete run
 Since Structure of Dabory Composable run by core and theme, Parent(Core)-Child(Theme) git repository, 
 You need to visit https://composable.dabory.com/ to install appropriate Theme over your CORE git code.
 
-Installation Guide using Docker is here https://manual.dabory.com/books/frontend/page/dc-demo-docker.
+Installation Guide using Docker is here <a href="https://manual.dabory.com/books/fro    ntend/page/dc-demo-docker" target="_blank">How to install PHP-Docker Frontend Package</a> 
 For more information send mailto: kimhi65@gmail.com
 
 To get started with the project, follow these steps:
